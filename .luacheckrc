@@ -1,0 +1,52 @@
+std = "lua51"
+exclude_files = {
+    "node_modules/**",
+    "scripts/**",
+    "mods/game_commands/**",
+    "mods/hudbars/**",
+    "mods/x_player_api/**",
+    "mods/player_monoids/**",
+    "mods/sfinv/**",
+    "mods/show_wielded_item/**",
+}
+read_globals = {
+    "ItemStack",
+    "vector",
+    "PcgRandom",
+    "PseudoRandom",
+    "SecureRandom",
+    "DIR_DELIM",
+    "PLATFORM",
+    "dump",
+    "dump2",
+    "Raycast",
+    "Settings",
+    "AreaStore",
+    "VoxelManip",
+    "VoxelArea",
+    "PerlinNoise",
+    "PerlinNoiseMap",
+    table = {
+        fields = {
+            "copy",
+            "indexof",
+            "insert_all",
+            "key_value_swap",
+            "shuffle",
+        },
+    },
+}
+globals = {
+    "core",
+    "minetest",
+    "hb",
+    "x_player_api",
+    "player_monoids",
+    "sfinv",
+    "tc_assets",
+    "tc_init",
+    "tc_elements",
+    "tc_tools",
+    "tc_world",
+    "tc_core",
+}

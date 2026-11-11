@@ -1,0 +1,26 @@
+{
+  "$schema": "https://content.luanti.org/api/cdb_schema/",
+  "type": "GAME",
+  "title": "Terrarium Crucible",
+  "name": "terrarium_crucible",
+  "short_description": "Shrink into a wizard's glass terrarium! Care for magical plants, clear falling fire and ice blocks, drink potions, and grow your garden!",
+  "long_description": "**Terrarium Crucible** is a cozy yet exciting action-puzzle gardening game made for the **2026 Luanti Game Jam** (*The Wizard's Workshop*).\n\nYou have been shrunk down to the size of a thimble and placed inside an open-top glass terrarium on a wizard's wooden desk, surrounded by giant flickering candles and an open spellbook. Your job—solo or together with friends—is to care for delicate magical plants called **Crucible Sprouts** while the wizard drops wild ingredients in from above!\n\n### How It Plays\n\n- **Grow & Expand Your Glass Garden**: You begin in a single glass room caring for one sprout. Help your plants reach **100% Bloom** while keeping them healthy to finish the level, choose **1 of 3 permanent upgrades**, and open a brand-new connected room with another plant—each growing at its own natural pace.\n- **Easy-to-Learn Tools & Combos**: Glowing markers on the floor warn you before hot **Brimstone**, cold **Ice Shards**, sour **Acid Slime**, or dry **Chalk** land. Clear them with your matching hotbar tools (`[1]`–`[4]`), swat them out of the air before they land for extra plant growth, or use your **Trowel `[1]`** to pick up one block and set it next to its opposite so they cancel each other out!\n- **Speed Paths & Bonus Crystals**: Cleaning up acid or chalk turns ordinary dirt into glowing green **Fertile Soil** that makes plants bloom faster and lets you run much quicker between rooms. From Level 2 onward, crack open shimmering **Prismatic Geodes** before time runs out to clear nearby messes all at once.\n- **Helpful Potions & Second Chances**: Clearing hazards rewards you with **Quicksilver Potions** (super speed), **Aegis Potions** (full heal, revives wilted plants, and saves you automatically if you run out of health), and **Chronos Hourglasses** (pauses falling blocks).\n- **Friendly for Everyone**: Features a built-in illustrated **Guidebook `[5]`**, a quick cheat-sheet right inside your inventory (`[I]`), helpful on-screen tips, three pace settings (**Casual**, **Normal**, and **Panic**) you can switch anytime at the **Control Altar**, team room pings (`[Z]`), and a **Top 10 Leaderboard**.",
+  "dev_state": "WIP",
+  "tags": [
+    "magic",
+    "puzzle",
+    "mini-game",
+    "oneofakind__original",
+    "plants_and_farming",
+    "singleplayer",
+    "multiplayer"
+  ],
+  "license": "MIT",
+  "media_license": "CC-BY-SA-3.0",
+  "repo": "https://github.com/sakel-hub/terrarium_crucible",
+  "issue_tracker": "https://github.com/sakel-hub/terrarium_crucible/issues",
+  "website": "https://github.com/sakel-hub/terrarium_crucible#readme",
+  "content_warnings": [],
+  "ai_disclosure": "GENERATED"
+}
+

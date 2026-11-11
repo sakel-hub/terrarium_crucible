@@ -1,0 +1,29 @@
+root = true
+
+[*]
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{lua,luacheckrc}]
+indent_style = space
+indent_size = 4
+tab_width = 4
+
+# Luanti code style rules for EmmyLuaCodeStyle (LuaLS)
+quote_style = none
+trailing_table_separator = keep
+call_arg_parentheses = keep
+space_around_table_field_list = false
+space_after_comma = true
+space_around_math_operator = true
+space_around_assign_operator = true
+space_around_logical_operator = true
+space_before_inline_comment = 2
+continuation_indent = 4
+
+[*.{json,yml,yaml,mjs}]
+indent_style = space
+indent_size = 2
+

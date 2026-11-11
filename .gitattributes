@@ -1,0 +1,95 @@
+# Auto-detect text files and perform LF normalization
+* text=auto eol=lf
+
+# Explicit text files
+*.lua text eol=lf
+*.txt text eol=lf
+*.tr text eol=lf
+*.md text eol=lf
+*.conf text eol=lf
+*.json text eol=lf
+*.po text eol=lf
+*.pot text eol=lf
+*.py text eol=lf
+*.mjs text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# 3D models and authoring assets
+*.blend binary
+*.ai binary
+*.b3d binary
+*.glb binary
+*.gltf text eol=lf
+*.obj text eol=lf
+
+# Textures and media
+*.png binary
+*.jpg binary
+*.ogg binary
+*.mp3 binary
+
+# ==============================================================================
+# GitHub Linguist Overrides (Keeps Repository Statistics 100% Lua)
+# ==============================================================================
+*.py linguist-generated=true
+scripts/** linguist-generated=true
+assets/** linguist-generated=true
+scratch/** linguist-generated=true
+package-lock.json linguist-generated=true
+
+# ==============================================================================
+# Git Archive / Release Exclusions (ContentDB & GitHub Releases)
+# Excludes test suites, authoring assets, dev scripts, and IDE/linter configs
+# from distributed release archives (git archive).
+# ==============================================================================
+
+# Python tooling, cache, and generated scripts
+*.py export-ignore
+__pycache__ export-ignore
+*.py[cod] export-ignore
+
+# Git, CI/CD, and developer configuration
+/.gitattributes export-ignore
+/.gitignore export-ignore
+/.editorconfig export-ignore
+/.luacheckrc export-ignore
+/.luarc.json export-ignore
+/.cdb.json export-ignore
+/.github export-ignore
+/.agents export-ignore
+/.agents/** export-ignore
+/.gemini export-ignore
+/.gemini/** export-ignore
+/.cursor export-ignore
+/.cursor/** export-ignore
+/.claude export-ignore
+/.claude/** export-ignore
+
+# Node.js, npm, and environment files
+/package.json export-ignore
+/package-lock.json export-ignore
+/.npmrc export-ignore
+/.nvmrc export-ignore
+/.env* export-ignore
+/node_modules export-ignore
+
+# Test suites, benchmarks, and bundled dev-only files
+/test*.lua export-ignore
+/tests export-ignore
+tests/** export-ignore
+mods/*/test*.lua export-ignore
+mods/*/.luacheckrc export-ignore
+mods/*/bower.json export-ignore
+mods/*/.mailmap export-ignore
+
+# Source assets, authoring files, and conversion scripts
+/assets export-ignore
+assets/** export-ignore
+/scripts export-ignore
+scripts/** export-ignore
+/scratch export-ignore
+scratch/** export-ignore
+*.ai export-ignore
+*.zip export-ignore
+

@@ -1,0 +1,36 @@
+{
+  "name": "terrarium_crucible",
+  "version": "1.0.0",
+  "description": "Shrink inside a wizard's glass terrarium, protect magical plants from falling hazards, and grow an expanding garden in Luanti.",
+  "type": "module",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "scripts": {
+    "lint": "luacheck .",
+    "diagnostics": "lua-language-server --check=. --check_format=pretty",
+    "diagnostics:errors": "lua-language-server --check=. --checklevel=Error",
+    "check": "npm run lint && npm run diagnostics:errors",
+    "test:game": "lua scripts/test_game.lua",
+    "test": "npm run lint && npm run test:game",
+    "push:ci": "node ./scripts/deploy.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sakel-hub/terrarium_crucible.git"
+  },
+  "author": "SaKeL",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sakel-hub/terrarium_crucible/issues"
+  },
+  "homepage": "https://github.com/sakel-hub/terrarium_crucible#readme",
+  "devDependencies": {
+    "node-fetch": "^3.3.2",
+    "yargs": "^17.7.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
