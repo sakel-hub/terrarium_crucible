@@ -157,6 +157,7 @@ local mock_players = {}
 
 local function make_mock_player(name)
     local hud_elems = {}
+    local next_hud_id = 0
     local inv_lists = {main = {}, craft = {}}
     local inv_sizes = {main = 8, craft = 9}
     local p = {
@@ -296,8 +297,9 @@ local function make_mock_player(name)
     function p:get_lighting() return self._lighting end
     function p:set_physics_override(_) self._physics_calls = self._physics_calls + 1 end
     function p:hud_add(def)
-        hud_elems[#hud_elems + 1] = table.copy(def)
-        return #hud_elems
+        next_hud_id = next_hud_id + 1
+        hud_elems[next_hud_id] = table.copy(def)
+        return next_hud_id
     end
     function p:hud_change(id, stat, val)
         self._hud_changes = self._hud_changes + 1
@@ -447,15 +449,25 @@ local function luanti_translate(textdomain, str, ...)
     end
 
     if not mock_escape_translate_mode then
-        return (str:gsub("@@", "\0AT\0"):gsub("@(%d+)", function(d)
-            return tostring(args[tonumber(d)] or "")
-        end):gsub("\0AT\0", "@"))
+        return (str:gsub("@(.)", function(c)
+            if c == "@" then
+                return "@"
+            elseif c:match("^%d$") then
+                return tostring(args[tonumber(c)] or "")
+            end
+            return "@" .. c
+        end))
     end
 
-    local body = str:gsub("@@", "\0AT\0"):gsub("@(%d+)", function(d)
-        local val = tostring(args[tonumber(d)] or "")
-        return "\27F" .. val .. "\27E"
-    end):gsub("\0AT\0", "@@")
+    local body = str:gsub("@(.)", function(c)
+        if c == "@" then
+            return "@@"
+        elseif c:match("^%d$") then
+            local val = tostring(args[tonumber(c)] or "")
+            return "\27F" .. val .. "\27E"
+        end
+        return "@" .. c
+    end)
     return "\27(T@" .. tostring(textdomain or "") .. ")" .. body .. "\27E"
 end
 
@@ -504,9 +516,14 @@ local function luanti_get_translated_string(lang_code, s)
                     local translated = (catalog and catalog[raw_msgid] and catalog[raw_msgid] ~= "")
                         and catalog[raw_msgid]
                         or raw_msgid
-                    out[#out + 1] = (translated:gsub("@@", "\0AT\0"):gsub("@(%d+)", function(d)
-                        return tostring(f_args[tonumber(d)] or "")
-                    end):gsub("\0AT\0", "@"))
+                    out[#out + 1] = (translated:gsub("@(.)", function(c)
+                        if c == "@" then
+                            return "@"
+                        elseif c:match("^%d$") then
+                            return tostring(f_args[tonumber(c)] or "")
+                        end
+                        return "@" .. c
+                    end))
                 end
             elseif stop_on_esc_e and s:sub(i, i + 1) == "\27E" then
                 i = i + 2

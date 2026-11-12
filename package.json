@@ -21,7 +21,7 @@
     "diagnostics": "lua-language-server --check=. --check_format=pretty",
     "diagnostics:errors": "lua-language-server --check=. --checklevel=Error",
     "check": "npm run lint && npm run diagnostics:errors",
-    "test:game": "lua scripts/test_game.lua",
+    "test:game": "lua5.1 scripts/test_game.lua",
     "test": "npm run lint && npm run test:game",
     "push:ci": "node ./scripts/deploy.mjs"
   },
