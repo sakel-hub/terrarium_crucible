@@ -10,6 +10,8 @@
 
 Shrink down inside a wizard's glass terrarium and care for magical glowing plants! Made for the **2026 Luanti Game Jam** (*The Wizard's Workshop*).
 
+![Terrarium Crucible Screenshot](screenshot.png)
+
 ---
 
 ## Welcome to the Glass Terrarium
