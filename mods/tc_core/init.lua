@@ -5,7 +5,7 @@ dofile(modpath .. "/hud.lua")
 dofile(modpath .. "/ui.lua")
 
 local P = tc_assets.PALETTE
-local REAGENTS = tc_elements.REAGENTS
+local S = tc_core.S
 
 -- Emerge initial arena mapblocks asynchronously after startup and initialize Level 1
 core.after(0, function()
@@ -22,31 +22,24 @@ end)
 
 core.register_on_joinplayer(function(player)
     local name = player:get_player_name()
-    tc_core.player_stats[name] = tc_core.player_stats[name] or {neutralized = 0, downed_until = 0}
     tc_core.init_player_fov(player)
 
     if #tc_core.state.plants == 0 and tc_world.is_ready then
         tc_core.start_level(1, false)
     end
+    tc_core.sync_joining_player(player)
 
     tc_core.init_player_hud(player)
 
-    core.chat_send_player(
-        name,
-        tc_assets.chat_prefix("Welcome!", P.gold) ..
-        core.colorize(
-            P.text_primary,
-            "Keep Heat (40–60°C) & Soil pH (5.6–8.4) comfortable until all plants reach 100% Bloom!"
-        )
-    )
-    core.chat_send_player(
-        name,
-        tc_assets.chat_prefix("Controls", P.aqua) ..
-        core.colorize(
-            P.text_secondary,
-            "[1–4] Tools · [5] Guidebook · [I] Quick Tool Guide · [Z] Call Out Room · [E+W] Sprint."
-        )
-    )
+    tc_core.push_hud_event_player(player, {
+        priority = 1,
+        icon = "tc_crucible_sprout_2.png",
+        title = S("✦ Welcome to the Garden!"),
+        detail = S("[1–4] Tools · [5] Guide · [I] Bag"),
+        color = P.hud_gold,
+        accent_hex = P.gold,
+        ttl = 4.8,
+    })
 
     core.after(0.2, function()
         local joined = core.get_player_by_name(name)
@@ -60,29 +53,11 @@ end)
 -- MULTI-CHAMBER PHYSICAL REAGENT DROP MECHANIC
 -- ========================================================
 
--- High-entropy PCG random generator + 8-card shuffled bag (2x per reagent) for fair streaks
-local pcg_rng = PcgRandom(os.time() + (core.get_us_time() % 1000000))
-local reagent_bag = {}
 local wave_cell_cursor = 0
 
-local function next_reagent_index()
-    if #reagent_bag == 0 then
-        for _ = 1, 2 do
-            for i = 1, #REAGENTS do
-                reagent_bag[#reagent_bag + 1] = i
-            end
-        end
-        for i = #reagent_bag, 2, -1 do
-            local j = pcg_rng:next(1, i)
-            reagent_bag[i], reagent_bag[j] = reagent_bag[j], reagent_bag[i]
-        end
-    end
-    return table.remove(reagent_bag)
-end
-
 local function drop_item_in_cell(cell, level, item_name)
-    local target_x = pcg_rng:next(cell.min_x + 1, cell.max_x - 1)
-    local target_z = pcg_rng:next(cell.min_z + 1, cell.max_z - 1)
+    local target_x = tc_core.next_random(cell.min_x + 1, cell.max_x - 1)
+    local target_z = tc_core.next_random(cell.min_z + 1, cell.max_z - 1)
 
     if tc_world.is_protected_pos({x = target_x, y = 1, z = target_z}, level) then
         target_x = cell.center.x + 2
@@ -101,32 +76,51 @@ local function drop_item_in_cell(cell, level, item_name)
     tc_elements.spawn_falling_reagent({x = target_x, y = land_y, z = target_z}, item_name)
 end
 
+local TRIAL_HUD_SPECS = {
+    {
+        icon = "tc_tool_trowel.png",
+        title = S("★ Trial: Twin Opposites!"),
+        detail = S("Pair Hot+Cold or Acid+Chalk [1]!"),
+    },
+    {
+        icon = "tc_tool_flask_water.png",
+        title = S("★ Trial: Ember Shower!"),
+        detail = S("Quench Brimstone with Flask [3]!"),
+    },
+    {
+        icon = "tc_tool_bellows.png",
+        title = S("★ Trial: Frost Squall!"),
+        detail = S("Melt blue Ice with Bellows [2]!"),
+    },
+    {
+        icon = "tc_tool_pestle.png",
+        title = S("★ Trial: Sour Drizzle!"),
+        detail = S("Sweep green Acid with Pestle [4]!"),
+    },
+}
+
 local function trigger_reagent_drop()
     local s = tc_core.state
     local cells = tc_world.get_active_cells(s.level)
-    local total_drops = tc_core.get_wave_drop_count(s.level, #core.get_connected_players())
+    local p_list = core.get_connected_players()
+    local p_cnt = math.max(1, #p_list)
+    local preview = tc_core.ensure_next_wave(p_cnt)
+    local items = preview.items
+    local total_drops = #items
 
-    s.wave = s.wave + 1
+    s.wave = preview.wave_num
     s.reagents_dropped = s.reagents_dropped + total_drops
+    if preview.kind == "trial" and preview.trial_id > 0 then
+        s.trial_cursor = preview.trial_id
+    end
 
-    local spawn_geode = (s.level >= 2) and (s.wave % 4 == 0)
     local wave_epoch = s.epoch
     local wave_lvl = s.level
-    local first_r_idx = 1
 
     for d = 1, total_drops do
         wave_cell_cursor = (wave_cell_cursor % #cells) + 1
         local cell = cells[wave_cell_cursor]
-        local item_to_drop
-        if spawn_geode and d == total_drops then
-            item_to_drop = "tc_elements:aether_geode"
-        else
-            local r_idx = next_reagent_index()
-            if d == 1 then
-                first_r_idx = r_idx
-            end
-            item_to_drop = REAGENTS[r_idx].name
-        end
+        local item_to_drop = items[d]
 
         if d == 1 then
             drop_item_in_cell(cell, wave_lvl, item_to_drop)
@@ -145,15 +139,43 @@ local function trigger_reagent_drop()
         end
     end
 
-    local voice_line = spawn_geode and tc_elements.CATALYST.voice or REAGENTS[first_r_idx].voice
-    local header_col = spawn_geode and P.aqua or P.gold
-    core.chat_send_all(
-        tc_assets.chat_prefix(
-            string.format("The Wizard · Wave %d (%d %s)", s.wave, total_drops, total_drops == 1 and "Drop" or "Drops"),
-            header_col
-        ) ..
-        core.colorize(P.text_primary, voice_line)
-    )
+    s.active_drop = {
+        wave_num = preview.wave_num,
+        level = wave_lvl,
+        kind = preview.kind,
+        trial_id = preview.trial_id,
+        items = items,
+        ttl = math.max(2.6, 1.9 + ((total_drops - 1) * 0.70)),
+    }
+    tc_core.roll_next_wave(p_cnt)
+
+    for i = 1, #p_list do
+        tc_core.sync_player_drop_hud(p_list[i])
+    end
+
+    if preview.kind == "trial" then
+        local tspec = TRIAL_HUD_SPECS[preview.trial_id] or TRIAL_HUD_SPECS[1]
+        tc_core.push_hud_event({
+            priority = 2,
+            icon = tspec.icon,
+            title = tspec.title,
+            detail = tspec.detail,
+            color = P.hud_violet,
+            accent_hex = P.violet,
+            ttl = 4.2,
+        })
+    elseif preview.kind == "geode" then
+        tc_core.push_hud_event({
+            priority = 2,
+            icon = "tc_aether_geode.png",
+            title = S("✦ Bonus Geode Falling!"),
+            detail = S("Crack with Trowel [1] within 22s!"),
+            color = P.hud_aqua,
+            accent_hex = P.aqua,
+            ttl = 4.2,
+        })
+    end
+
     core.sound_play("tc_drop_warning", {gain = 0.8}, true)
 end
 
@@ -176,6 +198,7 @@ local TARGET_NODES = {
     "tc_elements:alkaline_chalk",
     "tc_elements:water_source",
     "tc_elements:fertile_loam",
+    "tc_elements:steam",
 }
 
 -- Pre-allocated scan vectors to prevent per-step allocations
@@ -276,7 +299,7 @@ local function spawn_brimstone_ambient(pos)
     })
 end
 
----Analyzes unconsumed reagents and fertile soil inside a sprout's chamber without extra C++ spatial scans.
+---Analyzes unconsumed reagents, fertile soil, and warm steam inside a sprout's chamber without extra C++ scans.
 ---@param ppos {x: integer, y: integer, z: integer}
 ---@param cell CellInfo
 ---@param consumed table<integer, boolean>
@@ -285,8 +308,9 @@ end
 ---@param l_acid table[]
 ---@param l_chalk table[]
 ---@param l_fertile table[]
----@return integer near_hazards, boolean local_stress, integer fertile_in_cell
-local function analyze_plant_chamber(ppos, cell, consumed, l_brim, l_cryo, l_acid, l_chalk, l_fertile)
+---@param l_steam table[]
+---@return integer near_hazards, boolean local_stress, integer fertile_in_cell, boolean near_steam
+local function analyze_plant_chamber(ppos, cell, consumed, l_brim, l_cryo, l_acid, l_chalk, l_fertile, l_steam)
     local px, py, pz = ppos.x, ppos.y, ppos.z
     local near = 0
     local counts = {0, 0, 0, 0}
@@ -325,9 +349,23 @@ local function analyze_plant_chamber(ppos, cell, consumed, l_brim, l_cryo, l_aci
         end
     end
 
+    local near_steam = false
+    if l_steam then
+        for j = 1, #l_steam do
+            local spos = l_steam[j]
+            if math.abs(spos.x - px) <= 2
+                    and math.abs(spos.z - pz) <= 2
+                    and spos.y >= (py - 1)
+                    and spos.y <= (py + 2) then
+                near_steam = true
+                break
+            end
+        end
+    end
+
     local local_stress = (math.abs(counts[1] - counts[2]) >= 2)
         or (math.abs(counts[4] - counts[3]) >= 2)
-    return near, local_stress, fertile_in_cell
+    return near, local_stress, fertile_in_cell, near_steam
 end
 
 local function simulation_step()
@@ -377,6 +415,7 @@ local function simulation_step()
     local chalk_list   = node_positions["tc_elements:alkaline_chalk"] or {}
     local w_src_list   = node_positions["tc_elements:water_source"] or {}
     local fertile_list = node_positions["tc_elements:fertile_loam"] or {}
+    local steam_list   = node_positions["tc_elements:steam"] or {}
 
     local brimstone_cnt = #brim_list
     local cryo_cnt      = #cryo_list
@@ -538,33 +577,40 @@ local function simulation_step()
     if s.active_reagents > s.max_reagents then
         s.overload_timer = (s.overload_timer or 0) + 1
         if s.overload_timer >= 8 then
-            tc_core.trigger_defeat(string.format(
-                "Too many uncleared hazards (%d/%d blocks piled up for 8 seconds and cracked the glass!)",
-                s.active_reagents, s.max_reagents
-            ))
+            tc_core.trigger_defeat(
+                S(
+                    "Too many uncleared hazards (@1/@2 blocks piled up for 8 seconds and cracked the glass!)",
+                    s.active_reagents, s.max_reagents
+                ),
+                "overload"
+            )
             return
         elseif s.overload_timer == 1 or s.overload_timer == 5 then
             local rem = 8 - s.overload_timer
             local excess = s.active_reagents - s.max_reagents
             core.sound_play("tc_wither", {gain = 0.85}, true)
-            core.chat_send_all(
-                tc_assets.chat_prefix("Too Many Hazards!", P.coral) ..
-                core.colorize(
-                    P.text_primary,
-                    string.format(
-                        "Floor is overcrowded (%d/%d)! Clear %d block(s) within %ds before the glass cracks!",
-                        s.active_reagents, s.max_reagents, excess, rem
-                    )
-                )
-            )
+            tc_core.push_hud_event({
+                priority = 3,
+                icon = "tc_brimstone.png",
+                title = S("✖ Too Many Hazards (@1/@2)!", s.active_reagents, s.max_reagents),
+                detail = S("Clear @1 block(s) within @2s!", excess, rem),
+                color = P.hud_coral,
+                accent_hex = P.coral,
+                ttl = 3.8,
+            })
         end
     elseif (s.overload_timer or 0) > 0 then
         s.overload_timer = 0
         core.sound_play("tc_harmony_chime", {gain = 0.6}, true)
-        core.chat_send_all(
-            tc_assets.chat_prefix("Room Safe Again", P.emerald) ..
-            core.colorize(P.text_primary, "Nice work! You cleared enough blocks and saved the glass terrarium.")
-        )
+        tc_core.push_hud_event({
+            priority = 2,
+            icon = "tc_crucible_sprout_2.png",
+            title = S("✦ Room Safe Again!"),
+            detail = S("Overcrowding cleared — glass saved!"),
+            color = P.hud_emerald,
+            accent_hex = P.emerald,
+            ttl = 3.2,
+        })
     end
 
     -- Compute dynamic Temperature & pH normalized across chamber scale
@@ -580,7 +626,7 @@ local function simulation_step()
     s.turbulent        = (s.active_reagents > s.level)
     local full_harmony = tc_core.is_in_harmony()
 
-    local has_leyline = tc_core.has_boon("leyline_roots")
+    local has_leyline = tc_core.has_blessing("leyline_roots")
     local revive_req = has_leyline and 4 or 6
     local harmony_regen = has_leyline and 3.5 or 2.0
 
@@ -603,17 +649,15 @@ local function simulation_step()
         -- Trigger Harmonic Overdrive boost at 8+ consecutive seconds of Harmony
         if s.harmony_streak >= 8 then
             for i = 1, #players do
-                local pl = players[i]
-                tc_core.apply_effect(pl, "harmonic_overdrive", 2.5)
-                local hp = pl:get_hp()
-                if hp > 0 and hp < 20 then
-                    pl:set_hp(math.min(20, hp + 1))
-                end
+                tc_core.apply_effect(players[i], "harmonic_overdrive", 2.5)
             end
         end
     else
         s.harmony_streak = 0
     end
+
+    -- Evaluate 1.0s standing/wading hazard contact damage (Brimstone & Acid Slime) and Calm Balance player regen
+    tc_core.step_player_hazards(full_harmony)
 
     -- Emit subtle ambient magma ember sparks from up to 2 unconsumed Brimstone hazards
     if #brim_list > 0 and (s.seconds_elapsed % 2 == 0) then
@@ -635,8 +679,8 @@ local function simulation_step()
 
     for i = 1, n_plants do
         local p = s.plants[i]
-        local near_hazards, local_stress, fertile_in_cell = analyze_plant_chamber(
-            p.pos, cells[i], consumed, brim_list, cryo_list, acid_list, chalk_list, fertile_list
+        local near_hazards, local_stress, fertile_in_cell, near_steam = analyze_plant_chamber(
+            p.pos, cells[i], consumed, brim_list, cryo_list, acid_list, chalk_list, fertile_list, steam_list
         )
         p.hazards_near = near_hazards
         p.local_stress = local_stress
@@ -666,6 +710,9 @@ local function simulation_step()
                 if full_harmony and near_hazards == 0 and not local_stress then
                     vit_delta = vit_delta + harmony_regen
                 end
+                if not temp_extreme and not ph_extreme and near_steam and p.vitality < 100.0 then
+                    vit_delta = vit_delta + 0.6
+                end
             end
 
             p.vitality = tc_core.clamp(p.vitality + vit_delta, 0.0, 100.0)
@@ -675,17 +722,15 @@ local function simulation_step()
                 p.last_infotext = nil
                 core.swap_node(p.pos, {name = "tc_elements:crucible_sprout_withered"})
                 core.sound_play("tc_wither", {pos = p.pos, gain = 0.9, max_hear_distance = 24}, true)
-                core.chat_send_all(
-                    tc_assets.chat_prefix("Plant Alert", P.coral) ..
-                    core.colorize(
-                        P.text_primary,
-                        string.format(
-                            "Sprout #%d has WILTED! Splash with Water Flask [3], " ..
-                            "drink Aegis Potion, or keep %ds Balance!",
-                            p.index, revive_req
-                        )
-                    )
-                )
+                tc_core.push_hud_event({
+                    priority = 3,
+                    icon = "tc_crucible_sprout_withered.png",
+                    title = S("✖ Sprout #@1 WILTED!", p.index),
+                    detail = S("Splash with Flask [3] or Aegis!"),
+                    color = P.hud_coral,
+                    accent_hex = P.coral,
+                    ttl = 4.5,
+                })
             end
         end
 
@@ -711,7 +756,7 @@ local function simulation_step()
 
     -- Defeat Condition 1: All plants withered simultaneously
     if s.living_plants == 0 then
-        tc_core.trigger_defeat(string.format("All %d plant(s) wilted at the same time!", n_plants))
+        tc_core.trigger_defeat(S("All @1 plant(s) wilted at the same time!", n_plants), "wilt")
         return
     end
 
@@ -738,13 +783,14 @@ local function simulation_step()
         else
             local plant_growth
             if full_harmony then
-                local soil_bonus = math.min(0.65, (p.fertile_near or 0) * 0.13)
+                local base_harmony = 0.85 / (1.0 + 0.08 * (s.level - 1))
+                local soil_bonus = math.min(0.55, (p.fertile_near or 0) * 0.11)
                 local cond_mult = 1.0
                 if n_plants > 1 then
                     cond_mult = ((p.hazards_near > 0 or p.local_stress) and 0.75 or 1.0)
                         * (0.94 + 0.06 * (p.vitality / 100.0))
                 end
-                plant_growth = (0.85 + soil_bonus) * tempo * cond_mult
+                plant_growth = (base_harmony + soil_bonus) * tempo * cond_mult
             elseif temp_extreme or ph_extreme then
                 plant_growth = -0.55 * (2.0 - tempo)
             else
@@ -772,29 +818,38 @@ local function simulation_step()
                 if desired_stage > prev_stage then
                     core.sound_play("tc_transmute", {pos = p.pos, gain = 0.8, max_hear_distance = 24}, true)
                     spawn_stage_blossom_particles(p.pos)
-                    local blossom_msg = (n_plants == 1)
-                        and string.format("Your Sprout grew into %s!", stage_title)
-                        or string.format("Sprout #%d grew into %s! (%.0f%% Bloom)", p.index, stage_title, p.bloom)
-                    core.chat_send_all(
-                        tc_assets.chat_prefix("Plant Growth", P.gold) ..
-                        core.colorize(P.text_primary, blossom_msg)
-                    )
+                    local pb_str = string.format("%.0f", p.bloom)
+                    local blossom_title = (n_plants == 1)
+                        and S("✦ Grew into @1!", stage_title)
+                        or S("✦ Sprout #@1 → @2!", p.index, stage_title)
+                    tc_core.push_hud_event({
+                        priority = 1,
+                        icon = "tc_crucible_sprout_" .. desired_stage .. ".png",
+                        title = blossom_title,
+                        detail = S("@1% Bloom reached", pb_str),
+                        color = P.hud_gold,
+                        accent_hex = P.gold,
+                        ttl = 3.2,
+                    })
                 end
             end
-            local stress_tag = p.local_stress and " · [Clear extra hazards in this room!]" or ""
+            local stress_tag = p.local_stress and (" · " .. S("[Clear extra hazards in this room!]")) or ""
             new_info = tc_assets.format_infotext(
-                string.format("Sprout #%d · %s", p.index, stage_title),
-                string.format(
-                    "Bloom: %.0f%% · Plant Health: %.0f%% · Nearby Hazards: %d%s",
-                    p.bloom or 0.0, p.vitality, p.hazards_near, stress_tag
+                S("Sprout #@1 · @2", p.index, stage_title),
+                S(
+                    "Bloom: @1% · Plant Health: @2% · Nearby Hazards: @3@4",
+                    string.format("%.0f", p.bloom or 0.0),
+                    string.format("%.0f", p.vitality),
+                    p.hazards_near,
+                    stress_tag
                 ),
-                "Right-Click for Garden Status · Left-Click with Water Flask [3] to heal"
+                S("Right-Click for Garden Controls · Left-Click with Water Flask [3] to heal")
             )
         else
             new_info = tc_assets.format_infotext(
-                string.format("Sprout #%d [WILTED · Needs Water!]", p.index),
-                string.format("Growth paused at %.0f%% until revived!", p.bloom or 0.0),
-                string.format("Left-Click with Water Flask [3], drink Aegis Potion, or keep %ds Balance", revive_req)
+                S("Sprout #@1 [WILTED · Needs Water!]", p.index),
+                S("Growth paused at @1% until revived!", string.format("%.0f", p.bloom or 0.0)),
+                S("Left-Click with Water Flask [3], drink Aegis Potion, or keep @1s Balance", revive_req)
             )
         end
 
@@ -804,26 +859,69 @@ local function simulation_step()
         end
     end
 
+    -- 85% Final Bloom Surge on Level 3+: one-time telegraphed climax with a bonus Geode + matched opposite pair
+    if s.running and not s.victory and s.level >= 3 and not s.climax_triggered
+            and s.bloom >= 85.0 and s.bloom < 100.0 then
+        s.climax_triggered = true
+        s.drop_timer = math.max(s.drop_timer, 5.5) + 2.5
+        s.reagents_dropped = s.reagents_dropped + 3
+
+        local surge_epoch = s.epoch
+        local surge_lvl = s.level
+        local geode_cell = cells[(s.wave % #cells) + 1]
+        local pair = tc_core.OPPOSITE_PAIRS[(s.level % 2) + 1]
+        drop_item_in_cell(geode_cell, surge_lvl, "tc_elements:aether_geode")
+
+        for k = 1, 2 do
+            local target_cell = cells[((s.wave + k) % #cells) + 1]
+            local pair_item = pair[k]
+            core.after(k * 0.55, function()
+                if tc_core.state.running and tc_core.state.epoch == surge_epoch then
+                    drop_item_in_cell(target_cell, surge_lvl, pair_item)
+                end
+            end)
+        end
+
+        s.active_drop = {
+            wave_num = s.wave,
+            level = surge_lvl,
+            kind = "surge",
+            trial_id = 0,
+            items = {"tc_elements:aether_geode", pair[1], pair[2]},
+            ttl = 3.6,
+        }
+        core.sound_play("tc_geode_chime", {gain = 0.9}, true)
+        core.sound_play("tc_drop_warning", {gain = 0.8}, true)
+        tc_core.push_hud_event({
+            priority = 3,
+            icon = "tc_aether_geode.png",
+            title = S("★ 85% Final Bloom Surge!"),
+            detail = S("Crack Geode or Pair [1] for 100%!"),
+            color = P.hud_gold,
+            accent_hex = P.gold,
+            ttl = 4.6,
+        })
+    end
+
     -- Level Completion Check
     if s.bloom >= 100.0 and s.living_plants == n_plants and not s.victory then
         s.victory = true
         s.running = false
+        s.active_drop = nil
+        s.prev_blessing = s.active_blessing
+        s.offered_blessings = {}
         tc_core.record_all_players(true)
 
         core.sound_play("tc_victory", {gain = 1.0}, true)
-        core.chat_send_all(core.colorize(P.gold, "=================================================="))
-        core.chat_send_all(core.colorize(
-            P.gold,
-            string.format("★ LEVEL %d COMPLETE! ALL %d PLANT(S) REACHED 100%% BLOOM! ★", s.level, n_plants)
-        ))
-        core.chat_send_all(
-            tc_assets.chat_prefix("The Wizard", P.aqua) ..
-            core.colorize(
-                P.text_primary,
-                string.format("Wonderful work! Pick an upgrade to open Room #%d!", s.level + 1)
-            )
-        )
-        core.chat_send_all(core.colorize(P.gold, "=================================================="))
+        tc_core.push_hud_event({
+            priority = 3,
+            icon = "tc_crucible_sprout_4.png",
+            title = S("★ Level @1 Complete!", s.level),
+            detail = S("Pick a Blessing for Room #@1!", s.level + 1),
+            color = P.hud_gold,
+            accent_hex = P.gold,
+            ttl = 5.0,
+        })
 
         local PT = tc_assets.PARTICLES
         for i = 1, n_plants do
@@ -862,18 +960,14 @@ local function simulation_step()
     if s.running and s.stasis_timer <= 0 then
         s.drop_timer = s.drop_timer - 1.0
         if s.drop_timer <= 0 then
-            local base_iv = tc_core.INTERVALS[s.difficulty] or tc_core.INTERVALS.normal
-            local next_drops = tc_core.get_wave_drop_count(s.level, #players)
-            s.drop_timer = tc_core.clamp(
-                base_iv - math.min(2.5, (s.level - 1) * 0.5) + (next_drops - 1) * 1.0,
-                6.5, 60.0
-            )
+            s.drop_timer = tc_core.get_next_wave_interval(s.level, #players)
             trigger_reagent_drop()
         end
     end
 
-    -- Update all connected players' HUDs (packet-deduplicated)
+    -- Update all connected players' atmospheres and HUDs (packet-deduplicated)
     for i = 1, #players do
+        tc_core.sync_player_atmosphere(players[i])
         tc_core.update_player_hud(players[i])
     end
 end
@@ -936,27 +1030,27 @@ local function cmd_open_leaderboard(name)
     local player = core.get_player_by_name(name)
     if player then
         tc_core.show_leaderboard_dialog(player)
-        return true, "Opened Top 10 Scores."
+        return true, S("Opened Top 10 Scores.")
     end
-    return false, "Player must be connected."
+    return false, S("Player must be connected.")
 end
 
 local function cmd_open_guide(name)
     local player = core.get_player_by_name(name)
     if player then
         tc_core.show_guide_dialog(player, 1)
-        return true, "Opened Gardener's Guidebook."
+        return true, S("Opened Gardener's Guidebook.")
     end
-    return false, "Player must be connected."
+    return false, S("Player must be connected.")
 end
 
-local function cmd_open_altar(name)
+local function cmd_open_garden(name)
     local player = core.get_player_by_name(name)
     if player then
-        tc_core.show_altar_dialog(player)
-        return true, "Opened Control Altar."
+        tc_core.show_garden_dialog(player)
+        return true, S("Opened Garden Controls.")
     end
-    return false, "Player must be connected."
+    return false, S("Player must be connected.")
 end
 
 local function cmd_ping_chamber(name)
@@ -964,34 +1058,34 @@ local function cmd_ping_chamber(name)
     if player then
         if tc_tools.check_cooldown(player, "ping", 3.0) then
             tc_core.ping_chamber(player)
-            return true, "Marked the room for everyone."
+            return true, S("Marked the room for everyone.")
         end
-        return false, "Please wait a moment before pinging again."
+        return false, S("Please wait a moment before pinging again.")
     end
-    return false, "Player must be connected."
+    return false, S("Player must be connected.")
 end
 
 core.register_chatcommand("leaderboard", {
-    description = "Open the Top 10 Terrarium Crucible scores",
+    description = S("Open the Top 10 Terrarium Crucible scores"),
     func = cmd_open_leaderboard,
 })
 
 core.register_chatcommand("tc_top10", {
-    description = "Open the Top 10 Terrarium Crucible scores",
+    description = S("Open the Top 10 Terrarium Crucible scores"),
     func = cmd_open_leaderboard,
 })
 
 core.register_chatcommand("guide", {
-    description = "Open the illustrated Gardener's Guidebook",
+    description = S("Open the illustrated Gardener's Guidebook"),
     func = cmd_open_guide,
 })
 
 core.register_chatcommand("crucible", {
-    description = "Open Garden Status and Game Pace controls",
-    func = cmd_open_altar,
+    description = S("Open Garden Controls and Game Pace settings"),
+    func = cmd_open_garden,
 })
 
 core.register_chatcommand("ping", {
-    description = "Place a 4-second marker above the room you are facing",
+    description = S("Place a 4-second marker above the room you are facing"),
     func = cmd_ping_chamber,
 })

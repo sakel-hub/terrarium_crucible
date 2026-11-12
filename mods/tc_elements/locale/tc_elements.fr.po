@@ -1,0 +1,624 @@
+# Translation catalog for tc_elements (Terrarium Crucible)
+# Copyright (C) 2026 SaKeL
+# License: MIT
+msgid ""
+msgstr ""
+"Project-Id-Version: tc_elements 1.0\n"
+"POT-Creation-Date: 2026-11-11 00:00+0000\n"
+"PO-Revision-Date: 2026-11-11 00:00+0000\n"
+"Last-Translator: SaKeL\n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: api.lua:65
+msgid "Scorching Brimstone"
+msgstr "Soufre brûlant"
+
+#: api.lua:66
+msgid "Scorching Brimstone (Hot Block — Splash Water [3])"
+msgstr "Soufre brûlant (Bloc chaud — Arroser d'Eau [3])"
+
+#: api.lua:67
+msgid "Brimstone"
+msgstr "Soufre"
+
+#: api.lua:68 api.lua:128
+msgid "Flask [3]"
+msgstr "Fiole [3]"
+
+#: api.lua:74
+msgid "A glowing-hot lava stone dropped in from above by the wizard."
+msgstr "Une pierre de lave incandescente lâchée d'en haut par le sorcier."
+
+#: api.lua:75
+msgid "Raises heat, burns your boots (2 HP/s) if stood on, bonks on impact, & scorches green soil."
+msgstr "Augmente la chaleur, brûle vos bottes (2 PV/s), cogne à l'impact & brûle la terre verte."
+
+#: api.lua:76
+msgid "Splash with Flask [3], siphon with low Bellows [2] to refill all Puffs, or pair with Ice via Trowel [1]!"
+msgstr "Arrosez avec la Fiole [3], aspirez avec le Soufflet [2] bas pour tout recharger, ou combinez avec la Glace via la Truelle [1] !"
+
+#: api.lua:78
+msgid "Splash with Flask [3] · Siphon with low Bellows [2] · Pair with Ice [1]"
+msgstr "Arroser à la Fiole [3] · Aspirer au Soufflet [2] bas · Combiner à la Glace [1]"
+
+#: api.lua:81
+msgid "Dropping Scorching Brimstone! Splash it with Water Flask [3] or hit it mid-air for bonus growth!"
+msgstr "Chute de Soufre brûlant ! Arrosez-le avec la Fiole d'eau [3] ou frappez-le en plein vol pour un bonus !"
+
+#: api.lua:86
+msgid "Glacial Ice Shard"
+msgstr "Éclat de glace"
+
+#: api.lua:87
+msgid "Glacial Ice Shard (Cold Block — Melt with Bellows [2])"
+msgstr "Éclat de glace (Bloc froid — Fondre au Soufflet [2])"
+
+#: api.lua:88
+msgid "Ice"
+msgstr "Glace"
+
+#: api.lua:89
+msgid "Bellows [2]"
+msgstr "Soufflet [2]"
+
+#: api.lua:93
+msgid "A freezing blue ice crystal that cools down the glass room."
+msgstr "Un cristal de glace bleue glaciale qui refroidit la salle de verre."
+
+#: api.lua:94
+msgid "Makes the room colder, makes the floor slippery, and chills nearby green soil."
+msgstr "Refroidit la salle, rend le sol glissant et gèle la terre verte voisine."
+
+#: api.lua:95
+msgid "Left-Click with Thermal Bellows [2] to melt into fresh Water (then refill your Water Flask [3]!)."
+msgstr "Clic gauche avec le Soufflet thermique [2] pour le fondre en Eau fraîche (puis rechargez votre Fiole [3] !)."
+
+#: api.lua:96
+msgid "Left-Click with Bellows [2] to melt, then scoop Water with Flask [3]"
+msgstr "Clic gauche au Soufflet [2] pour fondre, puis puiser l'Eau à la Fiole [3]"
+
+#: api.lua:99
+msgid "Dropping a Glacial Ice Shard! Melt it with Bellows [2] (or catch it mid-air for bonus growth)!"
+msgstr "Chute d'Éclat de glace ! Fondez-le au Soufflet [2] (ou attrapez-le en vol pour un bonus) !"
+
+#: api.lua:104
+msgid "Vitriol Acid Slime"
+msgstr "Acide vitriolique"
+
+#: api.lua:105
+msgid "Vitriol Acid Slime (Sour Puddle — Clear with Pestle [4])"
+msgstr "Acide vitriolique (Flaque acide — Nettoyer au Pilon [4])"
+
+#: api.lua:106
+msgid "Acid"
+msgstr "Acide"
+
+#: api.lua:107
+msgid "Pestle [4]"
+msgstr "Pilon [4]"
+
+#: api.lua:113
+msgid "A bubbling green puddle that sours the soil and sticks to your boots."
+msgstr "Une flaque verte bouillonnante qui acidifie le sol et colle aux bottes."
+
+#: api.lua:114
+msgid "Sours soil, slows & stings your feet (2 HP/s), stops jumping inside it, & spoils green soil."
+msgstr "Acidifie le sol, ralentit & pique les pieds (2 PV/s), empêche de sauter & gâte la terre verte."
+
+#: api.lua:115
+msgid "Left-Click on or near it with Limestone Pestle [4] (or place Chalk beside it) to turn the floor into fast green Fertile Soil!"
+msgstr "Clic gauche dessus ou près avec le Pilon calcaire [4] (ou posez de la Craie à côté) pour créer de la Terre fertile verte !"
+
+#: api.lua:117
+msgid "Left-Click with Pestle [4] · Place Chalk beside it for green Speed Soil"
+msgstr "Clic gauche au Pilon [4] · Poser de la Craie à côté pour de la Terre rapide"
+
+#: api.lua:120
+msgid "Pouring green Acid Slime! Dust it with Pestle [4] to turn the floor into green Speed Soil!"
+msgstr "Coulée d'Acide vert ! Saupoudrez-le au Pilon [4] pour changer le sol en Terre rapide verte !"
+
+#: api.lua:125
+msgid "Alkaline Chalk"
+msgstr "Craie alcaline"
+
+#: api.lua:126
+msgid "Alkaline Chalk (Dry Block — Splash Water [3])"
+msgstr "Craie alcaline (Bloc sec — Arroser d'Eau [3])"
+
+#: api.lua:127
+msgid "Chalk"
+msgstr "Craie"
+
+#: api.lua:132
+msgid "A dry, chalky crystal block that throws off soil balance."
+msgstr "Un bloc crayeux et sec qui déséquilibre le sol."
+
+#: api.lua:133
+msgid "Makes soil too chalky (alkaline); melts away on its own if flowing water touches it."
+msgstr "Rend le sol trop alcalin ; fond tout seul au contact de l'eau courante."
+
+#: api.lua:134
+msgid "Wash with Flask [3], grind with low Pestle [4] to refill all Sweeps, or pair with Acid via Trowel [1]!"
+msgstr "Rincez à la Fiole [3], broyez au Pilon [4] bas pour tout recharger, ou combinez à l'Acide via la Truelle [1] !"
+
+#: api.lua:136
+msgid "Wash with Flask [3] · Grind with low Pestle [4] · Pair with Acid [1]"
+msgstr "Rincer à la Fiole [3] · Broyer au Pilon [4] bas · Combiner à l'Acide [1]"
+
+#: api.lua:139
+msgid "Dropping Alkaline Chalk! Splash it with Water Flask [3] or pair it beside green Acid Slime!"
+msgstr "Chute de Craie alcaline ! Arrosez-la à la Fiole d'eau [3] ou posez-la près de l'Acide vert !"
+
+#: api.lua:152
+msgid "Prismatic Geode"
+msgstr "Géode prismatique"
+
+#: api.lua:153
+msgid "Prismatic Geode (Bonus Crystal — Hit with Trowel [1]!)"
+msgstr "Géode prismatique (Cristal bonus — Frapper à la Truelle [1] !)"
+
+#: api.lua:154
+msgid "Geode"
+msgstr "Géode"
+
+#: api.lua:155
+msgid "Trowel [1]"
+msgstr "Truelle [1]"
+
+#: api.lua:161
+msgid "A shimmering rainbow crystal that drops in starting from Level 2."
+msgstr "Un cristal arc-en-ciel scintillant qui tombe à partir du Niveau 2."
+
+#: api.lua:162
+msgid "Clears nearby hazards, makes Speed Soil, refills all Tools [2–4], & rewards +1 Aegis Potion!"
+msgstr "Élimine les dangers proches, crée de la Terre rapide, recharge les Outils [2–4] & offre +1 Potion Égide !"
+
+#: api.lua:163
+msgid "Left-Click or Right-Click it with your Trowel [1] (or set any block beside it) before time runs out!"
+msgstr "Clic gauche ou droit dessus avec la Truelle [1] (ou posez un bloc à côté) avant la fin du temps !"
+
+#: api.lua:164
+msgid "A shimmering Prismatic Geode is falling! Hit it with Trowel [1] within 22s for +1 Aegis Potion, green Speed Soil, & bonus Bloom!"
+msgstr "Une Géode prismatique tombe ! Frappez-la à la Truelle [1] sous 22s pour +1 Potion Égide, de la Terre rapide & un bonus de Floraison !"
+
+#: api.lua:172
+msgid "Crucible Seedling (Stage 1/4)"
+msgstr "Jeune pousse du Creuset (Étape 1/4)"
+
+#: api.lua:180
+msgid "Crucible Vines (Stage 2/4)"
+msgstr "Lianes du Creuset (Étape 2/4)"
+
+#: api.lua:188
+msgid "Crucible Astral Rose (Stage 3/4)"
+msgstr "Rose astrale du Creuset (Étape 3/4)"
+
+#: api.lua:196
+msgid "Philosopher's Lotus (Stage 4/4 · Full Bloom)"
+msgstr "Lotus philosophal (Étape 4/4 · Pleine floraison)"
+
+#: api.lua:226 init.lua:168 init.lua:184
+msgid "Fertile Soil"
+msgstr "Terre fertile"
+
+#: api.lua:227 init.lua:185
+msgid "Faster Plant Growth · Faster Running"
+msgstr "Croissance accélérée · Course rapide"
+
+#: api.lua:228 init.lua:186
+msgid "Walk on this glowing green soil to run much faster!"
+msgstr "Marchez sur cette terre verte lumineuse pour courir bien plus vite !"
+
+#: api.lua:304
+msgid "Tools [2–4] Refilled"
+msgstr "Outils [2–4] rechargés"
+
+#: api.lua:309
+msgid "Tools [2–4] Refilled · +1 Aegis!"
+msgstr "Outils [2–4] rechargés · +1 Égide !"
+
+#: api.lua:312
+msgid "Tools [2–4] Refilled · Belt Full Bonus!"
+msgstr "Outils [2–4] rechargés · Bonus ceinture pleine !"
+
+#: api.lua:319
+msgid "✦ Geode Cracked! (+@1% Bloom)"
+msgstr "✦ Géode brisée ! (+@1% Floraison)"
+
+#: entities.lua:7
+msgid "Catch mid-air with filled Flask [3] (or low Bellows [2] to refill)!"
+msgstr "Attrapez en vol avec la Fiole pleine [3] (ou le Soufflet [2] bas pour recharger) !"
+
+#: entities.lua:8
+msgid "Catch mid-air with charged Bellows [2] for bonus Bloom!"
+msgstr "Attrapez en vol avec le Soufflet chargé [2] pour un bonus de Floraison !"
+
+#: entities.lua:9
+msgid "Catch mid-air with charged Pestle [4] for bonus Bloom!"
+msgstr "Attrapez en vol avec le Pilon chargé [4] pour un bonus de Floraison !"
+
+#: entities.lua:10
+msgid "Catch mid-air with filled Flask [3] (or low Pestle [4] to refill)!"
+msgstr "Attrapez en vol avec la Fiole pleine [3] (ou le Pilon [4] bas pour recharger) !"
+
+#: entities.lua:11
+msgid "Click with Trowel [1] (or let it land) to crack open the crystal!"
+msgstr "Cliquez à la Truelle [1] (ou laissez-la atterrir) pour briser le cristal !"
+
+#: entities.lua:88
+msgid "Falling Block"
+msgstr "Bloc en chute"
+
+#: entities.lua:89
+msgid "Hit mid-air with the matching tool!"
+msgstr "Frappez en plein vol avec le bon outil !"
+
+#: entities.lua:93
+msgid "Falling @1"
+msgstr "@1 en chute"
+
+#: entities.lua:93
+msgid "Dropping from above"
+msgstr "Tombe d'en haut"
+
+#: entities.lua:156
+msgid "Flask empty! Click Water/Steam to fill, or click air to condense +1."
+msgstr "Fiole vide ! Cliquez sur Eau/Vapeur pour remplir, ou dans l'air pour +1."
+
+#: entities.lua:169
+msgid "Mid-Air Siphon → Bellows Full!"
+msgstr "Aspiration en vol → Soufflet plein !"
+
+#: entities.lua:176
+msgid "Bellows [2] is full! Splash Brimstone [3] or pair Ice [1]."
+msgstr "Soufflet [2] plein ! Arrosez le Soufre [3] ou combinez la Glace [1]."
+
+#: entities.lua:190
+msgid "Mid-Air Grind → Pestle Full!"
+msgstr "Broyage en vol → Pilon plein !"
+
+#: entities.lua:197
+msgid "Pestle [4] is full! Wash Chalk [3] or pair Acid [1]."
+msgstr "Pilon [4] plein ! Rincez la Craie [3] ou combinez l'Acide [1]."
+
+#: entities.lua:219
+msgid "Bellows empty! Click Brimstone to refill, or click air to pump +1."
+msgstr "Soufflet vide ! Cliquez sur le Soufre pour remplir, ou dans l'air pour +1."
+
+#: entities.lua:235
+msgid "Pestle empty! Click Chalk to refill, or click air to scrape +1."
+msgstr "Pilon vide ! Cliquez sur la Craie pour remplir, ou dans l'air pour +1."
+
+#: entities.lua:251
+msgid "★ Aerial Catch!"
+msgstr "★ Prise aérienne !"
+
+#: entities.lua:251
+msgid "★ Mid-Air Catch!"
+msgstr "★ Prise en vol !"
+
+#: entities.lua:265
+msgid "Use the matching tool!"
+msgstr "Utilisez l'outil correspondant !"
+
+#: entities.lua:345
+msgid "Ouch! Step outside glowing floor rings before falling blocks land (or swat them mid-air)!"
+msgstr "Aïe ! Sortez des cercles lumineux au sol avant la chute des blocs (ou frappez-les en vol) !"
+
+#: init.lua:21 init.lua:28
+msgid "Terrarium Glass Wall"
+msgstr "Paroi de verre du terrarium"
+
+#: init.lua:22 init.lua:45
+msgid "Glass Room Wall"
+msgstr "Mur de la salle de verre"
+
+#: init.lua:23
+msgid "Thick brass-framed glass walls surrounding your tiny garden."
+msgstr "D'épaisses parois de verre serties de laiton entourant votre petit jardin."
+
+#: init.lua:24
+msgid "Keeps everything safely inside and opens outward when you finish a level!"
+msgstr "Garde tout bien à l'abri et s'ouvre vers l'extérieur à la fin d'un niveau !"
+
+#: init.lua:25
+msgid "Peer through the glass to see the wizard's giant wooden desk, candles, and open spellbook."
+msgstr "Regardez à travers le verre pour voir l'immense bureau du sorcier, les bougies et le grimoire."
+
+#: init.lua:44 init.lua:50
+msgid "Brass Terrarium Rim"
+msgstr "Bordure en laiton"
+
+#: init.lua:46
+msgid "Carved brass trim along the open top of the glass walls."
+msgstr "Une bordure de laiton ciselé au sommet ouvert des parois de verre."
+
+#: init.lua:47
+msgid "Frames the open ceiling where the wizard drops blocks in from above."
+msgstr "Encadre le plafond ouvert d'où le sorcier laisse tomber des blocs."
+
+#: init.lua:61 init.lua:66
+msgid "Wizard's Wooden Desk"
+msgstr "Bureau en bois du sorcier"
+
+#: init.lua:62 init.lua:78 init.lua:95 init.lua:112
+msgid "Outside Scenery"
+msgstr "Décor extérieur"
+
+#: init.lua:63
+msgid "Giant polished wooden desk planks underneath the glass terrarium."
+msgstr "D'immenses planches de bureau en bois poli sous le terrarium de verre."
+
+#: init.lua:77 init.lua:82
+msgid "Wizard's Open Spellbook"
+msgstr "Grimoire ouvert du sorcier"
+
+#: init.lua:79
+msgid "Giant glowing spellbook pages lying open on the desk outside the glass."
+msgstr "D'immenses pages lumineuses d'un grimoire ouvert sur le bureau derrière la vitre."
+
+#: init.lua:94 init.lua:99
+msgid "Giant Beeswax Candle"
+msgstr "Grande bougie de cire"
+
+#: init.lua:96
+msgid "A towering beeswax candle warming the wizard's desk outside the glass."
+msgstr "Une imposante bougie en cire d'abeille réchauffant le bureau du sorcier."
+
+#: init.lua:111 init.lua:117
+msgid "Dancing Candle Flame"
+msgstr "Flamme dansante de bougie"
+
+#: init.lua:113
+msgid "A warm flickering flame shining atop the giant desk candles."
+msgstr "Une flamme chaude et vacillante au sommet des bougies géantes."
+
+#: init.lua:114
+msgid "Lights up the workshop with a cozy golden glow."
+msgstr "Illumine l'atelier d'une douce lueur dorée."
+
+#: init.lua:133 init.lua:138
+msgid "Terrarium Base Stone"
+msgstr "Pierre de base du terrarium"
+
+#: init.lua:134 init.lua:150
+msgid "Garden Floor"
+msgstr "Sol du jardin"
+
+#: init.lua:135
+msgid "Solid dark stone foundation underneath the garden soil."
+msgstr "Une solide fondation de pierre sombre sous la terre du jardin."
+
+#: init.lua:149 init.lua:157
+msgid "Garden Soil"
+msgstr "Terre du jardin"
+
+#: init.lua:151
+msgid "Soft brown earth covering the floor of every glass room."
+msgstr "Une terre brune et meuble recouvrant le sol de chaque salle de verre."
+
+#: init.lua:152
+msgid "Can be upgraded into glowing green Fertile Soil that speeds up you and your plants!"
+msgstr "Peut devenir de la Terre fertile verte qui accélère vos pas et vos plantes !"
+
+#: init.lua:153
+msgid "Clear green Acid Slime with Pestle [4] or splash Chalk with Water Flask [3] on top of this soil."
+msgstr "Nettoyez l'Acide vert au Pilon [4] ou arrosez la Craie à la Fiole d'eau [3] sur cette terre."
+
+#: init.lua:169
+msgid "Rich Green Soil · Speed Boost"
+msgstr "Terre verte riche · Bonus de vitesse"
+
+#: init.lua:170
+msgid "Glowing green soil created whenever you clean up Acid, Chalk, or a Prismatic Geode."
+msgstr "Terre verte lumineuse créée en nettoyant de l'Acide, de la Craie ou une Géode prismatique."
+
+#: init.lua:171
+msgid "Helps nearby plants bloom faster AND lets you run much quicker when you walk on it!"
+msgstr "Aide les plantes proches à fleurir plus vite ET permet de courir bien plus rapidement !"
+
+#: init.lua:172
+msgid "Create green paths from room to room so you can dash across your garden with ease."
+msgstr "Tracez des chemins verts d'une salle à l'autre pour traverser le jardin en un éclair."
+
+#: init.lua:175
+msgid "Fertile Soil (Faster Running & Plant Growth)"
+msgstr "Terre fertile (Course & croissance rapides)"
+
+#: init.lua:204 init.lua:215
+msgid "Garden Tip"
+msgstr "Astuce jardin"
+
+#: init.lua:205
+msgid "Blocks can only be placed down on the garden floor!"
+msgstr "Les blocs ne peuvent être posés que sur le sol du jardin !"
+
+#: init.lua:216
+msgid "Please leave a little room around your plants!"
+msgstr "Laissez un peu d'espace autour de vos plantes !"
+
+#: init.lua:316
+msgid "Hot Block · Raises Heat"
+msgstr "Bloc chaud · Hausse la chaleur"
+
+#: init.lua:327
+msgid "Cold Block · Lowers Heat"
+msgstr "Bloc froid · Baisse la chaleur"
+
+#: init.lua:338
+msgid "Sour Puddle · Sours Soil"
+msgstr "Flaque acide · Acidifie le sol"
+
+#: init.lua:358
+msgid "Dry Block · Dries Soil"
+msgstr "Bloc sec · Assèche le sol"
+
+#: init.lua:411
+msgid "Bonus Crystal · Level 2+"
+msgstr "Cristal bonus · Niveau 2+"
+
+#: init.lua:431
+msgid "Cracks into 2 hazards in 22s!"
+msgstr "Se brise en 2 dangers dans 22s !"
+
+#: init.lua:432 init.lua:484
+msgid "Left-Click or Right-Click with Trowel [1] to clear nearby hazards!"
+msgstr "Clic gauche ou droit à la Truelle [1] pour éliminer les dangers proches !"
+
+#: init.lua:455
+msgid "Switch to your Trowel [1] and Left-Click or Right-Click this Prismatic Geode to crack it open!"
+msgstr "Prenez la Truelle [1] et faites un clic gauche ou droit sur cette Géode prismatique pour l'ouvrir !"
+
+#: init.lua:468
+msgid "Switch to your Trowel [1] (or place any block beside this Geode) to crack it open!"
+msgstr "Prenez la Truelle [1] (ou posez un bloc à côté de cette Géode) pour l'ouvrir !"
+
+#: init.lua:483
+msgid "Cracks into 2 hazards in @1s!"
+msgstr "Se brise en 2 dangers dans @1s !"
+
+#: init.lua:508
+msgid "Crystal Cracked"
+msgstr "Cristal brisé"
+
+#: init.lua:509
+msgid "An unopened Prismatic Geode cracked apart into 2 hazard blocks!"
+msgstr "Une Géode prismatique non ouverte s'est brisée en 2 blocs dangereux !"
+
+#: init.lua:522
+msgid "Fresh Water"
+msgstr "Eau fraîche"
+
+#: init.lua:523 init.lua:565
+msgid "Refills Your Water Flask"
+msgstr "Recharge votre Fiole d'eau"
+
+#: init.lua:524
+msgid "Clean, cool water left behind whenever you melt blue Ice Shards."
+msgstr "De l'eau claire et fraîche laissée par la fonte des Éclats de glace bleue."
+
+#: init.lua:525
+msgid "Gently cools the room and washes away nearby Brimstone or Chalk."
+msgstr "Rafraîchit doucement la salle et dissout le Soufre ou la Craie proches."
+
+#: init.lua:526
+msgid "Left-Click this water with your Water Flask [3] to scoop up the puddle and fill 3 splashes!"
+msgstr "Clic gauche sur cette eau avec la Fiole d'eau [3] pour puiser la flaque et remplir 3 jets !"
+
+#: init.lua:529
+msgid "Fresh Water (Left-Click with Flask [3])"
+msgstr "Eau fraîche (Clic gauche avec Fiole [3])"
+
+#: init.lua:564 init.lua:571
+msgid "Flowing Water"
+msgstr "Eau courante"
+
+#: init.lua:566
+msgid "Spreading ripples of cool water."
+msgstr "Des ondulations d'eau fraîche qui s'étendent."
+
+#: init.lua:567
+msgid "Melts Chalk on contact and cools hot Brimstone into Steam."
+msgstr "Dissout la Craie au contact et refroidit le Soufre brûlant en Vapeur."
+
+#: init.lua:568
+msgid "Left-Click anywhere on the puddle with your Water Flask [3] to scoop it up and refill!"
+msgstr "Clic gauche n'importe où sur la flaque avec la Fiole d'eau [3] pour la puiser et recharger !"
+
+#: init.lua:602
+msgid "Rising Steam"
+msgstr "Vapeur montante"
+
+#: init.lua:603
+msgid "Warm Mist · High Jump"
+msgstr "Brume tiède · Grand saut"
+
+#: init.lua:604
+msgid "Soft, warm mist created when water cools down hot Brimstone or Ice melts."
+msgstr "Douce brume tiède créée quand l'eau refroidit le Soufre ou quand la Glace fond."
+
+#: init.lua:605
+msgid "Step through it to float lightly and jump much higher for 5 seconds!"
+msgstr "Traversez-la pour flotter légèrement et sauter bien plus haut pendant 5 secondes !"
+
+#: init.lua:606
+msgid "Walk into rising steam to leap high, or Left-Click it with your Water Flask [3] to refill."
+msgstr "Marchez dans la vapeur pour sauter haut, ou clic gauche avec la Fiole d'eau [3] pour recharger."
+
+#: init.lua:609
+msgid "Rising Steam (Walk In for High Jump)"
+msgstr "Vapeur montante (Traverser : Grand saut)"
+
+#: init.lua:642
+msgid "Magical Plant · Protect & Grow!"
+msgstr "Plante magique · Protégez & cultivez !"
+
+#: init.lua:643
+msgid "The living heart of each glass room—grow all plants to 100% Bloom to finish the level!"
+msgstr "Le cœur vivant de chaque salle — amenez toutes les plantes à 100% de Floraison pour finir le niveau !"
+
+#: init.lua:644
+msgid "Blooms steadily when Heat (40–60°C) and Soil pH (5.6–8.4) stay comfortable and calm."
+msgstr "Fleurit régulièrement quand la Chaleur (40–60°C) et le pH du sol (5.6–8.4) restent stables."
+
+#: init.lua:645
+msgid "Right-Click to check Garden Status; Left-Click with a filled Water Flask [3] to heal it!"
+msgstr "Clic droit pour voir l'État du jardin ; clic gauche avec une Fiole d'eau [3] pleine pour la soigner !"
+
+#: init.lua:667
+msgid "Keep Heat (40–60°C) & Soil pH (5.6–8.4) comfortable"
+msgstr "Gardez Chaleur (40–60°C) & pH du sol (5.6–8.4) confortables"
+
+#: init.lua:668
+msgid "Right-Click for Garden Controls · Left-Click with Water Flask [3] to heal"
+msgstr "Clic droit : Commandes du jardin · Clic gauche à la Fiole [3] : Soigner"
+
+#: init.lua:682
+msgid "Wilted Sprout (Needs Water!)"
+msgstr "Pousse fanée (Besoin d'eau !)"
+
+#: init.lua:683
+msgid "Magical Plant · Needs Revival!"
+msgstr "Plante magique · À ranimer !"
+
+#: init.lua:684
+msgid "A tired, wilted sprout whose growth is paused until you revive it."
+msgstr "Une pousse fatiguée et fanée dont la croissance est en pause tant qu'elle n'est pas ranimée."
+
+#: init.lua:685
+msgid "If EVERY sprout in your garden wilts at the same time, the run ends!"
+msgstr "Si TOUTES les pousses de votre jardin fanent en même temps, la partie est finie !"
+
+#: init.lua:686
+msgid "Left-Click with a filled Water Flask [3], drink an Aegis Potion, or keep the room balanced for 6s to revive it!"
+msgstr "Clic gauche avec la Fiole d'eau [3] pleine, buvez une Potion Égide, ou gardez l'équilibre 6s pour la ranimer !"
+
+#: init.lua:690
+msgid "Wilted Sprout (Splash Water [3] to Revive!)"
+msgstr "Pousse fanée (Arroser d'Eau [3] pour ranimer !)"
+
+#: init.lua:708
+msgid "Wilted Sprout [Needs Revival!]"
+msgstr "Pousse fanée [À ranimer !]"
+
+#: init.lua:709
+msgid "Growth paused for this plant until revived!"
+msgstr "Croissance en pause jusqu'à sa ranimation !"
+
+#: init.lua:710
+msgid "Left-Click with Water Flask [3], drink Aegis Potion, or keep 6s Balance"
+msgstr "Clic gauche à la Fiole [3], boire Potion Égide, ou 6s d'Équilibre"
+
+
+#: hud_migration
+msgid "✖ Unopened Geode Shattered!"
+msgstr "✖ Géode non ouverte brisée !"
+
+#: hud_migration
+msgid "Split into 2 floor hazards!"
+msgstr "Divisée en 2 blocs dangereux !"

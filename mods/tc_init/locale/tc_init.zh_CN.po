@@ -1,0 +1,124 @@
+# Translation catalog for tc_init (Terrarium Crucible)
+# Copyright (C) 2026 SaKeL
+# License: MIT
+msgid ""
+msgstr ""
+"Project-Id-Version: tc_init 1.0\n"
+"POT-Creation-Date: 2026-11-11 00:00+0000\n"
+"PO-Revision-Date: 2026-11-11 00:00+0000\n"
+"Last-Translator: SaKeL\n"
+"Language-Team: Chinese (Simplified)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: api.lua:154
+msgid "Scorching Brimstone (Hot)"
+msgstr "灼热硫磺（热）"
+
+#: api.lua:155
+msgid "Splash with Flask [3], siphon with low Bellows [2] to refill, or pair with Ice [1]."
+msgstr "用水瓶 [3] 泼灭，用未满的风箱 [2] 吸取充能，或用 [1] 与寒冰配对。"
+
+#: api.lua:161
+msgid "Glacial Ice Shard (Cold)"
+msgstr "寒冰碎片（冷）"
+
+#: api.lua:162
+msgid "Melt with Bellows [2] into Water, then scoop Water with Flask [3] to refill!"
+msgstr "用风箱 [2] 融化成清水，再用水瓶 [3] 舀水补充！"
+
+#: api.lua:168
+msgid "Vitriol Acid Slime (Sour)"
+msgstr "矾酸黏液（酸）"
+
+#: api.lua:169
+msgid "Sweep with Pestle [4] (or pair Chalk [1] on it) to make green Speed Soil!"
+msgstr "用石杵 [4] 清扫（或用 [1] 配对白垩）即可生成绿色加速土！"
+
+#: api.lua:175
+msgid "Alkaline Chalk (Dry)"
+msgstr "碱性白垩（干）"
+
+#: api.lua:176
+msgid "Wash with Flask [3], grind with low Pestle [4] to refill, or pair with Acid [1]."
+msgstr "用水瓶 [3] 冲洗，用未满的石杵 [4] 研磨充能，或用 [1] 与酸液配对。"
+
+#: api.lua:205
+msgid "Open Guidebook"
+msgstr "打开图鉴"
+
+#: api.lua:206
+msgid "Read the illustrated 5-tab Guidebook to learn every tool, block, potion, and blessing."
+msgstr "阅读带插图的 5 页图鉴，了解所有工具、方块、药水与祝福。"
+
+#: api.lua:210
+msgid "Garden Status"
+msgstr "花园状态"
+
+#: api.lua:211
+msgid "Check each plant's health, see this level's blessing, or change the game pace anytime."
+msgstr "随时查看各植物生命值、本关祝福，或调整游戏节奏。"
+
+#: api.lua:215
+msgid "Top 10 Scores"
+msgstr "前 10 排行榜"
+
+#: api.lua:216
+msgid "See the Top 10 best runs saved on this world."
+msgstr "查看当前世界保存的前 10 最佳记录。"
+
+#: api.lua:221
+msgid "SATCHEL"
+msgstr "行囊"
+
+#: api.lua:229
+msgid "YOUR BAG & QUICK TOOL GUIDE"
+msgstr "行囊与工具速览"
+
+#: api.lua:230
+msgid "Keep Heat (40–60°C) & Soil pH (5.6–8.4) comfortable until every plant reaches 100% Bloom!"
+msgstr "保持温度（40–60°C）与土壤 pH（5.6–8.4）舒适，直到所有植物达到 100% 开花！"
+
+#: init.lua:21
+msgid "Gloved Hand"
+msgstr "园艺手套"
+
+#: init.lua:22
+msgid "Empty Hand"
+msgstr "空手"
+
+#: init.lua:23
+msgid "Your sturdy leather gardening glove."
+msgstr "结实耐用的皮革园艺手套。"
+
+#: init.lua:24
+msgid "Press keys [1] to [5] on your keyboard (or scroll the mouse wheel) to use your tools!"
+msgstr "按键盘 [1] 至 [5] 键（或滚动鼠标滚轮）切换使用工具！"
+
+#: init.lua:27
+msgid "Gloved Hand — Press [1–5] for Tools"
+msgstr "园艺手套 — 按 [1–5] 切换工具"
+
+#: init.lua:64
+msgid "Bag & Guide"
+msgstr "行囊与指南"
+
+#: init.lua:101
+msgid "Saved!"
+msgstr "化险为夷！"
+
+#: init.lua:104
+msgid "Your Aegis Potion activated automatically to refill your health and shield your garden!"
+msgstr "神盾药水已自动触发，回满你的生命并为整座花园张开护盾！"
+
+
+#: hud_migration
+msgid "✦ Saved by Auto-Aegis!"
+msgstr "✦ 自动神盾药水救了你！"
+
+#: hud_migration
+msgid "Health refilled & garden shielded (@1s)!"
+msgstr "生命已满且花园获护盾 (@1秒)！"

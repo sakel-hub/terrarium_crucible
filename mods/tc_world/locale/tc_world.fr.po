@@ -1,0 +1,28 @@
+# Translation catalog for tc_world (Terrarium Crucible)
+# Copyright (C) 2026 SaKeL
+# License: MIT
+msgid ""
+msgstr ""
+"Project-Id-Version: tc_world 1.0\n"
+"POT-Creation-Date: 2026-11-11 00:00+0000\n"
+"PO-Revision-Date: 2026-11-11 00:00+0000\n"
+"Last-Translator: SaKeL\n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: api.lua:412
+msgid "Sprout #@1 · @2"
+msgstr "Pousse #@1 · @2"
+
+#: api.lua:413
+msgid "Plant Health: 100% · Nearby Hazards: 0"
+msgstr "Santé plante : 100% · Dangers proches : 0"
+
+#: api.lua:414
+msgid "Right-Click for Garden Controls · Left-Click with Water Flask [3] to heal"
+msgstr "Clic droit : Commandes du jardin · Clic gauche à la Fiole [3] : Soigner"
+

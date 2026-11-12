@@ -1,7 +1,16 @@
 {
   "name": "terrarium_crucible",
   "version": "1.0.0",
-  "description": "Shrink inside a wizard's glass terrarium, protect magical plants from falling hazards, and grow an expanding garden in Luanti.",
+  "description": "Shrink into a wizard's glass terrarium! Care for magical glowing plants, clear falling fire and ice blocks, pave speed paths, and grow your garden solo or with friends in Luanti 5.18+.",
+  "keywords": [
+    "luanti",
+    "minetest",
+    "game-jam",
+    "puzzle",
+    "gardening",
+    "co-op",
+    "multiplayer"
+  ],
   "type": "module",
   "engines": {
     "node": ">=16.0.0",

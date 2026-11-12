@@ -1,0 +1,1500 @@
+# Translation catalog for tc_core (Terrarium Crucible)
+# Copyright (C) 2026 SaKeL
+# License: MIT
+msgid ""
+msgstr ""
+"Project-Id-Version: tc_core 1.0\n"
+"POT-Creation-Date: 2026-11-11 00:00+0000\n"
+"PO-Revision-Date: 2026-11-11 00:00+0000\n"
+"Last-Translator: SaKeL\n"
+"Language-Team: Slovak\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: api.lua:207 api.lua:208
+msgid "Aegis Shield"
+msgstr "Štít Egidy"
+
+#: api.lua:214
+msgid "Time Freeze Speed"
+msgstr "Rýchlosť zastavenia času"
+
+#: api.lua:215
+msgid "Time Freeze"
+msgstr "Zastavenie času"
+
+#: api.lua:221 api.lua:222
+msgid "Harmony Boost"
+msgstr "Bonus harmónie"
+
+#: api.lua:228
+msgid "Green Soil Speed"
+msgstr "Rýchlosť zelenej pôdy"
+
+#: api.lua:229
+msgid "Soil Speed"
+msgstr "Rýchlosť pôdy"
+
+#: api.lua:235
+msgid "Steam High Jump"
+msgstr "Skok z pary"
+
+#: api.lua:236
+msgid "Steam Jump"
+msgstr "Parný skok"
+
+#: api.lua:243 api.lua:244
+msgid "Recovering"
+msgstr "Zotavovanie"
+
+#: api.lua:266
+msgid "Deep Retort"
+msgstr "Hlboká retorta"
+
+#: api.lua:269
+msgid "Next Level: Water Flask [3] holds +2 extra Splashes & refills immediately."
+msgstr "Ďalšia úroveň: Fľaša s vodou [3] pojme +2 extra šplechnutia a ihneď sa doplní."
+
+#: api.lua:270
+msgid "Water Flask [3] holds +2 extra Splashes & refills immediately."
+msgstr "Fľaša s vodou [3] pojme +2 extra šplechnutia a ihneď sa doplní."
+
+#: api.lua:274
+msgid "Dragonlung Bellows"
+msgstr "Dračie mechy"
+
+#: api.lua:277
+msgid "Next Level: Bellows [2] holds +2 extra Puffs, melts 3x3 Ice & gives extra growth."
+msgstr "Ďalšia úroveň: Mechy [2] pojmú +2 extra fúknutia, roztopia 3x3 Ľadu a dajú extra rast."
+
+#: api.lua:278
+msgid "Bellows [2] holds +2 extra Puffs, melts 3x3 Ice & gives extra growth."
+msgstr "Mechy [2] pojmú +2 extra fúknutia, roztopia 3x3 Ľadu a dajú extra rast."
+
+#: api.lua:282
+msgid "Starlight Mortar"
+msgstr "Hviezdny mažiar"
+
+#: api.lua:285
+msgid "Next Level: Pestle [4] holds +2 extra Sweeps, clears 5x5 Acid & gives extra growth."
+msgstr "Ďalšia úroveň: Tĺčik [4] pojme +2 extra poprášenia, vyčistí 5x5 Kyseliny a dá extra rast."
+
+#: api.lua:286
+msgid "Pestle [4] holds +2 extra Sweeps, clears 5x5 Acid & gives extra growth."
+msgstr "Tĺčik [4] pojme +2 extra poprášenia, vyčistí 5x5 Kyseliny a dá extra rast."
+
+#: api.lua:290
+msgid "Ley-Line Roots"
+msgstr "Korene siločiar"
+
+#: api.lua:293
+msgid "Next Level: Plants heal faster when balanced & revive in 4s (was 6s)."
+msgstr "Ďalšia úroveň: Rastliny sa v rovnováhe liečia rýchlejšie a ožijú za 4s (namiesto 6s)."
+
+#: api.lua:294
+msgid "Plants heal faster when balanced & revive in 4s (was 6s)."
+msgstr "Rastliny sa v rovnováhe liečia rýchlejšie a ožijú za 4s (namiesto 6s)."
+
+#: api.lua:298
+msgid "Hermetic Boots"
+msgstr "Hermetické čižmy"
+
+#: api.lua:301
+msgid "Next Level: Run faster on green Soil & take half damage from hazards."
+msgstr "Ďalšia úroveň: Bežíte rýchlejšie po zelenej pôde a hrozby vám spôsobujú polovičné zranenie."
+
+#: api.lua:302
+msgid "Run faster on green Soil & take half damage from hazards."
+msgstr "Bežíte rýchlejšie po zelenej pôde a hrozby vám spôsobujú polovičné zranenie."
+
+#: api.lua:306
+msgid "Featherfall Winds"
+msgstr "Vánok pierka"
+
+#: api.lua:309
+msgid "Next Level: Blocks fall slower (+1.5s waves) & mid-air catches give extra Bloom."
+msgstr "Ďalšia úroveň: Bloky padajú pomalšie (+1.5s medzi vlnami) a vzdušné zásahy dávajú viac Rozkvetu."
+
+#: api.lua:310
+msgid "Blocks fall slower (+1.5s waves) & mid-air catches give extra Bloom."
+msgstr "Bloky padajú pomalšie (+1.5s medzi vlnami) a vzdušné zásahy dávajú viac Rozkvetu."
+
+#: api.lua:314
+msgid "Crystal Resonance"
+msgstr "Kryštálová rezonancia"
+
+#: api.lua:317
+msgid "Next Level: Bonus Geodes drop twice as often & Trowel [1] combos give +25% Bloom."
+msgstr "Ďalšia úroveň: Bonusové Geódy padajú dvakrát častejšie a kombá Lopatkou [1] dávajú +25% Rozkvetu."
+
+#: api.lua:318
+msgid "Bonus Geodes drop twice as often & Trowel [1] combos give +25% Bloom."
+msgstr "Bonusové Geódy padajú dvakrát častejšie a kombá Lopatkou [1] dávajú +25% Rozkvetu."
+
+#: api.lua:322
+msgid "Sunlit Dew"
+msgstr "Slnečná rosa"
+
+#: api.lua:325
+msgid "Next Level: Start with +1 extra Aegis Potion (14s shield), & Balance heals 1 Heart/3s!"
+msgstr "Ďalšia úroveň: Začnete s +1 Elixírom Egidy (14s štít) a rovnováha lieči 1 srdce za 3s!"
+
+#: api.lua:326
+msgid "Start with +1 extra Aegis Potion (14s shield), & Balance heals 1 Heart/3s!"
+msgstr "Začnete s +1 Elixírom Egidy (14s štít) a rovnováha lieči 1 srdce za 3s!"
+
+#: api.lua:976
+msgid "★ Nice Combo! Brimstone + Ice"
+msgstr "★ Skvelé kombo! Síra + Ľad"
+
+#: api.lua:1011
+msgid "★ Nice Combo! Acid + Chalk"
+msgstr "★ Skvelé kombo! Kyselina + Krieda"
+
+#: api.lua:1578
+msgid "Hot Brimstone! Step off & splash with Flask [3]."
+msgstr "Horúca Síra! Zostúpte z nej a ošpliechajte Fľašou [3]."
+
+#: api.lua:1605
+msgid "Stinging Acid! Step out & sweep with Pestle [4]."
+msgstr "Štipľavá Kyselina! Vystúpte z nej a poprášte Tĺčikom [4]."
+
+#: api.lua:1888
+msgid "Calm Balance"
+msgstr "Pokojná rovnováha"
+
+#: api.lua:1893
+msgid "✦ Sprout #@1 Revived!"
+msgstr "✦ Výhonok #@1 oživený!"
+
+#: api.lua:1894
+msgid "@1 restored @2% Plant HP"
+msgstr "@1 obnovil(a) @2% zdravia rastliny"
+
+#: api.lua:1903
+msgid "Watered Sprout #@1 (@2% HP)"
+msgstr "Poliaty Výhonok #@1 (@2% HP)"
+
+#: api.lua:1937
+msgid "✦ Aegis Shield (@1s)!"
+msgstr "✦ Štít Egidy (@1s)!"
+
+#: api.lua:1938
+msgid "@1 healed & shielded all plants!"
+msgstr "@1 vyliečil(a) a ochránil(a) všetky rastliny!"
+
+#: api.lua:1971 api.lua:2200
+msgid "Alchemist"
+msgstr "Alchymista"
+
+#: api.lua:1975
+msgid "✦ Time Frozen (@1s)!"
+msgstr "✦ Čas zastavený (@1s)!"
+
+#: api.lua:1976
+msgid "@1 paused drops · @2 cleared"
+msgstr "@1 pozastavil(a) padanie · vyčistené: @2"
+
+#: api.lua:2136
+msgid "Rank"
+msgstr "Poradie"
+
+#: api.lua:2137
+msgid "Player"
+msgstr "Hráč"
+
+#: api.lua:2138
+msgid "Highest Level"
+msgstr "Najvyššia úroveň"
+
+#: api.lua:2139
+msgid "Levels Won"
+msgstr "Vyhrané úrovne"
+
+#: api.lua:2140
+msgid "Best Bloom"
+msgstr "Najlepší rozkvet"
+
+#: api.lua:2141
+msgid "Cleared"
+msgstr "Vyčistené"
+
+#: api.lua:2142
+msgid "Time"
+msgstr "Čas"
+
+#: api.lua:2150
+msgid "(No scores saved yet — finish or reset a level to record!)"
+msgstr "(Zatiaľ žiadne uložené skóre — dokončite alebo reštartujte úroveň pre záznam!)"
+
+#: api.lua:2162
+msgid "Level @1 (@2 Room)"
+msgstr "Úroveň @1 (@2 miestnosť)"
+
+#: api.lua:2163
+msgid "Level @1 (@2 Rooms)"
+msgstr "Úroveň @1 (@2 miestnosti/í)"
+
+#: api.lua:2173
+msgid "@1s"
+msgstr "@1s"
+
+#: api.lua:2194
+msgid "Casual"
+msgstr "Pohodové"
+
+#: api.lua:2195
+msgid "Panic"
+msgstr "Panika"
+
+#: api.lua:2196
+msgid "Normal"
+msgstr "Normálne"
+
+#: api.lua:2201
+msgid "Terrarium Crucible · @1 · Lv@2 (@3 Won) · @4% Bloom · @5 Cleared · @6s [@7]"
+msgstr "Terrarium Crucible · @1 · Úr.@2 (@3 výhier) · @4% Rozkvet · @5 vyčistených · @6s [@7]"
+
+#: api.lua:2361
+msgid "+2 Aegis · +1 Hourglass · +1 Tool Cap!"
+msgstr "+2 Egida · +1 Hodiny · +1 kapacita nástrojov!"
+
+#: api.lua:2363
+msgid "+2 Aegis · +1 Hourglass"
+msgstr "+2 Egida · +1 Hodiny"
+
+#: api.lua:2365
+msgid "+1 Aegis · +1 Hourglass · +1 Tool Cap!"
+msgstr "+1 Egida · +1 Hodiny · +1 kapacita nástrojov!"
+
+#: api.lua:2367
+msgid "+1 Aegis · +1 Hourglass"
+msgstr "+1 Egida · +1 Hodiny"
+
+#: api.lua:2372
+msgid "@1 [@2] · @3"
+msgstr "@1 [@2] · @3"
+
+#: api.lua:2374
+msgid "Blessing: @1 · @2"
+msgstr "Požehnanie: @1 · @2"
+
+#: api.lua:2382
+msgid "★ LEVEL @1 BEGINS (@2 Rooms)"
+msgstr "★ ÚROVEŇ @1 ZAČÍNA (@2 miestnosti/í)"
+
+#: api.lua:2421
+msgid "The garden lost its balance!"
+msgstr "Záhrada stratila rovnováhu!"
+
+#: api.lua:2480
+msgid "You ran out of health, and the shockwave wilted the last remaining plant!"
+msgstr "Došlo vám zdravie a tlaková vlna zvädla poslednú zostávajúcu rastlinu!"
+
+#: api.lua:2488
+msgid "✖ Second Chance!"
+msgstr "✖ Druhá šanca!"
+
+#: api.lua:2489
+msgid "Plants lost 30% HP — water them with Flask [3]!"
+msgstr "Rastliny stratili 30% HP — polejte ich Fľašou [3]!"
+
+#: api.lua:2509
+msgid "Everyone on the team ran out of health at the same time!"
+msgstr "Všetkým členom tímu došlo zdravie v rovnakom okamihu!"
+
+#: api.lua:2514
+msgid "⚠ @1 Knocked Down!"
+msgstr "⚠ @1 je na zemi!"
+
+#: api.lua:2515
+msgid "Teammates: stay safe for 5s while they recover!"
+msgstr "Spoluhráči: vydržte v bezpečí 5s, kým sa zotaví!"
+
+#: hud.lua:33
+msgid "Bloom"
+msgstr "Rozkvet"
+
+#: hud.lua:38 hud.lua:50
+msgid "@1: @2%"
+msgstr "@1: @2%"
+
+#: hud.lua:45
+msgid "Plant HP"
+msgstr "Zdravie rastlín"
+
+#: hud.lua:57
+msgid "Heat"
+msgstr "Teplo"
+
+#: hud.lua:62
+msgid "@1: @2°C"
+msgstr "@1: @2°C"
+
+#: hud.lua:69
+msgid "Soil pH"
+msgstr "pH pôdy"
+
+#: hud.lua:74
+msgid "@1: @2/@3"
+msgstr "@1: @2/@3"
+
+#: hud.lua:89
+msgid "Boost"
+msgstr "Posilnenie"
+
+#: hud.lua:97
+msgid "@1: @2s"
+msgstr "@1: @2s"
+
+#: hud.lua:472
+msgid "▸ LEVEL COMPLETE! Pick a Blessing on screen or right-click a Plant!"
+msgstr "▸ ÚROVEŇ DOKONČENÁ! Vyberte si Požehnanie na obrazovke alebo kliknite pravým na rastlinu!"
+
+#: hud.lua:476
+msgid "▸ RUN ENDED: Right-click a Plant or press [I] to restart Level 1."
+msgstr "▸ POKUS SKONČIL: Kliknite pravým na rastlinu alebo stlačte [I] pre reštart 1. úrovne."
+
+#: hud.lua:483
+msgid "▸ ✖ OVERCROWDED (@1s)! Clear @2 hazard(s) with [1–4]!"
+msgstr "▸ ✖ PREPLNENÉ (@1s)! Vyčistite @2 hrozieb nástrojmi [1–4]!"
+
+#: hud.lua:489
+msgid "▸ PLANT WILTED! Splash with Flask [3], Aegis, or @1s Balance!"
+msgstr "▸ RASTLINA ZVÄDLA! Ošpliechajte Fľašou [3], Egidou alebo udržte @1s rovnováhu!"
+
+#: hud.lua:494
+msgid "▸ FLOOR FULL (@1/@2): Clear hazards now with Tools [1–4]!"
+msgstr "▸ PLNÁ PODLAHA (@1/@2): Ihneď vyčistite hrozby nástrojmi [1–4]!"
+
+#: hud.lua:499
+msgid "▸ TOO HOT (>60°C): Splash Brimstone [3] or pair with Ice [1]!"
+msgstr "▸ PRÍLIŠ HORÚCO (>60°C): Ošpliechajte Síru [3] alebo spojte s Ľadom [1]!"
+
+#: hud.lua:502
+msgid "▸ TOO COLD (<40°C): Melt blue Ice [2] & scoop Water [3]!"
+msgstr "▸ PRÍLIŠ CHLADNO (<40°C): Roztopte modrý Ľad [2] a naberte Vodu [3]!"
+
+#: hud.lua:505
+msgid "▸ TOO SOUR (<5.6 pH): Sweep green Acid with Pestle [4]!"
+msgstr "▸ PRÍLIŠ KYSLÉ (<5.6 pH): Poprášte zelenú Kyselinu Tĺčikom [4]!"
+
+#: hud.lua:508
+msgid "▸ TOO CHALKY (>8.4 pH): Wash Chalk [3] or pair with Acid [1]!"
+msgstr "▸ PRÍLIŠ ZÁSADITÉ (>8.4 pH): Zmyte Kriedu [3] alebo spojte s Kyselinou [1]!"
+
+#: hud.lua:512
+msgid "▸ CLUTTERED (@1>@2): Combine [1] or clear hazards [2–4]!"
+msgstr "▸ ZAHALTENÉ (@1>@2): Spájajte [1] alebo čistite hrozby [2–4]!"
+
+#: hud.lua:521
+msgid "▸ BALANCED: Combine blocks [1] or clear [2–4] for Bloom! [Z] Ping"
+msgstr "▸ V ROVNOVÁHE: Spájajte bloky [1] alebo čistite [2–4] pre Rozkvet! [Z] Označiť"
+
+#: hud.lua:525
+msgid "▸ HAPPY GARDEN: [I] Tool Guide · [5] Guidebook · [Z] Call Room"
+msgstr "▸ ŠŤASTNÁ ZÁHRADA: [I] Prehľad nástrojov · [5] Príručka · [Z] Označiť miestnosť"
+
+#: hud.lua:539
+msgid "★ 100% BLOOM ★"
+msgstr "★ 100% ROZKVET ★"
+
+#: hud.lua:541
+msgid "✖ PAUSED ✖"
+msgstr "✖ POZASTAVENÉ ✖"
+
+#: hud.lua:546
+msgid "LV@1 · Plants @2/@3 · Hazards @4/@5@6"
+msgstr "ÚR@1 · Rastliny @2/@3 · Hrozby @4/@5@6"
+
+#: hud.lua:551
+msgid "LEVEL @1 (1 Room)  ·  Plants: @2/@3  ·  Hazards: @4/@5@6"
+msgstr "ÚROVEŇ @1 (1 miestnosť)  ·  Rastliny: @2/@3  ·  Hrozby: @4/@5@6"
+
+#: hud.lua:556
+msgid "LEVEL @1 (@2 Rooms)  ·  Plants: @3/@4  ·  Hazards: @5/@6@7"
+msgstr "ÚROVEŇ @1 (@2 miestnosti/í)  ·  Rastliny: @3/@4  ·  Hrozby: @5/@6@7"
+
+#: hud.lua:570 ui.lua:399
+msgid "✖ OVERCROWDED (@1s)"
+msgstr "✖ PREPLNENÉ (@1s)"
+
+#: hud.lua:573
+msgid "✦ SHIELD (@1s)"
+msgstr "✦ ŠTÍT (@1s)"
+
+#: hud.lua:576
+msgid "✦ BALANCED (@1s)"
+msgstr "✦ V ROVNOVÁHE (@1s)"
+
+#: hud.lua:579
+msgid "⚠ CLUTTERED (@1>@2)"
+msgstr "⚠ ZAHALTENÉ (@1>@2)"
+
+#: hud.lua:583
+msgid "⚠ OFF BALANCE"
+msgstr "⚠ MIMO ROVNOVÁHY"
+
+#: hud.lua:584
+msgid "⚠ OFF BALANCE (40–60°C · 5.6–8.4 pH)"
+msgstr "⚠ MIMO ROVNOVÁHY (40–60°C · 5.6–8.4 pH)"
+
+#: hud.lua:595
+msgid "@1 · @2°C | @3pH · @4"
+msgstr "@1 · @2°C | @3pH · @4"
+
+#: hud.lua:597
+msgid "@1  ·  @2°C | @3 pH  ·  Blessing: @4"
+msgstr "@1  ·  @2°C | @3 pH  ·  Požehnanie: @4"
+
+#: hud.lua:600
+msgid "@1  ·  @2°C | @3 pH"
+msgstr "@1  ·  @2°C | @3 pH"
+
+#: hud.lua:647
+msgid "★ FINAL SURGE!"
+msgstr "★ ZÁVEREČNÝ NÁPOR!"
+
+#: hud.lua:651
+msgid "▾ BONUS GEODE!"
+msgstr "▾ BONUSOVÁ GEÓDA!"
+
+#: hud.lua:655
+msgid "▾ TRIAL FALLING!"
+msgstr "▾ SKÚŠOBNÁ VLNA!"
+
+#: hud.lua:659
+msgid "▾ FALLING NOW!"
+msgstr "▾ PRÁVE PADÁ!"
+
+#: hud.lua:665
+msgid "⏳ PAUSED · @1s@2"
+msgstr "⏳ POZASTAVENÉ · @1s@2"
+
+#: hud.lua:671
+msgid "✦ GEODE IN @1s@2"
+msgstr "✦ GEÓDA O @1s@2"
+
+#: hud.lua:675
+msgid "★ TRIAL IN @1s@2"
+msgstr "★ SKÚŠKA O @1s@2"
+
+#: hud.lua:679
+msgid "NEXT DROP · @1s@2"
+msgstr "ĎALŠÍ ZHADZ · @1s@2"
+
+#: hud.lua:721
+msgid "Crack Geode or Pair [1]!"
+msgstr "Rozbite Geódu alebo spojte [1]!"
+
+#: hud.lua:723
+msgid "Opposite Pair → Combine [1]!"
+msgstr "Protikladná dvojica → Spojte [1]!"
+
+#: hud.lua:726
+msgid "@1 → @2"
+msgstr "@1 → @2"
+
+#: hud.lua:728
+msgid "@1x @2 → @3"
+msgstr "@1x @2 → @3"
+
+#: hud.lua:730
+msgid "@1 + Geode!"
+msgstr "@1 + Geóda!"
+
+#: hud.lua:733
+msgid "@1 · @2"
+msgstr "@1 · @2"
+
+#: hud.lua:1021
+msgid "Action"
+msgstr "Akcia"
+
+#: hud.lua:1023
+msgid "+@1% Bloom · @2"
+msgstr "+@1% Rozkvet · @2"
+
+#: hud.lua:1437
+msgid "✖ Sprout #@1 WILTED!"
+msgstr "✖ Výhonok #@1 ZVÄDOL!"
+
+#: hud.lua:1438
+msgid "⚠ Sprout #@1 (@2%)"
+msgstr "⚠ Výhonok #@1 (@2%)"
+
+#: hud.lua:1531
+msgid "WILTED · @1% Bloom"
+msgstr "ZVÄDNUTÝ · @1% Rozkvet"
+
+#: hud.lua:1532
+msgid "@1% Bloom · @2% HP"
+msgstr "@1% Rozkvet · @2% HP"
+
+#: hud.lua:1558
+msgid "✦ Room #@1 Marked [@2]"
+msgstr "✦ Miestnosť #@1 označená [@2]"
+
+#: hud.lua:1559
+msgid "@1 · @2 Hazards"
+msgstr "@1 · @2 hrozieb"
+
+#: hud.lua:1565
+msgid "✦ Room #@1 [@2]"
+msgstr "✦ Miestnosť #@1 [@2]"
+
+#: init.lua:37
+msgid "Welcome!"
+msgstr "Vitajte!"
+
+#: init.lua:40
+msgid "Keep Heat (40–60°C) & Soil pH (5.6–8.4) comfortable until all plants reach 100% Bloom!"
+msgstr "Udržujte teplo (40–60°C) a pH pôdy (5.6–8.4) v pohodlí, kým všetky rastliny nedosiahnu 100% Rozkvet!"
+
+#: init.lua:45
+msgid "Controls"
+msgstr "Ovládanie"
+
+#: init.lua:48
+msgid "[1–4] Tools · [5] Guidebook · [I] Quick Tool Guide · [Z] Call Out Room · [E+W] Sprint."
+msgstr "[1–4] Nástroje · [5] Príručka · [I] Rýchly návod · [Z] Označiť miestnosť · [E+W] Šprint."
+
+#: init.lua:106
+msgid "Trial Wave — Twin Opposites! Pair Hot + Cold or Acid + Chalk with Trowel [1] for huge Bloom!"
+msgstr "Skúšobná vlna — Dvojica protikladov! Spojte Horúce + Studené alebo Kyselinu + Kriedu Lopatkou [1] pre obrovský Rozkvet!"
+
+#: init.lua:107
+msgid "Trial Wave — Ember Shower! Quench fiery Brimstone with Water Flask [3] and ride the Steam!"
+msgstr "Skúšobná vlna — Žeravá spŕška! Schlaďte ohnivú Síru Fľašou s vodou [3] a vzneste sa na Pare!"
+
+#: init.lua:108
+msgid "Trial Wave — Frost Squall! Puff blue Ice Shards with Thermal Bellows [2] and stock up on Water!"
+msgstr "Skúšobná vlna — Mrazivý víchor! Roztopte modré Ľadovcové črepy Tepelnými mechmi [2] a naberte zásobu Vody!"
+
+#: init.lua:109
+msgid "Trial Wave — Sour Drizzle! Sweep green Acid puddles with Pestle [4] to pave Speed Soil paths!"
+msgstr "Skúšobná vlna — Kyslé mrholenie! Poprášte zelené mláky Kyseliny Tĺčikom [4] a vydláždite chodníky Rýchlej pôdy!"
+
+#: init.lua:200
+msgid "The Wizard · Wave @1 (1 Drop)"
+msgstr "Čarodejník · Vlna @1 (1 zhadz)"
+
+#: init.lua:201
+msgid "The Wizard · Wave @1 (@2 Drops)"
+msgstr "Čarodejník · Vlna @1 (@2 zhady/ov)"
+
+#: init.lua:608
+msgid "Too many uncleared hazards (@1/@2 blocks piled up for 8 seconds and cracked the glass!)"
+msgstr "Príliš veľa nevyčistených hrozieb (@1/@2 blokov sa nahromadilo na 8 sekúnd a rozbilo sklo!)"
+
+#: init.lua:620
+msgid "Too Many Hazards!"
+msgstr "Príliš veľa hrozieb!"
+
+#: init.lua:623
+msgid "Floor is overcrowded (@1/@2)! Clear @3 block(s) within @4s before the glass cracks!"
+msgstr "Podlaha je preplnená (@1/@2)! Vyčistite @3 blok(y/ov) do @4s, skôr než sklo praskne!"
+
+#: init.lua:634
+msgid "Room Safe Again"
+msgstr "Miestnosť je opäť v bezpečí"
+
+#: init.lua:635
+msgid "Nice work! You cleared enough blocks and saved the glass terrarium."
+msgstr "Skvelá práca! Vyčistili ste dosť blokov a zachránili sklenené terárium."
+
+#: init.lua:749
+msgid "Plant Alert"
+msgstr "Pozor na rastlinu"
+
+#: init.lua:752
+msgid "Sprout #@1 has WILTED! Splash with Water Flask [3], drink Aegis Potion, or keep @2s Balance!"
+msgstr "Výhonok #@1 ZVÄDOL! Ošpliechajte ho Fľašou s vodou [3], vypite Elixír Egidy alebo udržte @2s rovnováhu!"
+
+#: init.lua:784
+msgid "All @1 plant(s) wilted at the same time!"
+msgstr "Všetkých @1 rastlín zvädlo v rovnakom okamihu!"
+
+#: init.lua:848
+msgid "Your Sprout grew into @1!"
+msgstr "Váš Výhonok vyrástol na: @1!"
+
+#: init.lua:849
+msgid "Sprout #@1 grew into @2! (@3% Bloom)"
+msgstr "Výhonok #@1 vyrástol na: @2! (@3% Rozkvet)"
+
+#: init.lua:851
+msgid "Plant Growth"
+msgstr "Rast rastliny"
+
+#: init.lua:856
+msgid "[Clear extra hazards in this room!]"
+msgstr "[Vyčistite prebytočné hrozby v tejto miestnosti!]"
+
+#: init.lua:858
+msgid "Sprout #@1 · @2"
+msgstr "Výhonok #@1 · @2"
+
+#: init.lua:859
+msgid "Bloom: @1% · Plant Health: @2% · Nearby Hazards: @3@4"
+msgstr "Rozkvet: @1% · Zdravie rastliny: @2% · Okolité hrozby: @3@4"
+
+#: init.lua:866
+msgid "Right-Click for Garden Controls · Left-Click with Water Flask [3] to heal"
+msgstr "Pravý klik: Ovládanie záhrady · Ľavý klik Fľašou s vodou [3]: liečenie"
+
+#: init.lua:870
+msgid "Sprout #@1 [WILTED · Needs Water!]"
+msgstr "Výhonok #@1 [ZVÄDNUTÝ · Potrebuje vodu!]"
+
+#: init.lua:871
+msgid "Growth paused at @1% until revived!"
+msgstr "Rast pozastavený na @1% až do oživenia!"
+
+#: init.lua:872
+msgid "Left-Click with Water Flask [3], drink Aegis Potion, or keep @1s Balance"
+msgstr "Ľavý klik Fľašou s vodou [3], Elixír Egidy alebo @1s rovnováhy"
+
+#: init.lua:908
+msgid "Final Bloom Surge!"
+msgstr "Záverečný nápor rozkvetu!"
+
+#: init.lua:911
+msgid "Your garden reached 85% Bloom! Crack the bonus Prismatic Geode or pair the twin drops to hit 100%!"
+msgstr "Vaša záhrada dosiahla 85% Rozkvet! Rozbite bonusovú Prizmatickú geódu alebo spojte dvojicu blokov pre 100%!"
+
+#: init.lua:928
+msgid "★ LEVEL @1 COMPLETE! ALL @2 PLANT(S) REACHED 100% BLOOM! ★"
+msgstr "★ ÚROVEŇ @1 DOKONČENÁ! VŠETKÝCH @2 RASTLÍN DOSIAHLO 100% ROZKVET! ★"
+
+#: init.lua:931
+msgid "The Wizard"
+msgstr "Čarodejník"
+
+#: init.lua:934
+msgid "Wonderful work! Pick a Next-Level Blessing to open Room #@1!"
+msgstr "Úžasná práca! Vyberte si Požehnanie do ďalšej úrovne a otvorte Miestnosť #@1!"
+
+#: init.lua:1046
+msgid "Opened Top 10 Scores."
+msgstr "Otvorené Top 10 skóre."
+
+#: init.lua:1048 init.lua:1057 init.lua:1066 init.lua:1078
+msgid "Player must be connected."
+msgstr "Hráč musí byť pripojený."
+
+#: init.lua:1055
+msgid "Opened Gardener's Guidebook."
+msgstr "Otvorená Záhradníkova príručka."
+
+#: init.lua:1064
+msgid "Opened Garden Controls."
+msgstr "Otvorené Ovládanie záhrady."
+
+#: init.lua:1074
+msgid "Marked the room for everyone."
+msgstr "Miestnosť označená pre všetkých."
+
+#: init.lua:1076
+msgid "Please wait a moment before pinging again."
+msgstr "Počkajte chvíľu pred ďalším označením."
+
+#: init.lua:1082 init.lua:1087
+msgid "Open the Top 10 Terrarium Crucible scores"
+msgstr "Otvoriť Top 10 skóre Terrarium Crucible"
+
+#: init.lua:1092
+msgid "Open the illustrated Gardener's Guidebook"
+msgstr "Otvoriť ilustrovanú Záhradníkovu príručku"
+
+#: init.lua:1097
+msgid "Open Garden Controls and Game Pace settings"
+msgstr "Otvoriť Ovládanie záhrady a nastavenie tempa hry"
+
+#: init.lua:1102
+msgid "Place a 4-second marker above the room you are facing"
+msgstr "Umiestniť 4-sekundovú značku nad miestnosť, na ktorú sa pozeráte"
+
+#: ui.lua:17
+msgid "1. How to Play"
+msgstr "1. Ako hrať"
+
+#: ui.lua:18
+msgid "Your goal, how plants grow, and how to keep the room comfortable."
+msgstr "Váš cieľ, ako rastliny rastú a ako udržať miestnosť v pohodlí."
+
+#: ui.lua:21
+msgid "2. Blocks & Tools"
+msgstr "2. Bloky a nástroje"
+
+#: ui.lua:22
+msgid "Picture guide showing every falling block and the tool that clears it."
+msgstr "Obrázkový prehľad každého padajúceho bloku a nástroja, ktorý ho vyčistí."
+
+#: ui.lua:25
+msgid "3. Combos & Potions"
+msgstr "3. Kombá a elixíry"
+
+#: ui.lua:26
+msgid "Combine opposite blocks, build green speed paths, and use potions."
+msgstr "Spájajte opačné bloky, tvorte zelené rýchle chodníky a používajte elixíry."
+
+#: ui.lua:29
+msgid "4. Healing & Co-op"
+msgstr "4. Liečenie a ko-op"
+
+#: ui.lua:30
+msgid "How to revive wilted plants, avoid overcrowding, and play with friends."
+msgstr "Ako oživiť zvädnuté rastliny, vyhnúť sa preplneniu a hrať s priateľmi."
+
+#: ui.lua:33
+msgid "5. Top 10 Scores"
+msgstr "5. Top 10 skóre"
+
+#: ui.lua:34
+msgid "See the highest levels reached and best runs saved on this world."
+msgstr "Pozrite si najvyššie dosiahnuté úrovne a najlepšie pokusy v tomto svete."
+
+#: ui.lua:41
+msgid "WELCOME TO THE WIZARD'S GLASS TERRARIUM!"
+msgstr "VITAJTE V ČARODEJNÍKOVOM SKLENENOM TERÁRIU!"
+
+#: ui.lua:44
+msgid "You have been shrunk down inside an open-top glass box on a wizard's wooden desk."
+msgstr "Boli ste zmenšení do otvorenej sklenenej skrinky na čarodejníkovom drevenom stole."
+
+#: ui.lua:48
+msgid "Glowing rings appear on the soil before fire, ice, acid, or chalk blocks drop in from above — clear them on the floor with Tools [1–4], or catch them in mid-air for extra plant growth!"
+msgstr "Na pôde sa zjavia žiariace kruhy predtým, než zhora dopadnú bloky ohňa, ľadu, kyseliny či kriedy — čistite ich na zemi nástrojmi [1–4] alebo ich zachyťte vo vzduchu pre extra rast rastlín!"
+
+#: ui.lua:54
+msgid "✦ YOUR GOAL: GROW EVERY PLANT TO 100% BLOOM"
+msgstr "✦ VÁŠ CIEĽ: VYPESTUJTE KAŽDÚ RASTLINU NA 100% ROZKVET"
+
+#: ui.lua:57
+msgid "Level 1 starts in 1 cozy glass room with charged Tools [2–4] (4 Puffs · 3 Splashes · 4 Sweeps, gaining +1 cap every 2 levels!)."
+msgstr "1. úroveň začína v 1 útulnej sklenenej miestnosti s nabitými nástrojmi [2–4] (4 fúknutia · 3 šplechnutia · 4 poprášenia, pričom každé 2 úrovne rastie kapacita o +1!)."
+
+#: ui.lua:64
+msgid "Reach 100% Bloom with all plants awake to finish the level, pick 1 of 3 Next-Level Blessings, and open a new archway room (plus Level 3+ Trial Waves)!"
+msgstr "Dosiahnite 100% Rozkvet so všetkými prebudenými rastlinami na dokončenie úrovne, vyberte si 1 z 3 Požehnaní do ďalšej úrovne a otvorte novú klenutú miestnosť (od 3. úrovne aj Skúšobné vlny)!"
+
+#: ui.lua:70
+msgid "✦ KEEP HEAT & SOIL COMFORTABLE"
+msgstr "✦ UDRŽUJTE TEPLO A PÔDU V POHODLÍ"
+
+#: ui.lua:71
+msgid "Heat [40°C – 60°C]"
+msgstr "Teplo [40°C – 60°C]"
+
+#: ui.lua:72
+msgid "Fiery Brimstone makes it hotter; blue Ice makes it colder."
+msgstr "Ohnivá Síra otepľuje; modrý Ľad ochladzuje."
+
+#: ui.lua:73
+msgid "Soil pH [5.6 – 8.4]"
+msgstr "pH pôdy [5.6 – 8.4]"
+
+#: ui.lua:74
+msgid "Green Acid makes soil too sour; Chalk makes soil too dry."
+msgstr "Zelená Kyselina pôdu okysľuje; Krieda ju vysušuje."
+
+#: ui.lua:77
+msgid "Keep leftover floor hazards low so the garden stays Balanced — plants heal themselves, wilted plants revive after 6s, and 8s of balance gives everyone a Harmony Boost!"
+msgstr "Udržujte nízky počet zvyšných hrozieb na podlahe, aby záhrada zostala v rovnováhe — rastliny sa samy liečia, zvädnuté ožijú po 6s a 8s rovnováhy dá všetkým Bonus harmónie!"
+
+#: ui.lua:94
+msgid "POINT AT ANY PICTURE · RIGHT-CLICK ANY PLANT!"
+msgstr "UKÁŽTE NA ĽUBOVOĽNÝ OBRÁZOK · KLIKNITE PRAVÝM NA RASTLINU!"
+
+#: ui.lua:96
+msgid "[1–4] Tools · [5] Guidebook · [I] Quick Guide · [Z] Call Room · [E+W] Sprint."
+msgstr "[1–4] Nástroje · [5] Príručka · [I] Rýchly návod · [Z] Označiť miestnosť · [E+W] Šprint."
+
+#: ui.lua:119
+msgid "What it does:"
+msgstr "Čo robí:"
+
+#: ui.lua:120
+msgid "How to clear:"
+msgstr "Ako vyčistiť:"
+
+#: ui.lua:135
+msgid "✦ HELPFUL COMBOS & BONUS CRYSTALS"
+msgstr "✦ UŽITOČNÉ KOMBÁ A BONUSOVÉ KRYŠTÁLY"
+
+#: ui.lua:137
+msgid "Combine Hot + Cold with Trowel [1]"
+msgstr "Spojte Horúce + Studené Lopatkou [1]"
+
+#: ui.lua:140
+msgid "Click Brimstone or Ice with Trowel [1] to scoop it up, then click right onto (or beside) its opposite so both burst into fresh Water & Steam!"
+msgstr "Kliknite na Síru alebo Ľad Lopatkou [1] pre nabratie, potom kliknite priamo na (alebo vedľa) jeho protiklad, aby oba vybuchli na čistú Vodu a Paru!"
+
+#: ui.lua:146
+msgid "Make Green Speed Soil (Acid + Chalk)"
+msgstr "Vytvorte zelenú Rýchlu pôdu (Kyselina + Krieda)"
+
+#: ui.lua:149
+msgid "Clear green Acid with Pestle [4] (or click Chalk onto Acid) to turn brown dirt into glowing Fertile Soil that boosts plant growth and running speed!"
+msgstr "Vyčistite zelenú Kyselinu Tĺčikom [4] (alebo kliknite Kriedou na Kyselinu) a premeňte hnedú hlinu na žiariacu Úrodnú pôdu, ktorá zrýchľuje rast rastlín aj váš beh!"
+
+#: ui.lua:155
+msgid "Prismatic Geodes & 85% Final Surge"
+msgstr "Prizmatické geódy a záverečný nápor pri 85%"
+
+#: ui.lua:158
+msgid "Click with Trowel [1] within 22s to clear nearby hazards & refill all Tools [2–4]!"
+msgstr "Kliknite Lopatkou [1] do 22s na vyčistenie okolitých hrozieb a doplnenie všetkých nástrojov [2–4]!"
+
+#: ui.lua:161
+msgid "Refilling Tools [2–4] & Emergency Prime:"
+msgstr "Dopĺňanie nástrojov [2–4] a núdzové nabitie:"
+
+#: ui.lua:164
+msgid "Siphon Brimstone → Bellows [2], Water/Steam → Flask [3], Chalk → Pestle [4] (or click empty air when empty for +1 emergency charge!)."
+msgstr "Odsajte Síru → Mechy [2], Vodu/Paru → Fľaša [3], Kriedu → Tĺčik [4] (alebo kliknite do prázdna pri prázdnom nástroji pre +1 núdzové nabitie!)."
+
+#: ui.lua:173
+msgid "✦ SPEED SOIL & RARE ELIXIRS [6–7]"
+msgstr "✦ RÝCHLA PÔDA A VZÁCNE ELIXÍRY [6–7]"
+
+#: ui.lua:175
+msgid "Extra potions past your belt cap auto-convert into bonus Bloom & healing!"
+msgstr "Extra elixíry nad kapacitu opaska sa automaticky premenia na bonusový Rozkvet a liečenie!"
+
+#: ui.lua:178
+msgid "Fertile Speed Soil"
+msgstr "Úrodná rýchla pôda"
+
+#: ui.lua:179
+msgid "(Pave Your Own Green Paths!)"
+msgstr "(Vydláždite si vlastné zelené chodníky!)"
+
+#: ui.lua:182
+msgid "Wash Chalk or dust Acid to pave glowing green paths that make you run much faster!"
+msgstr "Zmývajte Kriedu alebo poprášte Kyselinu a vydláždite si žiariace zelené chodníky, po ktorých pobežíte oveľa rýchlejšie!"
+
+#: ui.lua:185
+msgid "Aegis Potion [6]"
+msgstr "Elixír Egidy [6]"
+
+#: ui.lua:186
+msgid "(Geodes & Level Clears · Cap 2)"
+msgstr "(Z geód a úrovní · Max 2)"
+
+#: ui.lua:189
+msgid "Refills full health, revives all wilted plants, & shields you + plants for 12s (triggers automatically if you run out of health!)."
+msgstr "Doplní plné zdravie, oživí všetky zvädnuté rastliny a ochráni vás + rastliny na 12s (aktivuje sa automaticky pri strate zdravia!)."
+
+#: ui.lua:195
+msgid "Chronos Hourglass [7]"
+msgstr "Chronove presýpacie hodiny [7]"
+
+#: ui.lua:196
+msgid "(Every Level · Cap 2)"
+msgstr "(Každá úroveň · Max 2)"
+
+#: ui.lua:199
+msgid "Pauses falling blocks for 12s, clears nearby hazards, & speeds up everyone!"
+msgstr "Pozastaví padajúce bloky na 12s, vyčistí blízke hrozby a zrýchli všetkých!"
+
+#: ui.lua:222
+msgid "✦ PLANT HEALTH & HOW TO REVIVE"
+msgstr "✦ ZDRAVIE RASTLÍN A AKO ICH OŽIVIŤ"
+
+#: ui.lua:225
+msgid "Each room's plant has its own Plant Health (0% – 100%) and natural growth pace:"
+msgstr "Rastlina v každej miestnosti má vlastné Zdravie rastliny (0% – 100%) a prirodzené tempo rastu:"
+
+#: ui.lua:229
+msgid "Extreme heat/cold, sour/chalky soil, or hazards left right next to a plant slowly lower that plant's health."
+msgstr "Extrémne teplo/chlad, kyslá/kriedová pôda alebo hrozby ponechané hneď vedľa rastliny pomaly znižujú jej zdravie."
+
+#: ui.lua:236
+msgid "At 0% health, a plant WILTS and shows a bright red warning marker on screen so you can find it right away—even through walls!"
+msgstr "Pri 0% zdravia rastlina ZVÄDNE a zobrazí jasne červenú varovnú značku na obrazovke, aby ste ju ihneď našli — aj cez steny!"
+
+#: ui.lua:242
+msgid "3 EASY WAYS TO REVIVE A WILTED PLANT:"
+msgstr "3 JEDNODUCHÉ SPÔSOBY OŽIVENIA ZVÄDNUTEJ RASTLINY:"
+
+#: ui.lua:245
+msgid "Water Flask [3]: Left-Click right on the wilted plant (uses 1 splash)."
+msgstr "Fľaša s vodou [3]: Kliknite ľavým priamo na zvädnutú rastlinu (minie 1 šplechnutie)."
+
+#: ui.lua:249
+msgid "Aegis Potion: Drink one anywhere to revive every wilted plant at once!"
+msgstr "Elixír Egidy: Vypite jeden kdekoľvek a oživte všetky zvädnuté rastliny naraz!"
+
+#: ui.lua:253
+msgid "Calm Balance: Keep Heat & Soil comfortable for 6s (4s with Roots)!"
+msgstr "Pokojná rovnováha: Udržte teplo a pôdu v pohodlí na 6s (4s s Koreňmi)!"
+
+#: ui.lua:259
+msgid "✦ HOW A RUN CAN END (& HOW TO STAY SAFE)"
+msgstr "✦ AKO MÔŽE POKUS SKONČIŤ (A AKO ZOSTAŤ V BEZPEČÍ)"
+
+#: ui.lua:261
+msgid "Every Plant Wilts at Once"
+msgstr "Všetky rastliny zvädnú naraz"
+
+#: ui.lua:262
+msgid "Keep at least 1 plant healthy while you water any wilted ones!"
+msgstr "Udržte aspoň 1 rastlinu zdravú, kým polievate tie zvädnuté!"
+
+#: ui.lua:264
+msgid "Too Many Uncleared Blocks (8-Second Warning)"
+msgstr "Príliš veľa nevyčistených blokov (8-sekundové varovanie)"
+
+#: ui.lua:267
+msgid "If too many blocks pile up on the floor, an 8s warning counts down — clear a few blocks before time runs out to stay safe!"
+msgstr "Ak sa na podlahe nahromadí priveľa blokov, spustí sa 8s odpočet — vyčistite zopár blokov včas, aby ste zostali v bezpečí!"
+
+#: ui.lua:273
+msgid "Hazard Burns, Stings & Co-op"
+msgstr "Popáleniny, poleptanie a ko-op"
+
+#: ui.lua:276
+msgid "Standing on Brimstone, wading in Acid Slime, or standing under falling blocks hurts!"
+msgstr "Státie na Síre, brodenie v Kyslom slize alebo státie pod padajúcimi blokmi zraňuje!"
+
+#: ui.lua:280
+msgid "Solo: 0 HP brings you back in Room 1 (-30% plant HP). Press [Z] to call rooms!"
+msgstr "Sólo: 0 HP vás vráti do 1. miestnosti (-30% HP rastlín). Stlačte [Z] pre označenie miestnosti!"
+
+#: ui.lua:302
+msgid "★ TOP 10 TERRARIUM GARDENERS"
+msgstr "★ TOP 10 ZÁHRADNÍKOV TERÁRIA"
+
+#: ui.lua:306
+msgid "Ranked by Levels Won → Highest Level → Best Bloom → Hazards Cleared → Fastest Time."
+msgstr "Zoradené podľa: Vyhrané úrovne → Najvyššia úroveň → Najlepší rozkvet → Vyčistené hrozby → Najrýchlejší čas."
+
+#: ui.lua:351
+msgid "GRIMOIRE"
+msgstr "GRIMOÁR"
+
+#: ui.lua:356
+msgid "Garden Status & Pace"
+msgstr "Stav záhrady a tempo"
+
+#: ui.lua:357
+msgid "Check each plant's health, see this level's blessing, or change the game pace."
+msgstr "Skontrolujte zdravie každej rastliny, pozrite si požehnanie tejto úrovne alebo zmeňte tempo hry."
+
+#: ui.lua:361 ui.lua:462
+msgid "Back to Game"
+msgstr "Späť do hry"
+
+#: ui.lua:362
+msgid "Close the Guidebook and return to your garden."
+msgstr "Zavrieť príručku a vrátiť sa do záhrady."
+
+#: ui.lua:369
+msgid "THE GARDENER'S GUIDEBOOK"
+msgstr "ZÁHRADNÍKOVA PRÍRUČKA"
+
+#: ui.lua:372
+msgid "Illustrated How-to-Play · Point at any block, tool, or potion picture to read its full tip"
+msgstr "Ilustrovaný návod ako hrať · Ukážte na obrázok ľubovoľného bloku, nástroja alebo elixíru pre celý tip"
+
+#: ui.lua:395
+msgid "★ LEVEL COMPLETE ★"
+msgstr "★ ÚROVEŇ DOKONČENÁ ★"
+
+#: ui.lua:397
+msgid "✖ RUN ENDED ✖"
+msgstr "✖ POKUS SKONČIL ✖"
+
+#: ui.lua:401
+msgid "Plant Shield (@1s)"
+msgstr "Štít rastlín (@1s)"
+
+#: ui.lua:403
+msgid "Balanced (@1s)"
+msgstr "V rovnováhe (@1s)"
+
+#: ui.lua:405
+msgid "Floor Cluttered!"
+msgstr "Podlaha zahltená!"
+
+#: ui.lua:407
+msgid "Off Balance!"
+msgstr "Mimo rovnováhy!"
+
+#: ui.lua:421
+msgid "#@1: WILTED (@2% Bloom)"
+msgstr "#@1: ZVÄDNUTÁ (@2% Rozkvet)"
+
+#: ui.lua:429
+msgid "#@1: @2% Bloom (@3% HP)"
+msgstr "#@1: @2% Rozkvet (@3% HP)"
+
+#: ui.lua:435
+msgid "Starting..."
+msgstr "Začíname..."
+
+#: ui.lua:445
+msgid "None yet (Finish a level to pick 1 of 3 Next-Level Blessings!)"
+msgstr "Zatiaľ žiadne (Dokončite úroveň a vyberte si 1 z 3 Požehnaní do ďalšej úrovne!)"
+
+#: ui.lua:456
+msgid "★ Pick Blessing & Next Room! ★"
+msgstr "★ Vybrať Požehnanie a ďalšiu miestnosť! ★"
+
+#: ui.lua:457
+msgid "Open the Level Complete screen to pick your Next-Level Blessing and unlock the next room."
+msgstr "Otvoriť obrazovku dokončenia úrovne, vybrať Požehnanie a odomknúť ďalšiu miestnosť."
+
+#: ui.lua:463
+msgid "Close this menu and keep caring for your plants."
+msgstr "Zavrieť túto ponuku a pokračovať v starostlivosti o rastliny."
+
+#: ui.lua:467
+msgid "Casual (@1s)"
+msgstr "Pohodové (@1s)"
+
+#: ui.lua:468
+msgid "Normal (@1s)"
+msgstr "Normálne (@1s)"
+
+#: ui.lua:469
+msgid "Panic (@1s)"
+msgstr "Panika (@1s)"
+
+#: ui.lua:474
+msgid "Garden Condition"
+msgstr "Stav záhrady"
+
+#: ui.lua:475
+msgid "Keep Heat (40–60°C) and Soil pH (5.6–8.4) comfortable so your plants thrive."
+msgstr "Udržujte teplo (40–60°C) a pH pôdy (5.6–8.4) v pohodlí, aby rastliny prosperovali."
+
+#: ui.lua:479
+msgid "Plant Growth (Goal: 100%)"
+msgstr "Rast rastlín (Cieľ: 100%)"
+
+#: ui.lua:480
+msgid "@1%  (Stage @2/4)"
+msgstr "@1%  (Fáza @2/4)"
+
+#: ui.lua:482
+msgid "Grow your plants to 100% Bloom with all plants awake to finish the level!"
+msgstr "Vypestujte rastliny na 100% Rozkvet so všetkými prebudenými rastlinami na dokončenie úrovne!"
+
+#: ui.lua:486
+msgid "Plants Awake & Health"
+msgstr "Prebudené rastliny a zdravie"
+
+#: ui.lua:487
+msgid "@1 / @2  (@3% Avg)"
+msgstr "@1 / @2  (Priem. @3%)"
+
+#: ui.lua:489
+msgid "Heal hurt or wilted plants with Water Flask [3], Aegis Potion, or 6s of Balance."
+msgstr "Liečte oslabené alebo zvädnuté rastliny Fľašou s vodou [3], Elixírom Egidy alebo 6s rovnováhy."
+
+#: ui.lua:494
+msgid "Heat [40–60°C] · Soil [5.6–8.4]"
+msgstr "Teplo [40–60°C] · Pôda [5.6–8.4]"
+
+#: ui.lua:495
+msgid "@1°C  |  @2 pH"
+msgstr "@1°C  |  @2 pH"
+
+#: ui.lua:497
+msgid "Comfort Zone: 40–60°C Heat and 5.6–8.4 Soil pH."
+msgstr "Zóna pohodlia: teplo 40–60°C a pH pôdy 5.6–8.4."
+
+#: ui.lua:501
+msgid "Floor Hazard Limit"
+msgstr "Limit hrozieb na podlahe"
+
+#: ui.lua:502
+msgid "@1 / @2 Max Blocks"
+msgstr "@1 / @2 max blokov"
+
+#: ui.lua:504
+msgid "Going over the max starts an 8-second warning — clear a few blocks in time to stay safe!"
+msgstr "Prekročenie maxima spustí 8-sekundové varovanie — vyčistite pár blokov včas, aby ste zostali v bezpečí!"
+
+#: ui.lua:508
+msgid "Hazards Cleared & Time"
+msgstr "Vyčistené hrozby a čas"
+
+#: ui.lua:509
+msgid "@1 Cleared  (@2s)"
+msgstr "@1 vyčistených  (@2s)"
+
+#: ui.lua:511
+msgid "Crack Prismatic Geodes & finish levels to earn rare Aegis Potions & Chronos Hourglasses!"
+msgstr "Rozbíjajte Prizmatické geódy a dokončujte úrovne pre vzácne Elixíry Egidy a Chronove presýpacie hodiny!"
+
+#: ui.lua:519
+msgid "PLANTS BY ROOM:"
+msgstr "RASTLINY PODĽA MIESTNOSTÍ:"
+
+#: ui.lua:522
+msgid "THIS LEVEL'S BLESSING:"
+msgstr "POŽEHNANIE TEJTO ÚROVNE:"
+
+#: ui.lua:532
+msgid "GAME PACE (HOW FAST BLOCKS FALL)"
+msgstr "TEMPO HRY (AKO RÝCHLO PADAJÚ BLOKY)"
+
+#: ui.lua:534
+msgid "(Change anytime — active choice highlighted):"
+msgstr "(Zmeňte kedykoľvek — aktívna voľba je zvýraznená):"
+
+#: ui.lua:541
+msgid "Relaxed, unhurried pace — great for learning tools and enjoying your garden."
+msgstr "Pokojné, nenáhlivé tempo — skvelé na učenie sa nástrojov a vychutnávanie záhrady."
+
+#: ui.lua:547
+msgid "Comfortable, balanced pace — recommended for most players."
+msgstr "Príjemné, vyvážené tempo — odporúčané pre väčšinu hráčov."
+
+#: ui.lua:553
+msgid "Fast falling blocks — build green Speed Soil paths and use potions to keep up!"
+msgstr "Rýchlo padajúce bloky — budujte zelené chodníky Rýchlej pôdy a používajte elixíry!"
+
+#: ui.lua:559 ui.lua:620 ui.lua:851
+msgid "Open Guidebook"
+msgstr "Otvoriť príručku"
+
+#: ui.lua:560
+msgid "Read the 5-tab picture guide to every block, tool, potion, and plant tip."
+msgstr "Prečítajte si 5-kartového obrázkového sprievodcu každým blokom, nástrojom, elixírom a tipmi."
+
+#: ui.lua:564
+msgid "★ Top 10 Scores ★"
+msgstr "★ Top 10 skóre ★"
+
+#: ui.lua:565
+msgid "View the Top 10 best runs saved on this world."
+msgstr "Zobraziť Top 10 najlepších pokusov uložených v tomto svete."
+
+#: ui.lua:569
+msgid "Start Over at Level 1"
+msgstr "Začať odznova na 1. úrovni"
+
+#: ui.lua:570
+msgid "Save your current score and begin a brand-new Level 1 garden."
+msgstr "Uložiť aktuálne skóre a začať úplne novú záhradu od 1. úrovne."
+
+#: ui.lua:576
+msgid "GARDEN CONTROLS — LEVEL @1 (1 ROOM)"
+msgstr "OVLÁDANIE ZÁHRADY — ÚROVEŇ @1 (1 MIESTNOSŤ)"
+
+#: ui.lua:577
+msgid "GARDEN CONTROLS — LEVEL @1 (@2 ROOMS)"
+msgstr "OVLÁDANIE ZÁHRADY — ÚROVEŇ @1 (@2 MIESTNOSTI/Í)"
+
+#: ui.lua:585
+msgid "Check Plant Health, Active Blessing, Game Pace, Guidebook & Top 10 Scores"
+msgstr "Kontrola zdravia rastlín, aktívneho požehnania, tempa hry, príručky a Top 10 skóre"
+
+#: ui.lua:609 ui.lua:729 ui.lua:839
+msgid "Shareable Run Summary (Select & Copy):"
+msgstr "Zhrnutie pokusu na zdieľanie (Označte a skopírujte):"
+
+#: ui.lua:611 ui.lua:731 ui.lua:841
+msgid "Select and copy your run summary to share with friends or on Jam threads!"
+msgstr "Označte a skopírujte zhrnutie pokusu na zdieľanie s priateľmi alebo vo vláknach Jamu!"
+
+#: ui.lua:615
+msgid "Garden Status"
+msgstr "Stav záhrady"
+
+#: ui.lua:616
+msgid "Open live plant health and Game Pace controls."
+msgstr "Otvoriť živý prehľad zdravia rastlín a nastavenie tempa hry."
+
+#: ui.lua:621
+msgid "Open the illustrated Gardener's Guidebook."
+msgstr "Otvoriť ilustrovanú Záhradníkovu príručku."
+
+#: ui.lua:625
+msgid "Close"
+msgstr "Zavrieť"
+
+#: ui.lua:626
+msgid "Return to your garden."
+msgstr "Vrátiť sa do záhrady."
+
+#: ui.lua:633
+msgid "★ TOP 10 TERRARIUM GARDENERS ★"
+msgstr "★ TOP 10 ZÁHRADNÍKOV TERÁRIA ★"
+
+#: ui.lua:636
+msgid "Best Runs Saved on This World — Levels Won, Best Bloom & Hazards Cleared"
+msgstr "Najlepšie pokusy uložené v tomto svete — Vyhrané úrovne, Najlepší rozkvet a Vyčistené hrozby"
+
+#: ui.lua:658
+msgid "ALL @1 PLANT(S) BLOOMED IN @2s! PICK 1 BLESSING FOR LEVEL @3:"
+msgstr "VŠETKÝCH @1 RASTLÍN ROZKVITLO ZA @2s! VYBERTE SI 1 POŽEHNANIE PRE ÚROVEŇ @3:"
+
+#: ui.lua:662
+msgid "Next Up (Level @1):"
+msgstr "Nasleduje (Úroveň @1):"
+
+#: ui.lua:663
+msgid "Opens Glass Room #@1 with Plant #@2 (@3 falling block(s) per wave — your green Speed Soil paths stay!)."
+msgstr "Otvára Sklenenú miestnosť #@1 s Rastlinou #@2 (@3 padajúce bloky na vlnu — zelené chodníky zostávajú!)."
+
+#: ui.lua:667
+msgid "Fresh Every Level:"
+msgstr "Čerstvé v každej úrovni:"
+
+#: ui.lua:668
+msgid "Your Blessing lasts all of Level @1, plus +1 Aegis Potion & +1 Chronos Hourglass!"
+msgstr "Vaše Požehnanie trvá celú Úroveň @1, plus získate +1 Elixír Egidy a +1 Chronove presýpacie hodiny!"
+
+#: ui.lua:693
+msgid "Pick: @1 → Lvl @2"
+msgstr "Vybrať: @1 → Úr. @2"
+
+#: ui.lua:694
+msgid "Choose '@1' (@2) for Level @3 and open Room #@4!"
+msgstr "Vybrať '@1' (@2) pre Úroveň @3 a otvoriť Miestnosť #@4!"
+
+#: ui.lua:722 ui.lua:832
+msgid "TOP 10 SCORES:"
+msgstr "TOP 10 SKÓRE:"
+
+#: ui.lua:736
+msgid "Start Fresh at Level 1"
+msgstr "Začať nanovo na 1. úrovni"
+
+#: ui.lua:737
+msgid "Start a brand-new single-room Level 1 garden."
+msgstr "Začať úplne novú jednomiestnostnú záhradu 1. úrovne."
+
+#: ui.lua:741
+msgid "Look Around First"
+msgstr "Najprv sa poobzerať"
+
+#: ui.lua:742
+msgid "Close this window to admire your blooming plants (right-click any Plant when ready!)."
+msgstr "Zavrieť toto okno a obdivovať rozkvitnuté rastliny (keď budete pripravení, kliknite pravým na rastlinu!)."
+
+#: ui.lua:751
+msgid "★ LEVEL @1 COMPLETE — PICK YOUR NEXT-LEVEL BLESSING! ★"
+msgstr "★ ÚROVEŇ @1 DOKONČENÁ — VYBERTE SI POŽEHNANIE DO ĎALŠEJ ÚROVNE! ★"
+
+#: ui.lua:755
+msgid "Choose 1 Blessing for Level @1 (lasts the whole next level, then pick a fresh one!)"
+msgstr "Vyberte si 1 Požehnanie pre Úroveň @1 (trvá celú ďalšiu úroveň, potom si vyberiete nové!)"
+
+#: ui.lua:771
+msgid "Clear hazards steadily with Bellows [2], Water Flask [3], & Pestle [4], or use a Chronos Hourglass to pause falling blocks!"
+msgstr "Priebežne čistite hrozby Mechmi [2], Fľašou s vodou [3] a Tĺčikom [4], alebo použite Chronove presýpacie hodiny na pozastavenie blokov!"
+
+#: ui.lua:776
+msgid "Heal hurt or wilted plants anytime by Left-Clicking them with a filled Water Flask [3] or drinking an Aegis Potion!"
+msgstr "Liečte oslabené či zvädnuté rastliny kedykoľvek ľavým klikom plnou Fľašou s vodou [3] alebo vypitím Elixíru Egidy!"
+
+#: ui.lua:781
+msgid "Step around fiery Brimstone and green Acid Slime so they don't burn your feet—and drink an Aegis Potion whenever you need a full heal!"
+msgstr "Obchádzajte ohnivú Síru a zelený Kyslý sliz, aby vám nepálili nohy — a vypite Elixír Egidy vždy, keď potrebujete plné vyliečenie!"
+
+#: ui.lua:802
+msgid "Reached Level @1 (1 Room)  ·  Best Bloom on Level @2: @3%  ·  Time: @4s"
+msgstr "Dosiahnutá Úroveň @1 (1 miestnosť)  ·  Najlepší rozkvet na Úrovni @2: @3%  ·  Čas: @4s"
+
+#: ui.lua:807
+msgid "Reached Level @1 (@2 Rooms)  ·  Best Bloom on Level @3: @4%  ·  Time: @5s"
+msgstr "Dosiahnutá Úroveň @1 (@2 miestnosti/í)  ·  Najlepší rozkvet na Úrovni @3: @4%  ·  Čas: @5s"
+
+#: ui.lua:817
+msgid "WHAT HAPPENED: @1"
+msgstr "ČO SA STALO: @1"
+
+#: ui.lua:818
+msgid "Your Run:"
+msgstr "Váš pokus:"
+
+#: ui.lua:819
+msgid "Helpful Tip for Next Time:"
+msgstr "Užitočný tip nabudúce:"
+
+#: ui.lua:846
+msgid "Play Again (Start Level 1)"
+msgstr "Hrať znova (Začať 1. úroveň)"
+
+#: ui.lua:847
+msgid "Tidy up the terrarium and start a fresh Level 1 garden!"
+msgstr "Upratať terárium a začať novú záhradu 1. úrovne!"
+
+#: ui.lua:852
+msgid "Read picture tips on tools, combos, and healing plants."
+msgstr "Prečítať si obrázkové tipy o nástrojoch, kombách a liečení rastlín."
+
+#: ui.lua:856
+msgid "Look Around"
+msgstr "Poobzerať sa"
+
+#: ui.lua:857
+msgid "Close this window to look around (right-click any Plant to start again)."
+msgstr "Zavrieť toto okno a poobzerať sa (kliknite pravým na ľubovoľnú rastlinu pre nový štart)."
+
+#: ui.lua:864
+msgid "✖ GARDEN RUN ENDED ON LEVEL @1 ✖"
+msgstr "✖ ZÁHRADNÝ POKUS SKONČIL NA ÚROVNI @1 ✖"
+
+#: ui.lua:867
+msgid "No worries — right-click any Plant or press [I] to switch to Casual pace anytime!"
+msgstr "Žiadny strach — kliknite pravým na rastlinu alebo stlačte [I] a kedykoľvek prepnite na Pohodové tempo!"
+
+#: ui.lua:900 ui.lua:911 ui.lua:922
+msgid "Game Pace"
+msgstr "Tempo hry"
+
+#: ui.lua:903
+msgid "Switched to CASUAL pace (about @1s between falling blocks)."
+msgstr "Prepnuté na POHODOVÉ tempo (približne @1s medzi padajúcimi blokmi)."
+
+#: ui.lua:914
+msgid "Switched to NORMAL pace (about @1s between falling blocks)."
+msgstr "Prepnuté na NORMÁLNE tempo (približne @1s medzi padajúcimi blokmi)."
+
+#: ui.lua:925
+msgid "Switched to PANIC pace (about @1s between falling blocks)!"
+msgstr "Prepnuté na tempo PANIKA (približne @1s medzi padajúcimi blokmi)!"
+
+#: ui.lua:942
+msgid "Garden Reset"
+msgstr "Reštart záhrady"
+
+#: ui.lua:943
+msgid "Started a fresh Level 1 garden (1 Room, 1 Plant)!"
+msgstr "Začatá nová záhrada 1. úrovne (1 miestnosť, 1 rastlina)!"
+
+#: ui.lua:967
+msgid "Blessing Picked"
+msgstr "Požehnanie vybrané"
+
+#: ui.lua:970
+msgid "@1 chose [@2] — @3"
+msgstr "@1 si vybral(a) [@2] — @3"
+
+
+#: hud_migration
+msgid "✦ Welcome to the Garden!"
+msgstr "✦ Vitaj v záhrade!"
+
+#: hud_migration
+msgid "[1–4] Tools · [5] Guide · [I] Bag"
+msgstr "[1–4] Nástroje · [5] Kniha · [I] Vak"
+
+#: hud_migration
+msgid "★ Trial: Twin Opposites!"
+msgstr "★ Skúška: Opačné dvojice!"
+
+#: hud_migration
+msgid "Pair Hot+Cold or Acid+Chalk [1]!"
+msgstr "Spájaj opačné bloky lopatkou [1]!"
+
+#: hud_migration
+msgid "★ Trial: Ember Shower!"
+msgstr "★ Skúška: Ohnivý dážď!"
+
+#: hud_migration
+msgid "Quench Brimstone with Flask [3]!"
+msgstr "Schlaď síru fľašou vody [3]!"
+
+#: hud_migration
+msgid "★ Trial: Frost Squall!"
+msgstr "★ Skúška: Ľadová fujavica!"
+
+#: hud_migration
+msgid "Melt blue Ice with Bellows [2]!"
+msgstr "Roztop ľad mechom [2]!"
+
+#: hud_migration
+msgid "★ Trial: Sour Drizzle!"
+msgstr "★ Skúška: Kyslá spŕška!"
+
+#: hud_migration
+msgid "Sweep green Acid with Pestle [4]!"
+msgstr "Zotri kyselinu tĺčikom [4]!"
+
+#: hud_migration
+msgid "✦ Bonus Geode Falling!"
+msgstr "✦ Padá bonusová geóda!"
+
+#: hud_migration
+msgid "Crack with Trowel [1] within 22s!"
+msgstr "Rozbi lopatkou [1] do 22s!"
+
+#: hud_migration
+msgid "✖ Too Many Hazards (@1/@2)!"
+msgstr "✖ Priveľa hrozieb (@1/@2)!"
+
+#: hud_migration
+msgid "Clear @1 block(s) within @2s!"
+msgstr "Odstráň @1 blok(y) do @2s!"
+
+#: hud_migration
+msgid "✦ Room Safe Again!"
+msgstr "✦ Skleník je opäť v bezpečí!"
+
+#: hud_migration
+msgid "Overcrowding cleared — glass saved!"
+msgstr "Preplnenie odstránené — sklo drží!"
+
+#: hud_migration
+msgid "Splash with Flask [3] or Aegis!"
+msgstr "Polej fľašou [3] alebo Egidou!"
+
+#: hud_migration
+msgid "✦ Grew into @1!"
+msgstr "✦ Vyrástol na: @1!"
+
+#: hud_migration
+msgid "✦ Sprout #@1 → @2!"
+msgstr "✦ Výhonok #@1 → @2!"
+
+#: hud_migration
+msgid "@1% Bloom reached"
+msgstr "Dosiahnutých @1% rozkvetu"
+
+#: hud_migration
+msgid "★ 85% Final Bloom Surge!"
+msgstr "★ 85% Finálna vlna rozkvetu!"
+
+#: hud_migration
+msgid "Crack Geode or Pair [1] for 100%!"
+msgstr "Rozbi geódu alebo spoj pár [1]!"
+
+#: hud_migration
+msgid "★ Level @1 Complete!"
+msgstr "★ Úroveň @1 dokončená!"
+
+#: hud_migration
+msgid "Pick a Blessing for Room #@1!"
+msgstr "Vyber požehnanie pre miestnosť #@1!"
+
+#: hud_migration
+msgid "Pace: Casual (~@1s waves)"
+msgstr "Tempo: Pohodové (~@1s vlny)"
+
+#: hud_migration
+msgid "Pace: Normal (~@1s waves)"
+msgstr "Tempo: Normálne (~@1s vlny)"
+
+#: hud_migration
+msgid "Pace: Panic (~@1s waves)!"
+msgstr "Tempo: Panika (~@1s vlny)!"
+
+#: hud_migration
+msgid "✦ Garden Reset — Level 1"
+msgstr "✦ Reštart záhrady — Úroveň 1"
+
+#: hud_migration
+msgid "Started a fresh Level 1 garden!"
+msgstr "Začatá nová záhrada 1. úrovne!"

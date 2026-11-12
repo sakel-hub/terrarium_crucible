@@ -1,0 +1,124 @@
+# Translation catalog for tc_init (Terrarium Crucible)
+# Copyright (C) 2026 SaKeL
+# License: MIT
+msgid ""
+msgstr ""
+"Project-Id-Version: tc_init 1.0\n"
+"POT-Creation-Date: 2026-11-11 00:00+0000\n"
+"PO-Revision-Date: 2026-11-11 00:00+0000\n"
+"Last-Translator: SaKeL\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: api.lua:154
+msgid "Scorching Brimstone (Hot)"
+msgstr "灼熱の硫黄（高温）"
+
+#: api.lua:155
+msgid "Splash with Flask [3], siphon with low Bellows [2] to refill, or pair with Ice [1]."
+msgstr "フラスコ [3] で水をかけるか、残量の少ないふいご [2] で吸収補充、または氷と [1] で合成。"
+
+#: api.lua:161
+msgid "Glacial Ice Shard (Cold)"
+msgstr "氷河の氷片（低温）"
+
+#: api.lua:162
+msgid "Melt with Bellows [2] into Water, then scoop Water with Flask [3] to refill!"
+msgstr "ふいご [2] で水に溶かし、フラスコ [3] で水をすくって補充しよう！"
+
+#: api.lua:168
+msgid "Vitriol Acid Slime (Sour)"
+msgstr "硫酸スライム（酸性）"
+
+#: api.lua:169
+msgid "Sweep with Pestle [4] (or pair Chalk [1] on it) to make green Speed Soil!"
+msgstr "乳棒 [4] で掃くか（チョークと [1] で合成して）緑の加速ソイルに変えよう！"
+
+#: api.lua:175
+msgid "Alkaline Chalk (Dry)"
+msgstr "アルカリチョーク（乾燥）"
+
+#: api.lua:176
+msgid "Wash with Flask [3], grind with low Pestle [4] to refill, or pair with Acid [1]."
+msgstr "フラスコ [3] で洗い流すか、残量の少ない乳棒 [4] で砕いて補充、または酸と [1] で合成。"
+
+#: api.lua:205
+msgid "Open Guidebook"
+msgstr "ガイドブックを開く"
+
+#: api.lua:206
+msgid "Read the illustrated 5-tab Guidebook to learn every tool, block, potion, and blessing."
+msgstr "イラスト付き5タブのガイドブックで、道具・ブロック・ポーション・祝福を確認します。"
+
+#: api.lua:210
+msgid "Garden Status"
+msgstr "庭のステータス"
+
+#: api.lua:211
+msgid "Check each plant's health, see this level's blessing, or change the game pace anytime."
+msgstr "各植物のHPや現在の祝福の確認、ゲーム速度の変更がいつでも行えます。"
+
+#: api.lua:215
+msgid "Top 10 Scores"
+msgstr "トップ10スコア"
+
+#: api.lua:216
+msgid "See the Top 10 best runs saved on this world."
+msgstr "このワールドに保存されたベスト10記録を表示します。"
+
+#: api.lua:221
+msgid "SATCHEL"
+msgstr "サッチェル"
+
+#: api.lua:229
+msgid "YOUR BAG & QUICK TOOL GUIDE"
+msgstr "バッグ＆道具クイックガイド"
+
+#: api.lua:230
+msgid "Keep Heat (40–60°C) & Soil pH (5.6–8.4) comfortable until every plant reaches 100% Bloom!"
+msgstr "すべての植物が100%開花するまで、温度（40–60°C）と土壌pH（5.6–8.4）を快適に保とう！"
+
+#: init.lua:21
+msgid "Gloved Hand"
+msgstr "園芸グローブ"
+
+#: init.lua:22
+msgid "Empty Hand"
+msgstr "素手"
+
+#: init.lua:23
+msgid "Your sturdy leather gardening glove."
+msgstr "丈夫な革製の園芸用グローブ。"
+
+#: init.lua:24
+msgid "Press keys [1] to [5] on your keyboard (or scroll the mouse wheel) to use your tools!"
+msgstr "キーボードの [1]～[5] キー（またはマウスホイール）で道具を持ち替えよう！"
+
+#: init.lua:27
+msgid "Gloved Hand — Press [1–5] for Tools"
+msgstr "園芸グローブ — [1–5] で道具切替"
+
+#: init.lua:64
+msgid "Bag & Guide"
+msgstr "バッグ＆ガイド"
+
+#: init.lua:101
+msgid "Saved!"
+msgstr "危機一髪！"
+
+#: init.lua:104
+msgid "Your Aegis Potion activated automatically to refill your health and shield your garden!"
+msgstr "イージスポーションが自動発動し、HP全快＆庭全体にシールドを展開しました！"
+
+
+#: hud_migration
+msgid "✦ Saved by Auto-Aegis!"
+msgstr "✦ オート・イージス発動！"
+
+#: hud_migration
+msgid "Health refilled & garden shielded (@1s)!"
+msgstr "HP全快＆庭園シールド展開 (@1秒)！"

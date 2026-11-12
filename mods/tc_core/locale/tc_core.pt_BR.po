@@ -1,0 +1,1500 @@
+# Translation catalog for tc_core (Terrarium Crucible)
+# Copyright (C) 2026 SaKeL
+# License: MIT
+msgid ""
+msgstr ""
+"Project-Id-Version: tc_core 1.0\n"
+"POT-Creation-Date: 2026-11-11 00:00+0000\n"
+"PO-Revision-Date: 2026-11-11 00:00+0000\n"
+"Last-Translator: SaKeL\n"
+"Language-Team: Portuguese (Brazil)\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: api.lua:207 api.lua:208
+msgid "Aegis Shield"
+msgstr "Escudo Égide"
+
+#: api.lua:214
+msgid "Time Freeze Speed"
+msgstr "Velocidade Cronos"
+
+#: api.lua:215
+msgid "Time Freeze"
+msgstr "Tempo Parado"
+
+#: api.lua:221 api.lua:222
+msgid "Harmony Boost"
+msgstr "Impulso Harmonia"
+
+#: api.lua:228
+msgid "Green Soil Speed"
+msgstr "Velocidade Solo"
+
+#: api.lua:229
+msgid "Soil Speed"
+msgstr "Passo Veloz"
+
+#: api.lua:235
+msgid "Steam High Jump"
+msgstr "Supersalto Vapor"
+
+#: api.lua:236
+msgid "Steam Jump"
+msgstr "Salto a Vapor"
+
+#: api.lua:243 api.lua:244
+msgid "Recovering"
+msgstr "Recuperando"
+
+#: api.lua:266
+msgid "Deep Retort"
+msgstr "Retorta Profunda"
+
+#: api.lua:269
+msgid "Next Level: Water Flask [3] holds +2 extra Splashes & refills immediately."
+msgstr "Próximo Nível: Frasco d'Água [3] guarda +2 Borrifos extras e já recarrega na hora."
+
+#: api.lua:270
+msgid "Water Flask [3] holds +2 extra Splashes & refills immediately."
+msgstr "Frasco d'Água [3] guarda +2 Borrifos extras e já recarrega na hora."
+
+#: api.lua:274
+msgid "Dragonlung Bellows"
+msgstr "Fole Dracônico"
+
+#: api.lua:277
+msgid "Next Level: Bellows [2] holds +2 extra Puffs, melts 3x3 Ice & gives extra growth."
+msgstr "Próximo Nível: Fole [2] guarda +2 Sopros extras, derrete Gelo 3x3 e dá mais crescimento."
+
+#: api.lua:278
+msgid "Bellows [2] holds +2 extra Puffs, melts 3x3 Ice & gives extra growth."
+msgstr "Fole [2] guarda +2 Sopros extras, derrete Gelo 3x3 e dá mais crescimento."
+
+#: api.lua:282
+msgid "Starlight Mortar"
+msgstr "Almofariz Estelar"
+
+#: api.lua:285
+msgid "Next Level: Pestle [4] holds +2 extra Sweeps, clears 5x5 Acid & gives extra growth."
+msgstr "Próximo Nível: Pilão [4] guarda +2 Varridas extras, limpa Ácido 5x5 e dá mais crescimento."
+
+#: api.lua:286
+msgid "Pestle [4] holds +2 extra Sweeps, clears 5x5 Acid & gives extra growth."
+msgstr "Pilão [4] guarda +2 Varridas extras, limpa Ácido 5x5 e dá mais crescimento."
+
+#: api.lua:290
+msgid "Ley-Line Roots"
+msgstr "Raízes Telúricas"
+
+#: api.lua:293
+msgid "Next Level: Plants heal faster when balanced & revive in 4s (was 6s)."
+msgstr "Próximo Nível: Plantas curam mais rápido em equilíbrio e revivem em 4s (era 6s)."
+
+#: api.lua:294
+msgid "Plants heal faster when balanced & revive in 4s (was 6s)."
+msgstr "Plantas curam mais rápido em equilíbrio e revivem em 4s (era 6s)."
+
+#: api.lua:298
+msgid "Hermetic Boots"
+msgstr "Botas Herméticas"
+
+#: api.lua:301
+msgid "Next Level: Run faster on green Soil & take half damage from hazards."
+msgstr "Próximo Nível: Corra mais rápido no Solo verde e sofra metade do dano de perigos."
+
+#: api.lua:302
+msgid "Run faster on green Soil & take half damage from hazards."
+msgstr "Corra mais rápido no Solo verde e sofra metade do dano de perigos."
+
+#: api.lua:306
+msgid "Featherfall Winds"
+msgstr "Ventos de Pluma"
+
+#: api.lua:309
+msgid "Next Level: Blocks fall slower (+1.5s waves) & mid-air catches give extra Bloom."
+msgstr "Próximo Nível: Blocos caem mais devagar (+1.5s nas ondas) e pegar no ar dá mais Floração."
+
+#: api.lua:310
+msgid "Blocks fall slower (+1.5s waves) & mid-air catches give extra Bloom."
+msgstr "Blocos caem mais devagar (+1.5s nas ondas) e pegar no ar dá mais Floração."
+
+#: api.lua:314
+msgid "Crystal Resonance"
+msgstr "Ressonância Cristalina"
+
+#: api.lua:317
+msgid "Next Level: Bonus Geodes drop twice as often & Trowel [1] combos give +25% Bloom."
+msgstr "Próximo Nível: Geodos bônus caem 2x mais e combos com a Pá [1] dão +25% Floração."
+
+#: api.lua:318
+msgid "Bonus Geodes drop twice as often & Trowel [1] combos give +25% Bloom."
+msgstr "Geodos bônus caem 2x mais e combos com a Pá [1] dão +25% Floração."
+
+#: api.lua:322
+msgid "Sunlit Dew"
+msgstr "Orvalho Solar"
+
+#: api.lua:325
+msgid "Next Level: Start with +1 extra Aegis Potion (14s shield), & Balance heals 1 Heart/3s!"
+msgstr "Próximo Nível: Comece com +1 Poção Égide extra (escudo 14s) e Equilíbrio cura 1 coração/3s!"
+
+#: api.lua:326
+msgid "Start with +1 extra Aegis Potion (14s shield), & Balance heals 1 Heart/3s!"
+msgstr "Comece com +1 Poção Égide extra (escudo 14s) e Equilíbrio cura 1 coração/3s!"
+
+#: api.lua:976
+msgid "★ Nice Combo! Brimstone + Ice"
+msgstr "★ Ótimo Combo! Enxofre + Gelo"
+
+#: api.lua:1011
+msgid "★ Nice Combo! Acid + Chalk"
+msgstr "★ Ótimo Combo! Ácido + Giz"
+
+#: api.lua:1578
+msgid "Hot Brimstone! Step off & splash with Flask [3]."
+msgstr "Enxofre Quente! Saia de cima e borrife com Frasco [3]."
+
+#: api.lua:1605
+msgid "Stinging Acid! Step out & sweep with Pestle [4]."
+msgstr "Ácido Ardente! Saia dele e varra com Pilão [4]."
+
+#: api.lua:1888
+msgid "Calm Balance"
+msgstr "Equilíbrio Calmo"
+
+#: api.lua:1893
+msgid "✦ Sprout #@1 Revived!"
+msgstr "✦ Broto #@1 Revivido!"
+
+#: api.lua:1894
+msgid "@1 restored @2% Plant HP"
+msgstr "@1 restaurou @2% PV da Planta"
+
+#: api.lua:1903
+msgid "Watered Sprout #@1 (@2% HP)"
+msgstr "Regou Broto #@1 (@2% PV)"
+
+#: api.lua:1937
+msgid "✦ Aegis Shield (@1s)!"
+msgstr "✦ Escudo Égide (@1s)!"
+
+#: api.lua:1938
+msgid "@1 healed & shielded all plants!"
+msgstr "@1 curou e protegeu todas as plantas!"
+
+#: api.lua:1971 api.lua:2200
+msgid "Alchemist"
+msgstr "Alquimista"
+
+#: api.lua:1975
+msgid "✦ Time Frozen (@1s)!"
+msgstr "✦ Tempo Parado (@1s)!"
+
+#: api.lua:1976
+msgid "@1 paused drops · @2 cleared"
+msgstr "@1 pausou quedas · @2 limpos"
+
+#: api.lua:2136
+msgid "Rank"
+msgstr "Pos."
+
+#: api.lua:2137
+msgid "Player"
+msgstr "Jogador"
+
+#: api.lua:2138
+msgid "Highest Level"
+msgstr "Nível Máx."
+
+#: api.lua:2139
+msgid "Levels Won"
+msgstr "Vencidos"
+
+#: api.lua:2140
+msgid "Best Bloom"
+msgstr "Melhor Flor."
+
+#: api.lua:2141
+msgid "Cleared"
+msgstr "Limpos"
+
+#: api.lua:2142
+msgid "Time"
+msgstr "Tempo"
+
+#: api.lua:2150
+msgid "(No scores saved yet — finish or reset a level to record!)"
+msgstr "(Nenhum recorde salvo ainda — conclua ou reinicie um nível para registrar!)"
+
+#: api.lua:2162
+msgid "Level @1 (@2 Room)"
+msgstr "Nível @1 (@2 Sala)"
+
+#: api.lua:2163
+msgid "Level @1 (@2 Rooms)"
+msgstr "Nível @1 (@2 Salas)"
+
+#: api.lua:2173
+msgid "@1s"
+msgstr "@1s"
+
+#: api.lua:2194
+msgid "Casual"
+msgstr "Casual"
+
+#: api.lua:2195
+msgid "Panic"
+msgstr "Pânico"
+
+#: api.lua:2196
+msgid "Normal"
+msgstr "Normal"
+
+#: api.lua:2201
+msgid "Terrarium Crucible · @1 · Lv@2 (@3 Won) · @4% Bloom · @5 Cleared · @6s [@7]"
+msgstr "Terrarium Crucible · @1 · Nv@2 (@3 venc.) · @4% Floração · @5 limpos · @6s [@7]"
+
+#: api.lua:2361
+msgid "+2 Aegis · +1 Hourglass · +1 Tool Cap!"
+msgstr "+2 Égide · +1 Ampulheta · +1 Cap. Ferram.!"
+
+#: api.lua:2363
+msgid "+2 Aegis · +1 Hourglass"
+msgstr "+2 Égide · +1 Ampulheta"
+
+#: api.lua:2365
+msgid "+1 Aegis · +1 Hourglass · +1 Tool Cap!"
+msgstr "+1 Égide · +1 Ampulheta · +1 Cap. Ferram.!"
+
+#: api.lua:2367
+msgid "+1 Aegis · +1 Hourglass"
+msgstr "+1 Égide · +1 Ampulheta"
+
+#: api.lua:2372
+msgid "@1 [@2] · @3"
+msgstr "@1 [@2] · @3"
+
+#: api.lua:2374
+msgid "Blessing: @1 · @2"
+msgstr "Bênção: @1 · @2"
+
+#: api.lua:2382
+msgid "★ LEVEL @1 BEGINS (@2 Rooms)"
+msgstr "★ NÍVEL @1 COMEÇA (@2 Salas)"
+
+#: api.lua:2421
+msgid "The garden lost its balance!"
+msgstr "O jardim perdeu o equilíbrio!"
+
+#: api.lua:2480
+msgid "You ran out of health, and the shockwave wilted the last remaining plant!"
+msgstr "Sua vida acabou e a onda de choque murchou a última planta restante!"
+
+#: api.lua:2488
+msgid "✖ Second Chance!"
+msgstr "✖ Segunda Chance!"
+
+#: api.lua:2489
+msgid "Plants lost 30% HP — water them with Flask [3]!"
+msgstr "As plantas perderam 30% PV — regue-as com Frasco [3]!"
+
+#: api.lua:2509
+msgid "Everyone on the team ran out of health at the same time!"
+msgstr "Toda a equipe ficou sem vida ao mesmo tempo!"
+
+#: api.lua:2514
+msgid "⚠ @1 Knocked Down!"
+msgstr "⚠ @1 Caiu!"
+
+#: api.lua:2515
+msgid "Teammates: stay safe for 5s while they recover!"
+msgstr "Equipe: fiquem seguros por 5s enquanto se recupera!"
+
+#: hud.lua:33
+msgid "Bloom"
+msgstr "Floração"
+
+#: hud.lua:38 hud.lua:50
+msgid "@1: @2%"
+msgstr "@1: @2%"
+
+#: hud.lua:45
+msgid "Plant HP"
+msgstr "PV Planta"
+
+#: hud.lua:57
+msgid "Heat"
+msgstr "Calor"
+
+#: hud.lua:62
+msgid "@1: @2°C"
+msgstr "@1: @2°C"
+
+#: hud.lua:69
+msgid "Soil pH"
+msgstr "pH Solo"
+
+#: hud.lua:74
+msgid "@1: @2/@3"
+msgstr "@1: @2/@3"
+
+#: hud.lua:89
+msgid "Boost"
+msgstr "Impulso"
+
+#: hud.lua:97
+msgid "@1: @2s"
+msgstr "@1: @2s"
+
+#: hud.lua:472
+msgid "▸ LEVEL COMPLETE! Pick a Blessing on screen or right-click a Plant!"
+msgstr "▸ NÍVEL CONCLUÍDO! Escolha uma Bênção na tela ou clique dir. numa Planta!"
+
+#: hud.lua:476
+msgid "▸ RUN ENDED: Right-click a Plant or press [I] to restart Level 1."
+msgstr "▸ FIM DE JOGO: Clique dir. numa Planta ou aperte [I] para reiniciar o Nível 1."
+
+#: hud.lua:483
+msgid "▸ ✖ OVERCROWDED (@1s)! Clear @2 hazard(s) with [1–4]!"
+msgstr "▸ ✖ LOTADO (@1s)! Limpe @2 perigo(s) com [1–4]!"
+
+#: hud.lua:489
+msgid "▸ PLANT WILTED! Splash with Flask [3], Aegis, or @1s Balance!"
+msgstr "▸ PLANTA MURCHA! Borrife com Frasco [3], Égide ou @1s de Equilíbrio!"
+
+#: hud.lua:494
+msgid "▸ FLOOR FULL (@1/@2): Clear hazards now with Tools [1–4]!"
+msgstr "▸ CHÃO CHEIO (@1/@2): Limpe perigos já com Ferramentas [1–4]!"
+
+#: hud.lua:499
+msgid "▸ TOO HOT (>60°C): Splash Brimstone [3] or pair with Ice [1]!"
+msgstr "▸ MUITO QUENTE (>60°C): Borrife Enxofre [3] ou una com Gelo [1]!"
+
+#: hud.lua:502
+msgid "▸ TOO COLD (<40°C): Melt blue Ice [2] & scoop Water [3]!"
+msgstr "▸ MUITO FRIO (<40°C): Derreta Gelo azul [2] e recolha Água [3]!"
+
+#: hud.lua:505
+msgid "▸ TOO SOUR (<5.6 pH): Sweep green Acid with Pestle [4]!"
+msgstr "▸ MUITO AZEDO (<5.6 pH): Varra o Ácido verde com Pilão [4]!"
+
+#: hud.lua:508
+msgid "▸ TOO CHALKY (>8.4 pH): Wash Chalk [3] or pair with Acid [1]!"
+msgstr "▸ MUITO CALCÁRIO (>8.4 pH): Lave Giz [3] ou una com Ácido [1]!"
+
+#: hud.lua:512
+msgid "▸ CLUTTERED (@1>@2): Combine [1] or clear hazards [2–4]!"
+msgstr "▸ ACUMULADO (@1>@2): Combine [1] ou limpe perigos [2–4]!"
+
+#: hud.lua:521
+msgid "▸ BALANCED: Combine blocks [1] or clear [2–4] for Bloom! [Z] Ping"
+msgstr "▸ EQUILIBRADO: Combine [1] ou limpe [2–4] para Floração! [Z] Aviso"
+
+#: hud.lua:525
+msgid "▸ HAPPY GARDEN: [I] Tool Guide · [5] Guidebook · [Z] Call Room"
+msgstr "▸ JARDIM FELIZ: [I] Guia Rápido · [5] Guia · [Z] Marcar Sala"
+
+#: hud.lua:539
+msgid "★ 100% BLOOM ★"
+msgstr "★ 100% FLORAÇÃO ★"
+
+#: hud.lua:541
+msgid "✖ PAUSED ✖"
+msgstr "✖ PAUSADO ✖"
+
+#: hud.lua:546
+msgid "LV@1 · Plants @2/@3 · Hazards @4/@5@6"
+msgstr "NV@1 · Plantas @2/@3 · Perigos @4/@5@6"
+
+#: hud.lua:551
+msgid "LEVEL @1 (1 Room)  ·  Plants: @2/@3  ·  Hazards: @4/@5@6"
+msgstr "NÍVEL @1 (1 Sala)  ·  Plantas: @2/@3  ·  Perigos: @4/@5@6"
+
+#: hud.lua:556
+msgid "LEVEL @1 (@2 Rooms)  ·  Plants: @3/@4  ·  Hazards: @5/@6@7"
+msgstr "NÍVEL @1 (@2 Salas)  ·  Plantas: @3/@4  ·  Perigos: @5/@6@7"
+
+#: hud.lua:570 ui.lua:399
+msgid "✖ OVERCROWDED (@1s)"
+msgstr "✖ LOTADO (@1s)"
+
+#: hud.lua:573
+msgid "✦ SHIELD (@1s)"
+msgstr "✦ ESCUDO (@1s)"
+
+#: hud.lua:576
+msgid "✦ BALANCED (@1s)"
+msgstr "✦ EQUILÍBRIO (@1s)"
+
+#: hud.lua:579
+msgid "⚠ CLUTTERED (@1>@2)"
+msgstr "⚠ CHEIO (@1>@2)"
+
+#: hud.lua:583
+msgid "⚠ OFF BALANCE"
+msgstr "⚠ DESEQUILÍBRIO"
+
+#: hud.lua:584
+msgid "⚠ OFF BALANCE (40–60°C · 5.6–8.4 pH)"
+msgstr "⚠ DESEQUILÍBRIO (40–60°C · 5.6–8.4 pH)"
+
+#: hud.lua:595
+msgid "@1 · @2°C | @3pH · @4"
+msgstr "@1 · @2°C | @3pH · @4"
+
+#: hud.lua:597
+msgid "@1  ·  @2°C | @3 pH  ·  Blessing: @4"
+msgstr "@1  ·  @2°C | @3 pH  ·  Bênção: @4"
+
+#: hud.lua:600
+msgid "@1  ·  @2°C | @3 pH"
+msgstr "@1  ·  @2°C | @3 pH"
+
+#: hud.lua:647
+msgid "★ FINAL SURGE!"
+msgstr "★ IMPULSO FINAL!"
+
+#: hud.lua:651
+msgid "▾ BONUS GEODE!"
+msgstr "▾ GEODO BÔNUS!"
+
+#: hud.lua:655
+msgid "▾ TRIAL FALLING!"
+msgstr "▾ PROVA CAINDO!"
+
+#: hud.lua:659
+msgid "▾ FALLING NOW!"
+msgstr "▾ CAINDO AGORA!"
+
+#: hud.lua:665
+msgid "⏳ PAUSED · @1s@2"
+msgstr "⏳ PAUSA · @1s@2"
+
+#: hud.lua:671
+msgid "✦ GEODE IN @1s@2"
+msgstr "✦ GEODO EM @1s@2"
+
+#: hud.lua:675
+msgid "★ TRIAL IN @1s@2"
+msgstr "★ PROVA EM @1s@2"
+
+#: hud.lua:679
+msgid "NEXT DROP · @1s@2"
+msgstr "QUEDA EM · @1s@2"
+
+#: hud.lua:721
+msgid "Crack Geode or Pair [1]!"
+msgstr "Abra Geodo ou Una [1]!"
+
+#: hud.lua:723
+msgid "Opposite Pair → Combine [1]!"
+msgstr "Par Oposto → Una [1]!"
+
+#: hud.lua:726
+msgid "@1 → @2"
+msgstr "@1 → @2"
+
+#: hud.lua:728
+msgid "@1x @2 → @3"
+msgstr "@1x @2 → @3"
+
+#: hud.lua:730
+msgid "@1 + Geode!"
+msgstr "@1 + Geodo!"
+
+#: hud.lua:733
+msgid "@1 · @2"
+msgstr "@1 · @2"
+
+#: hud.lua:1021
+msgid "Action"
+msgstr "Ação"
+
+#: hud.lua:1023
+msgid "+@1% Bloom · @2"
+msgstr "+@1% Floração · @2"
+
+#: hud.lua:1437
+msgid "✖ Sprout #@1 WILTED!"
+msgstr "✖ Broto #@1 MURCHO!"
+
+#: hud.lua:1438
+msgid "⚠ Sprout #@1 (@2%)"
+msgstr "⚠ Broto #@1 (@2%)"
+
+#: hud.lua:1531
+msgid "WILTED · @1% Bloom"
+msgstr "MURCHO · @1% Floração"
+
+#: hud.lua:1532
+msgid "@1% Bloom · @2% HP"
+msgstr "@1% Floração · @2% PV"
+
+#: hud.lua:1558
+msgid "✦ Room #@1 Marked [@2]"
+msgstr "✦ Sala #@1 Marcada [@2]"
+
+#: hud.lua:1559
+msgid "@1 · @2 Hazards"
+msgstr "@1 · @2 Perigos"
+
+#: hud.lua:1565
+msgid "✦ Room #@1 [@2]"
+msgstr "✦ Sala #@1 [@2]"
+
+#: init.lua:37
+msgid "Welcome!"
+msgstr "Bem-vindo!"
+
+#: init.lua:40
+msgid "Keep Heat (40–60°C) & Soil pH (5.6–8.4) comfortable until all plants reach 100% Bloom!"
+msgstr "Mantenha Calor (40–60°C) e pH Solo (5.6–8.4) confortáveis até todas as plantas atingirem 100% de Floração!"
+
+#: init.lua:45
+msgid "Controls"
+msgstr "Controles"
+
+#: init.lua:48
+msgid "[1–4] Tools · [5] Guidebook · [I] Quick Tool Guide · [Z] Call Out Room · [E+W] Sprint."
+msgstr "[1–4] Ferramentas · [5] Guia · [I] Guia Rápido · [Z] Marcar Sala · [E+W] Correr."
+
+#: init.lua:106
+msgid "Trial Wave — Twin Opposites! Pair Hot + Cold or Acid + Chalk with Trowel [1] for huge Bloom!"
+msgstr "Onda de Prova — Pares Opostos! Una Quente + Frio ou Ácido + Giz com a Pá [1] para muita Floração!"
+
+#: init.lua:107
+msgid "Trial Wave — Ember Shower! Quench fiery Brimstone with Water Flask [3] and ride the Steam!"
+msgstr "Onda de Prova — Chuva de Brasas! Apague o Enxofre com Frasco d'Água [3] e salte no Vapor!"
+
+#: init.lua:108
+msgid "Trial Wave — Frost Squall! Puff blue Ice Shards with Thermal Bellows [2] and stock up on Water!"
+msgstr "Onda de Prova — Rajada Glacial! Derreta Gelo azul com Fole Térmico [2] e estoque Água!"
+
+#: init.lua:109
+msgid "Trial Wave — Sour Drizzle! Sweep green Acid puddles with Pestle [4] to pave Speed Soil paths!"
+msgstr "Onda de Prova — Garoa Ácida! Varra poças de Ácido com Pilão [4] para criar trilhas de Solo Veloz!"
+
+#: init.lua:200
+msgid "The Wizard · Wave @1 (1 Drop)"
+msgstr "O Mago · Onda @1 (1 Queda)"
+
+#: init.lua:201
+msgid "The Wizard · Wave @1 (@2 Drops)"
+msgstr "O Mago · Onda @1 (@2 Quedas)"
+
+#: init.lua:608
+msgid "Too many uncleared hazards (@1/@2 blocks piled up for 8 seconds and cracked the glass!)"
+msgstr "Perigos demais sem limpar (@1/@2 blocos acumulados por 8s trincaram o vidro!)"
+
+#: init.lua:620
+msgid "Too Many Hazards!"
+msgstr "Perigos Demais!"
+
+#: init.lua:623
+msgid "Floor is overcrowded (@1/@2)! Clear @3 block(s) within @4s before the glass cracks!"
+msgstr "Chão lotado (@1/@2)! Limpe @3 bloco(s) em @4s antes que o vidro trinque!"
+
+#: init.lua:634
+msgid "Room Safe Again"
+msgstr "Sala Segura"
+
+#: init.lua:635
+msgid "Nice work! You cleared enough blocks and saved the glass terrarium."
+msgstr "Bom trabalho! Você limpou blocos suficientes e salvou o terrário de vidro."
+
+#: init.lua:749
+msgid "Plant Alert"
+msgstr "Alerta de Planta"
+
+#: init.lua:752
+msgid "Sprout #@1 has WILTED! Splash with Water Flask [3], drink Aegis Potion, or keep @2s Balance!"
+msgstr "O Broto #@1 MURCHOU! Borrife com Frasco d'Água [3], beba Poção Égide ou mantenha @2s de Equilíbrio!"
+
+#: init.lua:784
+msgid "All @1 plant(s) wilted at the same time!"
+msgstr "Todas as @1 planta(s) murcharam ao mesmo tempo!"
+
+#: init.lua:848
+msgid "Your Sprout grew into @1!"
+msgstr "Seu Broto cresceu para @1!"
+
+#: init.lua:849
+msgid "Sprout #@1 grew into @2! (@3% Bloom)"
+msgstr "O Broto #@1 cresceu para @2! (@3% Floração)"
+
+#: init.lua:851
+msgid "Plant Growth"
+msgstr "Crescimento da Planta"
+
+#: init.lua:856
+msgid "[Clear extra hazards in this room!]"
+msgstr "[Limpe os perigos extras nesta sala!]"
+
+#: init.lua:858
+msgid "Sprout #@1 · @2"
+msgstr "Broto #@1 · @2"
+
+#: init.lua:859
+msgid "Bloom: @1% · Plant Health: @2% · Nearby Hazards: @3@4"
+msgstr "Floração: @1% · Saúde: @2% · Perigos Próximos: @3@4"
+
+#: init.lua:866
+msgid "Right-Click for Garden Controls · Left-Click with Water Flask [3] to heal"
+msgstr "Clique dir. para Controles do Jardim · Clique esq. com Frasco d'Água [3] para curar"
+
+#: init.lua:870
+msgid "Sprout #@1 [WILTED · Needs Water!]"
+msgstr "Broto #@1 [MURCHO · Precisa de Água!]"
+
+#: init.lua:871
+msgid "Growth paused at @1% until revived!"
+msgstr "Crescimento pausado em @1% até reviver!"
+
+#: init.lua:872
+msgid "Left-Click with Water Flask [3], drink Aegis Potion, or keep @1s Balance"
+msgstr "Clique esq. com Frasco d'Água [3], beba Poção Égide ou mantenha @1s de equilíbrio"
+
+#: init.lua:908
+msgid "Final Bloom Surge!"
+msgstr "Impulso Final de Floração!"
+
+#: init.lua:911
+msgid "Your garden reached 85% Bloom! Crack the bonus Prismatic Geode or pair the twin drops to hit 100%!"
+msgstr "Seu jardim chegou a 85% de Floração! Abra o Geodo Prismático ou una os pares para chegar a 100%!"
+
+#: init.lua:928
+msgid "★ LEVEL @1 COMPLETE! ALL @2 PLANT(S) REACHED 100% BLOOM! ★"
+msgstr "★ NÍVEL @1 CONCLUÍDO! TODAS AS @2 PLANTA(S) EM 100% DE FLORAÇÃO! ★"
+
+#: init.lua:931
+msgid "The Wizard"
+msgstr "O Mago"
+
+#: init.lua:934
+msgid "Wonderful work! Pick a Next-Level Blessing to open Room #@1!"
+msgstr "Excelente trabalho! Escolha uma Bênção para abrir a Sala #@1!"
+
+#: init.lua:1046
+msgid "Opened Top 10 Scores."
+msgstr "Top 10 Recordes aberto."
+
+#: init.lua:1048 init.lua:1057 init.lua:1066 init.lua:1078
+msgid "Player must be connected."
+msgstr "O jogador precisa estar conectado."
+
+#: init.lua:1055
+msgid "Opened Gardener's Guidebook."
+msgstr "Guia do Jardineiro aberto."
+
+#: init.lua:1064
+msgid "Opened Garden Controls."
+msgstr "Controles do Jardim abertos."
+
+#: init.lua:1074
+msgid "Marked the room for everyone."
+msgstr "Sala marcada para todos."
+
+#: init.lua:1076
+msgid "Please wait a moment before pinging again."
+msgstr "Aguarde um instante antes de marcar novamente."
+
+#: init.lua:1082 init.lua:1087
+msgid "Open the Top 10 Terrarium Crucible scores"
+msgstr "Abrir o Top 10 de recordes do Terrarium Crucible"
+
+#: init.lua:1092
+msgid "Open the illustrated Gardener's Guidebook"
+msgstr "Abrir o Guia do Jardineiro ilustrado"
+
+#: init.lua:1097
+msgid "Open Garden Controls and Game Pace settings"
+msgstr "Abrir Controles do Jardim e ajustes de ritmo"
+
+#: init.lua:1102
+msgid "Place a 4-second marker above the room you are facing"
+msgstr "Colocar um marcador de 4 segundos sobre a sala à sua frente"
+
+#: ui.lua:17
+msgid "1. How to Play"
+msgstr "1. Como Jogar"
+
+#: ui.lua:18
+msgid "Your goal, how plants grow, and how to keep the room comfortable."
+msgstr "Seu objetivo, como as plantas crescem e como manter a sala confortável."
+
+#: ui.lua:21
+msgid "2. Blocks & Tools"
+msgstr "2. Blocos e Itens"
+
+#: ui.lua:22
+msgid "Picture guide showing every falling block and the tool that clears it."
+msgstr "Guia ilustrado mostrando cada bloco que cai e a ferramenta que o limpa."
+
+#: ui.lua:25
+msgid "3. Combos & Potions"
+msgstr "3. Combos e Poções"
+
+#: ui.lua:26
+msgid "Combine opposite blocks, build green speed paths, and use potions."
+msgstr "Combine blocos opostos, crie trilhas verdes velozes e use poções."
+
+#: ui.lua:29
+msgid "4. Healing & Co-op"
+msgstr "4. Cura e Co-op"
+
+#: ui.lua:30
+msgid "How to revive wilted plants, avoid overcrowding, and play with friends."
+msgstr "Como reviver plantas murchas, evitar lotação e jogar com amigos."
+
+#: ui.lua:33
+msgid "5. Top 10 Scores"
+msgstr "5. Top 10 Recordes"
+
+#: ui.lua:34
+msgid "See the highest levels reached and best runs saved on this world."
+msgstr "Veja os maiores níveis alcançados e as melhores partidas salvas neste mundo."
+
+#: ui.lua:41
+msgid "WELCOME TO THE WIZARD'S GLASS TERRARIUM!"
+msgstr "BEM-VINDO AO TERRÁRIO DE VIDRO DO MAGO!"
+
+#: ui.lua:44
+msgid "You have been shrunk down inside an open-top glass box on a wizard's wooden desk."
+msgstr "Você foi encolhido dentro de uma caixa de vidro aberta na mesa de madeira de um mago."
+
+#: ui.lua:48
+msgid "Glowing rings appear on the soil before fire, ice, acid, or chalk blocks drop in from above — clear them on the floor with Tools [1–4], or catch them in mid-air for extra plant growth!"
+msgstr "Anéis brilhantes surgem no solo antes de fogo, gelo, ácido ou giz caírem lá de cima — limpe-os no chão com Ferramentas [1–4] ou apanhe no ar para crescimento extra!"
+
+#: ui.lua:54
+msgid "✦ YOUR GOAL: GROW EVERY PLANT TO 100% BLOOM"
+msgstr "✦ SEU OBJETIVO: LEVAR CADA PLANTA A 100% DE FLORAÇÃO"
+
+#: ui.lua:57
+msgid "Level 1 starts in 1 cozy glass room with charged Tools [2–4] (4 Puffs · 3 Splashes · 4 Sweeps, gaining +1 cap every 2 levels!)."
+msgstr "O Nível 1 começa em 1 sala aconchegante com Ferramentas [2–4] carregadas (4 Sopros · 3 Borrifos · 4 Varridas, +1 cap. a cada 2 níveis!)."
+
+#: ui.lua:64
+msgid "Reach 100% Bloom with all plants awake to finish the level, pick 1 of 3 Next-Level Blessings, and open a new archway room (plus Level 3+ Trial Waves)!"
+msgstr "Chegue a 100% de Floração com todas as plantas despertas para vencer o nível, escolher 1 de 3 Bênçãos e abrir uma nova sala (mais Ondas de Prova no Nv 3+)!"
+
+#: ui.lua:70
+msgid "✦ KEEP HEAT & SOIL COMFORTABLE"
+msgstr "✦ MANTENHA O CALOR E O SOLO CONFORTÁVEIS"
+
+#: ui.lua:71
+msgid "Heat [40°C – 60°C]"
+msgstr "Calor [40°C – 60°C]"
+
+#: ui.lua:72
+msgid "Fiery Brimstone makes it hotter; blue Ice makes it colder."
+msgstr "Enxofre ardente esquenta a sala; Gelo azul esfria."
+
+#: ui.lua:73
+msgid "Soil pH [5.6 – 8.4]"
+msgstr "pH Solo [5.6 – 8.4]"
+
+#: ui.lua:74
+msgid "Green Acid makes soil too sour; Chalk makes soil too dry."
+msgstr "Ácido verde deixa o solo muito azedo; Giz deixa o solo muito seco."
+
+#: ui.lua:77
+msgid "Keep leftover floor hazards low so the garden stays Balanced — plants heal themselves, wilted plants revive after 6s, and 8s of balance gives everyone a Harmony Boost!"
+msgstr "Deixe poucos perigos no chão para manter o jardim Equilibrado — as plantas se curam, murchas revivem após 6s, e 8s dão Impulso Harmonia a todos!"
+
+#: ui.lua:94
+msgid "POINT AT ANY PICTURE · RIGHT-CLICK ANY PLANT!"
+msgstr "APONTE PARA QUALQUER ÍCONE · CLIQUE DIR. EM QUALQUER PLANTA!"
+
+#: ui.lua:96
+msgid "[1–4] Tools · [5] Guidebook · [I] Quick Guide · [Z] Call Room · [E+W] Sprint."
+msgstr "[1–4] Ferramentas · [5] Guia · [I] Guia Rápido · [Z] Marcar Sala · [E+W] Correr."
+
+#: ui.lua:119
+msgid "What it does:"
+msgstr "O que faz:"
+
+#: ui.lua:120
+msgid "How to clear:"
+msgstr "Como limpar:"
+
+#: ui.lua:135
+msgid "✦ HELPFUL COMBOS & BONUS CRYSTALS"
+msgstr "✦ COMBOS ÚTEIS E CRISTAIS BÔNUS"
+
+#: ui.lua:137
+msgid "Combine Hot + Cold with Trowel [1]"
+msgstr "Combine Quente + Frio com a Pá [1]"
+
+#: ui.lua:140
+msgid "Click Brimstone or Ice with Trowel [1] to scoop it up, then click right onto (or beside) its opposite so both burst into fresh Water & Steam!"
+msgstr "Clique no Enxofre ou Gelo com a Pá [1] para pegar e clique sobre (ou ao lado de) seu oposto para virarem Água Fresca e Vapor!"
+
+#: ui.lua:146
+msgid "Make Green Speed Soil (Acid + Chalk)"
+msgstr "Crie Solo Veloz Verde (Ácido + Giz)"
+
+#: ui.lua:149
+msgid "Clear green Acid with Pestle [4] (or click Chalk onto Acid) to turn brown dirt into glowing Fertile Soil that boosts plant growth and running speed!"
+msgstr "Limpe Ácido verde com Pilão [4] (ou ponha Giz no Ácido) para transformar a terra em Solo Fértil brilhante que acelera plantas e corrida!"
+
+#: ui.lua:155
+msgid "Prismatic Geodes & 85% Final Surge"
+msgstr "Geodos Prismáticos e Impulso Final de 85%"
+
+#: ui.lua:158
+msgid "Click with Trowel [1] within 22s to clear nearby hazards & refill all Tools [2–4]!"
+msgstr "Clique com a Pá [1] em 22s para limpar perigos próximos e recarregar Ferramentas [2–4]!"
+
+#: ui.lua:161
+msgid "Refilling Tools [2–4] & Emergency Prime:"
+msgstr "Recarga das Ferramentas [2–4] e Carga de Emergência:"
+
+#: ui.lua:164
+msgid "Siphon Brimstone → Bellows [2], Water/Steam → Flask [3], Chalk → Pestle [4] (or click empty air when empty for +1 emergency charge!)."
+msgstr "Sugue Enxofre → Fole [2], Água/Vapor → Frasco [3], Giz → Pilão [4] (ou clique no ar quando vazia para +1 carga de emergência!)."
+
+#: ui.lua:173
+msgid "✦ SPEED SOIL & RARE ELIXIRS [6–7]"
+msgstr "✦ SOLO VELOZ E ELIXIRES RAROS [6–7]"
+
+#: ui.lua:175
+msgid "Extra potions past your belt cap auto-convert into bonus Bloom & healing!"
+msgstr "Poções extras além do limite do cinto viram Floração bônus e cura automaticamente!"
+
+#: ui.lua:178
+msgid "Fertile Speed Soil"
+msgstr "Solo Fértil Veloz"
+
+#: ui.lua:179
+msgid "(Pave Your Own Green Paths!)"
+msgstr "(Crie Suas Próprias Trilhas Verdes!)"
+
+#: ui.lua:182
+msgid "Wash Chalk or dust Acid to pave glowing green paths that make you run much faster!"
+msgstr "Lave Giz ou varra Ácido para abrir trilhas verdes brilhantes que fazem você correr muito mais rápido!"
+
+#: ui.lua:185
+msgid "Aegis Potion [6]"
+msgstr "Poção Égide [6]"
+
+#: ui.lua:186
+msgid "(Geodes & Level Clears · Cap 2)"
+msgstr "(Geodos e Níveis · Máx. 2)"
+
+#: ui.lua:189
+msgid "Refills full health, revives all wilted plants, & shields you + plants for 12s (triggers automatically if you run out of health!)."
+msgstr "Restaura toda a vida, revive plantas murchas e protege você + plantas por 12s (ativa sozinha se sua vida acabar!)."
+
+#: ui.lua:195
+msgid "Chronos Hourglass [7]"
+msgstr "Ampulheta de Cronos [7]"
+
+#: ui.lua:196
+msgid "(Every Level · Cap 2)"
+msgstr "(Cada Nível · Máx. 2)"
+
+#: ui.lua:199
+msgid "Pauses falling blocks for 12s, clears nearby hazards, & speeds up everyone!"
+msgstr "Pausa a queda de blocos por 12s, limpa perigos próximos e acelera todo mundo!"
+
+#: ui.lua:222
+msgid "✦ PLANT HEALTH & HOW TO REVIVE"
+msgstr "✦ SAÚDE DAS PLANTAS E COMO REVIVER"
+
+#: ui.lua:225
+msgid "Each room's plant has its own Plant Health (0% – 100%) and natural growth pace:"
+msgstr "A planta de cada sala tem sua própria Saúde (0% – 100%) e ritmo natural de crescimento:"
+
+#: ui.lua:229
+msgid "Extreme heat/cold, sour/chalky soil, or hazards left right next to a plant slowly lower that plant's health."
+msgstr "Calor/frio extremos, solo azedo/calcário ou perigos deixados colados numa planta reduzem aos poucos a saúde dela."
+
+#: ui.lua:236
+msgid "At 0% health, a plant WILTS and shows a bright red warning marker on screen so you can find it right away—even through walls!"
+msgstr "Com 0% de saúde, a planta MURCHA e exibe um alerta vermelho brilhante na tela para você achá-la na hora — até através das paredes!"
+
+#: ui.lua:242
+msgid "3 EASY WAYS TO REVIVE A WILTED PLANT:"
+msgstr "3 FORMAS FÁCEIS DE REVIVER UMA PLANTA MURCHA:"
+
+#: ui.lua:245
+msgid "Water Flask [3]: Left-Click right on the wilted plant (uses 1 splash)."
+msgstr "Frasco d'Água [3]: Clique esquerdo direto na planta murcha (usa 1 borrifo)."
+
+#: ui.lua:249
+msgid "Aegis Potion: Drink one anywhere to revive every wilted plant at once!"
+msgstr "Poção Égide: Beba uma onde estiver para reviver todas as plantas murchas de uma vez!"
+
+#: ui.lua:253
+msgid "Calm Balance: Keep Heat & Soil comfortable for 6s (4s with Roots)!"
+msgstr "Equilíbrio Calmo: Mantenha Calor e Solo confortáveis por 6s (4s com Raízes)!"
+
+#: ui.lua:259
+msgid "✦ HOW A RUN CAN END (& HOW TO STAY SAFE)"
+msgstr "✦ COMO A PARTIDA ACABA (E COMO EVITAR)"
+
+#: ui.lua:261
+msgid "Every Plant Wilts at Once"
+msgstr "Todas as Plantas Murcham Juntas"
+
+#: ui.lua:262
+msgid "Keep at least 1 plant healthy while you water any wilted ones!"
+msgstr "Mantenha ao menos 1 planta saudável enquanto rega as que murcharam!"
+
+#: ui.lua:264
+msgid "Too Many Uncleared Blocks (8-Second Warning)"
+msgstr "Blocos Demais sem Limpar (Aviso de 8s)"
+
+#: ui.lua:267
+msgid "If too many blocks pile up on the floor, an 8s warning counts down — clear a few blocks before time runs out to stay safe!"
+msgstr "Se blocos demais acumularem no chão, um aviso de 8s começa — limpe alguns blocos antes do tempo acabar para ficar seguro!"
+
+#: ui.lua:273
+msgid "Hazard Burns, Stings & Co-op"
+msgstr "Queimaduras, Ácido e Co-op"
+
+#: ui.lua:276
+msgid "Standing on Brimstone, wading in Acid Slime, or standing under falling blocks hurts!"
+msgstr "Pisar em Enxofre, andar em Limo Ácido ou ficar sob blocos caindo machuca!"
+
+#: ui.lua:280
+msgid "Solo: 0 HP brings you back in Room 1 (-30% plant HP). Press [Z] to call rooms!"
+msgstr "Solo: 0 PV traz você de volta à Sala 1 (-30% PV das plantas). Aperte [Z] para marcar salas!"
+
+#: ui.lua:302
+msgid "★ TOP 10 TERRARIUM GARDENERS"
+msgstr "★ TOP 10 JARDINEIROS DO TERRÁRIO"
+
+#: ui.lua:306
+msgid "Ranked by Levels Won → Highest Level → Best Bloom → Hazards Cleared → Fastest Time."
+msgstr "Classificado por Níveis Vencidos → Nível Máx. → Melhor Floração → Perigos Limpos → Menor Tempo."
+
+#: ui.lua:351
+msgid "GRIMOIRE"
+msgstr "GRIMÓRIO"
+
+#: ui.lua:356
+msgid "Garden Status & Pace"
+msgstr "Estado e Ritmo"
+
+#: ui.lua:357
+msgid "Check each plant's health, see this level's blessing, or change the game pace."
+msgstr "Veja a saúde de cada planta, a bênção deste nível ou mude o ritmo do jogo."
+
+#: ui.lua:361 ui.lua:462
+msgid "Back to Game"
+msgstr "Voltar ao Jogo"
+
+#: ui.lua:362
+msgid "Close the Guidebook and return to your garden."
+msgstr "Feche o Guia e volte para o seu jardim."
+
+#: ui.lua:369
+msgid "THE GARDENER'S GUIDEBOOK"
+msgstr "O GUIA DO JARDINEIRO"
+
+#: ui.lua:372
+msgid "Illustrated How-to-Play · Point at any block, tool, or potion picture to read its full tip"
+msgstr "Guia Ilustrado · Aponte para qualquer bloco, ferramenta ou poção para ler sua dica completa"
+
+#: ui.lua:395
+msgid "★ LEVEL COMPLETE ★"
+msgstr "★ NÍVEL CONCLUÍDO ★"
+
+#: ui.lua:397
+msgid "✖ RUN ENDED ✖"
+msgstr "✖ FIM DE PARTIDA ✖"
+
+#: ui.lua:401
+msgid "Plant Shield (@1s)"
+msgstr "Escudo Vegetal (@1s)"
+
+#: ui.lua:403
+msgid "Balanced (@1s)"
+msgstr "Equilibrado (@1s)"
+
+#: ui.lua:405
+msgid "Floor Cluttered!"
+msgstr "Chão Cheio!"
+
+#: ui.lua:407
+msgid "Off Balance!"
+msgstr "Desequilíbrio!"
+
+#: ui.lua:421
+msgid "#@1: WILTED (@2% Bloom)"
+msgstr "#@1: MURCHA (@2% Floração)"
+
+#: ui.lua:429
+msgid "#@1: @2% Bloom (@3% HP)"
+msgstr "#@1: @2% Floração (@3% PV)"
+
+#: ui.lua:435
+msgid "Starting..."
+msgstr "Iniciando..."
+
+#: ui.lua:445
+msgid "None yet (Finish a level to pick 1 of 3 Next-Level Blessings!)"
+msgstr "Nenhuma ainda (Conclua um nível para escolher 1 de 3 Bênçãos!)"
+
+#: ui.lua:456
+msgid "★ Pick Blessing & Next Room! ★"
+msgstr "★ Escolha Bênção e Nova Sala! ★"
+
+#: ui.lua:457
+msgid "Open the Level Complete screen to pick your Next-Level Blessing and unlock the next room."
+msgstr "Abra a tela de Nível Concluído para escolher sua Bênção e abrir a próxima sala."
+
+#: ui.lua:463
+msgid "Close this menu and keep caring for your plants."
+msgstr "Feche este menu e continue cuidando das suas plantas."
+
+#: ui.lua:467
+msgid "Casual (@1s)"
+msgstr "Casual (@1s)"
+
+#: ui.lua:468
+msgid "Normal (@1s)"
+msgstr "Normal (@1s)"
+
+#: ui.lua:469
+msgid "Panic (@1s)"
+msgstr "Pânico (@1s)"
+
+#: ui.lua:474
+msgid "Garden Condition"
+msgstr "Condição do Jardim"
+
+#: ui.lua:475
+msgid "Keep Heat (40–60°C) and Soil pH (5.6–8.4) comfortable so your plants thrive."
+msgstr "Mantenha o Calor (40–60°C) e o pH Solo (5.6–8.4) confortáveis para suas plantas prosperarem."
+
+#: ui.lua:479
+msgid "Plant Growth (Goal: 100%)"
+msgstr "Crescimento (Meta: 100%)"
+
+#: ui.lua:480
+msgid "@1%  (Stage @2/4)"
+msgstr "@1%  (Estágio @2/4)"
+
+#: ui.lua:482
+msgid "Grow your plants to 100% Bloom with all plants awake to finish the level!"
+msgstr "Leve suas plantas a 100% de Floração com todas despertas para concluir o nível!"
+
+#: ui.lua:486
+msgid "Plants Awake & Health"
+msgstr "Plantas Ativas e Saúde"
+
+#: ui.lua:487
+msgid "@1 / @2  (@3% Avg)"
+msgstr "@1 / @2  (@3% Méd.)"
+
+#: ui.lua:489
+msgid "Heal hurt or wilted plants with Water Flask [3], Aegis Potion, or 6s of Balance."
+msgstr "Cure plantas feridas ou murchas com Frasco d'Água [3], Poção Égide ou 6s de Equilíbrio."
+
+#: ui.lua:494
+msgid "Heat [40–60°C] · Soil [5.6–8.4]"
+msgstr "Calor [40–60°C] · Solo [5.6–8.4]"
+
+#: ui.lua:495
+msgid "@1°C  |  @2 pH"
+msgstr "@1°C  |  @2 pH"
+
+#: ui.lua:497
+msgid "Comfort Zone: 40–60°C Heat and 5.6–8.4 Soil pH."
+msgstr "Zona de Conforto: 40–60°C de Calor e 5.6–8.4 de pH Solo."
+
+#: ui.lua:501
+msgid "Floor Hazard Limit"
+msgstr "Limite de Perigos"
+
+#: ui.lua:502
+msgid "@1 / @2 Max Blocks"
+msgstr "@1 / @2 Blocos Máx."
+
+#: ui.lua:504
+msgid "Going over the max starts an 8-second warning — clear a few blocks in time to stay safe!"
+msgstr "Passar do limite inicia um aviso de 8 segundos — limpe alguns blocos a tempo para ficar seguro!"
+
+#: ui.lua:508
+msgid "Hazards Cleared & Time"
+msgstr "Perigos Limpos e Tempo"
+
+#: ui.lua:509
+msgid "@1 Cleared  (@2s)"
+msgstr "@1 Limpos  (@2s)"
+
+#: ui.lua:511
+msgid "Crack Prismatic Geodes & finish levels to earn rare Aegis Potions & Chronos Hourglasses!"
+msgstr "Abra Geodos Prismáticos e vença níveis para ganhar Poções Égide e Ampulhetas de Cronos!"
+
+#: ui.lua:519
+msgid "PLANTS BY ROOM:"
+msgstr "PLANTAS POR SALA:"
+
+#: ui.lua:522
+msgid "THIS LEVEL'S BLESSING:"
+msgstr "BÊNÇÃO DESTE NÍVEL:"
+
+#: ui.lua:532
+msgid "GAME PACE (HOW FAST BLOCKS FALL)"
+msgstr "RITMO DO JOGO (QUEDA DOS BLOCOS)"
+
+#: ui.lua:534
+msgid "(Change anytime — active choice highlighted):"
+msgstr "(Mude quando quiser — opção ativa destacada):"
+
+#: ui.lua:541
+msgid "Relaxed, unhurried pace — great for learning tools and enjoying your garden."
+msgstr "Ritmo tranquilo e sem pressa — ótimo para aprender as ferramentas e curtir seu jardim."
+
+#: ui.lua:547
+msgid "Comfortable, balanced pace — recommended for most players."
+msgstr "Ritmo confortável e equilibrado — recomendado para a maioria dos jogadores."
+
+#: ui.lua:553
+msgid "Fast falling blocks — build green Speed Soil paths and use potions to keep up!"
+msgstr "Queda rápida de blocos — crie trilhas de Solo Veloz verde e use poções para acompanhar!"
+
+#: ui.lua:559 ui.lua:620 ui.lua:851
+msgid "Open Guidebook"
+msgstr "Abrir Guia"
+
+#: ui.lua:560
+msgid "Read the 5-tab picture guide to every block, tool, potion, and plant tip."
+msgstr "Leia o guia ilustrado de 5 abas sobre cada bloco, ferramenta, poção e planta."
+
+#: ui.lua:564
+msgid "★ Top 10 Scores ★"
+msgstr "★ Top 10 Recordes ★"
+
+#: ui.lua:565
+msgid "View the Top 10 best runs saved on this world."
+msgstr "Veja as 10 melhores partidas salvas neste mundo."
+
+#: ui.lua:569
+msgid "Start Over at Level 1"
+msgstr "Recomeçar no Nível 1"
+
+#: ui.lua:570
+msgid "Save your current score and begin a brand-new Level 1 garden."
+msgstr "Salve sua pontuação atual e comece um novo jardim no Nível 1."
+
+#: ui.lua:576
+msgid "GARDEN CONTROLS — LEVEL @1 (1 ROOM)"
+msgstr "CONTROLES DO JARDIM — NÍVEL @1 (1 SALA)"
+
+#: ui.lua:577
+msgid "GARDEN CONTROLS — LEVEL @1 (@2 ROOMS)"
+msgstr "CONTROLES DO JARDIM — NÍVEL @1 (@2 SALAS)"
+
+#: ui.lua:585
+msgid "Check Plant Health, Active Blessing, Game Pace, Guidebook & Top 10 Scores"
+msgstr "Veja Saúde das Plantas, Bênção Ativa, Ritmo do Jogo, Guia e Top 10 Recordes"
+
+#: ui.lua:609 ui.lua:729 ui.lua:839
+msgid "Shareable Run Summary (Select & Copy):"
+msgstr "Resumo da Partida para Compartilhar (Selecione e Copie):"
+
+#: ui.lua:611 ui.lua:731 ui.lua:841
+msgid "Select and copy your run summary to share with friends or on Jam threads!"
+msgstr "Selecione e copie o resumo da sua partida para compartilhar com amigos!"
+
+#: ui.lua:615
+msgid "Garden Status"
+msgstr "Estado do Jardim"
+
+#: ui.lua:616
+msgid "Open live plant health and Game Pace controls."
+msgstr "Abrir saúde das plantas ao vivo e controles de ritmo."
+
+#: ui.lua:621
+msgid "Open the illustrated Gardener's Guidebook."
+msgstr "Abrir o Guia do Jardineiro ilustrado."
+
+#: ui.lua:625
+msgid "Close"
+msgstr "Fechar"
+
+#: ui.lua:626
+msgid "Return to your garden."
+msgstr "Volte ao seu jardim."
+
+#: ui.lua:633
+msgid "★ TOP 10 TERRARIUM GARDENERS ★"
+msgstr "★ TOP 10 JARDINEIROS DO TERRÁRIO ★"
+
+#: ui.lua:636
+msgid "Best Runs Saved on This World — Levels Won, Best Bloom & Hazards Cleared"
+msgstr "Melhores Partidas Salvas Neste Mundo — Níveis Vencidos, Melhor Floração e Perigos Limpos"
+
+#: ui.lua:658
+msgid "ALL @1 PLANT(S) BLOOMED IN @2s! PICK 1 BLESSING FOR LEVEL @3:"
+msgstr "TODAS AS @1 PLANTA(S) FLORESCERAM EM @2s! ESCOLHA 1 BÊNÇÃO PARA O NÍVEL @3:"
+
+#: ui.lua:662
+msgid "Next Up (Level @1):"
+msgstr "A Seguir (Nível @1):"
+
+#: ui.lua:663
+msgid "Opens Glass Room #@1 with Plant #@2 (@3 falling block(s) per wave — your green Speed Soil paths stay!)."
+msgstr "Abre a Sala de Vidro #@1 com a Planta #@2 (@3 bloco(s) por onda — suas trilhas de Solo Veloz continuam!)."
+
+#: ui.lua:667
+msgid "Fresh Every Level:"
+msgstr "Novo a Cada Nível:"
+
+#: ui.lua:668
+msgid "Your Blessing lasts all of Level @1, plus +1 Aegis Potion & +1 Chronos Hourglass!"
+msgstr "Sua Bênção dura todo o Nível @1, além de +1 Poção Égide e +1 Ampulheta de Cronos!"
+
+#: ui.lua:693
+msgid "Pick: @1 → Lvl @2"
+msgstr "Escolher: @1 → Nv @2"
+
+#: ui.lua:694
+msgid "Choose '@1' (@2) for Level @3 and open Room #@4!"
+msgstr "Escolha '@1' (@2) para o Nível @3 e abra a Sala #@4!"
+
+#: ui.lua:722 ui.lua:832
+msgid "TOP 10 SCORES:"
+msgstr "TOP 10 RECORDES:"
+
+#: ui.lua:736
+msgid "Start Fresh at Level 1"
+msgstr "Começar do Zero (Nível 1)"
+
+#: ui.lua:737
+msgid "Start a brand-new single-room Level 1 garden."
+msgstr "Comece um novo jardim de sala única no Nível 1."
+
+#: ui.lua:741
+msgid "Look Around First"
+msgstr "Olhar ao Redor Antes"
+
+#: ui.lua:742
+msgid "Close this window to admire your blooming plants (right-click any Plant when ready!)."
+msgstr "Feche esta janela para admirar suas plantas em flor (clique direito em qualquer Planta quando estiver pronto!)."
+
+#: ui.lua:751
+msgid "★ LEVEL @1 COMPLETE — PICK YOUR NEXT-LEVEL BLESSING! ★"
+msgstr "★ NÍVEL @1 CONCLUÍDO — ESCOLHA SUA BÊNÇÃO! ★"
+
+#: ui.lua:755
+msgid "Choose 1 Blessing for Level @1 (lasts the whole next level, then pick a fresh one!)"
+msgstr "Escolha 1 Bênção para o Nível @1 (dura todo o próximo nível, depois você escolhe outra!)"
+
+#: ui.lua:771
+msgid "Clear hazards steadily with Bellows [2], Water Flask [3], & Pestle [4], or use a Chronos Hourglass to pause falling blocks!"
+msgstr "Limpe os perigos sem parar com Fole [2], Frasco d'Água [3] e Pilão [4], ou use uma Ampulheta de Cronos para pausar as quedas!"
+
+#: ui.lua:776
+msgid "Heal hurt or wilted plants anytime by Left-Clicking them with a filled Water Flask [3] or drinking an Aegis Potion!"
+msgstr "Cure plantas feridas ou murchas a qualquer hora clicando com botão esquerdo usando Frasco d'Água [3] cheio ou bebendo Poção Égide!"
+
+#: ui.lua:781
+msgid "Step around fiery Brimstone and green Acid Slime so they don't burn your feet—and drink an Aegis Potion whenever you need a full heal!"
+msgstr "Desvie do Enxofre ardente e do Limo Ácido verde para não queimar os pés — e beba uma Poção Égide sempre que precisar de cura total!"
+
+#: ui.lua:802
+msgid "Reached Level @1 (1 Room)  ·  Best Bloom on Level @2: @3%  ·  Time: @4s"
+msgstr "Alcançou Nível @1 (1 Sala)  ·  Melhor Floração no Nv @2: @3%  ·  Tempo: @4s"
+
+#: ui.lua:807
+msgid "Reached Level @1 (@2 Rooms)  ·  Best Bloom on Level @3: @4%  ·  Time: @5s"
+msgstr "Alcançou Nível @1 (@2 Salas)  ·  Melhor Floração no Nv @3: @4%  ·  Tempo: @5s"
+
+#: ui.lua:817
+msgid "WHAT HAPPENED: @1"
+msgstr "O QUE HOUVE: @1"
+
+#: ui.lua:818
+msgid "Your Run:"
+msgstr "Sua Partida:"
+
+#: ui.lua:819
+msgid "Helpful Tip for Next Time:"
+msgstr "Dica Útil para a Próxima:"
+
+#: ui.lua:846
+msgid "Play Again (Start Level 1)"
+msgstr "Jogar de Novo (Nível 1)"
+
+#: ui.lua:847
+msgid "Tidy up the terrarium and start a fresh Level 1 garden!"
+msgstr "Arrume o terrário e comece um novo jardim no Nível 1!"
+
+#: ui.lua:852
+msgid "Read picture tips on tools, combos, and healing plants."
+msgstr "Leia dicas ilustradas sobre ferramentas, combos e cura de plantas."
+
+#: ui.lua:856
+msgid "Look Around"
+msgstr "Olhar ao Redor"
+
+#: ui.lua:857
+msgid "Close this window to look around (right-click any Plant to start again)."
+msgstr "Feche esta janela para olhar ao redor (clique direito em qualquer Planta para recomeçar)."
+
+#: ui.lua:864
+msgid "✖ GARDEN RUN ENDED ON LEVEL @1 ✖"
+msgstr "✖ PARTIDA ENCERRADA NO NÍVEL @1 ✖"
+
+#: ui.lua:867
+msgid "No worries — right-click any Plant or press [I] to switch to Casual pace anytime!"
+msgstr "Sem problemas — clique direito em qualquer Planta ou aperte [I] para mudar para o ritmo Casual quando quiser!"
+
+#: ui.lua:900 ui.lua:911 ui.lua:922
+msgid "Game Pace"
+msgstr "Ritmo do Jogo"
+
+#: ui.lua:903
+msgid "Switched to CASUAL pace (about @1s between falling blocks)."
+msgstr "Mudou para o ritmo CASUAL (cerca de @1s entre quedas de blocos)."
+
+#: ui.lua:914
+msgid "Switched to NORMAL pace (about @1s between falling blocks)."
+msgstr "Mudou para o ritmo NORMAL (cerca de @1s entre quedas de blocos)."
+
+#: ui.lua:925
+msgid "Switched to PANIC pace (about @1s between falling blocks)!"
+msgstr "Mudou para o ritmo PÂNICO (cerca de @1s entre quedas de blocos)!"
+
+#: ui.lua:942
+msgid "Garden Reset"
+msgstr "Jardim Reiniciado"
+
+#: ui.lua:943
+msgid "Started a fresh Level 1 garden (1 Room, 1 Plant)!"
+msgstr "Começou um novo jardim no Nível 1 (1 Sala, 1 Planta)!"
+
+#: ui.lua:967
+msgid "Blessing Picked"
+msgstr "Bênção Escolhida"
+
+#: ui.lua:970
+msgid "@1 chose [@2] — @3"
+msgstr "@1 escolheu [@2] — @3"
+
+
+#: hud_migration
+msgid "✦ Welcome to the Garden!"
+msgstr "✦ Bem-vindo ao jardim!"
+
+#: hud_migration
+msgid "[1–4] Tools · [5] Guide · [I] Bag"
+msgstr "[1–4] Itens · [5] Guia · [I] Bolsa"
+
+#: hud_migration
+msgid "★ Trial: Twin Opposites!"
+msgstr "★ Prova: Pares opostos!"
+
+#: hud_migration
+msgid "Pair Hot+Cold or Acid+Chalk [1]!"
+msgstr "Una Quente+Frio ou Ácido+Giz [1]!"
+
+#: hud_migration
+msgid "★ Trial: Ember Shower!"
+msgstr "★ Prova: Chuva de brasas!"
+
+#: hud_migration
+msgid "Quench Brimstone with Flask [3]!"
+msgstr "Apague o Enxofre com o Frasco [3]!"
+
+#: hud_migration
+msgid "★ Trial: Frost Squall!"
+msgstr "★ Prova: Rajada glacial!"
+
+#: hud_migration
+msgid "Melt blue Ice with Bellows [2]!"
+msgstr "Derreta o Gelo com o Fole [2]!"
+
+#: hud_migration
+msgid "★ Trial: Sour Drizzle!"
+msgstr "★ Prova: Garoa ácida!"
+
+#: hud_migration
+msgid "Sweep green Acid with Pestle [4]!"
+msgstr "Limpe o Ácido com o Pilão [4]!"
+
+#: hud_migration
+msgid "✦ Bonus Geode Falling!"
+msgstr "✦ Geodo bônus caindo!"
+
+#: hud_migration
+msgid "Crack with Trowel [1] within 22s!"
+msgstr "Quebre com a Pá [1] em 22s!"
+
+#: hud_migration
+msgid "✖ Too Many Hazards (@1/@2)!"
+msgstr "✖ Perigos demais (@1/@2)!"
+
+#: hud_migration
+msgid "Clear @1 block(s) within @2s!"
+msgstr "Limpe @1 bloco(s) em @2s!"
+
+#: hud_migration
+msgid "✦ Room Safe Again!"
+msgstr "✦ Sala segura novamente!"
+
+#: hud_migration
+msgid "Overcrowding cleared — glass saved!"
+msgstr "Excesso limpo — vidro salvo!"
+
+#: hud_migration
+msgid "Splash with Flask [3] or Aegis!"
+msgstr "Regue com Frasco [3] ou Égide!"
+
+#: hud_migration
+msgid "✦ Grew into @1!"
+msgstr "✦ Cresceu para @1!"
+
+#: hud_migration
+msgid "✦ Sprout #@1 → @2!"
+msgstr "✦ Broto #@1 → @2!"
+
+#: hud_migration
+msgid "@1% Bloom reached"
+msgstr "@1% de floração alcançada"
+
+#: hud_migration
+msgid "★ 85% Final Bloom Surge!"
+msgstr "★ Surto final de 85%!"
+
+#: hud_migration
+msgid "Crack Geode or Pair [1] for 100%!"
+msgstr "Quebre o Geodo ou una o par [1]!"
+
+#: hud_migration
+msgid "★ Level @1 Complete!"
+msgstr "★ Nível @1 concluído!"
+
+#: hud_migration
+msgid "Pick a Blessing for Room #@1!"
+msgstr "Escolha uma Bênção para a Sala #@1!"
+
+#: hud_migration
+msgid "Pace: Casual (~@1s waves)"
+msgstr "Ritmo: Casual (~@1s/onda)"
+
+#: hud_migration
+msgid "Pace: Normal (~@1s waves)"
+msgstr "Ritmo: Normal (~@1s/onda)"
+
+#: hud_migration
+msgid "Pace: Panic (~@1s waves)!"
+msgstr "Ritmo: Pânico (~@1s/onda)!"
+
+#: hud_migration
+msgid "✦ Garden Reset — Level 1"
+msgstr "✦ Jardim reiniciado — Nível 1"
+
+#: hud_migration
+msgid "Started a fresh Level 1 garden!"
+msgstr "Novo jardim de Nível 1 iniciado!"

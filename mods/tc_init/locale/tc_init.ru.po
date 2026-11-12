@@ -1,0 +1,124 @@
+# Translation catalog for tc_init (Terrarium Crucible)
+# Copyright (C) 2026 SaKeL
+# License: MIT
+msgid ""
+msgstr ""
+"Project-Id-Version: tc_init 1.0\n"
+"POT-Creation-Date: 2026-11-11 00:00+0000\n"
+"PO-Revision-Date: 2026-11-11 00:00+0000\n"
+"Last-Translator: SaKeL\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: api.lua:154
+msgid "Scorching Brimstone (Hot)"
+msgstr "Пылающая сера (жар)"
+
+#: api.lua:155
+msgid "Splash with Flask [3], siphon with low Bellows [2] to refill, or pair with Ice [1]."
+msgstr "Окатите Флягой [3], втяните неполными Мехами [2] для заряда или соедините со Льдом [1]."
+
+#: api.lua:161
+msgid "Glacial Ice Shard (Cold)"
+msgstr "Ледяной осколок (холод)"
+
+#: api.lua:162
+msgid "Melt with Bellows [2] into Water, then scoop Water with Flask [3] to refill!"
+msgstr "Растопите Мехами [2] в Воду и зачерпните её Флягой [3] для пополнения!"
+
+#: api.lua:168
+msgid "Vitriol Acid Slime (Sour)"
+msgstr "Купоросная слизь (кислая)"
+
+#: api.lua:169
+msgid "Sweep with Pestle [4] (or pair Chalk [1] on it) to make green Speed Soil!"
+msgstr "Сметите Пестиком [4] (или соедините с Мелом [1]), чтобы создать зелёную Быструю почву!"
+
+#: api.lua:175
+msgid "Alkaline Chalk (Dry)"
+msgstr "Щелочной мел (сухой)"
+
+#: api.lua:176
+msgid "Wash with Flask [3], grind with low Pestle [4] to refill, or pair with Acid [1]."
+msgstr "Смойте Флягой [3], разотрите неполным Пестиком [4] для заряда или соедините с Кислотой [1]."
+
+#: api.lua:205
+msgid "Open Guidebook"
+msgstr "Открыть справочник"
+
+#: api.lua:206
+msgid "Read the illustrated 5-tab Guidebook to learn every tool, block, potion, and blessing."
+msgstr "Прочтите иллюстрированный справочник из 5 вкладок обо всех инструментах, блоках, зельях и дарах."
+
+#: api.lua:210
+msgid "Garden Status"
+msgstr "Статус сада"
+
+#: api.lua:211
+msgid "Check each plant's health, see this level's blessing, or change the game pace anytime."
+msgstr "Проверьте здоровье растений, текущий дар уровня или смените темп игры в любой момент."
+
+#: api.lua:215
+msgid "Top 10 Scores"
+msgstr "Топ-10 рекордов"
+
+#: api.lua:216
+msgid "See the Top 10 best runs saved on this world."
+msgstr "Посмотрите 10 лучших забегов, сохранённых в этом мире."
+
+#: api.lua:221
+msgid "SATCHEL"
+msgstr "СУМКА"
+
+#: api.lua:229
+msgid "YOUR BAG & QUICK TOOL GUIDE"
+msgstr "ВАША СУМКА И ПАМЯТКА ИНСТРУМЕНТОВ"
+
+#: api.lua:230
+msgid "Keep Heat (40–60°C) & Soil pH (5.6–8.4) comfortable until every plant reaches 100% Bloom!"
+msgstr "Держите тепло (40–60°C) и pH почвы (5.6–8.4) в норме, пока все растения не достигнут 100% цветения!"
+
+#: init.lua:21
+msgid "Gloved Hand"
+msgstr "Рука в перчатке"
+
+#: init.lua:22
+msgid "Empty Hand"
+msgstr "Пустая рука"
+
+#: init.lua:23
+msgid "Your sturdy leather gardening glove."
+msgstr "Ваша прочная кожаная садовая перчатка."
+
+#: init.lua:24
+msgid "Press keys [1] to [5] on your keyboard (or scroll the mouse wheel) to use your tools!"
+msgstr "Нажимайте клавиши [1]–[5] (или крутите колесо мыши), чтобы выбирать инструменты!"
+
+#: init.lua:27
+msgid "Gloved Hand — Press [1–5] for Tools"
+msgstr "Рука в перчатке — нажмите [1–5] для инструментов"
+
+#: init.lua:64
+msgid "Bag & Guide"
+msgstr "Сумка и гид"
+
+#: init.lua:101
+msgid "Saved!"
+msgstr "Спасены!"
+
+#: init.lua:104
+msgid "Your Aegis Potion activated automatically to refill your health and shield your garden!"
+msgstr "Зелье Эгиды сработало автоматически: оно исцелило вас и укрыло весь сад щитом!"
+
+
+#: hud_migration
+msgid "✦ Saved by Auto-Aegis!"
+msgstr "✦ Спасение Авто-Эгидой!"
+
+#: hud_migration
+msgid "Health refilled & garden shielded (@1s)!"
+msgstr "ОЗ полны и сад под защитой (@1с)!"

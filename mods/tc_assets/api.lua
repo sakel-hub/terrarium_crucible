@@ -67,11 +67,80 @@
 ---@field aspect_h? integer
 ---@field playername? string
 
+---@class TcLightingStaticSpec
+---@field light_curve integer[] 16-entry monotonic voxel light lookup curve ending at 255
+---@field ao_gamma number Ambient occlusion contrast gamma
+
+---@class TcLightingPreset
+---@field saturation number
+---@field bloom table
+---@field volumetric_light table
+---@field static TcLightingStaticSpec
+
+---@class TcSkyColorSpec
+---@field day_sky string
+---@field day_horizon string
+---@field dawn_sky string
+---@field dawn_horizon string
+---@field night_sky string
+---@field night_horizon string
+---@field indoors string
+---@field fog_sun_tint string
+---@field fog_moon_tint string
+---@field fog_tint_type "default"|"custom"
+
+---@class TcSkyFogSpec
+---@field fog_distance integer
+---@field fog_start number
+---@field fog_color string
+
+---@class TcSkyPreset
+---@field type "regular"|"skybox"|"plain"
+---@field clouds boolean
+---@field body_orbit_tilt number
+---@field auto_dim_skybox boolean
+---@field sky_color TcSkyColorSpec
+---@field fog TcSkyFogSpec
+
+---@class TcMoonSpec
+---@field visible boolean
+---@field texture string
+---@field tonemap string
+---@field scale number
+
+---@class TcStarsSpec
+---@field visible boolean
+---@field count integer
+---@field star_color string
+---@field scale number
+---@field day_opacity number
+---@field star_seed integer
+
+---@class TcCloudsSpec
+---@field density number
+---@field color string
+---@field ambient string
+---@field shadow string
+---@field height number
+---@field thickness number
+---@field speed {x: number, z: number}
+
+---@class TcCelestialConfig
+---@field timeofday number Nocturnal time of day in [0, 1] placing the Astral Moon high above the rim
+---@field day_night_ratio number Overridden interior ambient daylight/moonlight ratio in [0, 1]
+---@field moon TcMoonSpec
+---@field stars TcStarsSpec
+---@field clouds TcCloudsSpec
+
 ---@class TcAssetsAPI
+---@field S fun(str: string, ...: any): string Mod translator function
 ---@field FORMSPEC_VERSION integer Latest Luanti formspec version used across all dialogs
+---@field LIGHTING_PRESETS table<string, TcLightingPreset> Luanti 5.18 static light curve + bloom presets
+---@field SKY_PRESETS table<string, TcSkyPreset> Luanti 5.18 state-reactive skybox, horizon & distance fog presets
+---@field CELESTIAL TcCelestialConfig Canonical nocturnal clock, moon, starfield, and arcane mist cloud settings
 ---@field PALETTE TcPalette WCAG 2.1 AA+ high-contrast Arcane Apothecary color palette
 ---@field PARTICLES table<string, string> Named 16x128 vertical-frame animated particle sheet textures
----@field ui TcAssetsUI Reusable formspec_version[8] theme & widget builders
+---@field ui TcAssetsUI Reusable formspec_version[12] theme & widget builders
 ---@field format_description fun(spec: TcDescriptionSpec): string
 ---@field format_infotext fun(title: string, status?: string, action_hint?: string): string
 ---@field chat_prefix fun(tag: string, color_hex?: string): string
@@ -87,8 +156,181 @@
 ---@field node_sound_crystal_defaults fun(tbl?: table): table
 tc_assets = {}
 
--- Target latest Luanti 5.18 formspec specification
-tc_assets.FORMSPEC_VERSION = 8
+local S = core.get_translator("tc_assets")
+tc_assets.S = S
+
+-- Target latest Luanti 5.18 formspec specification (formspec_version[12])
+tc_assets.FORMSPEC_VERSION = 12
+
+-- Luanti 5.18 atmospheric presets with custom static 16-entry voxel light_curve & ao_gamma
+tc_assets.LIGHTING_PRESETS = {
+    normal = {
+        saturation = 1.08,
+        bloom = {intensity = 0.06, strength_factor = 1.0, radius = 1.0},
+        volumetric_light = {strength = 0.14},
+        static = {
+            light_curve = {0, 10, 20, 32, 46, 62, 80, 100, 121, 143, 165, 186, 206, 224, 240, 255},
+            ao_gamma = 1.50,
+        },
+    },
+    stasis = {
+        saturation = 0.88,
+        bloom = {intensity = 0.10, strength_factor = 1.25, radius = 1.15},
+        volumetric_light = {strength = 0.22},
+        static = {
+            light_curve = {0, 14, 27, 41, 56, 72, 89, 107, 126, 146, 166, 186, 205, 223, 239, 255},
+            ao_gamma = 1.80,
+        },
+    },
+    overdrive = {
+        saturation = 1.22,
+        bloom = {intensity = 0.12, strength_factor = 1.35, radius = 1.2},
+        volumetric_light = {strength = 0.24},
+        static = {
+            light_curve = {0, 12, 24, 38, 54, 72, 92, 113, 135, 157, 178, 198, 215, 230, 243, 255},
+            ao_gamma = 1.60,
+        },
+    },
+    overload = {
+        saturation = 1.30,
+        bloom = {intensity = 0.15, strength_factor = 1.45, radius = 1.3},
+        volumetric_light = {strength = 0.28},
+        static = {
+            light_curve = {0, 6, 13, 22, 34, 49, 67, 88, 111, 136, 161, 185, 207, 226, 242, 255},
+            ao_gamma = 1.15,
+        },
+    },
+}
+
+-- Canonical nocturnal celestial clock & sky-body configuration:
+-- 1000 millihours (01:00) + 38.0 deg orbit tilt places tc_astral_moon.png upright at +48.5 deg elevation
+-- (-27.9 deg NNW, clearing the y=11 brass rim from spawn) with 100% star opacity, while day_night_ratio = 0.68
+-- preserves crisp moonlit/candlelit readability inside the open-top glass chambers.
+tc_assets.CELESTIAL = {
+    timeofday = 1000 / 24000,
+    day_night_ratio = 0.68,
+    moon = {
+        visible = true,
+        texture = "tc_astral_moon.png",
+        tonemap = "tc_moon_tonemap.png",
+        scale = 2.6,
+    },
+    stars = {
+        visible = true,
+        count = 1600,
+        star_color = "#EFE6FFBF",
+        scale = 0.85,
+        day_opacity = 0.35,
+        star_seed = 20260518,
+    },
+    clouds = {
+        density = 0.16,
+        color = "#C8B2FF2E",
+        ambient = "#342258",
+        shadow = "#1E1436",
+        height = 68,
+        thickness = 4,
+        speed = {x = 0.6, z = -1.0},
+    },
+}
+
+-- State-reactive themed skybox & fog presets calibrated for Sky::update()'s m_brightness (~0.66) multiplier.
+-- Uses fog_tint_type = "default" so Sky::update() applies tc_moon_tonemap.png to directional moon horizon glow,
+-- and auto_dim_skybox = false so cave-detection heuristics never hide the open-top sky, moon, or starfield.
+tc_assets.SKY_PRESETS = {
+    normal = {
+        type = "regular",
+        clouds = true,
+        body_orbit_tilt = 38.0,
+        auto_dim_skybox = false,
+        sky_color = {
+            day_sky = "#1E1638",
+            day_horizon = "#4A3074",
+            dawn_sky = "#2A1D48",
+            dawn_horizon = "#5A3884",
+            night_sky = "#261A44",
+            night_horizon = "#4E3278",
+            indoors = "#1E1638",
+            fog_sun_tint = "#FFB86C",
+            fog_moon_tint = "#C8A8FF",
+            fog_tint_type = "default",
+        },
+        fog = {
+            fog_distance = 120,
+            fog_start = 0.42,
+            fog_color = "#2E1E4A",
+        },
+    },
+    stasis = {
+        type = "regular",
+        clouds = true,
+        body_orbit_tilt = 38.0,
+        auto_dim_skybox = false,
+        sky_color = {
+            day_sky = "#162238",
+            day_horizon = "#2C5270",
+            dawn_sky = "#1C2E48",
+            dawn_horizon = "#366080",
+            night_sky = "#18263E",
+            night_horizon = "#2E5472",
+            indoors = "#162238",
+            fog_sun_tint = "#7CE8FF",
+            fog_moon_tint = "#9CEEFF",
+            fog_tint_type = "default",
+        },
+        fog = {
+            fog_distance = 120,
+            fog_start = 0.42,
+            fog_color = "#1D364C",
+        },
+    },
+    overdrive = {
+        type = "regular",
+        clouds = true,
+        body_orbit_tilt = 38.0,
+        auto_dim_skybox = false,
+        sky_color = {
+            day_sky = "#1A2836",
+            day_horizon = "#2E5A58",
+            dawn_sky = "#223442",
+            dawn_horizon = "#3A6B66",
+            night_sky = "#1D2E3C",
+            night_horizon = "#325E5B",
+            indoors = "#1A2836",
+            fog_sun_tint = "#FFD966",
+            fog_moon_tint = "#88FFD0",
+            fog_tint_type = "default",
+        },
+        fog = {
+            fog_distance = 120,
+            fog_start = 0.42,
+            fog_color = "#1F3C3E",
+        },
+    },
+    overload = {
+        type = "regular",
+        clouds = true,
+        body_orbit_tilt = 38.0,
+        auto_dim_skybox = false,
+        sky_color = {
+            day_sky = "#2C1428",
+            day_horizon = "#68283C",
+            dawn_sky = "#381A32",
+            dawn_horizon = "#7A3046",
+            night_sky = "#30162C",
+            night_horizon = "#6A2A3E",
+            indoors = "#2C1428",
+            fog_sun_tint = "#FF8585",
+            fog_moon_tint = "#FFB86C",
+            fog_tint_type = "default",
+        },
+        fog = {
+            fog_distance = 120,
+            fog_start = 0.38,
+            fog_color = "#441A28",
+        },
+    },
+}
 
 -- Animated 16x128 (8 frames of 16x16) vertical-frame particle sprite sheets
 tc_assets.PARTICLES = {
@@ -141,10 +383,10 @@ function tc_assets.format_description(spec)
         core.colorize(P.text_primary, spec.summary),
     }
     if spec.effect and spec.effect ~= "" then
-        lines[#lines + 1] = core.colorize(P.amber, "✦ What it does: ") .. core.colorize(P.text_primary, spec.effect)
+        lines[#lines + 1] = core.colorize(P.amber, S("✦ What it does: ")) .. core.colorize(P.text_primary, spec.effect)
     end
     if spec.usage and spec.usage ~= "" then
-        lines[#lines + 1] = core.colorize(P.aqua, "▸ How to use: ") .. core.colorize(P.emerald, spec.usage)
+        lines[#lines + 1] = core.colorize(P.aqua, S("▸ How to use: ")) .. core.colorize(P.emerald, spec.usage)
     end
     return table.concat(lines, "\n")
 end

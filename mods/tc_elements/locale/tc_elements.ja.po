@@ -1,0 +1,624 @@
+# Translation catalog for tc_elements (Terrarium Crucible)
+# Copyright (C) 2026 SaKeL
+# License: MIT
+msgid ""
+msgstr ""
+"Project-Id-Version: tc_elements 1.0\n"
+"POT-Creation-Date: 2026-11-11 00:00+0000\n"
+"PO-Revision-Date: 2026-11-11 00:00+0000\n"
+"Last-Translator: SaKeL\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: api.lua:65
+msgid "Scorching Brimstone"
+msgstr "灼熱の硫黄"
+
+#: api.lua:66
+msgid "Scorching Brimstone (Hot Block — Splash Water [3])"
+msgstr "灼熱の硫黄（高温ブロック — フラスコ [3] で消火）"
+
+#: api.lua:67
+msgid "Brimstone"
+msgstr "硫黄"
+
+#: api.lua:68 api.lua:128
+msgid "Flask [3]"
+msgstr "フラスコ [3]"
+
+#: api.lua:74
+msgid "A glowing-hot lava stone dropped in from above by the wizard."
+msgstr "魔法使いが上から落としてくる赤熱した溶岩石。"
+
+#: api.lua:75
+msgid "Raises heat, burns your boots (2 HP/s) if stood on, bonks on impact, & scorches green soil."
+msgstr "室温を上げ、踏むと火傷（2 HP/秒）、直撃でダメージ、さらに緑の土を焦がします。"
+
+#: api.lua:76
+msgid "Splash with Flask [3], siphon with low Bellows [2] to refill all Puffs, or pair with Ice via Trowel [1]!"
+msgstr "フラスコ [3] で水をかける、ふいご [2] で吸って全補充、またはコテ [1] で氷と合成しよう！"
+
+#: api.lua:78
+msgid "Splash with Flask [3] · Siphon with low Bellows [2] · Pair with Ice [1]"
+msgstr "フラスコ [3] で消火 · ふいご [2] で吸収補充 · コテ [1] で氷と合成"
+
+#: api.lua:81
+msgid "Dropping Scorching Brimstone! Splash it with Water Flask [3] or hit it mid-air for bonus growth!"
+msgstr "灼熱の硫黄が落下中！水フラスコ [3] で消すか、空中で迎撃して成長ボーナスを得よう！"
+
+#: api.lua:86
+msgid "Glacial Ice Shard"
+msgstr "氷河の氷片"
+
+#: api.lua:87
+msgid "Glacial Ice Shard (Cold Block — Melt with Bellows [2])"
+msgstr "氷河の氷片（低温ブロック — ふいご [2] で融解）"
+
+#: api.lua:88
+msgid "Ice"
+msgstr "氷"
+
+#: api.lua:89
+msgid "Bellows [2]"
+msgstr "ふいご [2]"
+
+#: api.lua:93
+msgid "A freezing blue ice crystal that cools down the glass room."
+msgstr "ガラス部屋を冷やす凍てつく青い氷晶。"
+
+#: api.lua:94
+msgid "Makes the room colder, makes the floor slippery, and chills nearby green soil."
+msgstr "室温を下げ、床を滑りやすくし、周囲の緑の土を凍らせます。"
+
+#: api.lua:95
+msgid "Left-Click with Thermal Bellows [2] to melt into fresh Water (then refill your Water Flask [3]!)."
+msgstr "熱風ふいご [2] で左クリックして真水に溶かそう（水フラスコ [3] の補充にも使えます！）。"
+
+#: api.lua:96
+msgid "Left-Click with Bellows [2] to melt, then scoop Water with Flask [3]"
+msgstr "ふいご [2] 左クリックで溶かし、フラスコ [3] で水をすくう"
+
+#: api.lua:99
+msgid "Dropping a Glacial Ice Shard! Melt it with Bellows [2] (or catch it mid-air for bonus growth)!"
+msgstr "氷河の氷片が落下中！ふいご [2] で溶かそう（空中迎撃で成長ボーナス）！"
+
+#: api.lua:104
+msgid "Vitriol Acid Slime"
+msgstr "硫酸スライム"
+
+#: api.lua:105
+msgid "Vitriol Acid Slime (Sour Puddle — Clear with Pestle [4])"
+msgstr "硫酸スライム（酸性水たまり — 乳棒 [4] で中和）"
+
+#: api.lua:106
+msgid "Acid"
+msgstr "酸"
+
+#: api.lua:107
+msgid "Pestle [4]"
+msgstr "乳棒 [4]"
+
+#: api.lua:113
+msgid "A bubbling green puddle that sours the soil and sticks to your boots."
+msgstr "土を酸性にし、ブーツにまとわりつく泡立つ緑の水たまり。"
+
+#: api.lua:114
+msgid "Sours soil, slows & stings your feet (2 HP/s), stops jumping inside it, & spoils green soil."
+msgstr "土を酸性にし、鈍足＆足元ダメージ（2 HP/秒）、ジャンプ不可、さらに緑の土を傷めます。"
+
+#: api.lua:115
+msgid "Left-Click on or near it with Limestone Pestle [4] (or place Chalk beside it) to turn the floor into fast green Fertile Soil!"
+msgstr "石灰岩の乳棒 [4] で左クリック（または隣にチョークを配置）すると、素早く走れる肥沃な土に変わります！"
+
+#: api.lua:117
+msgid "Left-Click with Pestle [4] · Place Chalk beside it for green Speed Soil"
+msgstr "乳棒 [4] で左クリック · 隣にチョークを置いて加速ソイル化"
+
+#: api.lua:120
+msgid "Pouring green Acid Slime! Dust it with Pestle [4] to turn the floor into green Speed Soil!"
+msgstr "緑の酸スライムが落下中！乳棒 [4] で中和して床を緑の加速ソイルに変えよう！"
+
+#: api.lua:125
+msgid "Alkaline Chalk"
+msgstr "アルカリチョーク"
+
+#: api.lua:126
+msgid "Alkaline Chalk (Dry Block — Splash Water [3])"
+msgstr "アルカリチョーク（乾燥ブロック — フラスコ [3] で洗浄）"
+
+#: api.lua:127
+msgid "Chalk"
+msgstr "チョーク"
+
+#: api.lua:132
+msgid "A dry, chalky crystal block that throws off soil balance."
+msgstr "土壌のバランスを崩す乾いた白亜の結晶ブロック。"
+
+#: api.lua:133
+msgid "Makes soil too chalky (alkaline); melts away on its own if flowing water touches it."
+msgstr "土をアルカリ性に傾けます。流水に触れると自然に溶けて消えます。"
+
+#: api.lua:134
+msgid "Wash with Flask [3], grind with low Pestle [4] to refill all Sweeps, or pair with Acid via Trowel [1]!"
+msgstr "フラスコ [3] で洗う、乳棒 [4] で砕いて全補充、またはコテ [1] で酸と合成しよう！"
+
+#: api.lua:136
+msgid "Wash with Flask [3] · Grind with low Pestle [4] · Pair with Acid [1]"
+msgstr "フラスコ [3] で洗浄 · 乳棒 [4] で粉砕補充 · コテ [1] で酸と合成"
+
+#: api.lua:139
+msgid "Dropping Alkaline Chalk! Splash it with Water Flask [3] or pair it beside green Acid Slime!"
+msgstr "アルカリチョークが落下中！水フラスコ [3] で洗うか、酸スライムの隣に合わせて中和しよう！"
+
+#: api.lua:152
+msgid "Prismatic Geode"
+msgstr "プリズム晶洞"
+
+#: api.lua:153
+msgid "Prismatic Geode (Bonus Crystal — Hit with Trowel [1]!)"
+msgstr "プリズム晶洞（ボーナス結晶 — コテ [1] で割ろう！）"
+
+#: api.lua:154
+msgid "Geode"
+msgstr "晶洞"
+
+#: api.lua:155
+msgid "Trowel [1]"
+msgstr "コテ [1]"
+
+#: api.lua:161
+msgid "A shimmering rainbow crystal that drops in starting from Level 2."
+msgstr "レベル2から落ちてくる虹色に輝くボーナス結晶。"
+
+#: api.lua:162
+msgid "Clears nearby hazards, makes Speed Soil, refills all Tools [2–4], & rewards +1 Aegis Potion!"
+msgstr "周囲の障害を除去し、加速ソイルを生成、道具 [2–4] を全補充＆イージスポーション +1 を獲得！"
+
+#: api.lua:163
+msgid "Left-Click or Right-Click it with your Trowel [1] (or set any block beside it) before time runs out!"
+msgstr "時間切れになる前にコテ [1] で左/右クリック（または隣にブロックを配置）して割ろう！"
+
+#: api.lua:164
+msgid "A shimmering Prismatic Geode is falling! Hit it with Trowel [1] within 22s for +1 Aegis Potion, green Speed Soil, & bonus Bloom!"
+msgstr "プリズム晶洞が落下中！22秒以内にコテ [1] で割るとイージスポーション +1、加速ソイル、開花ボーナスを獲得！"
+
+#: api.lua:172
+msgid "Crucible Seedling (Stage 1/4)"
+msgstr "クルーシブルの芽（段階 1/4）"
+
+#: api.lua:180
+msgid "Crucible Vines (Stage 2/4)"
+msgstr "クルーシブルの蔓（段階 2/4）"
+
+#: api.lua:188
+msgid "Crucible Astral Rose (Stage 3/4)"
+msgstr "クルーシブルの星薔薇（段階 3/4）"
+
+#: api.lua:196
+msgid "Philosopher's Lotus (Stage 4/4 · Full Bloom)"
+msgstr "賢者の蓮（段階 4/4 · 満開）"
+
+#: api.lua:226 init.lua:168 init.lua:184
+msgid "Fertile Soil"
+msgstr "肥沃な土"
+
+#: api.lua:227 init.lua:185
+msgid "Faster Plant Growth · Faster Running"
+msgstr "植物の成長促進 · ダッシュ速度上昇"
+
+#: api.lua:228 init.lua:186
+msgid "Walk on this glowing green soil to run much faster!"
+msgstr "この輝く緑の土の上を歩くと素早く走れます！"
+
+#: api.lua:304
+msgid "Tools [2–4] Refilled"
+msgstr "道具 [2–4] 全補充"
+
+#: api.lua:309
+msgid "Tools [2–4] Refilled · +1 Aegis!"
+msgstr "道具 [2–4] 全補充 · イージス +1！"
+
+#: api.lua:312
+msgid "Tools [2–4] Refilled · Belt Full Bonus!"
+msgstr "道具 [2–4] 全補充 · 所持上限ボーナス！"
+
+#: api.lua:319
+msgid "✦ Geode Cracked! (+@1% Bloom)"
+msgstr "✦ 晶洞開封！（+@1% 開花）"
+
+#: entities.lua:7
+msgid "Catch mid-air with filled Flask [3] (or low Bellows [2] to refill)!"
+msgstr "水入りフラスコ [3] で空中迎撃（または残量の少ないふいご [2] で補充）！"
+
+#: entities.lua:8
+msgid "Catch mid-air with charged Bellows [2] for bonus Bloom!"
+msgstr "充填済みのふいご [2] で空中迎撃して開花ボーナス！"
+
+#: entities.lua:9
+msgid "Catch mid-air with charged Pestle [4] for bonus Bloom!"
+msgstr "充填済みの乳棒 [4] で空中迎撃して開花ボーナス！"
+
+#: entities.lua:10
+msgid "Catch mid-air with filled Flask [3] (or low Pestle [4] to refill)!"
+msgstr "水入りフラスコ [3] で空中迎撃（または残量の少ない乳棒 [4] で補充）！"
+
+#: entities.lua:11
+msgid "Click with Trowel [1] (or let it land) to crack open the crystal!"
+msgstr "コテ [1] でクリック（または着地後）に結晶を割ろう！"
+
+#: entities.lua:88
+msgid "Falling Block"
+msgstr "落下ブロック"
+
+#: entities.lua:89
+msgid "Hit mid-air with the matching tool!"
+msgstr "対応する道具で空中で打ち払おう！"
+
+#: entities.lua:93
+msgid "Falling @1"
+msgstr "落下中の@1"
+
+#: entities.lua:93
+msgid "Dropping from above"
+msgstr "頭上から落下中"
+
+#: entities.lua:156
+msgid "Flask empty! Click Water/Steam to fill, or click air to condense +1."
+msgstr "フラスコが空です！水/蒸気をクリックして満タンにするか、空中クリックで +1 凝縮。"
+
+#: entities.lua:169
+msgid "Mid-Air Siphon → Bellows Full!"
+msgstr "空中吸収 → ふいご満タン！"
+
+#: entities.lua:176
+msgid "Bellows [2] is full! Splash Brimstone [3] or pair Ice [1]."
+msgstr "ふいご [2] は満タンです！硫黄に [3] で水をかけるか氷と [1] で合成しよう。"
+
+#: entities.lua:190
+msgid "Mid-Air Grind → Pestle Full!"
+msgstr "空中粉砕 → 乳棒満タン！"
+
+#: entities.lua:197
+msgid "Pestle [4] is full! Wash Chalk [3] or pair Acid [1]."
+msgstr "乳棒 [4] は満タンです！チョークを [3] で洗うか酸と [1] で合成しよう。"
+
+#: entities.lua:219
+msgid "Bellows empty! Click Brimstone to refill, or click air to pump +1."
+msgstr "ふいごが空です！硫黄をクリックして満タンにするか、空中クリックで +1 送風。"
+
+#: entities.lua:235
+msgid "Pestle empty! Click Chalk to refill, or click air to scrape +1."
+msgstr "乳棒が空です！チョークをクリックして満タンにするか、空中クリックで +1 削り取り。"
+
+#: entities.lua:251
+msgid "★ Aerial Catch!"
+msgstr "★ エアリアルキャッチ！"
+
+#: entities.lua:251
+msgid "★ Mid-Air Catch!"
+msgstr "★ 空中キャッチ！"
+
+#: entities.lua:265
+msgid "Use the matching tool!"
+msgstr "対応する道具を使ってください！"
+
+#: entities.lua:345
+msgid "Ouch! Step outside glowing floor rings before falling blocks land (or swat them mid-air)!"
+msgstr "イタッ！落下ブロックが着地する前に床の光る輪から出るか、空中で迎撃しよう！"
+
+#: init.lua:21 init.lua:28
+msgid "Terrarium Glass Wall"
+msgstr "テラリウムのガラス壁"
+
+#: init.lua:22 init.lua:45
+msgid "Glass Room Wall"
+msgstr "ガラス部屋の壁"
+
+#: init.lua:23
+msgid "Thick brass-framed glass walls surrounding your tiny garden."
+msgstr "小さな庭を囲む真鍮フレームの分厚いガラス壁。"
+
+#: init.lua:24
+msgid "Keeps everything safely inside and opens outward when you finish a level!"
+msgstr "中を安全に守り、レベルクリア時には外へ向かって開きます！"
+
+#: init.lua:25
+msgid "Peer through the glass to see the wizard's giant wooden desk, candles, and open spellbook."
+msgstr "ガラス越しに魔法使いの巨大な木の机やキャンドル、開かれた魔導書が見えます。"
+
+#: init.lua:44 init.lua:50
+msgid "Brass Terrarium Rim"
+msgstr "真鍮のテラリウム縁"
+
+#: init.lua:46
+msgid "Carved brass trim along the open top of the glass walls."
+msgstr "ガラス壁の上部を縁取る彫刻入りの真鍮リム。"
+
+#: init.lua:47
+msgid "Frames the open ceiling where the wizard drops blocks in from above."
+msgstr "魔法使いが上からブロックを落としてくる吹き抜け天井を囲んでいます。"
+
+#: init.lua:61 init.lua:66
+msgid "Wizard's Wooden Desk"
+msgstr "魔法使いの木製机"
+
+#: init.lua:62 init.lua:78 init.lua:95 init.lua:112
+msgid "Outside Scenery"
+msgstr "外の風景"
+
+#: init.lua:63
+msgid "Giant polished wooden desk planks underneath the glass terrarium."
+msgstr "ガラステラリウムの下に広がる磨き上げられた巨大な木の机。"
+
+#: init.lua:77 init.lua:82
+msgid "Wizard's Open Spellbook"
+msgstr "魔法使いの開いた魔導書"
+
+#: init.lua:79
+msgid "Giant glowing spellbook pages lying open on the desk outside the glass."
+msgstr "ガラスの外の机に広げられた、淡く光る巨大な魔導書のページ。"
+
+#: init.lua:94 init.lua:99
+msgid "Giant Beeswax Candle"
+msgstr "巨大な蜜蝋キャンドル"
+
+#: init.lua:96
+msgid "A towering beeswax candle warming the wizard's desk outside the glass."
+msgstr "ガラスの外で魔法使いの机を温かく照らす巨大な蜜蝋キャンドル。"
+
+#: init.lua:111 init.lua:117
+msgid "Dancing Candle Flame"
+msgstr "揺らめくキャンドルの炎"
+
+#: init.lua:113
+msgid "A warm flickering flame shining atop the giant desk candles."
+msgstr "巨大なキャンドルの先端で温かく揺らめく炎。"
+
+#: init.lua:114
+msgid "Lights up the workshop with a cozy golden glow."
+msgstr "工房全体を心地よい黄金色の光で照らします。"
+
+#: init.lua:133 init.lua:138
+msgid "Terrarium Base Stone"
+msgstr "テラリウムの基底石"
+
+#: init.lua:134 init.lua:150
+msgid "Garden Floor"
+msgstr "庭の基礎床"
+
+#: init.lua:135
+msgid "Solid dark stone foundation underneath the garden soil."
+msgstr "庭の土の下を支える頑丈な黒石の土台。"
+
+#: init.lua:149 init.lua:157
+msgid "Garden Soil"
+msgstr "庭の土"
+
+#: init.lua:151
+msgid "Soft brown earth covering the floor of every glass room."
+msgstr "すべてのガラス部屋の床を覆う柔らかな茶色い土。"
+
+#: init.lua:152
+msgid "Can be upgraded into glowing green Fertile Soil that speeds up you and your plants!"
+msgstr "輝く緑の「肥沃な土」に変化させると、植物の成長と移動速度がアップ！"
+
+#: init.lua:153
+msgid "Clear green Acid Slime with Pestle [4] or splash Chalk with Water Flask [3] on top of this soil."
+msgstr "この土の上で酸スライムを乳棒 [4] で掃くか、チョークに水フラスコ [3] をかけよう。"
+
+#: init.lua:169
+msgid "Rich Green Soil · Speed Boost"
+msgstr "豊かな緑の土 · スピード上昇"
+
+#: init.lua:170
+msgid "Glowing green soil created whenever you clean up Acid, Chalk, or a Prismatic Geode."
+msgstr "酸やチョークの浄化、またはプリズム晶洞の開封で生まれる輝く緑の土。"
+
+#: init.lua:171
+msgid "Helps nearby plants bloom faster AND lets you run much quicker when you walk on it!"
+msgstr "近くの植物の開花を早め、さらに上を歩くと移動速度が大幅に上がります！"
+
+#: init.lua:172
+msgid "Create green paths from room to room so you can dash across your garden with ease."
+msgstr "部屋から部屋へ緑の小道をつなげて、庭中を軽快に駆け回ろう。"
+
+#: init.lua:175
+msgid "Fertile Soil (Faster Running & Plant Growth)"
+msgstr "肥沃な土（移動速度＆植物成長アップ）"
+
+#: init.lua:204 init.lua:215
+msgid "Garden Tip"
+msgstr "ガーデニングのヒント"
+
+#: init.lua:205
+msgid "Blocks can only be placed down on the garden floor!"
+msgstr "ブロックは庭の床の上にしか置けません！"
+
+#: init.lua:216
+msgid "Please leave a little room around your plants!"
+msgstr "植物のまわりには少しスペースを空けてください！"
+
+#: init.lua:316
+msgid "Hot Block · Raises Heat"
+msgstr "高温ブロック · 温度上昇"
+
+#: init.lua:327
+msgid "Cold Block · Lowers Heat"
+msgstr "低温ブロック · 温度低下"
+
+#: init.lua:338
+msgid "Sour Puddle · Sours Soil"
+msgstr "酸性水たまり · 土を酸性化"
+
+#: init.lua:358
+msgid "Dry Block · Dries Soil"
+msgstr "乾燥ブロック · 土をアルカリ化"
+
+#: init.lua:411
+msgid "Bonus Crystal · Level 2+"
+msgstr "ボーナス結晶 · Lv2以降"
+
+#: init.lua:431
+msgid "Cracks into 2 hazards in 22s!"
+msgstr "22秒後に障害ブロック2個に分裂！"
+
+#: init.lua:432 init.lua:484
+msgid "Left-Click or Right-Click with Trowel [1] to clear nearby hazards!"
+msgstr "コテ [1] で左/右クリックして周囲の障害を一掃しよう！"
+
+#: init.lua:455
+msgid "Switch to your Trowel [1] and Left-Click or Right-Click this Prismatic Geode to crack it open!"
+msgstr "コテ [1] に持ち替えて、このプリズム晶洞を左/右クリックして割ろう！"
+
+#: init.lua:468
+msgid "Switch to your Trowel [1] (or place any block beside this Geode) to crack it open!"
+msgstr "コテ [1] に持ち替える（または晶洞の隣にブロックを置く）と割れます！"
+
+#: init.lua:483
+msgid "Cracks into 2 hazards in @1s!"
+msgstr "あと @1秒で障害ブロック2個に分裂！"
+
+#: init.lua:508
+msgid "Crystal Cracked"
+msgstr "結晶が分裂"
+
+#: init.lua:509
+msgid "An unopened Prismatic Geode cracked apart into 2 hazard blocks!"
+msgstr "未開封のプリズム晶洞が割れて、障害ブロック2個になってしまいました！"
+
+#: init.lua:522
+msgid "Fresh Water"
+msgstr "真水"
+
+#: init.lua:523 init.lua:565
+msgid "Refills Your Water Flask"
+msgstr "水フラスコを補充"
+
+#: init.lua:524
+msgid "Clean, cool water left behind whenever you melt blue Ice Shards."
+msgstr "青い氷片を溶かすと残る冷たく澄んだ水。"
+
+#: init.lua:525
+msgid "Gently cools the room and washes away nearby Brimstone or Chalk."
+msgstr "部屋を穏やかに冷やし、近くの硫黄やチョークを洗い流します。"
+
+#: init.lua:526
+msgid "Left-Click this water with your Water Flask [3] to scoop up the puddle and fill 3 splashes!"
+msgstr "水フラスコ [3] で左クリックすると水たまりをすくってスプラッシュ3回分を補充！"
+
+#: init.lua:529
+msgid "Fresh Water (Left-Click with Flask [3])"
+msgstr "真水（フラスコ [3] 左クリックで補充）"
+
+#: init.lua:564 init.lua:571
+msgid "Flowing Water"
+msgstr "流水"
+
+#: init.lua:566
+msgid "Spreading ripples of cool water."
+msgstr "波紋を広げながら流れる冷たい水。"
+
+#: init.lua:567
+msgid "Melts Chalk on contact and cools hot Brimstone into Steam."
+msgstr "触れたチョークを溶かし、熱い硫黄を冷やして蒸気に変えます。"
+
+#: init.lua:568
+msgid "Left-Click anywhere on the puddle with your Water Flask [3] to scoop it up and refill!"
+msgstr "水フラスコ [3] で水たまりを左クリックしてすくい取り、補充しよう！"
+
+#: init.lua:602
+msgid "Rising Steam"
+msgstr "立ち昇る蒸気"
+
+#: init.lua:603
+msgid "Warm Mist · High Jump"
+msgstr "温かい霧 · ハイジャンプ"
+
+#: init.lua:604
+msgid "Soft, warm mist created when water cools down hot Brimstone or Ice melts."
+msgstr "水が硫黄を冷やした時や氷が溶けた時に立ち昇る柔らかな湯気。"
+
+#: init.lua:605
+msgid "Step through it to float lightly and jump much higher for 5 seconds!"
+msgstr "中に入ると5秒間体が軽くなり、高くジャンプできます！"
+
+#: init.lua:606
+msgid "Walk into rising steam to leap high, or Left-Click it with your Water Flask [3] to refill."
+msgstr "蒸気に入ってハイジャンプするか、水フラスコ [3] で左クリックして補充しよう。"
+
+#: init.lua:609
+msgid "Rising Steam (Walk In for High Jump)"
+msgstr "立ち昇る蒸気（入るとハイジャンプ）"
+
+#: init.lua:642
+msgid "Magical Plant · Protect & Grow!"
+msgstr "魔法の植物 · 守って育てよう！"
+
+#: init.lua:643
+msgid "The living heart of each glass room—grow all plants to 100% Bloom to finish the level!"
+msgstr "各ガラス部屋の命の要。すべての植物を100%開花させるとレベルクリア！"
+
+#: init.lua:644
+msgid "Blooms steadily when Heat (40–60°C) and Soil pH (5.6–8.4) stay comfortable and calm."
+msgstr "温度（40–60°C）と土壌pH（5.6–8.4）が快適な間、順調に開花が進みます。"
+
+#: init.lua:645
+msgid "Right-Click to check Garden Status; Left-Click with a filled Water Flask [3] to heal it!"
+msgstr "右クリックで庭のステータス確認。水入りフラスコ [3] の左クリックで回復！"
+
+#: init.lua:667
+msgid "Keep Heat (40–60°C) & Soil pH (5.6–8.4) comfortable"
+msgstr "温度（40–60°C）と土壌pH（5.6–8.4）を快適に保つ"
+
+#: init.lua:668
+msgid "Right-Click for Garden Controls · Left-Click with Water Flask [3] to heal"
+msgstr "右クリック：庭の管理 · 水フラスコ [3] 左クリック：回復"
+
+#: init.lua:682
+msgid "Wilted Sprout (Needs Water!)"
+msgstr "しおれた苗（水やりが必要！）"
+
+#: init.lua:683
+msgid "Magical Plant · Needs Revival!"
+msgstr "魔法の植物 · 復活が必要！"
+
+#: init.lua:684
+msgid "A tired, wilted sprout whose growth is paused until you revive it."
+msgstr "元気を失ってしおれた苗。復活させるまで成長が止まります。"
+
+#: init.lua:685
+msgid "If EVERY sprout in your garden wilts at the same time, the run ends!"
+msgstr "庭のすべての苗が同時にしおれるとゲームオーバーになります！"
+
+#: init.lua:686
+msgid "Left-Click with a filled Water Flask [3], drink an Aegis Potion, or keep the room balanced for 6s to revive it!"
+msgstr "水フラスコ [3] で左クリック、イージスポーションを飲む、または6秒間バランスを保つと復活します！"
+
+#: init.lua:690
+msgid "Wilted Sprout (Splash Water [3] to Revive!)"
+msgstr "しおれた苗（フラスコ [3] の水で復活！）"
+
+#: init.lua:708
+msgid "Wilted Sprout [Needs Revival!]"
+msgstr "しおれた苗 [復活が必要！]"
+
+#: init.lua:709
+msgid "Growth paused for this plant until revived!"
+msgstr "復活するまでこの植物の成長は停止中！"
+
+#: init.lua:710
+msgid "Left-Click with Water Flask [3], drink Aegis Potion, or keep 6s Balance"
+msgstr "水フラスコ [3] 左クリック、イージスポーション、または6秒間バランス維持"
+
+
+#: hud_migration
+msgid "✖ Unopened Geode Shattered!"
+msgstr "✖ 未開封の晶洞が砕け散った！"
+
+#: hud_migration
+msgid "Split into 2 floor hazards!"
+msgstr "危険ブロック2個に分裂！"

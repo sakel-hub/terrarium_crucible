@@ -16,6 +16,8 @@
 ---@field button function
 ---@field item_badge fun(x: number, y: number, size: number, item: string, tip?: string, accent?: string): string
 ---@field stat_box function
+---@field readonly_field function
+---@field spine_label fun(x: number, y: number, text: string, color_hex?: string): string
 ---@field inv_slots_bg fun(x: number, y: number, cols: integer, rows: integer): string
 ---@field window fun(spec: TcWindowSpec): string
 local ui = {}
@@ -37,6 +39,7 @@ function ui.get_prepend()
         "bgcolor[" .. P.bg_backdrop .. ";true]",
         "background9[0,0;1,1;tc_gui_formbg.png;true;10]",
         "listcolors[#181228D9;#3A2E5C;#7A62B8;" .. P.bg_tooltip .. ";" .. P.text_primary .. "]",
+        "listimages[tc_gui_hb_bg.png;tc_gui_slot_hover.png]",
         "style_type[label;textcolor=" .. P.text_primary .. ";font_size=*1.02]",
         "style_type[button,button_exit;bgcolor=#2A2142;bgcolor_hovered=#3A2E5C;" ..
             "bgcolor_pressed=#1F1832;textcolor=" .. P.text_primary .. ";font=bold]",
@@ -46,15 +49,11 @@ function ui.get_prepend()
     })
 end
 
----Escapes special characters for safe inclusion inside Luanti hypertext markup.
+---Escapes `\`, `<`, and `>` for safe inclusion inside Luanti `hypertext[]` markup (`&` is literal, never HTML).
 ---@param text string
 ---@return string
 function ui.ht_escape(text)
-    local s = tostring(text or "")
-    s = s:gsub("&", "&amp;")
-    s = s:gsub("<", "&lt;")
-    s = s:gsub(">", "&gt;")
-    return s
+    return core.hypertext_escape(tostring(text or ""))
 end
 
 ---Creates an AA-accessible hypertext block with readable base font size and colors.
@@ -210,7 +209,51 @@ function ui.stat_box(x, y, w, h, label, value, accent_hex, tip)
     return table.concat(parts)
 end
 
----Renders slot background frames aligned with formspec_version[8] `list[...]` (1.25 real-unit step).
+---Renders a Luanti 5.18 formspec_version[12] read-only (`editable=false`) copyable text field.
+---@param x number
+---@param y number
+---@param w number
+---@param h number
+---@param name string
+---@param label string
+---@param value string
+---@param tip? string
+---@return string
+function ui.readonly_field(x, y, w, h, name, label, value, tip)
+    local parts = {
+        string.format(
+            "style[%s;editable=false;bgcolor=%s;textcolor=%s;border=true]",
+            name, P.bg_inset, P.gold
+        ),
+        string.format(
+            "field[%.2f,%.2f;%.2f,%.2f;%s;%s;%s]",
+            x, y, w, h, name,
+            core.formspec_escape(label or ""),
+            core.formspec_escape(value or "")
+        ),
+    }
+    if tip and tip ~= "" then
+        parts[#parts + 1] = ui.tooltip_elem(name, tip)
+    end
+    return table.concat(parts)
+end
+
+---Renders a vertical book-spine ornament label using Luanti 5.18's `vertlabel` `textcolor` support.
+---@param x number
+---@param y number
+---@param text string
+---@param color_hex? string
+---@return string
+function ui.spine_label(x, y, text, color_hex)
+    local col = color_hex or P.gold
+    return table.concat({
+        string.format("style_type[vertlabel;textcolor=%s;font=bold]", col),
+        string.format("vertlabel[%.2f,%.2f;%s]", x, y, core.formspec_escape(text or "")),
+        string.format("style_type[vertlabel;textcolor=%s;font=regular]", P.text_primary),
+    })
+end
+
+---Renders slot background frames aligned with formspec_version[12] `list[...]` (1.25 real-unit step).
 ---@param x number
 ---@param y number
 ---@param cols integer
@@ -229,7 +272,7 @@ function ui.inv_slots_bg(x, y, cols, rows)
     return table.concat(out)
 end
 
----Builds a complete formspec_version[8] window using the unified Terrarium Crucible theme.
+---Builds a complete formspec_version[12] window using the unified Terrarium Crucible theme.
 ---@param spec TcWindowSpec
 ---@return string
 function ui.window(spec)

@@ -1,0 +1,624 @@
+# Translation catalog for tc_elements (Terrarium Crucible)
+# Copyright (C) 2026 SaKeL
+# License: MIT
+msgid ""
+msgstr ""
+"Project-Id-Version: tc_elements 1.0\n"
+"POT-Creation-Date: 2026-11-11 00:00+0000\n"
+"PO-Revision-Date: 2026-11-11 00:00+0000\n"
+"Last-Translator: SaKeL\n"
+"Language-Team: Chinese (Simplified)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: api.lua:65
+msgid "Scorching Brimstone"
+msgstr "灼热硫磺"
+
+#: api.lua:66
+msgid "Scorching Brimstone (Hot Block — Splash Water [3])"
+msgstr "灼热硫磺（高温方块 — 用水瓶 [3] 泼灭）"
+
+#: api.lua:67
+msgid "Brimstone"
+msgstr "硫磺"
+
+#: api.lua:68 api.lua:128
+msgid "Flask [3]"
+msgstr "水瓶 [3]"
+
+#: api.lua:74
+msgid "A glowing-hot lava stone dropped in from above by the wizard."
+msgstr "巫师从上方投下的炽热熔岩石。"
+
+#: api.lua:75
+msgid "Raises heat, burns your boots (2 HP/s) if stood on, bonks on impact, & scorches green soil."
+msgstr "升高室温，踩上去会烫伤靴子（2 HP/秒），砸中会受伤，还会烤焦绿土。"
+
+#: api.lua:76
+msgid "Splash with Flask [3], siphon with low Bellows [2] to refill all Puffs, or pair with Ice via Trowel [1]!"
+msgstr "用水瓶 [3] 泼灭、用未满的风箱 [2] 吸取回满鼓风，或用花铲 [1] 与寒冰配对！"
+
+#: api.lua:78
+msgid "Splash with Flask [3] · Siphon with low Bellows [2] · Pair with Ice [1]"
+msgstr "水瓶 [3] 泼灭 · 风箱 [2] 吸取充能 · 花铲 [1] 配对寒冰"
+
+#: api.lua:81
+msgid "Dropping Scorching Brimstone! Splash it with Water Flask [3] or hit it mid-air for bonus growth!"
+msgstr "灼热硫磺落下！用水瓶 [3] 泼灭，或在半空拦截以获额外生长！"
+
+#: api.lua:86
+msgid "Glacial Ice Shard"
+msgstr "寒冰碎片"
+
+#: api.lua:87
+msgid "Glacial Ice Shard (Cold Block — Melt with Bellows [2])"
+msgstr "寒冰碎片（低温方块 — 用风箱 [2] 融化）"
+
+#: api.lua:88
+msgid "Ice"
+msgstr "寒冰"
+
+#: api.lua:89
+msgid "Bellows [2]"
+msgstr "风箱 [2]"
+
+#: api.lua:93
+msgid "A freezing blue ice crystal that cools down the glass room."
+msgstr "令玻璃房降温的冰蓝结晶。"
+
+#: api.lua:94
+msgid "Makes the room colder, makes the floor slippery, and chills nearby green soil."
+msgstr "降低室温，使地面湿滑，并冻坏附近的绿土。"
+
+#: api.lua:95
+msgid "Left-Click with Thermal Bellows [2] to melt into fresh Water (then refill your Water Flask [3]!)."
+msgstr "用热力风箱 [2] 左键将其融化为清水（随后可用水瓶 [3] 舀水补充！）。"
+
+#: api.lua:96
+msgid "Left-Click with Bellows [2] to melt, then scoop Water with Flask [3]"
+msgstr "风箱 [2] 左键融化，再用水瓶 [3] 舀水补充"
+
+#: api.lua:99
+msgid "Dropping a Glacial Ice Shard! Melt it with Bellows [2] (or catch it mid-air for bonus growth)!"
+msgstr "寒冰碎片落下！用风箱 [2] 融化（或在半空拦截以获额外生长）！"
+
+#: api.lua:104
+msgid "Vitriol Acid Slime"
+msgstr "矾酸黏液"
+
+#: api.lua:105
+msgid "Vitriol Acid Slime (Sour Puddle — Clear with Pestle [4])"
+msgstr "矾酸黏液（强酸水洼 — 用石杵 [4] 清除）"
+
+#: api.lua:106
+msgid "Acid"
+msgstr "酸液"
+
+#: api.lua:107
+msgid "Pestle [4]"
+msgstr "石杵 [4]"
+
+#: api.lua:113
+msgid "A bubbling green puddle that sours the soil and sticks to your boots."
+msgstr "冒泡的绿色酸洼，会使土壤变酸并粘住靴子。"
+
+#: api.lua:114
+msgid "Sours soil, slows & stings your feet (2 HP/s), stops jumping inside it, & spoils green soil."
+msgstr "酸化土壤，减速并灼刺双脚（2 HP/秒），困在其中无法跳跃，且会腐蚀绿土。"
+
+#: api.lua:115
+msgid "Left-Click on or near it with Limestone Pestle [4] (or place Chalk beside it) to turn the floor into fast green Fertile Soil!"
+msgstr "用石灰石杵 [4] 左键点击它或附近地面（或在旁放置白垩），将地面化作翠绿肥沃加速土！"
+
+#: api.lua:117
+msgid "Left-Click with Pestle [4] · Place Chalk beside it for green Speed Soil"
+msgstr "石杵 [4] 左键清扫 · 旁放白垩生成绿色加速土"
+
+#: api.lua:120
+msgid "Pouring green Acid Slime! Dust it with Pestle [4] to turn the floor into green Speed Soil!"
+msgstr "绿色酸液倾泻而下！用石杵 [4] 撒粉中和，将地面化作绿色加速土！"
+
+#: api.lua:125
+msgid "Alkaline Chalk"
+msgstr "碱性白垩"
+
+#: api.lua:126
+msgid "Alkaline Chalk (Dry Block — Splash Water [3])"
+msgstr "碱性白垩（干燥方块 — 用水瓶 [3] 冲洗）"
+
+#: api.lua:127
+msgid "Chalk"
+msgstr "白垩"
+
+#: api.lua:132
+msgid "A dry, chalky crystal block that throws off soil balance."
+msgstr "破坏土壤酸碱平衡的干燥白垩块。"
+
+#: api.lua:133
+msgid "Makes soil too chalky (alkaline); melts away on its own if flowing water touches it."
+msgstr "使土壤过于偏碱；接触流水时会自动融解。"
+
+#: api.lua:134
+msgid "Wash with Flask [3], grind with low Pestle [4] to refill all Sweeps, or pair with Acid via Trowel [1]!"
+msgstr "用水瓶 [3] 冲洗、用未满的石杵 [4] 研磨回满清扫，或用花铲 [1] 与酸液配对！"
+
+#: api.lua:136
+msgid "Wash with Flask [3] · Grind with low Pestle [4] · Pair with Acid [1]"
+msgstr "水瓶 [3] 冲洗 · 石杵 [4] 研磨充能 · 花铲 [1] 配对酸液"
+
+#: api.lua:139
+msgid "Dropping Alkaline Chalk! Splash it with Water Flask [3] or pair it beside green Acid Slime!"
+msgstr "碱性白垩落下！用水瓶 [3] 冲洗，或放到绿色酸液旁中和！"
+
+#: api.lua:152
+msgid "Prismatic Geode"
+msgstr "棱彩晶洞"
+
+#: api.lua:153
+msgid "Prismatic Geode (Bonus Crystal — Hit with Trowel [1]!)"
+msgstr "棱彩晶洞（奖励水晶 — 用花铲 [1] 敲开！）"
+
+#: api.lua:154
+msgid "Geode"
+msgstr "晶洞"
+
+#: api.lua:155
+msgid "Trowel [1]"
+msgstr "花铲 [1]"
+
+#: api.lua:161
+msgid "A shimmering rainbow crystal that drops in starting from Level 2."
+msgstr "从第 2 关起掉落的闪耀彩虹水晶。"
+
+#: api.lua:162
+msgid "Clears nearby hazards, makes Speed Soil, refills all Tools [2–4], & rewards +1 Aegis Potion!"
+msgstr "清除附近危害、生成加速土、回满所有工具 [2–4]，并奖励 +1 神盾药水！"
+
+#: api.lua:163
+msgid "Left-Click or Right-Click it with your Trowel [1] (or set any block beside it) before time runs out!"
+msgstr "在倒计时结束前，用花铲 [1] 左键或右键敲开它（或在旁放置任意方块）！"
+
+#: api.lua:164
+msgid "A shimmering Prismatic Geode is falling! Hit it with Trowel [1] within 22s for +1 Aegis Potion, green Speed Soil, & bonus Bloom!"
+msgstr "闪耀的棱彩晶洞正在落下！22 秒内用花铲 [1] 敲开可得 +1 神盾药水、绿色加速土与额外开花度！"
+
+#: api.lua:172
+msgid "Crucible Seedling (Stage 1/4)"
+msgstr "坩埚幼苗（阶段 1/4）"
+
+#: api.lua:180
+msgid "Crucible Vines (Stage 2/4)"
+msgstr "坩埚藤蔓（阶段 2/4）"
+
+#: api.lua:188
+msgid "Crucible Astral Rose (Stage 3/4)"
+msgstr "坩埚星芒玫瑰（阶段 3/4）"
+
+#: api.lua:196
+msgid "Philosopher's Lotus (Stage 4/4 · Full Bloom)"
+msgstr "贤者之莲（阶段 4/4 · 盛放）"
+
+#: api.lua:226 init.lua:168 init.lua:184
+msgid "Fertile Soil"
+msgstr "肥沃土壤"
+
+#: api.lua:227 init.lua:185
+msgid "Faster Plant Growth · Faster Running"
+msgstr "加速植物生长 · 加速奔跑"
+
+#: api.lua:228 init.lua:186
+msgid "Walk on this glowing green soil to run much faster!"
+msgstr "踩在这片发光的绿土上即可飞快奔跑！"
+
+#: api.lua:304
+msgid "Tools [2–4] Refilled"
+msgstr "工具 [2–4] 已回满"
+
+#: api.lua:309
+msgid "Tools [2–4] Refilled · +1 Aegis!"
+msgstr "工具 [2–4] 已回满 · +1 神盾药水！"
+
+#: api.lua:312
+msgid "Tools [2–4] Refilled · Belt Full Bonus!"
+msgstr "工具 [2–4] 已回满 · 腰带满载奖励！"
+
+#: api.lua:319
+msgid "✦ Geode Cracked! (+@1% Bloom)"
+msgstr "✦ 晶洞敲开！（+@1% 开花度）"
+
+#: entities.lua:7
+msgid "Catch mid-air with filled Flask [3] (or low Bellows [2] to refill)!"
+msgstr "用装满的水瓶 [3] 半空拦截（或用未满的风箱 [2] 吸取充能）！"
+
+#: entities.lua:8
+msgid "Catch mid-air with charged Bellows [2] for bonus Bloom!"
+msgstr "用充能的风箱 [2] 半空拦截以获额外开花度！"
+
+#: entities.lua:9
+msgid "Catch mid-air with charged Pestle [4] for bonus Bloom!"
+msgstr "用充能的石杵 [4] 半空拦截以获额外开花度！"
+
+#: entities.lua:10
+msgid "Catch mid-air with filled Flask [3] (or low Pestle [4] to refill)!"
+msgstr "用装满的水瓶 [3] 半空拦截（或用未满的石杵 [4] 研磨充能）！"
+
+#: entities.lua:11
+msgid "Click with Trowel [1] (or let it land) to crack open the crystal!"
+msgstr "用花铲 [1] 点击（或等它落地后）敲开水晶！"
+
+#: entities.lua:88
+msgid "Falling Block"
+msgstr "下落方块"
+
+#: entities.lua:89
+msgid "Hit mid-air with the matching tool!"
+msgstr "用对应工具在半空拦截！"
+
+#: entities.lua:93
+msgid "Falling @1"
+msgstr "下落的@1"
+
+#: entities.lua:93
+msgid "Dropping from above"
+msgstr "正从上方落下"
+
+#: entities.lua:156
+msgid "Flask empty! Click Water/Steam to fill, or click air to condense +1."
+msgstr "水瓶已空！点击清水/蒸汽装满，或点击空气凝结 +1。"
+
+#: entities.lua:169
+msgid "Mid-Air Siphon → Bellows Full!"
+msgstr "半空吸取 → 风箱已满！"
+
+#: entities.lua:176
+msgid "Bellows [2] is full! Splash Brimstone [3] or pair Ice [1]."
+msgstr "风箱 [2] 已满！请用水瓶 [3] 泼灭硫磺或用 [1] 配对寒冰。"
+
+#: entities.lua:190
+msgid "Mid-Air Grind → Pestle Full!"
+msgstr "半空研磨 → 石杵已满！"
+
+#: entities.lua:197
+msgid "Pestle [4] is full! Wash Chalk [3] or pair Acid [1]."
+msgstr "石杵 [4] 已满！请用水瓶 [3] 冲洗白垩或用 [1] 配对酸液。"
+
+#: entities.lua:219
+msgid "Bellows empty! Click Brimstone to refill, or click air to pump +1."
+msgstr "风箱已空！点击硫磺回满，或点击空气鼓风 +1。"
+
+#: entities.lua:235
+msgid "Pestle empty! Click Chalk to refill, or click air to scrape +1."
+msgstr "石杵已空！点击白垩回满，或点击空气刮取 +1。"
+
+#: entities.lua:251
+msgid "★ Aerial Catch!"
+msgstr "★ 空中拦截！"
+
+#: entities.lua:251
+msgid "★ Mid-Air Catch!"
+msgstr "★ 半空拦截！"
+
+#: entities.lua:265
+msgid "Use the matching tool!"
+msgstr "请使用对应的工具！"
+
+#: entities.lua:345
+msgid "Ouch! Step outside glowing floor rings before falling blocks land (or swat them mid-air)!"
+msgstr "哎哟！赶在下落方块砸地前离开地面光圈（或在半空将它击碎）！"
+
+#: init.lua:21 init.lua:28
+msgid "Terrarium Glass Wall"
+msgstr "生态瓶玻璃墙"
+
+#: init.lua:22 init.lua:45
+msgid "Glass Room Wall"
+msgstr "玻璃房墙壁"
+
+#: init.lua:23
+msgid "Thick brass-framed glass walls surrounding your tiny garden."
+msgstr "环绕微型花园的厚实黄铜框玻璃墙。"
+
+#: init.lua:24
+msgid "Keeps everything safely inside and opens outward when you finish a level!"
+msgstr "妥善保护瓶内一切，并在过关时向外开启！"
+
+#: init.lua:25
+msgid "Peer through the glass to see the wizard's giant wooden desk, candles, and open spellbook."
+msgstr "透过玻璃可以望见巫师巨大的木书桌、蜡烛和摊开的魔导书。"
+
+#: init.lua:44 init.lua:50
+msgid "Brass Terrarium Rim"
+msgstr "黄铜瓶口边框"
+
+#: init.lua:46
+msgid "Carved brass trim along the open top of the glass walls."
+msgstr "镶嵌在玻璃墙敞口顶端的雕花黄铜边框。"
+
+#: init.lua:47
+msgid "Frames the open ceiling where the wizard drops blocks in from above."
+msgstr "围出敞开的瓶口，巫师会从上方往里投下方块。"
+
+#: init.lua:61 init.lua:66
+msgid "Wizard's Wooden Desk"
+msgstr "巫师的木书桌"
+
+#: init.lua:62 init.lua:78 init.lua:95 init.lua:112
+msgid "Outside Scenery"
+msgstr "瓶外布景"
+
+#: init.lua:63
+msgid "Giant polished wooden desk planks underneath the glass terrarium."
+msgstr "玻璃生态瓶下方光滑巨大的木桌面。"
+
+#: init.lua:77 init.lua:82
+msgid "Wizard's Open Spellbook"
+msgstr "巫师摊开的魔导书"
+
+#: init.lua:79
+msgid "Giant glowing spellbook pages lying open on the desk outside the glass."
+msgstr "玻璃外书桌上摊开的巨大发光书页。"
+
+#: init.lua:94 init.lua:99
+msgid "Giant Beeswax Candle"
+msgstr "巨型蜂蜡烛"
+
+#: init.lua:96
+msgid "A towering beeswax candle warming the wizard's desk outside the glass."
+msgstr "玻璃外温暖巫师书桌的高耸蜂蜡烛。"
+
+#: init.lua:111 init.lua:117
+msgid "Dancing Candle Flame"
+msgstr "跃动的烛火"
+
+#: init.lua:113
+msgid "A warm flickering flame shining atop the giant desk candles."
+msgstr "巨型书桌蜡烛顶端温暖摇曳的火苗。"
+
+#: init.lua:114
+msgid "Lights up the workshop with a cozy golden glow."
+msgstr "用温馨的金色光芒照亮整间工坊。"
+
+#: init.lua:133 init.lua:138
+msgid "Terrarium Base Stone"
+msgstr "生态瓶基石"
+
+#: init.lua:134 init.lua:150
+msgid "Garden Floor"
+msgstr "花园底层"
+
+#: init.lua:135
+msgid "Solid dark stone foundation underneath the garden soil."
+msgstr "垫在花园土壤下方的坚实深色基石。"
+
+#: init.lua:149 init.lua:157
+msgid "Garden Soil"
+msgstr "花园土壤"
+
+#: init.lua:151
+msgid "Soft brown earth covering the floor of every glass room."
+msgstr "铺满每间玻璃房地面的松软褐土。"
+
+#: init.lua:152
+msgid "Can be upgraded into glowing green Fertile Soil that speeds up you and your plants!"
+msgstr "可升级为发光的翠绿肥沃土壤，让你和植物一起加速！"
+
+#: init.lua:153
+msgid "Clear green Acid Slime with Pestle [4] or splash Chalk with Water Flask [3] on top of this soil."
+msgstr "在此土壤上用石杵 [4] 清除酸液，或用水瓶 [3] 冲洗白垩即可。"
+
+#: init.lua:169
+msgid "Rich Green Soil · Speed Boost"
+msgstr "丰饶绿土 · 速度加成"
+
+#: init.lua:170
+msgid "Glowing green soil created whenever you clean up Acid, Chalk, or a Prismatic Geode."
+msgstr "清理酸液、白垩或棱彩晶洞时生成的发光绿土。"
+
+#: init.lua:171
+msgid "Helps nearby plants bloom faster AND lets you run much quicker when you walk on it!"
+msgstr "既能让附近植物更快开花，又能让你踩在上面疾速奔跑！"
+
+#: init.lua:172
+msgid "Create green paths from room to room so you can dash across your garden with ease."
+msgstr "在房间之间铺出绿色通道，轻松疾驰穿梭整座花园。"
+
+#: init.lua:175
+msgid "Fertile Soil (Faster Running & Plant Growth)"
+msgstr "肥沃土壤（加速奔跑与植物生长）"
+
+#: init.lua:204 init.lua:215
+msgid "Garden Tip"
+msgstr "园艺提示"
+
+#: init.lua:205
+msgid "Blocks can only be placed down on the garden floor!"
+msgstr "方块只能放置在花园地面上！"
+
+#: init.lua:216
+msgid "Please leave a little room around your plants!"
+msgstr "请在植物周围留出一点空间！"
+
+#: init.lua:316
+msgid "Hot Block · Raises Heat"
+msgstr "高温方块 · 升高温度"
+
+#: init.lua:327
+msgid "Cold Block · Lowers Heat"
+msgstr "低温方块 · 降低温度"
+
+#: init.lua:338
+msgid "Sour Puddle · Sours Soil"
+msgstr "强酸水洼 · 酸化土壤"
+
+#: init.lua:358
+msgid "Dry Block · Dries Soil"
+msgstr "干燥方块 · 碱化土壤"
+
+#: init.lua:411
+msgid "Bonus Crystal · Level 2+"
+msgstr "奖励水晶 · 第 2 关+"
+
+#: init.lua:431
+msgid "Cracks into 2 hazards in 22s!"
+msgstr "22 秒后碎裂为 2 个危害方块！"
+
+#: init.lua:432 init.lua:484
+msgid "Left-Click or Right-Click with Trowel [1] to clear nearby hazards!"
+msgstr "用花铲 [1] 左键或右键点击以清除附近危害！"
+
+#: init.lua:455
+msgid "Switch to your Trowel [1] and Left-Click or Right-Click this Prismatic Geode to crack it open!"
+msgstr "切换到花铲 [1]，左键或右键点击这颗棱彩晶洞将其敲开！"
+
+#: init.lua:468
+msgid "Switch to your Trowel [1] (or place any block beside this Geode) to crack it open!"
+msgstr "切换到花铲 [1]（或在此晶洞旁放置任意方块）将其敲开！"
+
+#: init.lua:483
+msgid "Cracks into 2 hazards in @1s!"
+msgstr "@1 秒后碎裂为 2 个危害方块！"
+
+#: init.lua:508
+msgid "Crystal Cracked"
+msgstr "水晶碎裂"
+
+#: init.lua:509
+msgid "An unopened Prismatic Geode cracked apart into 2 hazard blocks!"
+msgstr "一颗未开启的棱彩晶洞碎裂成了 2 个危害方块！"
+
+#: init.lua:522
+msgid "Fresh Water"
+msgstr "清水"
+
+#: init.lua:523 init.lua:565
+msgid "Refills Your Water Flask"
+msgstr "补充水瓶"
+
+#: init.lua:524
+msgid "Clean, cool water left behind whenever you melt blue Ice Shards."
+msgstr "融化蓝色寒冰碎片后留下的清凉净水。"
+
+#: init.lua:525
+msgid "Gently cools the room and washes away nearby Brimstone or Chalk."
+msgstr "温和降低室温，并冲走附近的硫磺或白垩。"
+
+#: init.lua:526
+msgid "Left-Click this water with your Water Flask [3] to scoop up the puddle and fill 3 splashes!"
+msgstr "用水瓶 [3] 左键点击这滩清水即可舀起并补充 3 次泼洒！"
+
+#: init.lua:529
+msgid "Fresh Water (Left-Click with Flask [3])"
+msgstr "清水（用水瓶 [3] 左键舀取）"
+
+#: init.lua:564 init.lua:571
+msgid "Flowing Water"
+msgstr "流水"
+
+#: init.lua:566
+msgid "Spreading ripples of cool water."
+msgstr "向外漫延的清凉水波。"
+
+#: init.lua:567
+msgid "Melts Chalk on contact and cools hot Brimstone into Steam."
+msgstr "接触白垩即将其融解，并冷却灼热硫磺化作蒸汽。"
+
+#: init.lua:568
+msgid "Left-Click anywhere on the puddle with your Water Flask [3] to scoop it up and refill!"
+msgstr "用水瓶 [3] 左键点击水洼任意处即可舀起装满！"
+
+#: init.lua:602
+msgid "Rising Steam"
+msgstr "升腾蒸汽"
+
+#: init.lua:603
+msgid "Warm Mist · High Jump"
+msgstr "温暖水雾 · 高跳加成"
+
+#: init.lua:604
+msgid "Soft, warm mist created when water cools down hot Brimstone or Ice melts."
+msgstr "清水冷却硫磺或寒冰融化时产生的柔和暖雾。"
+
+#: init.lua:605
+msgid "Step through it to float lightly and jump much higher for 5 seconds!"
+msgstr "步入其中可获得 5 秒轻盈高跳效果！"
+
+#: init.lua:606
+msgid "Walk into rising steam to leap high, or Left-Click it with your Water Flask [3] to refill."
+msgstr "走进升腾蒸汽即可高高跃起，或用水瓶 [3] 左键点击收集补充。"
+
+#: init.lua:609
+msgid "Rising Steam (Walk In for High Jump)"
+msgstr "升腾蒸汽（走入可高跳）"
+
+#: init.lua:642
+msgid "Magical Plant · Protect & Grow!"
+msgstr "魔法植物 · 悉心守护与培育！"
+
+#: init.lua:643
+msgid "The living heart of each glass room—grow all plants to 100% Bloom to finish the level!"
+msgstr "每间玻璃房的生命核心——将所有植物培育至 100% 开花即可过关！"
+
+#: init.lua:644
+msgid "Blooms steadily when Heat (40–60°C) and Soil pH (5.6–8.4) stay comfortable and calm."
+msgstr "当温度（40–60°C）与土壤 pH（5.6–8.4）保持舒适平稳时，植物会稳定开花。"
+
+#: init.lua:645
+msgid "Right-Click to check Garden Status; Left-Click with a filled Water Flask [3] to heal it!"
+msgstr "右键查看花园状态；用装满的水瓶 [3] 左键为其恢复生命！"
+
+#: init.lua:667
+msgid "Keep Heat (40–60°C) & Soil pH (5.6–8.4) comfortable"
+msgstr "保持温度（40–60°C）与土壤 pH（5.6–8.4）舒适"
+
+#: init.lua:668
+msgid "Right-Click for Garden Controls · Left-Click with Water Flask [3] to heal"
+msgstr "右键打开花园面板 · 水瓶 [3] 左键治疗"
+
+#: init.lua:682
+msgid "Wilted Sprout (Needs Water!)"
+msgstr "枯萎幼苗（急需浇水！）"
+
+#: init.lua:683
+msgid "Magical Plant · Needs Revival!"
+msgstr "魔法植物 · 急需复苏！"
+
+#: init.lua:684
+msgid "A tired, wilted sprout whose growth is paused until you revive it."
+msgstr "蔫垂枯萎的幼苗，复苏前将暂停生长。"
+
+#: init.lua:685
+msgid "If EVERY sprout in your garden wilts at the same time, the run ends!"
+msgstr "若花园中所有幼苗同时枯萎，本局挑战即宣告结束！"
+
+#: init.lua:686
+msgid "Left-Click with a filled Water Flask [3], drink an Aegis Potion, or keep the room balanced for 6s to revive it!"
+msgstr "用装满的水瓶 [3] 左键浇水、饮用神盾药水，或保持房间平衡 6 秒即可使其复苏！"
+
+#: init.lua:690
+msgid "Wilted Sprout (Splash Water [3] to Revive!)"
+msgstr "枯萎幼苗（用水瓶 [3] 浇水复苏！）"
+
+#: init.lua:708
+msgid "Wilted Sprout [Needs Revival!]"
+msgstr "枯萎幼苗 [急需复苏！]"
+
+#: init.lua:709
+msgid "Growth paused for this plant until revived!"
+msgstr "该植物在复苏前已暂停生长！"
+
+#: init.lua:710
+msgid "Left-Click with Water Flask [3], drink Aegis Potion, or keep 6s Balance"
+msgstr "水瓶 [3] 左键浇水、饮用神盾药水，或保持 6 秒平衡"
+
+
+#: hud_migration
+msgid "✖ Unopened Geode Shattered!"
+msgstr "✖ 未开启的晶洞碎裂了！"
+
+#: hud_migration
+msgid "Split into 2 floor hazards!"
+msgstr "分裂成了 2 个地面危险方块！"

@@ -8,10 +8,12 @@
 ---@field min_z integer Interior minimum Z
 ---@field max_z integer Interior maximum Z
 
+---@alias GridPos3D {x: integer, y: integer, z: integer}
+
 ---@class TcWorldAPI
+---@field S fun(str: string, ...: any): string Mod translator function
 ---@field CELL_SIZE integer Interior width/depth/height of each cubic terrarium chamber (11)
 ---@field WALL_HEIGHT integer Height of the glass walls + brass rim (11)
----@field ALTAR_POS {x: integer, y: integer, z: integer} Position of the Crucible Control Altar
 ---@field SPAWN_POS {x: number, y: number, z: number} Safe player spawn position inside Chamber 1
 ---@field is_ready boolean Whether initial map emerge & world construction has completed
 ---@field get_cell_grid_coords fun(cell_idx: integer): integer, integer
@@ -19,17 +21,21 @@
 ---@field get_active_cells fun(level: integer): CellInfo[]
 ---@field get_max_built_level fun(): integer
 ---@field get_bounding_box fun(level: integer): {min_x: integer, max_x: integer, min_z: integer, max_z: integer}
----@field is_protected_pos fun(pos: {x: integer, y: integer, z: integer}, level: integer): boolean
+---@field get_archway_pillars fun(level: integer): {x: integer, z: integer}[]
+---@field is_protected_pos fun(pos: GridPos3D, level: integer): boolean
+---@field resolve_safe_floor_pos fun(pos: GridPos3D, level: integer): GridPos3D
 ---@field build_level fun(level?: integer, preserve_fertile?: boolean)
 ---@field emerge_initial_area fun(on_ready: fun())
 ---@field rebuild fun()
 tc_world = {
+    S = core.get_translator("tc_world"),
     CELL_SIZE = 11,
     WALL_HEIGHT = 11,
-    ALTAR_POS = {x = 0, y = 1, z = -4},
     SPAWN_POS = tc_init.SPAWN_POS,
     is_ready = false,
 }
+
+local S = tc_world.S
 
 local HALF_CELL = 5 -- (11 - 1) / 2
 local WORKSHOP_PAD = 12
@@ -41,6 +47,8 @@ local data_buf = {}
 local cell_info_cache = {}
 local active_cells_cache = {}
 local bbox_cache = {}
+local pillar_list_cache = {}
+local pillar_map_cache = {}
 
 -- Cached Content IDs (static after node registration in tc_elements)
 local c_sub     = core.get_content_id("tc_elements:substrate")
@@ -53,7 +61,6 @@ local c_parch   = core.get_content_id("tc_elements:parchment")
 local c_wax     = core.get_content_id("tc_elements:candle_wax")
 local c_wick    = core.get_content_id("tc_elements:candle_wick")
 local c_sprout1 = core.get_content_id("tc_elements:crucible_sprout_1")
-local c_altar   = core.get_content_id("tc_elements:altar_stone")
 
 ---Returns the highest level ever constructed in this world (persisted in mod_storage).
 ---@return integer
@@ -170,14 +177,56 @@ function tc_world.get_bounding_box(level)
     return cached
 end
 
----Checks whether a coordinate is reserved for a Crucible Sprout or the Control Altar.
+---Returns cached 1x1 archway corner pillar coordinates framing connected rooms on Level 2+
+---(leaving wide 9-block open archways between every pair of neighboring chambers).
+---@param level integer Current game level
+---@return {x: integer, z: integer}[]
+function tc_world.get_archway_pillars(level)
+    local count = math.max(1, math.floor(level or 1))
+    local cached = pillar_list_cache[count]
+    if cached then
+        return cached
+    end
+    local pillars = {}
+    local pmap = {}
+    if count >= 2 then
+        local cells = tc_world.get_active_cells(count)
+        local cell_set = {}
+        for i = 1, #cells do
+            local c = cells[i]
+            cell_set[(c.gz + 512) * 1024 + (c.gx + 512)] = true
+        end
+        for i = 1, #cells do
+            local c = cells[i]
+            for ix = 0, 1 do
+                local cx = (ix == 0) and c.min_x or c.max_x
+                local sx = (ix == 0) and -1 or 1
+                for iz = 0, 1 do
+                    local cz = (iz == 0) and c.min_z or c.max_z
+                    local sz = (iz == 0) and -1 or 1
+                    local has_adj_x = cell_set[(c.gz + 512) * 1024 + (c.gx + sx + 512)]
+                    local has_adj_z = cell_set[(c.gz + sz + 512) * 1024 + (c.gx + 512)]
+                    if has_adj_x or has_adj_z then
+                        local k = (cz + 2048) * 4096 + (cx + 2048)
+                        if not pmap[k] then
+                            pmap[k] = true
+                            pillars[#pillars + 1] = {x = cx, z = cz}
+                        end
+                    end
+                end
+            end
+        end
+    end
+    pillar_list_cache[count] = pillars
+    pillar_map_cache[count] = pmap
+    return pillars
+end
+
+---Checks whether a coordinate is reserved for a Crucible Sprout or an archway corner pillar.
 ---@param pos {x: integer, y: integer, z: integer}
 ---@param level integer
 ---@return boolean
 function tc_world.is_protected_pos(pos, level)
-    if pos.x == tc_world.ALTAR_POS.x and pos.z == tc_world.ALTAR_POS.z and pos.y >= 1 and pos.y <= 3 then
-        return true
-    end
     local cells = tc_world.get_active_cells(level)
     for i = 1, #cells do
         local c = cells[i].center
@@ -185,7 +234,56 @@ function tc_world.is_protected_pos(pos, level)
             return true
         end
     end
+    local count = math.max(1, math.floor(level or 1))
+    if count >= 2 and pos.y >= 0 and pos.y <= tc_world.WALL_HEIGHT then
+        if not pillar_map_cache[count] then
+            tc_world.get_archway_pillars(count)
+        end
+        if pillar_map_cache[count][(pos.z + 2048) * 4096 + (pos.x + 2048)] then
+            return true
+        end
+    end
     return false
+end
+
+---Ensures a landing coordinate lies strictly inside an active chamber's floor and off any Sprout or archway pillar.
+---@param pos {x: integer, y: integer, z: integer}
+---@param level integer
+---@return {x: integer, y: integer, z: integer}
+function tc_world.resolve_safe_floor_pos(pos, level)
+    local cells = tc_world.get_active_cells(level)
+    local inside_cell = nil
+    local best_cell = cells[1]
+    local best_dist = math.huge
+
+    for i = 1, #cells do
+        local c = cells[i]
+        if pos.x >= c.min_x and pos.x <= c.max_x and pos.z >= c.min_z and pos.z <= c.max_z then
+            inside_cell = c
+            break
+        end
+        local dx = pos.x - c.center.x
+        local dz = pos.z - c.center.z
+        local d2 = dx * dx + dz * dz
+        if d2 < best_dist then
+            best_dist = d2
+            best_cell = c
+        end
+    end
+
+    if inside_cell and not tc_world.is_protected_pos(pos, level) then
+        return pos
+    end
+
+    local c = inside_cell or best_cell
+    local sx = math.max(c.min_x + 1, math.min(c.max_x - 1, pos.x))
+    local sz = math.max(c.min_z + 1, math.min(c.max_z - 1, pos.z))
+    if sx == c.center.x and sz == c.center.z then
+        sx = c.center.x + 2
+    end
+    pos.x = sx
+    pos.z = sz
+    return pos
 end
 
 local function stamp_candle(data, area, cx, cz, height)
@@ -308,6 +406,23 @@ function tc_world.build_level(level, preserve_fertile)
         end
     end
 
+    -- Stamp 1x1 Brass-Framed Glass Corner Pillars between connected rooms on Level 2+
+    -- (marking each 11x11 chamber's micro-climate bounds while leaving wide 9-block open archways)
+    local pillars = tc_world.get_archway_pillars(level)
+    for i = 1, #pillars do
+        local p = pillars[i]
+        local vi = area:index(p.x, 0, p.z)
+        data[vi] = c_sub
+        vi = vi + ystride
+        data[vi] = c_rim
+        for _ = 2, tc_world.WALL_HEIGHT - 1 do
+            vi = vi + ystride
+            data[vi] = c_glass
+        end
+        vi = vi + ystride
+        data[vi] = c_rim
+    end
+
     -- Stamp Workshop Diorama Props outside the active terrarium perimeter:
     -- Giant Beeswax Candles casting warm light across the glass
     stamp_candle(data, area, active_bbox.max_x + 6, 0, 9)
@@ -329,9 +444,6 @@ function tc_world.build_level(level, preserve_fertile)
         data[area:index(c.x, c.y, c.z)] = c_sprout1
     end
 
-    -- Place Crucible Control Altar inside Chamber 1
-    data[area:index(tc_world.ALTAR_POS.x, tc_world.ALTAR_POS.y, tc_world.ALTAR_POS.z)] = c_altar
-
     vm:set_data(data)
     vm:calc_lighting()
     vm:write_to_map(true)
@@ -340,16 +452,11 @@ function tc_world.build_level(level, preserve_fertile)
     for i = 1, #cells do
         local c = cells[i].center
         core.get_meta(c):set_string("infotext", tc_assets.format_infotext(
-            string.format("Sprout #%d · %s", i, sprout_title),
-            "Plant Health: 100% · Nearby Hazards: 0",
-            "Right-Click to view Garden Status · Left-Click with Water Flask [3] to heal"
+            S("Sprout #@1 · @2", i, sprout_title),
+            S("Plant Health: 100% · Nearby Hazards: 0"),
+            S("Right-Click for Garden Controls · Left-Click with Water Flask [3] to heal")
         ))
     end
-    core.get_meta(tc_world.ALTAR_POS):set_string("infotext", tc_assets.format_infotext(
-        "Control Altar",
-        "Check Plant Health · Change Game Pace · Guidebook · Top 10 Scores",
-        "Right-Click to open Garden Controls"
-    ))
 
     tc_world.is_ready = true
 end

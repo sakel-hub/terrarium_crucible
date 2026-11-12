@@ -1,0 +1,124 @@
+# Translation catalog for tc_init (Terrarium Crucible)
+# Copyright (C) 2026 SaKeL
+# License: MIT
+msgid ""
+msgstr ""
+"Project-Id-Version: tc_init 1.0\n"
+"POT-Creation-Date: 2026-11-11 00:00+0000\n"
+"PO-Revision-Date: 2026-11-11 00:00+0000\n"
+"Last-Translator: SaKeL\n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: api.lua:154
+msgid "Scorching Brimstone (Hot)"
+msgstr "Soufre brûlant (Chaud)"
+
+#: api.lua:155
+msgid "Splash with Flask [3], siphon with low Bellows [2] to refill, or pair with Ice [1]."
+msgstr "Arrosez avec la Fiole [3], aspirez avec le Soufflet [2] bas pour recharger, ou combinez avec la Glace [1]."
+
+#: api.lua:161
+msgid "Glacial Ice Shard (Cold)"
+msgstr "Éclat de glace (Froid)"
+
+#: api.lua:162
+msgid "Melt with Bellows [2] into Water, then scoop Water with Flask [3] to refill!"
+msgstr "Fondez en Eau avec le Soufflet [2], puis puisez l'Eau avec la Fiole [3] pour recharger !"
+
+#: api.lua:168
+msgid "Vitriol Acid Slime (Sour)"
+msgstr "Acide vitriolique (Acide)"
+
+#: api.lua:169
+msgid "Sweep with Pestle [4] (or pair Chalk [1] on it) to make green Speed Soil!"
+msgstr "Balayez au Pilon [4] (ou combinez la Craie [1] dessus) pour créer de la Terre rapide verte !"
+
+#: api.lua:175
+msgid "Alkaline Chalk (Dry)"
+msgstr "Craie alcaline (Sec)"
+
+#: api.lua:176
+msgid "Wash with Flask [3], grind with low Pestle [4] to refill, or pair with Acid [1]."
+msgstr "Rincez avec la Fiole [3], broyez au Pilon [4] bas pour recharger, ou combinez avec l'Acide [1]."
+
+#: api.lua:205
+msgid "Open Guidebook"
+msgstr "Ouvrir le Guide"
+
+#: api.lua:206
+msgid "Read the illustrated 5-tab Guidebook to learn every tool, block, potion, and blessing."
+msgstr "Lisez le Guide illustré en 5 onglets pour découvrir chaque outil, bloc, potion et bénédiction."
+
+#: api.lua:210
+msgid "Garden Status"
+msgstr "État du jardin"
+
+#: api.lua:211
+msgid "Check each plant's health, see this level's blessing, or change the game pace anytime."
+msgstr "Vérifiez la santé des plantes, la bénédiction active, ou changez le rythme à tout moment."
+
+#: api.lua:215
+msgid "Top 10 Scores"
+msgstr "Top 10 des scores"
+
+#: api.lua:216
+msgid "See the Top 10 best runs saved on this world."
+msgstr "Voir les 10 meilleures parties enregistrées dans ce monde."
+
+#: api.lua:221
+msgid "SATCHEL"
+msgstr "BESACE"
+
+#: api.lua:229
+msgid "YOUR BAG & QUICK TOOL GUIDE"
+msgstr "VOTRE SAC & GUIDE RAPIDE DES OUTILS"
+
+#: api.lua:230
+msgid "Keep Heat (40–60°C) & Soil pH (5.6–8.4) comfortable until every plant reaches 100% Bloom!"
+msgstr "Gardez la Chaleur (40–60°C) & le pH du sol (5.6–8.4) confortables jusqu'à 100% de Floraison !"
+
+#: init.lua:21
+msgid "Gloved Hand"
+msgstr "Main gantée"
+
+#: init.lua:22
+msgid "Empty Hand"
+msgstr "Main vide"
+
+#: init.lua:23
+msgid "Your sturdy leather gardening glove."
+msgstr "Votre solide gant de jardinage en cuir."
+
+#: init.lua:24
+msgid "Press keys [1] to [5] on your keyboard (or scroll the mouse wheel) to use your tools!"
+msgstr "Appuyez sur les touches [1] à [5] (ou utilisez la molette) pour choisir vos outils !"
+
+#: init.lua:27
+msgid "Gloved Hand — Press [1–5] for Tools"
+msgstr "Main gantée — Touches [1–5] : Outils"
+
+#: init.lua:64
+msgid "Bag & Guide"
+msgstr "Sac & Guide"
+
+#: init.lua:101
+msgid "Saved!"
+msgstr "Sauvé !"
+
+#: init.lua:104
+msgid "Your Aegis Potion activated automatically to refill your health and shield your garden!"
+msgstr "Votre Potion Égide s'est activée automatiquement pour vous soigner et protéger le jardin !"
+
+
+#: hud_migration
+msgid "✦ Saved by Auto-Aegis!"
+msgstr "✦ Sauvé par Auto-Égide !"
+
+#: hud_migration
+msgid "Health refilled & garden shielded (@1s)!"
+msgstr "Santé pleine & jardin protégé (@1s) !"

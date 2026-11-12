@@ -1,6 +1,13 @@
 -- (Hardcoded) default settings
 
 hb.settings.max_bar_length = 160
+hb.settings.bar_height = 16
+hb.settings.bar_bg_texture = "hudbars_bar_background.png"
+hb.settings.text_offset_x = 2
+hb.settings.text_offset_y = -1
+hb.settings.text_valign = 1
+hb.settings.icon_gap = 3
+hb.settings.icon_valign = 1
 hb.settings.statbar_length = 20
 
 -- Statbar positions

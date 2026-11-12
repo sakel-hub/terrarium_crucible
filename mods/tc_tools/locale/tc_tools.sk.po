@@ -1,0 +1,404 @@
+# Translation catalog for tc_tools (Terrarium Crucible)
+# Copyright (C) 2026 SaKeL
+# License: MIT
+msgid ""
+msgstr ""
+"Project-Id-Version: tc_tools 1.0\n"
+"POT-Creation-Date: 2026-11-11 00:00+0000\n"
+"PO-Revision-Date: 2026-11-11 00:00+0000\n"
+"Last-Translator: SaKeL\n"
+"Language-Team: Slovak\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: api.lua:150
+msgid "Thermal Bellows [2] — @1/@2 Puffs"
+msgstr "Tepelné mechy [2] — @1/@2 fúknutí"
+
+#: api.lua:154
+msgid "Water Flask [3] — @1/@2 Splashes"
+msgstr "Fľaša s vodou [3] — @1/@2 šplechnutí"
+
+#: api.lua:158
+msgid "Limestone Pestle [4] — @1/@2 Sweeps"
+msgstr "Vápencový tĺčik [4] — @1/@2 poprášení"
+
+#: api.lua:343
+msgid "Hand-Pumped +1 Puff — Brimstone fills all!"
+msgstr "Ručne nafúknuté +1 fúknutie — Síra doplní naplno!"
+
+#: api.lua:356
+msgid "Condensed +1 Splash — Water fills all!"
+msgstr "Skondenzované +1 šplechnutie — Voda doplní naplno!"
+
+#: api.lua:369
+msgid "Scraped +1 Sweep — Chalk fills all!"
+msgstr "Zoškrabané +1 poprášenie — Krieda doplní naplno!"
+
+#: api.lua:404 api.lua:480
+msgid "its opposite block"
+msgstr "opačný blok"
+
+#: api.lua:412
+msgid "Trowel [1] — Carrying @1 (Click @2 or Floor)"
+msgstr "Lopatka [1] — Nesie: @1 (Kliknite na @2 alebo podlahu)"
+
+#: api.lua:415
+msgid "Alchemist's Trowel — Carrying @1"
+msgstr "Alchymistova lopatka — Nesie: @1"
+
+#: api.lua:416
+msgid "Tool [1] · Holding 1 Block"
+msgstr "Nástroj [1] · Drží 1 blok"
+
+#: api.lua:417
+msgid "Safely holding @1 on your trowel."
+msgstr "Bezpečne držíte @1 na svojej lopatke."
+
+#: api.lua:418
+msgid "Combine it with @1 so both cancel out and boost plant growth!"
+msgstr "Spojte s blokom @1, aby sa navzájom vyrušili a podporili rast rastlín!"
+
+#: api.lua:419
+msgid "Click directly on @1 (or Right-Click empty floor beside it) to combine!"
+msgstr "Kliknite priamo na @1 (alebo pravým tlačidlom na voľnú zem vedľa) pre spojenie!"
+
+#: api.lua:483
+msgid "Carrying @1! Click directly on @2 to combine, or Right-Click an empty floor tile to set it down."
+msgstr "Nesiete @1! Kliknite priamo na @2 pre spojenie, alebo pravým tlačidlom na voľnú dlaždicu podlahy pre položenie."
+
+#: api.lua:485
+msgid "a block"
+msgstr "blok"
+
+#: init.lua:72
+msgid "Left-Click or Right-Click a hazard block (Brimstone, Ice, Acid, or Chalk) to pick it up onto your Trowel!"
+msgstr "Kliknite ľavým alebo pravým tlačidlom na nebezpečný blok (Síra, Ľad, Kyselina alebo Krieda) a naberte ho na Lopatku!"
+
+#: init.lua:85
+msgid "Please leave a little room around your plants!"
+msgstr "Nechajte, prosím, okolo svojich rastlín trochu miesta!"
+
+#: init.lua:105
+msgid "Click directly on the opposite block to combine, or Right-Click an empty spot on the garden floor!"
+msgstr "Kliknite priamo na opačný blok pre spojenie, alebo pravým tlačidlom na voľné miesto na podlahe záhrady!"
+
+#: init.lua:112
+msgid "Alchemist's Trowel"
+msgstr "Alchymistova lopatka"
+
+#: init.lua:113
+msgid "Tool [1] · Move & Combine Blocks"
+msgstr "Nástroj [1] · Presúvanie a spájanie blokov"
+
+#: init.lua:114
+msgid "A sturdy gardening trowel that safely picks up hazard blocks and opens bonus crystals."
+msgstr "Pevná záhradnícka lopatka, ktorá bezpečne dvíha nebezpečné bloky a otvára bonusové kryštály."
+
+#: init.lua:115
+msgid "Combine Brimstone + Ice or Acid + Chalk together for big plant growth!"
+msgstr "Spájajte Síru + Ľad alebo Kyselinu + Kriedu pre výrazný rast rastlín!"
+
+#: init.lua:116
+msgid "Click any hazard block to pick it up, then click directly on its opposite (or Right-Click empty floor beside it)! Also cracks open Prismatic Geodes."
+msgstr "Kliknite na ľubovoľný nebezpečný blok na nabratie a potom priamo na jeho protiklad (alebo pravým klikom vedľa)! Rozbíja aj Prizmatické geódy."
+
+#: init.lua:120
+msgid "Trowel [1] — Click to Move & Combine Blocks"
+msgstr "Lopatka [1] — Kliknite pre presun a spájanie blokov"
+
+#: init.lua:170
+msgid "Brimstone Siphoned → Bellows Full!"
+msgstr "Síra odsatá → Mechy sú plné!"
+
+#: init.lua:190
+msgid "Chalk Ground → Pestle Full!"
+msgstr "Krieda rozdrvená → Tĺčik je plný!"
+
+#: init.lua:200
+msgid "Thermal Bellows (Empty)"
+msgstr "Tepelné mechy (Prázdne)"
+
+#: init.lua:201
+msgid "Tool [2] · Needs Heat Refill"
+msgstr "Nástroj [2] · Potrebuje doplniť teplo"
+
+#: init.lua:202
+msgid "A cooled leather air-puffer out of warm puffs (holds 4+ Puffs when refilled)."
+msgstr "Vychladnuté kožené mechy bez teplých fúknutí (po doplnení pojmú 4+ fúknutí)."
+
+#: init.lua:203
+msgid "Siphons hot Brimstone right off the floor (or mid-air) to refill all Puffs & boost Bloom!"
+msgstr "Odsajú horúcu Síru priamo z podlahy (alebo vo vzduchu), doplnia všetky fúknutia a podporia Rozkvet!"
+
+#: init.lua:204
+msgid "Left-Click hot Brimstone to refill completely, or Left-Click empty air (1.8s) to hand-pump +1 Puff."
+msgstr "Kliknite ľavým tlačidlom na horúcu Síru pre plné doplnenie, alebo do prázdna (1.8s) pre ručné nafúkanie +1 fúknutia."
+
+#: init.lua:209
+msgid "Thermal Bellows [2] — Empty (Click Brimstone or Air)"
+msgstr "Tepelné mechy [2] — Prázdne (Kliknite na Síru alebo vzduch)"
+
+#: init.lua:232 init.lua:244
+msgid "Bellows empty! Click Brimstone to refill, or click air to pump +1."
+msgstr "Mechy sú prázdne! Kliknite na Síru na doplnenie alebo do vzduchu pre +1."
+
+#: init.lua:253
+msgid "Thermal Bellows (Charged)"
+msgstr "Tepelné mechy (Nabité)"
+
+#: init.lua:254
+msgid "Tool [2] · Melts Ice · Siphons Brimstone"
+msgstr "Nástroj [2] · Rozpúšťa Ľad · Odsáva Síru"
+
+#: init.lua:255
+msgid "Filled with 4 warm Puffs (+1 every 2 levels, +2 with Dragonlung Bellows)."
+msgstr "Naplnené 4 teplými fúknutiami (+1 každé 2 úrovne, +2 s Dračími mechmi)."
+
+#: init.lua:256
+msgid "Melts blue Ice Shards into Water & Steam! Siphons hot Brimstone when below max Puffs."
+msgstr "Rozpúšťa modré Ľadovcové črepy na Vodu a Paru! Pri nižšom stave odsáva horúcu Síru."
+
+#: init.lua:257
+msgid "Left-Click blue Ice to melt (1 Puff), or Left-Click Brimstone when low to refill all Puffs!"
+msgstr "Kliknite ľavým tlačidlom na modrý Ľad pre roztopenie (1 fúknutie), alebo na Síru pri nízkom stave pre plné doplnenie!"
+
+#: init.lua:260
+msgid "Thermal Bellows [2] — 4/4 Puffs"
+msgstr "Tepelné mechy [2] — 4/4 fúknutí"
+
+#: init.lua:282
+msgid "Bellows [2] is full! Splash Brimstone [3] or pair Ice [1]."
+msgstr "Mechy [2] sú plné! Ošpliechajte Síru [3] alebo spojte s Ľadom [1]."
+
+#: init.lua:340
+msgid "Melted Ice → Water!"
+msgstr "Ľad roztopený → Voda!"
+
+#: init.lua:341
+msgid "Melted @1 Ice → Water!"
+msgstr "Roztopený Ľad (@1x) → Voda!"
+
+#: init.lua:349
+msgid "Puffed Water into rising Steam!"
+msgstr "Voda rozfúkaná na stúpajúcu Paru!"
+
+#: init.lua:362
+msgid "Click Ice to melt, or Brimstone when low to refill!"
+msgstr "Kliknite na Ľad pre roztopenie, alebo na Síru pri nízkom stave pre doplnenie!"
+
+#: init.lua:445
+msgid "Water Flask (Empty)"
+msgstr "Fľaša s vodou (Prázdna)"
+
+#: init.lua:446
+msgid "Tool [3] · Needs Refill"
+msgstr "Nástroj [3] · Potrebuje doplniť"
+
+#: init.lua:447
+msgid "A glass watering flask out of cool splashes (holds 3+ Splashes when refilled)."
+msgstr "Sklenená polievacia fľaša bez chladných šplechnutí (po doplnení pojme 3+ šplechnutí)."
+
+#: init.lua:448
+msgid "Scoops up an entire Water puddle or Steam cloud to fill your flask all the way!"
+msgstr "Naberie celú mláku Vody alebo oblak Pary a naplní vašu fľašu až po okraj!"
+
+#: init.lua:449
+msgid "Left-Click Water/Steam to refill completely, or Left-Click empty air (1.8s) to condense +1 Splash."
+msgstr "Kliknite ľavým tlačidlom na Vodu/Paru pre plné doplnenie, alebo do prázdna (1.8s) pre skondenzovanie +1 šplechnutia."
+
+#: init.lua:452
+msgid "Water Flask [3] — Empty (Click Water/Steam or Air)"
+msgstr "Fľaša s vodou [3] — Prázdna (Kliknite na Vodu/Paru alebo vzduch)"
+
+#: init.lua:476 init.lua:489
+msgid "Flask empty! Click Water/Steam to fill, or click air to condense +1."
+msgstr "Fľaša je prázdna! Kliknite na Vodu/Paru na naplnenie alebo do vzduchu pre +1."
+
+#: init.lua:499
+msgid "Water Flask (Filled)"
+msgstr "Fľaša s vodou (Plná)"
+
+#: init.lua:500
+msgid "Tool [3] · Ready to Splash!"
+msgstr "Nástroj [3] · Pripravená polievať!"
+
+#: init.lua:501
+msgid "Filled with 3 cool Splashes (+1 every 2 levels, +2 with Deep Retort)."
+msgstr "Naplnená 3 chladnými šplechnutiami (+1 každé 2 úrovne, +2 s Hlbokou retortou)."
+
+#: init.lua:502
+msgid "Cools hot Brimstone into Steam, washes Chalk into green soil, and heals hurt or wilted plants!"
+msgstr "Ochladzuje horúcu Síru na Paru, zmýva Kriedu na zelenú pôdu a lieči zranené či zvädnuté rastliny!"
+
+#: init.lua:503
+msgid "Left-Click Brimstone, Chalk, or a hurt Plant to splash it (or Left-Click extra Water puddles to tidy them up!)."
+msgstr "Kliknite ľavým tlačidlom na Síru, Kriedu alebo oslabenú rastlinu pre ošpliechanie (alebo na zvyšné mláky Vody pre upratanie!)."
+
+#: init.lua:507
+msgid "Water Flask [3] — 3/3 Splashes"
+msgstr "Fľaša s vodou [3] — 3/3 šplechnutí"
+
+#: init.lua:535
+msgid "Quenched Brimstone → Steam!"
+msgstr "Síra schladená → Para!"
+
+#: init.lua:552
+msgid "Washed Chalk → Speed Soil!"
+msgstr "Krieda zmytá → Rýchla pôda!"
+
+#: init.lua:552
+msgid "Washed Chalk!"
+msgstr "Krieda zmytá!"
+
+#: init.lua:566
+msgid "This plant is already happy and at full 100% health!"
+msgstr "Táto rastlina je už spokojná a má plných 100% zdravia!"
+
+#: init.lua:576
+msgid "Click Brimstone, Chalk, or a hurt Plant to splash (or click Water to scoop)!"
+msgstr "Kliknite na Síru, Kriedu alebo oslabenú rastlinu pre ošpliechanie (alebo na Vodu pre nabratie)!"
+
+#: init.lua:587
+msgid "Limestone Pestle (Empty)"
+msgstr "Vápencový tĺčik (Prázdny)"
+
+#: init.lua:588
+msgid "Tool [4] · Needs Chalk Refill"
+msgstr "Nástroj [4] · Potrebuje doplniť kriedu"
+
+#: init.lua:589
+msgid "A bare stone pestle out of mineral powder (holds 4+ Sweeps when refilled)."
+msgstr "Holý kamenný tĺčik bez minerálneho prášku (po doplnení pojme 4+ poprášení)."
+
+#: init.lua:590
+msgid "Grinds dry Alkaline Chalk right off the floor (or mid-air) into Speed Soil & refills all Sweeps!"
+msgstr "Rozdrví suchú Zásaditú kriedu priamo z podlahy (alebo vo vzduchu) na Rýchlu pôdu a doplní všetky poprášenia!"
+
+#: init.lua:591
+msgid "Left-Click Alkaline Chalk to refill completely, or Left-Click empty air (1.8s) to scrape +1 Sweep."
+msgstr "Kliknite ľavým tlačidlom na Zásaditú kriedu pre plné doplnenie, alebo do prázdna (1.8s) pre zoškrabanie +1 poprášenia."
+
+#: init.lua:594
+msgid "Limestone Pestle [4] — Empty (Click Chalk or Air)"
+msgstr "Vápencový tĺčik [4] — Prázdny (Kliknite na Kriedu alebo vzduch)"
+
+#: init.lua:614 init.lua:626
+msgid "Pestle empty! Click Chalk to refill, or click air to scrape +1."
+msgstr "Tĺčik je prázdny! Kliknite na Kriedu na doplnenie alebo do vzduchu pre +1."
+
+#: init.lua:635
+msgid "Limestone Pestle (Charged)"
+msgstr "Vápencový tĺčik (Nabitý)"
+
+#: init.lua:636
+msgid "Tool [4] · Clears Acid · Grinds Chalk"
+msgstr "Nástroj [4] · Čistí Kyselinu · Drví Kriedu"
+
+#: init.lua:637
+msgid "Coated with 4 mineral Sweeps (+1 every 2 levels, +2 with Starlight Mortar)."
+msgstr "Obalený 4 minerálnymi poprášeniami (+1 každé 2 úrovne, +2 s Hviezdnych mažiarom)."
+
+#: init.lua:638
+msgid "Clears a wide patch of green Acid Slime into Speed Soil! Grinds Chalk when below max Sweeps."
+msgstr "Vyčistí širokú plochu zeleného Kyslého slizu na Rýchlu pôdu! Pri nižšom stave drví Kriedu."
+
+#: init.lua:639
+msgid "Left-Click on or near Acid Slime (1 Sweep), or Left-Click Chalk when low to refill all Sweeps!"
+msgstr "Kliknite ľavým tlačidlom na Kyslý sliz či vedľa neho (1 poprášenie), alebo na Kriedu pri nízkom stave pre plné doplnenie!"
+
+#: init.lua:642
+msgid "Limestone Pestle [4] — 4/4 Sweeps"
+msgstr "Vápencový tĺčik [4] — 4/4 poprášení"
+
+#: init.lua:663
+msgid "Pestle [4] is full! Wash Chalk [3] or pair Acid [1]."
+msgstr "Tĺčik [4] je plný! Zmyte Kriedu [3] alebo spojte s Kyselinou [1]."
+
+#: init.lua:698
+msgid "Cleared Acid → Speed Soil!"
+msgstr "Kyselina vyčistená → Rýchla pôda!"
+
+#: init.lua:699
+msgid "Cleared @1 Acid → Speed Soil!"
+msgstr "Vyčistená Kyselina (@1x) → Rýchla pôda!"
+
+#: init.lua:710
+msgid "Click near Acid Slime, or Chalk when low to refill!"
+msgstr "Kliknite blízko Kyslého slizu, alebo na Kriedu pri nízkom stave pre doplnenie!"
+
+#: init.lua:727
+msgid "Gardener's Guidebook"
+msgstr "Záhradníkova príručka"
+
+#: init.lua:728
+msgid "Tool [5] · Illustrated How-to-Play"
+msgstr "Nástroj [5] · Ilustrovaný návod ako hrať"
+
+#: init.lua:729
+msgid "Your friendly picture guide to every block, tool, potion, plant tip, and Top 10 score."
+msgstr "Váš prehľadný obrázkový sprievodca každým blokom, nástrojom, elixírom, tipmi pre rastliny a Top 10 skóre."
+
+#: init.lua:730
+msgid "Shows clear tips with hoverable item pictures—plus the Top 10 Leaderboard!"
+msgstr "Zobrazuje jasné rady s interaktívnymi ikonami predmetov — plus rebríček Top 10!"
+
+#: init.lua:731
+msgid "Left-Click or Right-Click anytime to read (press [Z] to call out a room; hold [E]+W to sprint!)."
+msgstr "Kliknite ľavým alebo pravým tlačidlom kedykoľvek pre čítanie (stlačte [Z] pre označenie miestnosti; držte [E]+W pre šprint!)."
+
+#: init.lua:735
+msgid "Guidebook [5] — How to Play & Top 10"
+msgstr "Príručka [5] — Ako hrať a Top 10"
+
+#: init.lua:826
+msgid "Aegis Potion"
+msgstr "Elixír Egidy"
+
+#: init.lua:827
+msgid "Aegis Potion — Full Heal & Garden Shield (12s)"
+msgstr "Elixír Egidy — Plné vyliečenie a štít záhrady (12s)"
+
+#: init.lua:828
+msgid "Lifesaver Potion · From Geodes & Level Clears"
+msgstr "Záchranný elixír · Z geód a dokončených úrovní"
+
+#: init.lua:829
+msgid "A rare golden-green elixir that heals you and shields both you and your whole garden."
+msgstr "Vzácny zlatozelený elixír, ktorý vás vylieči a ochráni vás aj celú vašu záhradu."
+
+#: init.lua:830
+msgid "Refills your full health, revives all wilted plants, & shields you + every plant for 12s (14s with Sunlit Dew)! Also triggers automatically if you run out of health!"
+msgstr "Doplní vám plné zdravie, oživí všetky zvädnuté rastliny a ochráni vás aj každú rastlinu na 12s (14s so Slnečnou rosou)! Aktivuje sa aj automaticky pri strate zdravia!"
+
+#: init.lua:832
+msgid "Left-Click or Right-Click to drink—or keep one in your bag as an automatic lifesaver!"
+msgstr "Kliknite ľavým alebo pravým tlačidlom na vypitie — alebo si jeden nechajte v brašne ako automatickú záchranu!"
+
+#: init.lua:847
+msgid "Chronos Hourglass"
+msgstr "Chronove presýpacie hodiny"
+
+#: init.lua:848
+msgid "Chronos Hourglass — Pause Falling Blocks (12s)"
+msgstr "Chronove presýpacie hodiny — Pozastavenie padania blokov (12s)"
+
+#: init.lua:849
+msgid "Time Hourglass · Earned Every Level Cleared"
+msgstr "Hodiny času · Za každú dokončenú úroveň"
+
+#: init.lua:850
+msgid "A magical brass hourglass filled with sparkling violet sand."
+msgstr "Čarovné mosadzné presýpacie hodiny naplnené trblietavým fialovým pieskom."
+
+#: init.lua:851
+msgid "Pauses new falling blocks for 12 seconds, clears 1 nearby hazard per plant, & speeds up the team!"
+msgstr "Pozastavia nové padajúce bloky na 12 sekúnd, vyčistia 1 blízku hrozbu pri každej rastline a zrýchlia celý tím!"
+
+#: init.lua:852
+msgid "Left-Click or Right-Click whenever your rooms get busy and you need breathing room!"
+msgstr "Kliknite ľavým alebo pravým tlačidlom vždy, keď je v miestnostiach rušno a potrebujete chvíľu na vydýchnutie!"
+

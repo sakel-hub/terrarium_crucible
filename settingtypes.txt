@@ -1,7 +1,7 @@
 # Terrarium Crucible Settings
 
 # How many seconds pass between falling blocks on Normal pace (Casual gives you more time; Panic is faster)
-tc_drop_interval (Seconds between falling blocks) float 12.0 5.0 60.0
+tc_drop_interval (Seconds between falling blocks) float 11.5 5.0 60.0
 
-# Starting game pace (you can also change this anytime in-game at the Control Altar)
+# Starting game pace (you can also change this anytime in-game by right-clicking any plant)
 tc_difficulty (Starting game pace) enum normal casual,normal,panic

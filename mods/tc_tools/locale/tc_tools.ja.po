@@ -1,0 +1,404 @@
+# Translation catalog for tc_tools (Terrarium Crucible)
+# Copyright (C) 2026 SaKeL
+# License: MIT
+msgid ""
+msgstr ""
+"Project-Id-Version: tc_tools 1.0\n"
+"POT-Creation-Date: 2026-11-11 00:00+0000\n"
+"PO-Revision-Date: 2026-11-11 00:00+0000\n"
+"Last-Translator: SaKeL\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: api.lua:150
+msgid "Thermal Bellows [2] — @1/@2 Puffs"
+msgstr "熱風ふいご [2] — @1/@2 パフ"
+
+#: api.lua:154
+msgid "Water Flask [3] — @1/@2 Splashes"
+msgstr "水フラスコ [3] — @1/@2 スプラッシュ"
+
+#: api.lua:158
+msgid "Limestone Pestle [4] — @1/@2 Sweeps"
+msgstr "石灰岩の乳棒 [4] — @1/@2 スイープ"
+
+#: api.lua:343
+msgid "Hand-Pumped +1 Puff — Brimstone fills all!"
+msgstr "手動送風 +1 パフ — 硫黄なら全補充！"
+
+#: api.lua:356
+msgid "Condensed +1 Splash — Water fills all!"
+msgstr "空気凝縮 +1 スプラッシュ — 水なら全補充！"
+
+#: api.lua:369
+msgid "Scraped +1 Sweep — Chalk fills all!"
+msgstr "粉末削り +1 スイープ — チョークなら全補充！"
+
+#: api.lua:404 api.lua:480
+msgid "its opposite block"
+msgstr "対になるブロック"
+
+#: api.lua:412
+msgid "Trowel [1] — Carrying @1 (Click @2 or Floor)"
+msgstr "コテ [1] — @1を保持中（@2または床をクリック）"
+
+#: api.lua:415
+msgid "Alchemist's Trowel — Carrying @1"
+msgstr "錬金術師の移植ごて — @1を保持中"
+
+#: api.lua:416
+msgid "Tool [1] · Holding 1 Block"
+msgstr "道具 [1] · ブロック1個保持中"
+
+#: api.lua:417
+msgid "Safely holding @1 on your trowel."
+msgstr "コテの上に@1を安全に乗せています。"
+
+#: api.lua:418
+msgid "Combine it with @1 so both cancel out and boost plant growth!"
+msgstr "@1と合成して相殺させ、植物の成長を一気に進めよう！"
+
+#: api.lua:419
+msgid "Click directly on @1 (or Right-Click empty floor beside it) to combine!"
+msgstr "@1を直接クリック（または隣の空き床を右クリック）して合成！"
+
+#: api.lua:483
+msgid "Carrying @1! Click directly on @2 to combine, or Right-Click an empty floor tile to set it down."
+msgstr "@1を保持中！@2を直接クリックして合成するか、空いた床を右クリックして置きます。"
+
+#: api.lua:485
+msgid "a block"
+msgstr "ブロック"
+
+#: init.lua:72
+msgid "Left-Click or Right-Click a hazard block (Brimstone, Ice, Acid, or Chalk) to pick it up onto your Trowel!"
+msgstr "障害ブロック（硫黄・氷・酸・チョーク）を左/右クリックしてコテですくい上げよう！"
+
+#: init.lua:85
+msgid "Please leave a little room around your plants!"
+msgstr "植物のまわりには少しスペースを空けてください！"
+
+#: init.lua:105
+msgid "Click directly on the opposite block to combine, or Right-Click an empty spot on the garden floor!"
+msgstr "対になるブロックを直接クリックして合成するか、空いた床を右クリックして置こう！"
+
+#: init.lua:112
+msgid "Alchemist's Trowel"
+msgstr "錬金術師の移植ごて"
+
+#: init.lua:113
+msgid "Tool [1] · Move & Combine Blocks"
+msgstr "道具 [1] · ブロックの移動＆合成"
+
+#: init.lua:114
+msgid "A sturdy gardening trowel that safely picks up hazard blocks and opens bonus crystals."
+msgstr "障害ブロックを安全に持ち上げ、ボーナス結晶も割れる頑丈な園芸コテ。"
+
+#: init.lua:115
+msgid "Combine Brimstone + Ice or Acid + Chalk together for big plant growth!"
+msgstr "「硫黄＋氷」や「酸＋チョーク」を合成すると植物が大きく成長します！"
+
+#: init.lua:116
+msgid "Click any hazard block to pick it up, then click directly on its opposite (or Right-Click empty floor beside it)! Also cracks open Prismatic Geodes."
+msgstr "障害ブロックをクリックして持ち上げ、対になるブロックを直接クリック（または隣の床を右クリック）！プリズム晶洞も割れます。"
+
+#: init.lua:120
+msgid "Trowel [1] — Click to Move & Combine Blocks"
+msgstr "コテ [1] — クリックで移動＆合成"
+
+#: init.lua:170
+msgid "Brimstone Siphoned → Bellows Full!"
+msgstr "硫黄を吸収 → ふいご満タン！"
+
+#: init.lua:190
+msgid "Chalk Ground → Pestle Full!"
+msgstr "チョークを粉砕 → 乳棒満タン！"
+
+#: init.lua:200
+msgid "Thermal Bellows (Empty)"
+msgstr "熱風ふいご（空）"
+
+#: init.lua:201
+msgid "Tool [2] · Needs Heat Refill"
+msgstr "道具 [2] · 熱源の補充が必要"
+
+#: init.lua:202
+msgid "A cooled leather air-puffer out of warm puffs (holds 4+ Puffs when refilled)."
+msgstr "熱風を使い切った革製のふいご（補充で4パフ以上保持）。"
+
+#: init.lua:203
+msgid "Siphons hot Brimstone right off the floor (or mid-air) to refill all Puffs & boost Bloom!"
+msgstr "床（または空中）の灼熱の硫黄を吸い取って全パフを補充し、開花も促進！"
+
+#: init.lua:204
+msgid "Left-Click hot Brimstone to refill completely, or Left-Click empty air (1.8s) to hand-pump +1 Puff."
+msgstr "熱い硫黄を左クリックで全補充、または何もない空間を左クリック（1.8秒）で +1 パフ手動補充。"
+
+#: init.lua:209
+msgid "Thermal Bellows [2] — Empty (Click Brimstone or Air)"
+msgstr "熱風ふいご [2] — 空（硫黄または空中をクリック）"
+
+#: init.lua:232 init.lua:244
+msgid "Bellows empty! Click Brimstone to refill, or click air to pump +1."
+msgstr "ふいごが空です！硫黄をクリックして満タンにするか、空中クリックで +1 送風。"
+
+#: init.lua:253
+msgid "Thermal Bellows (Charged)"
+msgstr "熱風ふいご（充填済）"
+
+#: init.lua:254
+msgid "Tool [2] · Melts Ice · Siphons Brimstone"
+msgstr "道具 [2] · 氷を溶かす · 硫黄を吸収"
+
+#: init.lua:255
+msgid "Filled with 4 warm Puffs (+1 every 2 levels, +2 with Dragonlung Bellows)."
+msgstr "温かい熱風が4パフ充填（2レベルごとに上限+1、竜肺のふいごで+2）。"
+
+#: init.lua:256
+msgid "Melts blue Ice Shards into Water & Steam! Siphons hot Brimstone when below max Puffs."
+msgstr "青い氷片を水と蒸気に溶かします！最大未満の時は熱い硫黄を吸収可能。"
+
+#: init.lua:257
+msgid "Left-Click blue Ice to melt (1 Puff), or Left-Click Brimstone when low to refill all Puffs!"
+msgstr "青い氷を左クリックで融解（1パフ消費）、残量が減ったら硫黄を左クリックで全補充！"
+
+#: init.lua:260
+msgid "Thermal Bellows [2] — 4/4 Puffs"
+msgstr "熱風ふいご [2] — 4/4 パフ"
+
+#: init.lua:282
+msgid "Bellows [2] is full! Splash Brimstone [3] or pair Ice [1]."
+msgstr "ふいご [2] は満タンです！硫黄に [3] で水をかけるか氷と [1] で合成しよう。"
+
+#: init.lua:340
+msgid "Melted Ice → Water!"
+msgstr "氷を融解 → 水！"
+
+#: init.lua:341
+msgid "Melted @1 Ice → Water!"
+msgstr "氷 @1個を融解 → 水！"
+
+#: init.lua:349
+msgid "Puffed Water into rising Steam!"
+msgstr "水に熱風を送って蒸気に変えた！"
+
+#: init.lua:362
+msgid "Click Ice to melt, or Brimstone when low to refill!"
+msgstr "氷をクリックで融解、残量減少時は硫黄で補充！"
+
+#: init.lua:445
+msgid "Water Flask (Empty)"
+msgstr "水フラスコ（空）"
+
+#: init.lua:446
+msgid "Tool [3] · Needs Refill"
+msgstr "道具 [3] · 水の補充が必要"
+
+#: init.lua:447
+msgid "A glass watering flask out of cool splashes (holds 3+ Splashes when refilled)."
+msgstr "水を使い切ったガラスの水やりフラスコ（補充で3スプラッシュ以上保持）。"
+
+#: init.lua:448
+msgid "Scoops up an entire Water puddle or Steam cloud to fill your flask all the way!"
+msgstr "水たまりや蒸気をまるごとすくい取って一気に満タンにします！"
+
+#: init.lua:449
+msgid "Left-Click Water/Steam to refill completely, or Left-Click empty air (1.8s) to condense +1 Splash."
+msgstr "水/蒸気を左クリックで全補充、または何もない空間を左クリック（1.8秒）で +1 スプラッシュ凝縮。"
+
+#: init.lua:452
+msgid "Water Flask [3] — Empty (Click Water/Steam or Air)"
+msgstr "水フラスコ [3] — 空（水/蒸気または空中をクリック）"
+
+#: init.lua:476 init.lua:489
+msgid "Flask empty! Click Water/Steam to fill, or click air to condense +1."
+msgstr "フラスコが空です！水/蒸気をクリックして満タンにするか、空中クリックで +1 凝縮。"
+
+#: init.lua:499
+msgid "Water Flask (Filled)"
+msgstr "水フラスコ（満水）"
+
+#: init.lua:500
+msgid "Tool [3] · Ready to Splash!"
+msgstr "道具 [3] · 水かけ準備完了！"
+
+#: init.lua:501
+msgid "Filled with 3 cool Splashes (+1 every 2 levels, +2 with Deep Retort)."
+msgstr "冷たい水が3スプラッシュ分（2レベルごとに上限+1、深淵のレトルトで+2）。"
+
+#: init.lua:502
+msgid "Cools hot Brimstone into Steam, washes Chalk into green soil, and heals hurt or wilted plants!"
+msgstr "硫黄を蒸気に冷やし、チョークを緑の土に変え、傷ついたりしおれた植物を回復します！"
+
+#: init.lua:503
+msgid "Left-Click Brimstone, Chalk, or a hurt Plant to splash it (or Left-Click extra Water puddles to tidy them up!)."
+msgstr "硫黄・チョーク・傷ついた植物を左クリックして水をかけよう（余分な水たまりの回収も可能！）。"
+
+#: init.lua:507
+msgid "Water Flask [3] — 3/3 Splashes"
+msgstr "水フラスコ [3] — 3/3 スプラッシュ"
+
+#: init.lua:535
+msgid "Quenched Brimstone → Steam!"
+msgstr "硫黄を消火 → 蒸気！"
+
+#: init.lua:552
+msgid "Washed Chalk → Speed Soil!"
+msgstr "チョークを洗浄 → 加速ソイル！"
+
+#: init.lua:552
+msgid "Washed Chalk!"
+msgstr "チョークを洗い流した！"
+
+#: init.lua:566
+msgid "This plant is already happy and at full 100% health!"
+msgstr "この植物はすでに元気いっぱいでHP 100%です！"
+
+#: init.lua:576
+msgid "Click Brimstone, Chalk, or a hurt Plant to splash (or click Water to scoop)!"
+msgstr "硫黄・チョーク・傷ついた植物に水をかけよう（水クリックで回収）！"
+
+#: init.lua:587
+msgid "Limestone Pestle (Empty)"
+msgstr "石灰岩の乳棒（空）"
+
+#: init.lua:588
+msgid "Tool [4] · Needs Chalk Refill"
+msgstr "道具 [4] · チョークの補充が必要"
+
+#: init.lua:589
+msgid "A bare stone pestle out of mineral powder (holds 4+ Sweeps when refilled)."
+msgstr "ミネラル粉を使い切った石の乳棒（補充で4スイープ以上保持）。"
+
+#: init.lua:590
+msgid "Grinds dry Alkaline Chalk right off the floor (or mid-air) into Speed Soil & refills all Sweeps!"
+msgstr "床（または空中）のチョークを砕いて加速ソイルに変え、全スイープを補充！"
+
+#: init.lua:591
+msgid "Left-Click Alkaline Chalk to refill completely, or Left-Click empty air (1.8s) to scrape +1 Sweep."
+msgstr "チョークを左クリックで全補充、または何もない空間を左クリック（1.8秒）で +1 スイープ補充。"
+
+#: init.lua:594
+msgid "Limestone Pestle [4] — Empty (Click Chalk or Air)"
+msgstr "石灰岩の乳棒 [4] — 空（チョークまたは空中をクリック）"
+
+#: init.lua:614 init.lua:626
+msgid "Pestle empty! Click Chalk to refill, or click air to scrape +1."
+msgstr "乳棒が空です！チョークをクリックして満タンにするか、空中クリックで +1 削り取り。"
+
+#: init.lua:635
+msgid "Limestone Pestle (Charged)"
+msgstr "石灰岩の乳棒（充填済）"
+
+#: init.lua:636
+msgid "Tool [4] · Clears Acid · Grinds Chalk"
+msgstr "道具 [4] · 酸を中和 · チョークを粉砕"
+
+#: init.lua:637
+msgid "Coated with 4 mineral Sweeps (+1 every 2 levels, +2 with Starlight Mortar)."
+msgstr "ミネラル粉が4スイープ分（2レベルごとに上限+1、星明かりの乳鉢で+2）。"
+
+#: init.lua:638
+msgid "Clears a wide patch of green Acid Slime into Speed Soil! Grinds Chalk when below max Sweeps."
+msgstr "広範囲の酸スライムを加速ソイルに浄化！最大未満の時はチョークを砕いて補充可能。"
+
+#: init.lua:639
+msgid "Left-Click on or near Acid Slime (1 Sweep), or Left-Click Chalk when low to refill all Sweeps!"
+msgstr "酸スライムの上か近くを左クリックで中和（1スイープ消費）、残量減少時はチョークで全補充！"
+
+#: init.lua:642
+msgid "Limestone Pestle [4] — 4/4 Sweeps"
+msgstr "石灰岩の乳棒 [4] — 4/4 スイープ"
+
+#: init.lua:663
+msgid "Pestle [4] is full! Wash Chalk [3] or pair Acid [1]."
+msgstr "乳棒 [4] は満タンです！チョークを [3] で洗うか酸と [1] で合成しよう。"
+
+#: init.lua:698
+msgid "Cleared Acid → Speed Soil!"
+msgstr "酸を中和 → 加速ソイル！"
+
+#: init.lua:699
+msgid "Cleared @1 Acid → Speed Soil!"
+msgstr "酸 @1箇所を中和 → 加速ソイル！"
+
+#: init.lua:710
+msgid "Click near Acid Slime, or Chalk when low to refill!"
+msgstr "酸スライム付近をクリックで中和、残量減少時はチョークで補充！"
+
+#: init.lua:727
+msgid "Gardener's Guidebook"
+msgstr "庭師のガイドブック"
+
+#: init.lua:728
+msgid "Tool [5] · Illustrated How-to-Play"
+msgstr "道具 [5] · イラスト付き遊び方ガイド"
+
+#: init.lua:729
+msgid "Your friendly picture guide to every block, tool, potion, plant tip, and Top 10 score."
+msgstr "すべてのブロック、道具、ポーション、育成のコツ、トップ10スコアをまとめた図鑑。"
+
+#: init.lua:730
+msgid "Shows clear tips with hoverable item pictures—plus the Top 10 Leaderboard!"
+msgstr "アイコンにカーソルを合わせると詳細ヒントを表示—トップ10ランキングも収録！"
+
+#: init.lua:731
+msgid "Left-Click or Right-Click anytime to read (press [Z] to call out a room; hold [E]+W to sprint!)."
+msgstr "いつでも左/右クリックで閲覧（[Z] で部屋にマーカー、[E]+W 長押しでダッシュ！）。"
+
+#: init.lua:735
+msgid "Guidebook [5] — How to Play & Top 10"
+msgstr "ガイド [5] — 遊び方＆トップ10"
+
+#: init.lua:826
+msgid "Aegis Potion"
+msgstr "イージスポーション"
+
+#: init.lua:827
+msgid "Aegis Potion — Full Heal & Garden Shield (12s)"
+msgstr "イージスポーション — 全回復＆庭シールド（12秒）"
+
+#: init.lua:828
+msgid "Lifesaver Potion · From Geodes & Level Clears"
+msgstr "緊急守護ポーション · 晶洞＆クリア報酬"
+
+#: init.lua:829
+msgid "A rare golden-green elixir that heals you and shields both you and your whole garden."
+msgstr "あなたを癒やし、あなたと庭全体を保護する希少な金緑色の霊薬。"
+
+#: init.lua:830
+msgid "Refills your full health, revives all wilted plants, & shields you + every plant for 12s (14s with Sunlit Dew)! Also triggers automatically if you run out of health!"
+msgstr "HP全回復、しおれた植物をすべて復活させ、12秒間（陽だまりの露で14秒）全員＋全植物にシールド付与！HPが0になると自動発動します！"
+
+#: init.lua:832
+msgid "Left-Click or Right-Click to drink—or keep one in your bag as an automatic lifesaver!"
+msgstr "左/右クリックで飲むか、バッグに入れておけば自動のお守りになります！"
+
+#: init.lua:847
+msgid "Chronos Hourglass"
+msgstr "クロノスの砂時計"
+
+#: init.lua:848
+msgid "Chronos Hourglass — Pause Falling Blocks (12s)"
+msgstr "クロノスの砂時計 — 落下ブロック一時停止（12秒）"
+
+#: init.lua:849
+msgid "Time Hourglass · Earned Every Level Cleared"
+msgstr "時の砂時計 · 毎レベルクリア報酬"
+
+#: init.lua:850
+msgid "A magical brass hourglass filled with sparkling violet sand."
+msgstr "きらめく紫の砂が詰まった魔法の真鍮製砂時計。"
+
+#: init.lua:851
+msgid "Pauses new falling blocks for 12 seconds, clears 1 nearby hazard per plant, & speeds up the team!"
+msgstr "12秒間ブロックの落下を止め、各植物の周囲の障害を1つ消し、全員をスピードアップ！"
+
+#: init.lua:852
+msgid "Left-Click or Right-Click whenever your rooms get busy and you need breathing room!"
+msgstr "部屋が忙しくなって一息つきたい時に、いつでも左/右クリックで使おう！"
+

@@ -1,0 +1,124 @@
+# Translation catalog for tc_init (Terrarium Crucible)
+# Copyright (C) 2026 SaKeL
+# License: MIT
+msgid ""
+msgstr ""
+"Project-Id-Version: tc_init 1.0\n"
+"POT-Creation-Date: 2026-11-11 00:00+0000\n"
+"PO-Revision-Date: 2026-11-11 00:00+0000\n"
+"Last-Translator: SaKeL\n"
+"Language-Team: Slovak\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: api.lua:154
+msgid "Scorching Brimstone (Hot)"
+msgstr "Žeravá síra (Horúca)"
+
+#: api.lua:155
+msgid "Splash with Flask [3], siphon with low Bellows [2] to refill, or pair with Ice [1]."
+msgstr "Ošpliechajte Fľašou [3], odsajte takmer prázdnymi Mechmi [2] na doplnenie alebo spojte s Ľadom [1]."
+
+#: api.lua:161
+msgid "Glacial Ice Shard (Cold)"
+msgstr "Ľadovcový črep (Studený)"
+
+#: api.lua:162
+msgid "Melt with Bellows [2] into Water, then scoop Water with Flask [3] to refill!"
+msgstr "Roztopte Mechmi [2] na Vodu a potom Vodu naberte Fľašou [3] na doplnenie!"
+
+#: api.lua:168
+msgid "Vitriol Acid Slime (Sour)"
+msgstr "Kyslý vitriolový sliz (Kyslý)"
+
+#: api.lua:169
+msgid "Sweep with Pestle [4] (or pair Chalk [1] on it) to make green Speed Soil!"
+msgstr "Poprášte Tĺčikom [4] (alebo naň položte Kriedu [1]) a vytvorte zelenú Rýchlu pôdu!"
+
+#: api.lua:175
+msgid "Alkaline Chalk (Dry)"
+msgstr "Zásaditá krieda (Suchá)"
+
+#: api.lua:176
+msgid "Wash with Flask [3], grind with low Pestle [4] to refill, or pair with Acid [1]."
+msgstr "Zmyte Fľašou [3], rozdrvte takmer prázdnym Tĺčikom [4] na doplnenie alebo spojte s Kyselinou [1]."
+
+#: api.lua:205
+msgid "Open Guidebook"
+msgstr "Otvoriť príručku"
+
+#: api.lua:206
+msgid "Read the illustrated 5-tab Guidebook to learn every tool, block, potion, and blessing."
+msgstr "Prečítajte si ilustrovanú 5-kartovú príručku a spoznajte každý nástroj, blok, elixír a požehnanie."
+
+#: api.lua:210
+msgid "Garden Status"
+msgstr "Stav záhrady"
+
+#: api.lua:211
+msgid "Check each plant's health, see this level's blessing, or change the game pace anytime."
+msgstr "Skontrolujte zdravie každej rastliny, pozrite si požehnanie tejto úrovne alebo kedykoľvek zmeňte tempo hry."
+
+#: api.lua:215
+msgid "Top 10 Scores"
+msgstr "Top 10 skóre"
+
+#: api.lua:216
+msgid "See the Top 10 best runs saved on this world."
+msgstr "Pozrite si Top 10 najlepších pokusov uložených v tomto svete."
+
+#: api.lua:221
+msgid "SATCHEL"
+msgstr "BRAŠNA"
+
+#: api.lua:229
+msgid "YOUR BAG & QUICK TOOL GUIDE"
+msgstr "VAŠA BRAŠNA A RÝCHLY PREHĽAD NÁSTROJOV"
+
+#: api.lua:230
+msgid "Keep Heat (40–60°C) & Soil pH (5.6–8.4) comfortable until every plant reaches 100% Bloom!"
+msgstr "Udržujte teplo (40–60°C) a pH pôdy (5.6–8.4) v pohodlí, kým každá rastlina nedosiahne 100% Rozkvet!"
+
+#: init.lua:21
+msgid "Gloved Hand"
+msgstr "Ruka v rukavici"
+
+#: init.lua:22
+msgid "Empty Hand"
+msgstr "Prázdna ruka"
+
+#: init.lua:23
+msgid "Your sturdy leather gardening glove."
+msgstr "Vaša pevná kožená záhradnícka rukavica."
+
+#: init.lua:24
+msgid "Press keys [1] to [5] on your keyboard (or scroll the mouse wheel) to use your tools!"
+msgstr "Stláčajte klávesy [1] až [5] na klávesnici (alebo otáčajte kolieskom myši) na používanie nástrojov!"
+
+#: init.lua:27
+msgid "Gloved Hand — Press [1–5] for Tools"
+msgstr "Ruka v rukavici — Stlačte [1–5] pre nástroje"
+
+#: init.lua:64
+msgid "Bag & Guide"
+msgstr "Brašna a návod"
+
+#: init.lua:101
+msgid "Saved!"
+msgstr "Zachránení!"
+
+#: init.lua:104
+msgid "Your Aegis Potion activated automatically to refill your health and shield your garden!"
+msgstr "Váš Elixír Egidy sa automaticky aktivoval, doplnil vám zdravie a ochránil celú záhradu!"
+
+
+#: hud_migration
+msgid "✦ Saved by Auto-Aegis!"
+msgstr "✦ Zachránený Auto-Egidou!"
+
+#: hud_migration
+msgid "Health refilled & garden shielded (@1s)!"
+msgstr "Zdravie plné a štít aktívny (@1s)!"

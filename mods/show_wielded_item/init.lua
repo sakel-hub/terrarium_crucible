@@ -36,7 +36,7 @@ local function set_hud(player)
 	end
 
 	huds[player_name] = player:hud_add({
-		hud_elem_type = "text",
+		type = "text",
 		position = {x=0.5, y=1},
 		offset = off,
 		alignment = {x=0, y=0},
@@ -58,7 +58,26 @@ minetest.register_on_leaveplayer(function(player)
 	local name = player:get_player_name()
 	wield[name] = nil
 	wieldindex[name] = nil
+	huds[name] = nil
+	dtimes[name] = nil
 end)
+
+local function resolve_for_player(player_name, str)
+	if not str or str == "" or string.find(str, "\27", 1, true) == nil then
+		return str or ""
+	end
+	if minetest.get_translated_string then
+		local lang = "en"
+		if player_name and player_name ~= "" and minetest.get_player_information then
+			local info = minetest.get_player_information(player_name)
+			if info and info.lang_code and info.lang_code ~= "" then
+				lang = info.lang_code
+			end
+		end
+		return minetest.get_translated_string(lang, str)
+	end
+	return str
+end
 
 local function get_first_line(text)
 	-- Cut off text after first newline
@@ -96,23 +115,20 @@ minetest.register_globalstep(function(dtime)
 				local desc
 				if wstack.get_short_description then
 					-- get_short_description()
-					desc = wstack:get_short_description()
+					desc = resolve_for_player(player_name, wstack:get_short_description())
 				end
 				if (not desc or desc == "") and wstack.get_description then
 					-- get_description()
-					desc = wstack:get_description()
-					desc = get_first_line(desc)
+					desc = get_first_line(resolve_for_player(player_name, wstack:get_description()))
 				end
 				if (not desc or desc == "") and not wstack.get_description then
 					-- Metadata (old versions only)
 					local meta = wstack:get_meta()
-					desc = meta:get_string("description")
-					desc = get_first_line(desc)
+					desc = get_first_line(resolve_for_player(player_name, meta:get_string("description")))
 				end
-				if not desc or desc == "" then
+				if (not desc or desc == "") and def and def.description then
 					-- Item definition
-					desc = def.description
-					desc = get_first_line(desc)
+					desc = get_first_line(resolve_for_player(player_name, def.description))
 				end
 				if not desc or desc == "" then
 					-- Final fallback: itemstring

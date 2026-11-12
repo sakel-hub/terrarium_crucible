@@ -1,0 +1,404 @@
+# Translation catalog for tc_tools (Terrarium Crucible)
+# Copyright (C) 2026 SaKeL
+# License: MIT
+msgid ""
+msgstr ""
+"Project-Id-Version: tc_tools 1.0\n"
+"POT-Creation-Date: 2026-11-11 00:00+0000\n"
+"PO-Revision-Date: 2026-11-11 00:00+0000\n"
+"Last-Translator: SaKeL\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: api.lua:150
+msgid "Thermal Bellows [2] — @1/@2 Puffs"
+msgstr "Тепловые меха [2] — @1/@2 выдувов"
+
+#: api.lua:154
+msgid "Water Flask [3] — @1/@2 Splashes"
+msgstr "Фляга с водой [3] — @1/@2 всплесков"
+
+#: api.lua:158
+msgid "Limestone Pestle [4] — @1/@2 Sweeps"
+msgstr "Известковый пестик [4] — @1/@2 взмахов"
+
+#: api.lua:343
+msgid "Hand-Pumped +1 Puff — Brimstone fills all!"
+msgstr "Накачан +1 выдув — Сера заряжает полностью!"
+
+#: api.lua:356
+msgid "Condensed +1 Splash — Water fills all!"
+msgstr "Собран +1 всплеск — Вода наполняет полностью!"
+
+#: api.lua:369
+msgid "Scraped +1 Sweep — Chalk fills all!"
+msgstr "Наскребли +1 взмах — Мел заряжает полностью!"
+
+#: api.lua:404 api.lua:480
+msgid "its opposite block"
+msgstr "противоположный блок"
+
+#: api.lua:412
+msgid "Trowel [1] — Carrying @1 (Click @2 or Floor)"
+msgstr "Совок [1] — Несёте: @1 (клик по: @2 или полу)"
+
+#: api.lua:415
+msgid "Alchemist's Trowel — Carrying @1"
+msgstr "Совок алхимика — Несёте: @1"
+
+#: api.lua:416
+msgid "Tool [1] · Holding 1 Block"
+msgstr "Инструмент [1] · Несёт 1 блок"
+
+#: api.lua:417
+msgid "Safely holding @1 on your trowel."
+msgstr "На вашем совке безопасно лежит @1."
+
+#: api.lua:418
+msgid "Combine it with @1 so both cancel out and boost plant growth!"
+msgstr "Соедините с блоком (@1), чтобы нейтрализовать оба и ускорить рост растений!"
+
+#: api.lua:419
+msgid "Click directly on @1 (or Right-Click empty floor beside it) to combine!"
+msgstr "Нажмите прямо на @1 (или ПКМ по пустому полу рядом), чтобы соединить!"
+
+#: api.lua:483
+msgid "Carrying @1! Click directly on @2 to combine, or Right-Click an empty floor tile to set it down."
+msgstr "Вы несёте @1! Нажмите прямо на @2 для реакции или ПКМ по пустому полу, чтобы положить."
+
+#: api.lua:485
+msgid "a block"
+msgstr "блок"
+
+#: init.lua:72
+msgid "Left-Click or Right-Click a hazard block (Brimstone, Ice, Acid, or Chalk) to pick it up onto your Trowel!"
+msgstr "ЛКМ или ПКМ по опасному блоку (Сера, Лёд, Кислота или Мел), чтобы поднять его на Совок!"
+
+#: init.lua:85
+msgid "Please leave a little room around your plants!"
+msgstr "Пожалуйста, оставьте немного места вокруг растений!"
+
+#: init.lua:105
+msgid "Click directly on the opposite block to combine, or Right-Click an empty spot on the garden floor!"
+msgstr "Нажмите прямо на противоположный блок для реакции или ПКМ по пустому месту на полу сада!"
+
+#: init.lua:112
+msgid "Alchemist's Trowel"
+msgstr "Совок алхимика"
+
+#: init.lua:113
+msgid "Tool [1] · Move & Combine Blocks"
+msgstr "Инструмент [1] · Перенос и соединение блоков"
+
+#: init.lua:114
+msgid "A sturdy gardening trowel that safely picks up hazard blocks and opens bonus crystals."
+msgstr "Прочный садовый совок: безопасно переносит опасные блоки и раскалывает бонус-кристаллы."
+
+#: init.lua:115
+msgid "Combine Brimstone + Ice or Acid + Chalk together for big plant growth!"
+msgstr "Соединяйте Серу + Лёд или Кислоту + Мел ради мощного рывка роста!"
+
+#: init.lua:116
+msgid "Click any hazard block to pick it up, then click directly on its opposite (or Right-Click empty floor beside it)! Also cracks open Prismatic Geodes."
+msgstr "Кликните по опасному блоку, чтобы взять его, затем по противоположному (или ПКМ рядом на пол)! Также раскалывает Призматические жеоды."
+
+#: init.lua:120
+msgid "Trowel [1] — Click to Move & Combine Blocks"
+msgstr "Совок [1] — клик для переноса и соединения блоков"
+
+#: init.lua:170
+msgid "Brimstone Siphoned → Bellows Full!"
+msgstr "Жар серы втянут → Меха полны!"
+
+#: init.lua:190
+msgid "Chalk Ground → Pestle Full!"
+msgstr "Мел растёрт → Пестик полон!"
+
+#: init.lua:200
+msgid "Thermal Bellows (Empty)"
+msgstr "Тепловые меха (пусто)"
+
+#: init.lua:201
+msgid "Tool [2] · Needs Heat Refill"
+msgstr "Инструмент [2] · Нужен заряд жара"
+
+#: init.lua:202
+msgid "A cooled leather air-puffer out of warm puffs (holds 4+ Puffs when refilled)."
+msgstr "Остывшие кожаные меха без тёплых выдувов (вмещают 4+ выдувов при зарядке)."
+
+#: init.lua:203
+msgid "Siphons hot Brimstone right off the floor (or mid-air) to refill all Puffs & boost Bloom!"
+msgstr "Втягивают горячую Серу с пола (или на лету), пополняя все выдувы и ускоряя цветение!"
+
+#: init.lua:204
+msgid "Left-Click hot Brimstone to refill completely, or Left-Click empty air (1.8s) to hand-pump +1 Puff."
+msgstr "ЛКМ по горячей Сере для полного заряда или ЛКМ по воздуху (1.8 с) для +1 выдува."
+
+#: init.lua:209
+msgid "Thermal Bellows [2] — Empty (Click Brimstone or Air)"
+msgstr "Тепловые меха [2] — Пусто (клик по Сере или воздуху)"
+
+#: init.lua:232 init.lua:244
+msgid "Bellows empty! Click Brimstone to refill, or click air to pump +1."
+msgstr "Меха пусты! Нажмите по Сере для заряда или по воздуху (+1)."
+
+#: init.lua:253
+msgid "Thermal Bellows (Charged)"
+msgstr "Тепловые меха (заряжены)"
+
+#: init.lua:254
+msgid "Tool [2] · Melts Ice · Siphons Brimstone"
+msgstr "Инструмент [2] · Топит Лёд · Втягивает Серу"
+
+#: init.lua:255
+msgid "Filled with 4 warm Puffs (+1 every 2 levels, +2 with Dragonlung Bellows)."
+msgstr "Запас: 4 тёплых выдува (+1 каждые 2 ур., +2 с Драконьими мехами)."
+
+#: init.lua:256
+msgid "Melts blue Ice Shards into Water & Steam! Siphons hot Brimstone when below max Puffs."
+msgstr "Топит синие Ледяные осколки в Воду и Пар! Втягивает Серу, если запас не полон."
+
+#: init.lua:257
+msgid "Left-Click blue Ice to melt (1 Puff), or Left-Click Brimstone when low to refill all Puffs!"
+msgstr "ЛКМ по синему Льду для растопки (1 выдув) или ЛКМ по Сере для полного заряда!"
+
+#: init.lua:260
+msgid "Thermal Bellows [2] — 4/4 Puffs"
+msgstr "Тепловые меха [2] — 4/4 выдувов"
+
+#: init.lua:282
+msgid "Bellows [2] is full! Splash Brimstone [3] or pair Ice [1]."
+msgstr "Меха [2] полны! Окатите Серу [3] или соедините со Льдом [1]."
+
+#: init.lua:340
+msgid "Melted Ice → Water!"
+msgstr "Лёд растоплен → Вода!"
+
+#: init.lua:341
+msgid "Melted @1 Ice → Water!"
+msgstr "Растоплено льда (@1) → Вода!"
+
+#: init.lua:349
+msgid "Puffed Water into rising Steam!"
+msgstr "Вода раздута в Восходящий пар!"
+
+#: init.lua:362
+msgid "Click Ice to melt, or Brimstone when low to refill!"
+msgstr "Клик по Льду — растопить, по Сере (когда мало) — зарядить!"
+
+#: init.lua:445
+msgid "Water Flask (Empty)"
+msgstr "Фляга с водой (пусто)"
+
+#: init.lua:446
+msgid "Tool [3] · Needs Refill"
+msgstr "Инструмент [3] · Нужно наполнить"
+
+#: init.lua:447
+msgid "A glass watering flask out of cool splashes (holds 3+ Splashes when refilled)."
+msgstr "Стеклянная садовая фляга без воды (вмещает 3+ всплесков при наполнении)."
+
+#: init.lua:448
+msgid "Scoops up an entire Water puddle or Steam cloud to fill your flask all the way!"
+msgstr "Зачерпывает целую лужу Воды или облако Пара, наполняя флягу до краёв!"
+
+#: init.lua:449
+msgid "Left-Click Water/Steam to refill completely, or Left-Click empty air (1.8s) to condense +1 Splash."
+msgstr "ЛКМ по Воде/Пару для полного наполнения или ЛКМ по воздуху (1.8 с) для +1 всплеска."
+
+#: init.lua:452
+msgid "Water Flask [3] — Empty (Click Water/Steam or Air)"
+msgstr "Фляга с водой [3] — Пусто (клик по Воде/Пару или воздуху)"
+
+#: init.lua:476 init.lua:489
+msgid "Flask empty! Click Water/Steam to fill, or click air to condense +1."
+msgstr "Фляга пуста! Нажмите по Воде/Пару для наполнения или по воздуху (+1)."
+
+#: init.lua:499
+msgid "Water Flask (Filled)"
+msgstr "Фляга с водой (полная)"
+
+#: init.lua:500
+msgid "Tool [3] · Ready to Splash!"
+msgstr "Инструмент [3] · Готова поливать!"
+
+#: init.lua:501
+msgid "Filled with 3 cool Splashes (+1 every 2 levels, +2 with Deep Retort)."
+msgstr "Запас: 3 прохладных всплеска (+1 каждые 2 ур., +2 с Глубокой ретортой)."
+
+#: init.lua:502
+msgid "Cools hot Brimstone into Steam, washes Chalk into green soil, and heals hurt or wilted plants!"
+msgstr "Остужает Серу в Пар, смывает Мел в зелёную почву и лечит раненые или увядшие растения!"
+
+#: init.lua:503
+msgid "Left-Click Brimstone, Chalk, or a hurt Plant to splash it (or Left-Click extra Water puddles to tidy them up!)."
+msgstr "ЛКМ по Сере, Мелу или больному растению для полива (или ЛКМ по лишним лужам Воды)!"
+
+#: init.lua:507
+msgid "Water Flask [3] — 3/3 Splashes"
+msgstr "Фляга с водой [3] — 3/3 всплесков"
+
+#: init.lua:535
+msgid "Quenched Brimstone → Steam!"
+msgstr "Сера потушена → Пар!"
+
+#: init.lua:552
+msgid "Washed Chalk → Speed Soil!"
+msgstr "Мел смыт → Быстрая почва!"
+
+#: init.lua:552
+msgid "Washed Chalk!"
+msgstr "Мел смыт!"
+
+#: init.lua:566
+msgid "This plant is already happy and at full 100% health!"
+msgstr "Это растение уже счастливо и полностью здорово (100%)!"
+
+#: init.lua:576
+msgid "Click Brimstone, Chalk, or a hurt Plant to splash (or click Water to scoop)!"
+msgstr "Клик по Сере, Мелу или растению — полить (по Воде — набрать)!"
+
+#: init.lua:587
+msgid "Limestone Pestle (Empty)"
+msgstr "Известковый пестик (пусто)"
+
+#: init.lua:588
+msgid "Tool [4] · Needs Chalk Refill"
+msgstr "Инструмент [4] · Нужен заряд мела"
+
+#: init.lua:589
+msgid "A bare stone pestle out of mineral powder (holds 4+ Sweeps when refilled)."
+msgstr "Каменный пестик без минеральной пудры (вмещает 4+ взмахов при зарядке)."
+
+#: init.lua:590
+msgid "Grinds dry Alkaline Chalk right off the floor (or mid-air) into Speed Soil & refills all Sweeps!"
+msgstr "Растирает сухой Щелочной мел с пола (или на лету) в Быструю почву и пополняет все взмахи!"
+
+#: init.lua:591
+msgid "Left-Click Alkaline Chalk to refill completely, or Left-Click empty air (1.8s) to scrape +1 Sweep."
+msgstr "ЛКМ по Щелочному мелу для полного заряда или ЛКМ по воздуху (1.8 с) для +1 взмаха."
+
+#: init.lua:594
+msgid "Limestone Pestle [4] — Empty (Click Chalk or Air)"
+msgstr "Известковый пестик [4] — Пусто (клик по Мелу или воздуху)"
+
+#: init.lua:614 init.lua:626
+msgid "Pestle empty! Click Chalk to refill, or click air to scrape +1."
+msgstr "Пестик пуст! Нажмите по Мелу для заряда или по воздуху (+1)."
+
+#: init.lua:635
+msgid "Limestone Pestle (Charged)"
+msgstr "Известковый пестик (заряжен)"
+
+#: init.lua:636
+msgid "Tool [4] · Clears Acid · Grinds Chalk"
+msgstr "Инструмент [4] · Убирает Кислоту · Трёт Мел"
+
+#: init.lua:637
+msgid "Coated with 4 mineral Sweeps (+1 every 2 levels, +2 with Starlight Mortar)."
+msgstr "Запас: 4 минеральных взмаха (+1 каждые 2 ур., +2 со Звёздной ступкой)."
+
+#: init.lua:638
+msgid "Clears a wide patch of green Acid Slime into Speed Soil! Grinds Chalk when below max Sweeps."
+msgstr "Очищает широкое пятно Кислотной слизи в Быструю почву! Растирает Мел, когда запас не полон."
+
+#: init.lua:639
+msgid "Left-Click on or near Acid Slime (1 Sweep), or Left-Click Chalk when low to refill all Sweeps!"
+msgstr "ЛКМ по Кислотной слизи или рядом (1 взмах), либо ЛКМ по Мелу для полного заряда!"
+
+#: init.lua:642
+msgid "Limestone Pestle [4] — 4/4 Sweeps"
+msgstr "Известковый пестик [4] — 4/4 взмахов"
+
+#: init.lua:663
+msgid "Pestle [4] is full! Wash Chalk [3] or pair Acid [1]."
+msgstr "Пестик [4] полон! Смойте Мел [3] или соедините с Кислотой [1]."
+
+#: init.lua:698
+msgid "Cleared Acid → Speed Soil!"
+msgstr "Кислота убрана → Быстрая почва!"
+
+#: init.lua:699
+msgid "Cleared @1 Acid → Speed Soil!"
+msgstr "Убрано кислоты (@1) → Быстрая почва!"
+
+#: init.lua:710
+msgid "Click near Acid Slime, or Chalk when low to refill!"
+msgstr "Клик рядом с Кислотой — убрать, по Мелу (когда мало) — зарядить!"
+
+#: init.lua:727
+msgid "Gardener's Guidebook"
+msgstr "Справочник садовника"
+
+#: init.lua:728
+msgid "Tool [5] · Illustrated How-to-Play"
+msgstr "Инструмент [5] · Иллюстрированное руководство"
+
+#: init.lua:729
+msgid "Your friendly picture guide to every block, tool, potion, plant tip, and Top 10 score."
+msgstr "Наглядный гид с картинками по всем блокам, инструментам, зельям, растениям и топ-10 рекордов."
+
+#: init.lua:730
+msgid "Shows clear tips with hoverable item pictures—plus the Top 10 Leaderboard!"
+msgstr "Показывает понятные подсказки при наведении на значки, а также таблицу топ-10!"
+
+#: init.lua:731
+msgid "Left-Click or Right-Click anytime to read (press [Z] to call out a room; hold [E]+W to sprint!)."
+msgstr "ЛКМ или ПКМ в любой момент для чтения ([Z] — отметить комнату; [E]+W — спринт!)."
+
+#: init.lua:735
+msgid "Guidebook [5] — How to Play & Top 10"
+msgstr "Справочник [5] — Как играть и Топ-10"
+
+#: init.lua:826
+msgid "Aegis Potion"
+msgstr "Зелье Эгиды"
+
+#: init.lua:827
+msgid "Aegis Potion — Full Heal & Garden Shield (12s)"
+msgstr "Зелье Эгиды — Полное лечение и щит сада (12 с)"
+
+#: init.lua:828
+msgid "Lifesaver Potion · From Geodes & Level Clears"
+msgstr "Спасительное зелье · Из жеод и за уровни"
+
+#: init.lua:829
+msgid "A rare golden-green elixir that heals you and shields both you and your whole garden."
+msgstr "Редкий золотисто-зелёный эликсир, исцеляющий вас и укрывающий щитом весь сад."
+
+#: init.lua:830
+msgid "Refills your full health, revives all wilted plants, & shields you + every plant for 12s (14s with Sunlit Dew)! Also triggers automatically if you run out of health!"
+msgstr "Полностью лечит вас, оживляет все увядшие растения и даёт щит на 12 с (14 с с Солнечной росой)! Срабатывает само при 0 ОЗ!"
+
+#: init.lua:832
+msgid "Left-Click or Right-Click to drink—or keep one in your bag as an automatic lifesaver!"
+msgstr "ЛКМ или ПКМ, чтобы выпить — или храните в сумке для автоспасения!"
+
+#: init.lua:847
+msgid "Chronos Hourglass"
+msgstr "Часы Хроноса"
+
+#: init.lua:848
+msgid "Chronos Hourglass — Pause Falling Blocks (12s)"
+msgstr "Часы Хроноса — Пауза падения блоков (12 с)"
+
+#: init.lua:849
+msgid "Time Hourglass · Earned Every Level Cleared"
+msgstr "Песочные часы · За каждый пройденный уровень"
+
+#: init.lua:850
+msgid "A magical brass hourglass filled with sparkling violet sand."
+msgstr "Волшебные латунные часы с искрящимся фиолетовым песком."
+
+#: init.lua:851
+msgid "Pauses new falling blocks for 12 seconds, clears 1 nearby hazard per plant, & speeds up the team!"
+msgstr "Останавливает падение блоков на 12 с, убирает по 1 угрозе у каждого растения и ускоряет команду!"
+
+#: init.lua:852
+msgid "Left-Click or Right-Click whenever your rooms get busy and you need breathing room!"
+msgstr "ЛКМ или ПКМ, когда в комнатах слишком жарко и нужна передышка!"
+

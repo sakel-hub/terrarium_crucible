@@ -1,0 +1,404 @@
+# Translation catalog for tc_tools (Terrarium Crucible)
+# Copyright (C) 2026 SaKeL
+# License: MIT
+msgid ""
+msgstr ""
+"Project-Id-Version: tc_tools 1.0\n"
+"POT-Creation-Date: 2026-11-11 00:00+0000\n"
+"PO-Revision-Date: 2026-11-11 00:00+0000\n"
+"Last-Translator: SaKeL\n"
+"Language-Team: Chinese (Simplified)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: api.lua:150
+msgid "Thermal Bellows [2] — @1/@2 Puffs"
+msgstr "热力风箱 [2] — @1/@2 次鼓风"
+
+#: api.lua:154
+msgid "Water Flask [3] — @1/@2 Splashes"
+msgstr "水瓶 [3] — @1/@2 次泼洒"
+
+#: api.lua:158
+msgid "Limestone Pestle [4] — @1/@2 Sweeps"
+msgstr "石灰石杵 [4] — @1/@2 次清扫"
+
+#: api.lua:343
+msgid "Hand-Pumped +1 Puff — Brimstone fills all!"
+msgstr "手动鼓气 +1 — 吸取硫磺可直接回满！"
+
+#: api.lua:356
+msgid "Condensed +1 Splash — Water fills all!"
+msgstr "空气凝水 +1 — 舀取清水可直接回满！"
+
+#: api.lua:369
+msgid "Scraped +1 Sweep — Chalk fills all!"
+msgstr "刮取石粉 +1 — 研磨白垩可直接回满！"
+
+#: api.lua:404 api.lua:480
+msgid "its opposite block"
+msgstr "相克方块"
+
+#: api.lua:412
+msgid "Trowel [1] — Carrying @1 (Click @2 or Floor)"
+msgstr "花铲 [1] — 托着@1（点击@2或地面）"
+
+#: api.lua:415
+msgid "Alchemist's Trowel — Carrying @1"
+msgstr "炼金花铲 — 托着@1"
+
+#: api.lua:416
+msgid "Tool [1] · Holding 1 Block"
+msgstr "工具 [1] · 已托起 1 个方块"
+
+#: api.lua:417
+msgid "Safely holding @1 on your trowel."
+msgstr "花铲上正稳稳托着@1。"
+
+#: api.lua:418
+msgid "Combine it with @1 so both cancel out and boost plant growth!"
+msgstr "将它与@1合并抵消，大幅促进植物生长！"
+
+#: api.lua:419
+msgid "Click directly on @1 (or Right-Click empty floor beside it) to combine!"
+msgstr "直接点击@1（或右键点击其旁空地）即可合并！"
+
+#: api.lua:483
+msgid "Carrying @1! Click directly on @2 to combine, or Right-Click an empty floor tile to set it down."
+msgstr "正托着@1！直接点击@2合并，或右键点击空地放下。"
+
+#: api.lua:485
+msgid "a block"
+msgstr "方块"
+
+#: init.lua:72
+msgid "Left-Click or Right-Click a hazard block (Brimstone, Ice, Acid, or Chalk) to pick it up onto your Trowel!"
+msgstr "左键或右键点击危害方块（硫磺、寒冰、酸液或白垩），用花铲将它铲起！"
+
+#: init.lua:85
+msgid "Please leave a little room around your plants!"
+msgstr "请在植物周围留出一点空间！"
+
+#: init.lua:105
+msgid "Click directly on the opposite block to combine, or Right-Click an empty spot on the garden floor!"
+msgstr "直接点击相克方块进行合并，或右键点击花园空地放下！"
+
+#: init.lua:112
+msgid "Alchemist's Trowel"
+msgstr "炼金花铲"
+
+#: init.lua:113
+msgid "Tool [1] · Move & Combine Blocks"
+msgstr "工具 [1] · 搬运与合并方块"
+
+#: init.lua:114
+msgid "A sturdy gardening trowel that safely picks up hazard blocks and opens bonus crystals."
+msgstr "坚固的园艺花铲，可安全铲起危害方块并敲开奖励水晶。"
+
+#: init.lua:115
+msgid "Combine Brimstone + Ice or Acid + Chalk together for big plant growth!"
+msgstr "将硫磺 + 寒冰，或酸液 + 白垩合并，可大幅加速植物生长！"
+
+#: init.lua:116
+msgid "Click any hazard block to pick it up, then click directly on its opposite (or Right-Click empty floor beside it)! Also cracks open Prismatic Geodes."
+msgstr "点击任意危害方块将其铲起，再直接点击其相克方块（或右键点击其旁空地）！也可敲开棱彩晶洞。"
+
+#: init.lua:120
+msgid "Trowel [1] — Click to Move & Combine Blocks"
+msgstr "花铲 [1] — 点击搬运与合并方块"
+
+#: init.lua:170
+msgid "Brimstone Siphoned → Bellows Full!"
+msgstr "已吸取硫磺 → 风箱回满！"
+
+#: init.lua:190
+msgid "Chalk Ground → Pestle Full!"
+msgstr "已研磨白垩 → 石杵回满！"
+
+#: init.lua:200
+msgid "Thermal Bellows (Empty)"
+msgstr "热力风箱（空）"
+
+#: init.lua:201
+msgid "Tool [2] · Needs Heat Refill"
+msgstr "工具 [2] · 需要热力充能"
+
+#: init.lua:202
+msgid "A cooled leather air-puffer out of warm puffs (holds 4+ Puffs when refilled)."
+msgstr "热气耗尽的皮革风箱（充能后可存 4+ 次鼓风）。"
+
+#: init.lua:203
+msgid "Siphons hot Brimstone right off the floor (or mid-air) to refill all Puffs & boost Bloom!"
+msgstr "直接吸取地面（或半空）的灼热硫磺，回满鼓风并提升开花度！"
+
+#: init.lua:204
+msgid "Left-Click hot Brimstone to refill completely, or Left-Click empty air (1.8s) to hand-pump +1 Puff."
+msgstr "左键点击灼热硫磺完全回满，或对着空气左键（1.8 秒）手动鼓风 +1。"
+
+#: init.lua:209
+msgid "Thermal Bellows [2] — Empty (Click Brimstone or Air)"
+msgstr "热力风箱 [2] — 空（点击硫磺或空气）"
+
+#: init.lua:232 init.lua:244
+msgid "Bellows empty! Click Brimstone to refill, or click air to pump +1."
+msgstr "风箱已空！点击硫磺回满，或点击空气鼓风 +1。"
+
+#: init.lua:253
+msgid "Thermal Bellows (Charged)"
+msgstr "热力风箱（已充能）"
+
+#: init.lua:254
+msgid "Tool [2] · Melts Ice · Siphons Brimstone"
+msgstr "工具 [2] · 融化寒冰 · 吸取硫磺"
+
+#: init.lua:255
+msgid "Filled with 4 warm Puffs (+1 every 2 levels, +2 with Dragonlung Bellows)."
+msgstr "装有 4 次热风（每 2 关上限 +1，龙肺风箱祝福额外 +2）。"
+
+#: init.lua:256
+msgid "Melts blue Ice Shards into Water & Steam! Siphons hot Brimstone when below max Puffs."
+msgstr "将蓝色寒冰碎片融化为清水与蒸汽！未满时可吸取灼热硫磺。"
+
+#: init.lua:257
+msgid "Left-Click blue Ice to melt (1 Puff), or Left-Click Brimstone when low to refill all Puffs!"
+msgstr "左键点击寒冰将其融化（消耗 1 次），未满时左键点击硫磺回满鼓风！"
+
+#: init.lua:260
+msgid "Thermal Bellows [2] — 4/4 Puffs"
+msgstr "热力风箱 [2] — 4/4 次鼓风"
+
+#: init.lua:282
+msgid "Bellows [2] is full! Splash Brimstone [3] or pair Ice [1]."
+msgstr "风箱 [2] 已满！请用水瓶 [3] 泼灭硫磺或用 [1] 配对寒冰。"
+
+#: init.lua:340
+msgid "Melted Ice → Water!"
+msgstr "寒冰融化 → 清水！"
+
+#: init.lua:341
+msgid "Melted @1 Ice → Water!"
+msgstr "已融化 @1 块寒冰 → 清水！"
+
+#: init.lua:349
+msgid "Puffed Water into rising Steam!"
+msgstr "将清水吹化为升腾蒸汽！"
+
+#: init.lua:362
+msgid "Click Ice to melt, or Brimstone when low to refill!"
+msgstr "点击寒冰融化，未满时点击硫磺回满！"
+
+#: init.lua:445
+msgid "Water Flask (Empty)"
+msgstr "水瓶（空）"
+
+#: init.lua:446
+msgid "Tool [3] · Needs Refill"
+msgstr "工具 [3] · 需要装水"
+
+#: init.lua:447
+msgid "A glass watering flask out of cool splashes (holds 3+ Splashes when refilled)."
+msgstr "水已用尽的玻璃浇水瓶（装满后可存 3+ 次泼洒）。"
+
+#: init.lua:448
+msgid "Scoops up an entire Water puddle or Steam cloud to fill your flask all the way!"
+msgstr "舀起整滩清水或整团蒸汽，直接灌满水瓶！"
+
+#: init.lua:449
+msgid "Left-Click Water/Steam to refill completely, or Left-Click empty air (1.8s) to condense +1 Splash."
+msgstr "左键点击清水/蒸汽完全装满，或对着空气左键（1.8 秒）凝结 +1 次泼洒。"
+
+#: init.lua:452
+msgid "Water Flask [3] — Empty (Click Water/Steam or Air)"
+msgstr "水瓶 [3] — 空（点击清水/蒸汽或空气）"
+
+#: init.lua:476 init.lua:489
+msgid "Flask empty! Click Water/Steam to fill, or click air to condense +1."
+msgstr "水瓶已空！点击清水/蒸汽装满，或点击空气凝结 +1。"
+
+#: init.lua:499
+msgid "Water Flask (Filled)"
+msgstr "水瓶（已装满）"
+
+#: init.lua:500
+msgid "Tool [3] · Ready to Splash!"
+msgstr "工具 [3] · 随时泼洒！"
+
+#: init.lua:501
+msgid "Filled with 3 cool Splashes (+1 every 2 levels, +2 with Deep Retort)."
+msgstr "装有 3 次清凉泼洒（每 2 关上限 +1，深渊曲颈瓶祝福额外 +2）。"
+
+#: init.lua:502
+msgid "Cools hot Brimstone into Steam, washes Chalk into green soil, and heals hurt or wilted plants!"
+msgstr "将灼热硫磺冷却为蒸汽，将白垩冲洗为绿土，还能治疗受伤或枯萎的植物！"
+
+#: init.lua:503
+msgid "Left-Click Brimstone, Chalk, or a hurt Plant to splash it (or Left-Click extra Water puddles to tidy them up!)."
+msgstr "左键点击硫磺、白垩或受损植物进行泼洒（也可左键点击多余水洼将其收起！）。"
+
+#: init.lua:507
+msgid "Water Flask [3] — 3/3 Splashes"
+msgstr "水瓶 [3] — 3/3 次泼洒"
+
+#: init.lua:535
+msgid "Quenched Brimstone → Steam!"
+msgstr "浇灭硫磺 → 蒸汽！"
+
+#: init.lua:552
+msgid "Washed Chalk → Speed Soil!"
+msgstr "冲洗白垩 → 加速土！"
+
+#: init.lua:552
+msgid "Washed Chalk!"
+msgstr "已冲洗白垩！"
+
+#: init.lua:566
+msgid "This plant is already happy and at full 100% health!"
+msgstr "这株植物状态极佳，已是 100% 满生命值！"
+
+#: init.lua:576
+msgid "Click Brimstone, Chalk, or a hurt Plant to splash (or click Water to scoop)!"
+msgstr "点击硫磺、白垩或受损植物泼水（或点击清水舀起）！"
+
+#: init.lua:587
+msgid "Limestone Pestle (Empty)"
+msgstr "石灰石杵（空）"
+
+#: init.lua:588
+msgid "Tool [4] · Needs Chalk Refill"
+msgstr "工具 [4] · 需要白垩充能"
+
+#: init.lua:589
+msgid "A bare stone pestle out of mineral powder (holds 4+ Sweeps when refilled)."
+msgstr "矿粉耗尽的光洁石杵（充能后可存 4+ 次清扫）。"
+
+#: init.lua:590
+msgid "Grinds dry Alkaline Chalk right off the floor (or mid-air) into Speed Soil & refills all Sweeps!"
+msgstr "直接将地面（或半空）的碱性白垩研磨成加速土，并回满所有清扫次数！"
+
+#: init.lua:591
+msgid "Left-Click Alkaline Chalk to refill completely, or Left-Click empty air (1.8s) to scrape +1 Sweep."
+msgstr "左键点击碱性白垩完全回满，或对着空气左键（1.8 秒）刮取 +1 次清扫。"
+
+#: init.lua:594
+msgid "Limestone Pestle [4] — Empty (Click Chalk or Air)"
+msgstr "石灰石杵 [4] — 空（点击白垩或空气）"
+
+#: init.lua:614 init.lua:626
+msgid "Pestle empty! Click Chalk to refill, or click air to scrape +1."
+msgstr "石杵已空！点击白垩回满，或点击空气刮取 +1。"
+
+#: init.lua:635
+msgid "Limestone Pestle (Charged)"
+msgstr "石灰石杵（已充能）"
+
+#: init.lua:636
+msgid "Tool [4] · Clears Acid · Grinds Chalk"
+msgstr "工具 [4] · 清除酸液 · 研磨白垩"
+
+#: init.lua:637
+msgid "Coated with 4 mineral Sweeps (+1 every 2 levels, +2 with Starlight Mortar)."
+msgstr "覆有 4 次矿粉清扫（每 2 关上限 +1，星光研钵祝福额外 +2）。"
+
+#: init.lua:638
+msgid "Clears a wide patch of green Acid Slime into Speed Soil! Grinds Chalk when below max Sweeps."
+msgstr "将大片绿色酸液中和为加速土！未满时可研磨白垩补充。"
+
+#: init.lua:639
+msgid "Left-Click on or near Acid Slime (1 Sweep), or Left-Click Chalk when low to refill all Sweeps!"
+msgstr "在酸液上或附近左键清扫（消耗 1 次），未满时左键点击白垩回满！"
+
+#: init.lua:642
+msgid "Limestone Pestle [4] — 4/4 Sweeps"
+msgstr "石灰石杵 [4] — 4/4 次清扫"
+
+#: init.lua:663
+msgid "Pestle [4] is full! Wash Chalk [3] or pair Acid [1]."
+msgstr "石杵 [4] 已满！请用水瓶 [3] 冲洗白垩或用 [1] 配对酸液。"
+
+#: init.lua:698
+msgid "Cleared Acid → Speed Soil!"
+msgstr "清除酸液 → 加速土！"
+
+#: init.lua:699
+msgid "Cleared @1 Acid → Speed Soil!"
+msgstr "已清除 @1 处酸液 → 加速土！"
+
+#: init.lua:710
+msgid "Click near Acid Slime, or Chalk when low to refill!"
+msgstr "点击酸液附近清扫，未满时点击白垩回满！"
+
+#: init.lua:727
+msgid "Gardener's Guidebook"
+msgstr "园丁图鉴"
+
+#: init.lua:728
+msgid "Tool [5] · Illustrated How-to-Play"
+msgstr "工具 [5] · 图文玩法指南"
+
+#: init.lua:729
+msgid "Your friendly picture guide to every block, tool, potion, plant tip, and Top 10 score."
+msgstr "贴心的图文指南，收录所有方块、工具、药水、植物技巧与前 10 排行榜。"
+
+#: init.lua:730
+msgid "Shows clear tips with hoverable item pictures—plus the Top 10 Leaderboard!"
+msgstr "鼠标悬停物品图标即可查看详尽说明——内附前 10 排行榜！"
+
+#: init.lua:731
+msgid "Left-Click or Right-Click anytime to read (press [Z] to call out a room; hold [E]+W to sprint!)."
+msgstr "随时左键或右键阅读（按 [Z] 标记房间；按住 [E]+W 冲刺！）。"
+
+#: init.lua:735
+msgid "Guidebook [5] — How to Play & Top 10"
+msgstr "图鉴 [5] — 玩法指南与前 10 榜"
+
+#: init.lua:826
+msgid "Aegis Potion"
+msgstr "神盾药水"
+
+#: init.lua:827
+msgid "Aegis Potion — Full Heal & Garden Shield (12s)"
+msgstr "神盾药水 — 完全治疗与花园护盾（12 秒）"
+
+#: init.lua:828
+msgid "Lifesaver Potion · From Geodes & Level Clears"
+msgstr "救命灵药 · 源自晶洞与通关奖励"
+
+#: init.lua:829
+msgid "A rare golden-green elixir that heals you and shields both you and your whole garden."
+msgstr "珍贵的金绿色灵药，能治愈你并为你和整座花园张开护盾。"
+
+#: init.lua:830
+msgid "Refills your full health, revives all wilted plants, & shields you + every plant for 12s (14s with Sunlit Dew)! Also triggers automatically if you run out of health!"
+msgstr "回满生命、复苏所有枯萎植物，并为你和所有植物提供 12 秒护盾（日耀甘露下为 14 秒）！生命归零时还会自动触发！"
+
+#: init.lua:832
+msgid "Left-Click or Right-Click to drink—or keep one in your bag as an automatic lifesaver!"
+msgstr "左键或右键饮用——或留在行囊中充当自动保命符！"
+
+#: init.lua:847
+msgid "Chronos Hourglass"
+msgstr "时之沙漏"
+
+#: init.lua:848
+msgid "Chronos Hourglass — Pause Falling Blocks (12s)"
+msgstr "时之沙漏 — 暂停方块下落（12 秒）"
+
+#: init.lua:849
+msgid "Time Hourglass · Earned Every Level Cleared"
+msgstr "时间沙漏 · 每关通关固定奖励"
+
+#: init.lua:850
+msgid "A magical brass hourglass filled with sparkling violet sand."
+msgstr "装满闪耀紫沙的魔法黄铜沙漏。"
+
+#: init.lua:851
+msgid "Pauses new falling blocks for 12 seconds, clears 1 nearby hazard per plant, & speeds up the team!"
+msgstr "暂停新方块下落 12 秒，为每株植物清除 1 个附近危害，并为全队加速！"
+
+#: init.lua:852
+msgid "Left-Click or Right-Click whenever your rooms get busy and you need breathing room!"
+msgstr "房间忙不过来时，随时左键或右键使用，争取喘息良机！"
+

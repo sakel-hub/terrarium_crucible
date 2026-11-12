@@ -1,0 +1,404 @@
+# Translation catalog for tc_tools (Terrarium Crucible)
+# Copyright (C) 2026 SaKeL
+# License: MIT
+msgid ""
+msgstr ""
+"Project-Id-Version: tc_tools 1.0\n"
+"POT-Creation-Date: 2026-11-11 00:00+0000\n"
+"PO-Revision-Date: 2026-11-11 00:00+0000\n"
+"Last-Translator: SaKeL\n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: api.lua:150
+msgid "Thermal Bellows [2] — @1/@2 Puffs"
+msgstr "Soufflet thermique [2] — @1/@2 Souffles"
+
+#: api.lua:154
+msgid "Water Flask [3] — @1/@2 Splashes"
+msgstr "Fiole d'eau [3] — @1/@2 Jets"
+
+#: api.lua:158
+msgid "Limestone Pestle [4] — @1/@2 Sweeps"
+msgstr "Pilon calcaire [4] — @1/@2 Passages"
+
+#: api.lua:343
+msgid "Hand-Pumped +1 Puff — Brimstone fills all!"
+msgstr "Pompé +1 Souffle — le Soufre remplit tout !"
+
+#: api.lua:356
+msgid "Condensed +1 Splash — Water fills all!"
+msgstr "Condensé +1 Jet — l'Eau remplit tout !"
+
+#: api.lua:369
+msgid "Scraped +1 Sweep — Chalk fills all!"
+msgstr "Gratté +1 Passage — la Craie remplit tout !"
+
+#: api.lua:404 api.lua:480
+msgid "its opposite block"
+msgstr "son bloc opposé"
+
+#: api.lua:412
+msgid "Trowel [1] — Carrying @1 (Click @2 or Floor)"
+msgstr "Truelle [1] — Porte @1 (Cliquer @2 ou Sol)"
+
+#: api.lua:415
+msgid "Alchemist's Trowel — Carrying @1"
+msgstr "Truelle d'alchimiste — Porte @1"
+
+#: api.lua:416
+msgid "Tool [1] · Holding 1 Block"
+msgstr "Outil [1] · Tient 1 bloc"
+
+#: api.lua:417
+msgid "Safely holding @1 on your trowel."
+msgstr "Vous tenez @1 en sécurité sur votre truelle."
+
+#: api.lua:418
+msgid "Combine it with @1 so both cancel out and boost plant growth!"
+msgstr "Combinez-le avec @1 pour les annuler tous les deux et stimuler la floraison !"
+
+#: api.lua:419
+msgid "Click directly on @1 (or Right-Click empty floor beside it) to combine!"
+msgstr "Cliquez directement sur @1 (ou clic droit sur le sol vide à côté) pour combiner !"
+
+#: api.lua:483
+msgid "Carrying @1! Click directly on @2 to combine, or Right-Click an empty floor tile to set it down."
+msgstr "Vous portez @1 ! Cliquez sur @2 pour combiner, ou clic droit sur une case vide pour le poser."
+
+#: api.lua:485
+msgid "a block"
+msgstr "un bloc"
+
+#: init.lua:72
+msgid "Left-Click or Right-Click a hazard block (Brimstone, Ice, Acid, or Chalk) to pick it up onto your Trowel!"
+msgstr "Clic gauche ou droit sur un bloc dangereux (Soufre, Glace, Acide ou Craie) pour le ramasser sur la Truelle !"
+
+#: init.lua:85
+msgid "Please leave a little room around your plants!"
+msgstr "Laissez un peu d'espace autour de vos plantes !"
+
+#: init.lua:105
+msgid "Click directly on the opposite block to combine, or Right-Click an empty spot on the garden floor!"
+msgstr "Cliquez directement sur le bloc opposé pour combiner, ou clic droit sur un espace vide du sol !"
+
+#: init.lua:112
+msgid "Alchemist's Trowel"
+msgstr "Truelle d'alchimiste"
+
+#: init.lua:113
+msgid "Tool [1] · Move & Combine Blocks"
+msgstr "Outil [1] · Déplacer & combiner"
+
+#: init.lua:114
+msgid "A sturdy gardening trowel that safely picks up hazard blocks and opens bonus crystals."
+msgstr "Une solide truelle de jardinage qui ramasse sans risque les blocs dangereux et ouvre les cristaux bonus."
+
+#: init.lua:115
+msgid "Combine Brimstone + Ice or Acid + Chalk together for big plant growth!"
+msgstr "Combinez Soufre + Glace ou Acide + Craie pour une forte croissance des plantes !"
+
+#: init.lua:116
+msgid "Click any hazard block to pick it up, then click directly on its opposite (or Right-Click empty floor beside it)! Also cracks open Prismatic Geodes."
+msgstr "Cliquez sur un bloc dangereux pour le prendre, puis cliquez sur son opposé (ou clic droit à côté) ! Ouvre aussi les Géodes prismatiques."
+
+#: init.lua:120
+msgid "Trowel [1] — Click to Move & Combine Blocks"
+msgstr "Truelle [1] — Cliquer pour déplacer & combiner"
+
+#: init.lua:170
+msgid "Brimstone Siphoned → Bellows Full!"
+msgstr "Soufre aspiré → Soufflet plein !"
+
+#: init.lua:190
+msgid "Chalk Ground → Pestle Full!"
+msgstr "Craie broyée → Pilon plein !"
+
+#: init.lua:200
+msgid "Thermal Bellows (Empty)"
+msgstr "Soufflet thermique (Vide)"
+
+#: init.lua:201
+msgid "Tool [2] · Needs Heat Refill"
+msgstr "Outil [2] · Recharge de chaleur"
+
+#: init.lua:202
+msgid "A cooled leather air-puffer out of warm puffs (holds 4+ Puffs when refilled)."
+msgstr "Un soufflet en cuir refroidi à court d'air chaud (contient 4+ Souffles une fois rechargé)."
+
+#: init.lua:203
+msgid "Siphons hot Brimstone right off the floor (or mid-air) to refill all Puffs & boost Bloom!"
+msgstr "Aspire le Soufre brûlant au sol (ou en vol) pour recharger tous les Souffles & stimuler la Floraison !"
+
+#: init.lua:204
+msgid "Left-Click hot Brimstone to refill completely, or Left-Click empty air (1.8s) to hand-pump +1 Puff."
+msgstr "Clic gauche sur le Soufre pour tout recharger, ou dans l'air vide (1.8s) pour pomper +1 Souffle."
+
+#: init.lua:209
+msgid "Thermal Bellows [2] — Empty (Click Brimstone or Air)"
+msgstr "Soufflet thermique [2] — Vide (Cliquer Soufre ou Air)"
+
+#: init.lua:232 init.lua:244
+msgid "Bellows empty! Click Brimstone to refill, or click air to pump +1."
+msgstr "Soufflet vide ! Cliquez sur le Soufre pour remplir, ou dans l'air pour +1."
+
+#: init.lua:253
+msgid "Thermal Bellows (Charged)"
+msgstr "Soufflet thermique (Chargé)"
+
+#: init.lua:254
+msgid "Tool [2] · Melts Ice · Siphons Brimstone"
+msgstr "Outil [2] · Fond la Glace · Aspire le Soufre"
+
+#: init.lua:255
+msgid "Filled with 4 warm Puffs (+1 every 2 levels, +2 with Dragonlung Bellows)."
+msgstr "Rempli de 4 Souffles chauds (+1 tous les 2 niveaux, +2 avec Soufflet draconique)."
+
+#: init.lua:256
+msgid "Melts blue Ice Shards into Water & Steam! Siphons hot Brimstone when below max Puffs."
+msgstr "Fond les Éclats de glace en Eau & Vapeur ! Aspire le Soufre brûlant sous le max de Souffles."
+
+#: init.lua:257
+msgid "Left-Click blue Ice to melt (1 Puff), or Left-Click Brimstone when low to refill all Puffs!"
+msgstr "Clic gauche sur la Glace bleue pour fondre (1 Souffle), ou sur le Soufre pour tout recharger !"
+
+#: init.lua:260
+msgid "Thermal Bellows [2] — 4/4 Puffs"
+msgstr "Soufflet thermique [2] — 4/4 Souffles"
+
+#: init.lua:282
+msgid "Bellows [2] is full! Splash Brimstone [3] or pair Ice [1]."
+msgstr "Soufflet [2] plein ! Arrosez le Soufre [3] ou combinez la Glace [1]."
+
+#: init.lua:340
+msgid "Melted Ice → Water!"
+msgstr "Glace fondue → Eau !"
+
+#: init.lua:341
+msgid "Melted @1 Ice → Water!"
+msgstr "@1 Glaces fondues → Eau !"
+
+#: init.lua:349
+msgid "Puffed Water into rising Steam!"
+msgstr "Eau soufflée en Vapeur montante !"
+
+#: init.lua:362
+msgid "Click Ice to melt, or Brimstone when low to refill!"
+msgstr "Cliquez sur la Glace pour fondre, ou sur le Soufre pour recharger !"
+
+#: init.lua:445
+msgid "Water Flask (Empty)"
+msgstr "Fiole d'eau (Vide)"
+
+#: init.lua:446
+msgid "Tool [3] · Needs Refill"
+msgstr "Outil [3] · Recharge requise"
+
+#: init.lua:447
+msgid "A glass watering flask out of cool splashes (holds 3+ Splashes when refilled)."
+msgstr "Une fiole d'arrosage en verre à sec (contient 3+ Jets une fois remplie)."
+
+#: init.lua:448
+msgid "Scoops up an entire Water puddle or Steam cloud to fill your flask all the way!"
+msgstr "Puise toute une flaque d'Eau ou un nuage de Vapeur pour remplir entièrement votre fiole !"
+
+#: init.lua:449
+msgid "Left-Click Water/Steam to refill completely, or Left-Click empty air (1.8s) to condense +1 Splash."
+msgstr "Clic gauche sur Eau/Vapeur pour tout remplir, ou dans l'air vide (1.8s) pour condenser +1 Jet."
+
+#: init.lua:452
+msgid "Water Flask [3] — Empty (Click Water/Steam or Air)"
+msgstr "Fiole d'eau [3] — Vide (Cliquer Eau/Vapeur ou Air)"
+
+#: init.lua:476 init.lua:489
+msgid "Flask empty! Click Water/Steam to fill, or click air to condense +1."
+msgstr "Fiole vide ! Cliquez sur Eau/Vapeur pour remplir, ou dans l'air pour +1."
+
+#: init.lua:499
+msgid "Water Flask (Filled)"
+msgstr "Fiole d'eau (Pleine)"
+
+#: init.lua:500
+msgid "Tool [3] · Ready to Splash!"
+msgstr "Outil [3] · Prête à arroser !"
+
+#: init.lua:501
+msgid "Filled with 3 cool Splashes (+1 every 2 levels, +2 with Deep Retort)."
+msgstr "Remplie de 3 Jets frais (+1 tous les 2 niveaux, +2 avec Cornue profonde)."
+
+#: init.lua:502
+msgid "Cools hot Brimstone into Steam, washes Chalk into green soil, and heals hurt or wilted plants!"
+msgstr "Refroidit le Soufre en Vapeur, rince la Craie en terre verte et soigne les plantes blessées ou fanées !"
+
+#: init.lua:503
+msgid "Left-Click Brimstone, Chalk, or a hurt Plant to splash it (or Left-Click extra Water puddles to tidy them up!)."
+msgstr "Clic gauche sur le Soufre, la Craie ou une Plante blessée pour arroser (ou sur les flaques d'Eau en trop !)."
+
+#: init.lua:507
+msgid "Water Flask [3] — 3/3 Splashes"
+msgstr "Fiole d'eau [3] — 3/3 Jets"
+
+#: init.lua:535
+msgid "Quenched Brimstone → Steam!"
+msgstr "Soufre éteint → Vapeur !"
+
+#: init.lua:552
+msgid "Washed Chalk → Speed Soil!"
+msgstr "Craie rincée → Terre rapide !"
+
+#: init.lua:552
+msgid "Washed Chalk!"
+msgstr "Craie rincée !"
+
+#: init.lua:566
+msgid "This plant is already happy and at full 100% health!"
+msgstr "Cette plante est déjà ravie et à 100% de sa santé !"
+
+#: init.lua:576
+msgid "Click Brimstone, Chalk, or a hurt Plant to splash (or click Water to scoop)!"
+msgstr "Cliquez sur Soufre, Craie ou Plante blessée pour arroser (ou sur l'Eau pour puiser) !"
+
+#: init.lua:587
+msgid "Limestone Pestle (Empty)"
+msgstr "Pilon calcaire (Vide)"
+
+#: init.lua:588
+msgid "Tool [4] · Needs Chalk Refill"
+msgstr "Outil [4] · Recharge de craie"
+
+#: init.lua:589
+msgid "A bare stone pestle out of mineral powder (holds 4+ Sweeps when refilled)."
+msgstr "Un pilon de pierre sans poudre minérale (contient 4+ Passages une fois rechargé)."
+
+#: init.lua:590
+msgid "Grinds dry Alkaline Chalk right off the floor (or mid-air) into Speed Soil & refills all Sweeps!"
+msgstr "Broie la Craie alcaline au sol (ou en vol) en Terre rapide & recharge tous les Passages !"
+
+#: init.lua:591
+msgid "Left-Click Alkaline Chalk to refill completely, or Left-Click empty air (1.8s) to scrape +1 Sweep."
+msgstr "Clic gauche sur la Craie alcaline pour tout recharger, ou dans l'air vide (1.8s) pour gratter +1 Passage."
+
+#: init.lua:594
+msgid "Limestone Pestle [4] — Empty (Click Chalk or Air)"
+msgstr "Pilon calcaire [4] — Vide (Cliquer Craie ou Air)"
+
+#: init.lua:614 init.lua:626
+msgid "Pestle empty! Click Chalk to refill, or click air to scrape +1."
+msgstr "Pilon vide ! Cliquez sur la Craie pour remplir, ou dans l'air pour +1."
+
+#: init.lua:635
+msgid "Limestone Pestle (Charged)"
+msgstr "Pilon calcaire (Chargé)"
+
+#: init.lua:636
+msgid "Tool [4] · Clears Acid · Grinds Chalk"
+msgstr "Outil [4] · Nettoie l'Acide · Broie la Craie"
+
+#: init.lua:637
+msgid "Coated with 4 mineral Sweeps (+1 every 2 levels, +2 with Starlight Mortar)."
+msgstr "Enduit de 4 Passages minéraux (+1 tous les 2 niveaux, +2 avec Mortier stellaire)."
+
+#: init.lua:638
+msgid "Clears a wide patch of green Acid Slime into Speed Soil! Grinds Chalk when below max Sweeps."
+msgstr "Transforme une large zone d'Acide vert en Terre rapide ! Broie la Craie sous le max de Passages."
+
+#: init.lua:639
+msgid "Left-Click on or near Acid Slime (1 Sweep), or Left-Click Chalk when low to refill all Sweeps!"
+msgstr "Clic gauche sur ou près de l'Acide (1 Passage), ou sur la Craie pour tout recharger !"
+
+#: init.lua:642
+msgid "Limestone Pestle [4] — 4/4 Sweeps"
+msgstr "Pilon calcaire [4] — 4/4 Passages"
+
+#: init.lua:663
+msgid "Pestle [4] is full! Wash Chalk [3] or pair Acid [1]."
+msgstr "Pilon [4] plein ! Rincez la Craie [3] ou combinez l'Acide [1]."
+
+#: init.lua:698
+msgid "Cleared Acid → Speed Soil!"
+msgstr "Acide nettoyé → Terre rapide !"
+
+#: init.lua:699
+msgid "Cleared @1 Acid → Speed Soil!"
+msgstr "@1 Acides nettoyés → Terre rapide !"
+
+#: init.lua:710
+msgid "Click near Acid Slime, or Chalk when low to refill!"
+msgstr "Cliquez près de l'Acide, ou sur la Craie pour recharger !"
+
+#: init.lua:727
+msgid "Gardener's Guidebook"
+msgstr "Guide du jardinier"
+
+#: init.lua:728
+msgid "Tool [5] · Illustrated How-to-Play"
+msgstr "Outil [5] · Guide illustré"
+
+#: init.lua:729
+msgid "Your friendly picture guide to every block, tool, potion, plant tip, and Top 10 score."
+msgstr "Votre guide illustré pour chaque bloc, outil, potion, astuce de plante et le Top 10."
+
+#: init.lua:730
+msgid "Shows clear tips with hoverable item pictures—plus the Top 10 Leaderboard!"
+msgstr "Affiche des conseils clairs avec icônes interactives — ainsi que le Classement Top 10 !"
+
+#: init.lua:731
+msgid "Left-Click or Right-Click anytime to read (press [Z] to call out a room; hold [E]+W to sprint!)."
+msgstr "Clic gauche ou droit à tout moment pour lire ([Z] pour signaler une salle ; [E]+W pour sprinter !)."
+
+#: init.lua:735
+msgid "Guidebook [5] — How to Play & Top 10"
+msgstr "Guide [5] — Comment jouer & Top 10"
+
+#: init.lua:826
+msgid "Aegis Potion"
+msgstr "Potion Égide"
+
+#: init.lua:827
+msgid "Aegis Potion — Full Heal & Garden Shield (12s)"
+msgstr "Potion Égide — Soin complet & Bouclier du jardin (12s)"
+
+#: init.lua:828
+msgid "Lifesaver Potion · From Geodes & Level Clears"
+msgstr "Potion de secours · Géodes & fins de niveau"
+
+#: init.lua:829
+msgid "A rare golden-green elixir that heals you and shields both you and your whole garden."
+msgstr "Un rare élixir vert doré qui vous soigne et protège tout votre jardin."
+
+#: init.lua:830
+msgid "Refills your full health, revives all wilted plants, & shields you + every plant for 12s (14s with Sunlit Dew)! Also triggers automatically if you run out of health!"
+msgstr "Rend toute votre santé, ranime les plantes fanées & vous protège avec les plantes pendant 12s (14s avec Rosée solaire) ! S'active aussi automatiquement à 0 PV !"
+
+#: init.lua:832
+msgid "Left-Click or Right-Click to drink—or keep one in your bag as an automatic lifesaver!"
+msgstr "Clic gauche ou droit pour boire — ou gardez-en une dans le sac en secours automatique !"
+
+#: init.lua:847
+msgid "Chronos Hourglass"
+msgstr "Sablier de Chronos"
+
+#: init.lua:848
+msgid "Chronos Hourglass — Pause Falling Blocks (12s)"
+msgstr "Sablier de Chronos — Pause des chutes (12s)"
+
+#: init.lua:849
+msgid "Time Hourglass · Earned Every Level Cleared"
+msgstr "Sablier temporel · Gagné à chaque niveau fini"
+
+#: init.lua:850
+msgid "A magical brass hourglass filled with sparkling violet sand."
+msgstr "Un sablier magique en laiton rempli de sable violet scintillant."
+
+#: init.lua:851
+msgid "Pauses new falling blocks for 12 seconds, clears 1 nearby hazard per plant, & speeds up the team!"
+msgstr "Suspend les chutes de blocs pendant 12 secondes, retire 1 danger proche par plante & accélère l'équipe !"
+
+#: init.lua:852
+msgid "Left-Click or Right-Click whenever your rooms get busy and you need breathing room!"
+msgstr "Clic gauche ou droit dès que vos salles débordent pour reprendre votre souffle !"
+

@@ -1,0 +1,405 @@
+# Translation catalog for tc_tools (Terrarium Crucible)
+# Copyright (C) 2026 SaKeL
+# License: MIT
+msgid ""
+msgstr ""
+"Project-Id-Version: tc_tools 1.0\n"
+"POT-Creation-Date: 2026-11-11 00:00+0000\n"
+"PO-Revision-Date: 2026-11-11 00:00+0000\n"
+"Last-Translator: SaKeL\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Source-Language: en\n"
+
+#: api.lua:150
+msgid "Thermal Bellows [2] — @1/@2 Puffs"
+msgstr "Thermal Bellows [2] — @1/@2 Puffs"
+
+#: api.lua:154
+msgid "Water Flask [3] — @1/@2 Splashes"
+msgstr "Water Flask [3] — @1/@2 Splashes"
+
+#: api.lua:158
+msgid "Limestone Pestle [4] — @1/@2 Sweeps"
+msgstr "Limestone Pestle [4] — @1/@2 Sweeps"
+
+#: api.lua:343
+msgid "Hand-Pumped +1 Puff — Brimstone fills all!"
+msgstr "Hand-Pumped +1 Puff — Brimstone fills all!"
+
+#: api.lua:356
+msgid "Condensed +1 Splash — Water fills all!"
+msgstr "Condensed +1 Splash — Water fills all!"
+
+#: api.lua:369
+msgid "Scraped +1 Sweep — Chalk fills all!"
+msgstr "Scraped +1 Sweep — Chalk fills all!"
+
+#: api.lua:404 api.lua:480
+msgid "its opposite block"
+msgstr "its opposite block"
+
+#: api.lua:412
+msgid "Trowel [1] — Carrying @1 (Click @2 or Floor)"
+msgstr "Trowel [1] — Carrying @1 (Click @2 or Floor)"
+
+#: api.lua:415
+msgid "Alchemist's Trowel — Carrying @1"
+msgstr "Alchemist's Trowel — Carrying @1"
+
+#: api.lua:416
+msgid "Tool [1] · Holding 1 Block"
+msgstr "Tool [1] · Holding 1 Block"
+
+#: api.lua:417
+msgid "Safely holding @1 on your trowel."
+msgstr "Safely holding @1 on your trowel."
+
+#: api.lua:418
+msgid "Combine it with @1 so both cancel out and boost plant growth!"
+msgstr "Combine it with @1 so both cancel out and boost plant growth!"
+
+#: api.lua:419
+msgid "Click directly on @1 (or Right-Click empty floor beside it) to combine!"
+msgstr "Click directly on @1 (or Right-Click empty floor beside it) to combine!"
+
+#: api.lua:483
+msgid "Carrying @1! Click directly on @2 to combine, or Right-Click an empty floor tile to set it down."
+msgstr "Carrying @1! Click directly on @2 to combine, or Right-Click an empty floor tile to set it down."
+
+#: api.lua:485
+msgid "a block"
+msgstr "a block"
+
+#: init.lua:72
+msgid "Left-Click or Right-Click a hazard block (Brimstone, Ice, Acid, or Chalk) to pick it up onto your Trowel!"
+msgstr "Left-Click or Right-Click a hazard block (Brimstone, Ice, Acid, or Chalk) to pick it up onto your Trowel!"
+
+#: init.lua:85
+msgid "Please leave a little room around your plants!"
+msgstr "Please leave a little room around your plants!"
+
+#: init.lua:105
+msgid "Click directly on the opposite block to combine, or Right-Click an empty spot on the garden floor!"
+msgstr "Click directly on the opposite block to combine, or Right-Click an empty spot on the garden floor!"
+
+#: init.lua:112
+msgid "Alchemist's Trowel"
+msgstr "Alchemist's Trowel"
+
+#: init.lua:113
+msgid "Tool [1] · Move & Combine Blocks"
+msgstr "Tool [1] · Move & Combine Blocks"
+
+#: init.lua:114
+msgid "A sturdy gardening trowel that safely picks up hazard blocks and opens bonus crystals."
+msgstr "A sturdy gardening trowel that safely picks up hazard blocks and opens bonus crystals."
+
+#: init.lua:115
+msgid "Combine Brimstone + Ice or Acid + Chalk together for big plant growth!"
+msgstr "Combine Brimstone + Ice or Acid + Chalk together for big plant growth!"
+
+#: init.lua:116
+msgid "Click any hazard block to pick it up, then click directly on its opposite (or Right-Click empty floor beside it)! Also cracks open Prismatic Geodes."
+msgstr "Click any hazard block to pick it up, then click directly on its opposite (or Right-Click empty floor beside it)! Also cracks open Prismatic Geodes."
+
+#: init.lua:120
+msgid "Trowel [1] — Click to Move & Combine Blocks"
+msgstr "Trowel [1] — Click to Move & Combine Blocks"
+
+#: init.lua:170
+msgid "Brimstone Siphoned → Bellows Full!"
+msgstr "Brimstone Siphoned → Bellows Full!"
+
+#: init.lua:190
+msgid "Chalk Ground → Pestle Full!"
+msgstr "Chalk Ground → Pestle Full!"
+
+#: init.lua:200
+msgid "Thermal Bellows (Empty)"
+msgstr "Thermal Bellows (Empty)"
+
+#: init.lua:201
+msgid "Tool [2] · Needs Heat Refill"
+msgstr "Tool [2] · Needs Heat Refill"
+
+#: init.lua:202
+msgid "A cooled leather air-puffer out of warm puffs (holds 4+ Puffs when refilled)."
+msgstr "A cooled leather air-puffer out of warm puffs (holds 4+ Puffs when refilled)."
+
+#: init.lua:203
+msgid "Siphons hot Brimstone right off the floor (or mid-air) to refill all Puffs & boost Bloom!"
+msgstr "Siphons hot Brimstone right off the floor (or mid-air) to refill all Puffs & boost Bloom!"
+
+#: init.lua:204
+msgid "Left-Click hot Brimstone to refill completely, or Left-Click empty air (1.8s) to hand-pump +1 Puff."
+msgstr "Left-Click hot Brimstone to refill completely, or Left-Click empty air (1.8s) to hand-pump +1 Puff."
+
+#: init.lua:209
+msgid "Thermal Bellows [2] — Empty (Click Brimstone or Air)"
+msgstr "Thermal Bellows [2] — Empty (Click Brimstone or Air)"
+
+#: init.lua:232 init.lua:244
+msgid "Bellows empty! Click Brimstone to refill, or click air to pump +1."
+msgstr "Bellows empty! Click Brimstone to refill, or click air to pump +1."
+
+#: init.lua:253
+msgid "Thermal Bellows (Charged)"
+msgstr "Thermal Bellows (Charged)"
+
+#: init.lua:254
+msgid "Tool [2] · Melts Ice · Siphons Brimstone"
+msgstr "Tool [2] · Melts Ice · Siphons Brimstone"
+
+#: init.lua:255
+msgid "Filled with 4 warm Puffs (+1 every 2 levels, +2 with Dragonlung Bellows)."
+msgstr "Filled with 4 warm Puffs (+1 every 2 levels, +2 with Dragonlung Bellows)."
+
+#: init.lua:256
+msgid "Melts blue Ice Shards into Water & Steam! Siphons hot Brimstone when below max Puffs."
+msgstr "Melts blue Ice Shards into Water & Steam! Siphons hot Brimstone when below max Puffs."
+
+#: init.lua:257
+msgid "Left-Click blue Ice to melt (1 Puff), or Left-Click Brimstone when low to refill all Puffs!"
+msgstr "Left-Click blue Ice to melt (1 Puff), or Left-Click Brimstone when low to refill all Puffs!"
+
+#: init.lua:260
+msgid "Thermal Bellows [2] — 4/4 Puffs"
+msgstr "Thermal Bellows [2] — 4/4 Puffs"
+
+#: init.lua:282
+msgid "Bellows [2] is full! Splash Brimstone [3] or pair Ice [1]."
+msgstr "Bellows [2] is full! Splash Brimstone [3] or pair Ice [1]."
+
+#: init.lua:340
+msgid "Melted Ice → Water!"
+msgstr "Melted Ice → Water!"
+
+#: init.lua:341
+msgid "Melted @1 Ice → Water!"
+msgstr "Melted @1 Ice → Water!"
+
+#: init.lua:349
+msgid "Puffed Water into rising Steam!"
+msgstr "Puffed Water into rising Steam!"
+
+#: init.lua:362
+msgid "Click Ice to melt, or Brimstone when low to refill!"
+msgstr "Click Ice to melt, or Brimstone when low to refill!"
+
+#: init.lua:445
+msgid "Water Flask (Empty)"
+msgstr "Water Flask (Empty)"
+
+#: init.lua:446
+msgid "Tool [3] · Needs Refill"
+msgstr "Tool [3] · Needs Refill"
+
+#: init.lua:447
+msgid "A glass watering flask out of cool splashes (holds 3+ Splashes when refilled)."
+msgstr "A glass watering flask out of cool splashes (holds 3+ Splashes when refilled)."
+
+#: init.lua:448
+msgid "Scoops up an entire Water puddle or Steam cloud to fill your flask all the way!"
+msgstr "Scoops up an entire Water puddle or Steam cloud to fill your flask all the way!"
+
+#: init.lua:449
+msgid "Left-Click Water/Steam to refill completely, or Left-Click empty air (1.8s) to condense +1 Splash."
+msgstr "Left-Click Water/Steam to refill completely, or Left-Click empty air (1.8s) to condense +1 Splash."
+
+#: init.lua:452
+msgid "Water Flask [3] — Empty (Click Water/Steam or Air)"
+msgstr "Water Flask [3] — Empty (Click Water/Steam or Air)"
+
+#: init.lua:476 init.lua:489
+msgid "Flask empty! Click Water/Steam to fill, or click air to condense +1."
+msgstr "Flask empty! Click Water/Steam to fill, or click air to condense +1."
+
+#: init.lua:499
+msgid "Water Flask (Filled)"
+msgstr "Water Flask (Filled)"
+
+#: init.lua:500
+msgid "Tool [3] · Ready to Splash!"
+msgstr "Tool [3] · Ready to Splash!"
+
+#: init.lua:501
+msgid "Filled with 3 cool Splashes (+1 every 2 levels, +2 with Deep Retort)."
+msgstr "Filled with 3 cool Splashes (+1 every 2 levels, +2 with Deep Retort)."
+
+#: init.lua:502
+msgid "Cools hot Brimstone into Steam, washes Chalk into green soil, and heals hurt or wilted plants!"
+msgstr "Cools hot Brimstone into Steam, washes Chalk into green soil, and heals hurt or wilted plants!"
+
+#: init.lua:503
+msgid "Left-Click Brimstone, Chalk, or a hurt Plant to splash it (or Left-Click extra Water puddles to tidy them up!)."
+msgstr "Left-Click Brimstone, Chalk, or a hurt Plant to splash it (or Left-Click extra Water puddles to tidy them up!)."
+
+#: init.lua:507
+msgid "Water Flask [3] — 3/3 Splashes"
+msgstr "Water Flask [3] — 3/3 Splashes"
+
+#: init.lua:535
+msgid "Quenched Brimstone → Steam!"
+msgstr "Quenched Brimstone → Steam!"
+
+#: init.lua:552
+msgid "Washed Chalk → Speed Soil!"
+msgstr "Washed Chalk → Speed Soil!"
+
+#: init.lua:552
+msgid "Washed Chalk!"
+msgstr "Washed Chalk!"
+
+#: init.lua:566
+msgid "This plant is already happy and at full 100% health!"
+msgstr "This plant is already happy and at full 100% health!"
+
+#: init.lua:576
+msgid "Click Brimstone, Chalk, or a hurt Plant to splash (or click Water to scoop)!"
+msgstr "Click Brimstone, Chalk, or a hurt Plant to splash (or click Water to scoop)!"
+
+#: init.lua:587
+msgid "Limestone Pestle (Empty)"
+msgstr "Limestone Pestle (Empty)"
+
+#: init.lua:588
+msgid "Tool [4] · Needs Chalk Refill"
+msgstr "Tool [4] · Needs Chalk Refill"
+
+#: init.lua:589
+msgid "A bare stone pestle out of mineral powder (holds 4+ Sweeps when refilled)."
+msgstr "A bare stone pestle out of mineral powder (holds 4+ Sweeps when refilled)."
+
+#: init.lua:590
+msgid "Grinds dry Alkaline Chalk right off the floor (or mid-air) into Speed Soil & refills all Sweeps!"
+msgstr "Grinds dry Alkaline Chalk right off the floor (or mid-air) into Speed Soil & refills all Sweeps!"
+
+#: init.lua:591
+msgid "Left-Click Alkaline Chalk to refill completely, or Left-Click empty air (1.8s) to scrape +1 Sweep."
+msgstr "Left-Click Alkaline Chalk to refill completely, or Left-Click empty air (1.8s) to scrape +1 Sweep."
+
+#: init.lua:594
+msgid "Limestone Pestle [4] — Empty (Click Chalk or Air)"
+msgstr "Limestone Pestle [4] — Empty (Click Chalk or Air)"
+
+#: init.lua:614 init.lua:626
+msgid "Pestle empty! Click Chalk to refill, or click air to scrape +1."
+msgstr "Pestle empty! Click Chalk to refill, or click air to scrape +1."
+
+#: init.lua:635
+msgid "Limestone Pestle (Charged)"
+msgstr "Limestone Pestle (Charged)"
+
+#: init.lua:636
+msgid "Tool [4] · Clears Acid · Grinds Chalk"
+msgstr "Tool [4] · Clears Acid · Grinds Chalk"
+
+#: init.lua:637
+msgid "Coated with 4 mineral Sweeps (+1 every 2 levels, +2 with Starlight Mortar)."
+msgstr "Coated with 4 mineral Sweeps (+1 every 2 levels, +2 with Starlight Mortar)."
+
+#: init.lua:638
+msgid "Clears a wide patch of green Acid Slime into Speed Soil! Grinds Chalk when below max Sweeps."
+msgstr "Clears a wide patch of green Acid Slime into Speed Soil! Grinds Chalk when below max Sweeps."
+
+#: init.lua:639
+msgid "Left-Click on or near Acid Slime (1 Sweep), or Left-Click Chalk when low to refill all Sweeps!"
+msgstr "Left-Click on or near Acid Slime (1 Sweep), or Left-Click Chalk when low to refill all Sweeps!"
+
+#: init.lua:642
+msgid "Limestone Pestle [4] — 4/4 Sweeps"
+msgstr "Limestone Pestle [4] — 4/4 Sweeps"
+
+#: init.lua:663
+msgid "Pestle [4] is full! Wash Chalk [3] or pair Acid [1]."
+msgstr "Pestle [4] is full! Wash Chalk [3] or pair Acid [1]."
+
+#: init.lua:698
+msgid "Cleared Acid → Speed Soil!"
+msgstr "Cleared Acid → Speed Soil!"
+
+#: init.lua:699
+msgid "Cleared @1 Acid → Speed Soil!"
+msgstr "Cleared @1 Acid → Speed Soil!"
+
+#: init.lua:710
+msgid "Click near Acid Slime, or Chalk when low to refill!"
+msgstr "Click near Acid Slime, or Chalk when low to refill!"
+
+#: init.lua:727
+msgid "Gardener's Guidebook"
+msgstr "Gardener's Guidebook"
+
+#: init.lua:728
+msgid "Tool [5] · Illustrated How-to-Play"
+msgstr "Tool [5] · Illustrated How-to-Play"
+
+#: init.lua:729
+msgid "Your friendly picture guide to every block, tool, potion, plant tip, and Top 10 score."
+msgstr "Your friendly picture guide to every block, tool, potion, plant tip, and Top 10 score."
+
+#: init.lua:730
+msgid "Shows clear tips with hoverable item pictures—plus the Top 10 Leaderboard!"
+msgstr "Shows clear tips with hoverable item pictures—plus the Top 10 Leaderboard!"
+
+#: init.lua:731
+msgid "Left-Click or Right-Click anytime to read (press [Z] to call out a room; hold [E]+W to sprint!)."
+msgstr "Left-Click or Right-Click anytime to read (press [Z] to call out a room; hold [E]+W to sprint!)."
+
+#: init.lua:735
+msgid "Guidebook [5] — How to Play & Top 10"
+msgstr "Guidebook [5] — How to Play & Top 10"
+
+#: init.lua:826
+msgid "Aegis Potion"
+msgstr "Aegis Potion"
+
+#: init.lua:827
+msgid "Aegis Potion — Full Heal & Garden Shield (12s)"
+msgstr "Aegis Potion — Full Heal & Garden Shield (12s)"
+
+#: init.lua:828
+msgid "Lifesaver Potion · From Geodes & Level Clears"
+msgstr "Lifesaver Potion · From Geodes & Level Clears"
+
+#: init.lua:829
+msgid "A rare golden-green elixir that heals you and shields both you and your whole garden."
+msgstr "A rare golden-green elixir that heals you and shields both you and your whole garden."
+
+#: init.lua:830
+msgid "Refills your full health, revives all wilted plants, & shields you + every plant for 12s (14s with Sunlit Dew)! Also triggers automatically if you run out of health!"
+msgstr "Refills your full health, revives all wilted plants, & shields you + every plant for 12s (14s with Sunlit Dew)! Also triggers automatically if you run out of health!"
+
+#: init.lua:832
+msgid "Left-Click or Right-Click to drink—or keep one in your bag as an automatic lifesaver!"
+msgstr "Left-Click or Right-Click to drink—or keep one in your bag as an automatic lifesaver!"
+
+#: init.lua:847
+msgid "Chronos Hourglass"
+msgstr "Chronos Hourglass"
+
+#: init.lua:848
+msgid "Chronos Hourglass — Pause Falling Blocks (12s)"
+msgstr "Chronos Hourglass — Pause Falling Blocks (12s)"
+
+#: init.lua:849
+msgid "Time Hourglass · Earned Every Level Cleared"
+msgstr "Time Hourglass · Earned Every Level Cleared"
+
+#: init.lua:850
+msgid "A magical brass hourglass filled with sparkling violet sand."
+msgstr "A magical brass hourglass filled with sparkling violet sand."
+
+#: init.lua:851
+msgid "Pauses new falling blocks for 12 seconds, clears 1 nearby hazard per plant, & speeds up the team!"
+msgstr "Pauses new falling blocks for 12 seconds, clears 1 nearby hazard per plant, & speeds up the team!"
+
+#: init.lua:852
+msgid "Left-Click or Right-Click whenever your rooms get busy and you need breathing room!"
+msgstr "Left-Click or Right-Click whenever your rooms get busy and you need breathing room!"
+

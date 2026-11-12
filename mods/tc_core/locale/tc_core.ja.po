@@ -1,0 +1,1500 @@
+# Translation catalog for tc_core (Terrarium Crucible)
+# Copyright (C) 2026 SaKeL
+# License: MIT
+msgid ""
+msgstr ""
+"Project-Id-Version: tc_core 1.0\n"
+"POT-Creation-Date: 2026-11-11 00:00+0000\n"
+"PO-Revision-Date: 2026-11-11 00:00+0000\n"
+"Last-Translator: SaKeL\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: api.lua:207 api.lua:208
+msgid "Aegis Shield"
+msgstr "イージスシールド"
+
+#: api.lua:214
+msgid "Time Freeze Speed"
+msgstr "時間停止加速"
+
+#: api.lua:215
+msgid "Time Freeze"
+msgstr "時間停止"
+
+#: api.lua:221 api.lua:222
+msgid "Harmony Boost"
+msgstr "ハーモニー加速"
+
+#: api.lua:228
+msgid "Green Soil Speed"
+msgstr "緑土スピード"
+
+#: api.lua:229
+msgid "Soil Speed"
+msgstr "ソイル加速"
+
+#: api.lua:235
+msgid "Steam High Jump"
+msgstr "蒸気ハイジャンプ"
+
+#: api.lua:236
+msgid "Steam Jump"
+msgstr "蒸気ジャンプ"
+
+#: api.lua:243 api.lua:244
+msgid "Recovering"
+msgstr "回復中"
+
+#: api.lua:266
+msgid "Deep Retort"
+msgstr "深淵のレトルト"
+
+#: api.lua:269
+msgid "Next Level: Water Flask [3] holds +2 extra Splashes & refills immediately."
+msgstr "次レベル：水フラスコ [3] の容量 +2 スプラッシュ＆即時満タン。"
+
+#: api.lua:270
+msgid "Water Flask [3] holds +2 extra Splashes & refills immediately."
+msgstr "水フラスコ [3] の容量 +2 スプラッシュ＆即時満タン。"
+
+#: api.lua:274
+msgid "Dragonlung Bellows"
+msgstr "竜肺のふいご"
+
+#: api.lua:277
+msgid "Next Level: Bellows [2] holds +2 extra Puffs, melts 3x3 Ice & gives extra growth."
+msgstr "次レベル：ふいご [2] の容量 +2 パフ、3x3範囲の氷を溶かし追加成長。"
+
+#: api.lua:278
+msgid "Bellows [2] holds +2 extra Puffs, melts 3x3 Ice & gives extra growth."
+msgstr "ふいご [2] の容量 +2 パフ、3x3範囲の氷を溶かし追加成長。"
+
+#: api.lua:282
+msgid "Starlight Mortar"
+msgstr "星明かりの乳鉢"
+
+#: api.lua:285
+msgid "Next Level: Pestle [4] holds +2 extra Sweeps, clears 5x5 Acid & gives extra growth."
+msgstr "次レベル：乳棒 [4] の容量 +2 スイープ、5x5範囲の酸を浄化し追加成長。"
+
+#: api.lua:286
+msgid "Pestle [4] holds +2 extra Sweeps, clears 5x5 Acid & gives extra growth."
+msgstr "乳棒 [4] の容量 +2 スイープ、5x5範囲の酸を浄化し追加成長。"
+
+#: api.lua:290
+msgid "Ley-Line Roots"
+msgstr "地脈の根"
+
+#: api.lua:293
+msgid "Next Level: Plants heal faster when balanced & revive in 4s (was 6s)."
+msgstr "次レベル：バランス時の植物回復が早まり、復活時間が4秒に短縮（通常6秒）。"
+
+#: api.lua:294
+msgid "Plants heal faster when balanced & revive in 4s (was 6s)."
+msgstr "バランス時の植物回復が早まり、復活時間が4秒に短縮（通常6秒）。"
+
+#: api.lua:298
+msgid "Hermetic Boots"
+msgstr "ヘルメスのブーツ"
+
+#: api.lua:301
+msgid "Next Level: Run faster on green Soil & take half damage from hazards."
+msgstr "次レベル：緑の土でさらに速く走れ、障害から受けるダメージが半減。"
+
+#: api.lua:302
+msgid "Run faster on green Soil & take half damage from hazards."
+msgstr "緑の土でさらに速く走れ、障害から受けるダメージが半減。"
+
+#: api.lua:306
+msgid "Featherfall Winds"
+msgstr "羽落ちの風"
+
+#: api.lua:309
+msgid "Next Level: Blocks fall slower (+1.5s waves) & mid-air catches give extra Bloom."
+msgstr "次レベル：落下間隔が緩やかになり（+1.5秒）、空中キャッチで追加開花。"
+
+#: api.lua:310
+msgid "Blocks fall slower (+1.5s waves) & mid-air catches give extra Bloom."
+msgstr "落下間隔が緩やかになり（+1.5秒）、空中キャッチで追加開花。"
+
+#: api.lua:314
+msgid "Crystal Resonance"
+msgstr "結晶の共鳴"
+
+#: api.lua:317
+msgid "Next Level: Bonus Geodes drop twice as often & Trowel [1] combos give +25% Bloom."
+msgstr "次レベル：晶洞の出現率が2倍になり、コテ [1] の合成で開花 +25%。"
+
+#: api.lua:318
+msgid "Bonus Geodes drop twice as often & Trowel [1] combos give +25% Bloom."
+msgstr "晶洞の出現率が2倍になり、コテ [1] の合成で開花 +25%。"
+
+#: api.lua:322
+msgid "Sunlit Dew"
+msgstr "陽だまりの露"
+
+#: api.lua:325
+msgid "Next Level: Start with +1 extra Aegis Potion (14s shield), & Balance heals 1 Heart/3s!"
+msgstr "次レベル：開始時イージスポーション +1（14秒シールド）＆バランス中3秒ごとにハート1回復！"
+
+#: api.lua:326
+msgid "Start with +1 extra Aegis Potion (14s shield), & Balance heals 1 Heart/3s!"
+msgstr "開始時イージスポーション +1（14秒シールド）＆バランス中3秒ごとにハート1回復！"
+
+#: api.lua:976
+msgid "★ Nice Combo! Brimstone + Ice"
+msgstr "★ ナイスコンボ！ 硫黄 + 氷"
+
+#: api.lua:1011
+msgid "★ Nice Combo! Acid + Chalk"
+msgstr "★ ナイスコンボ！ 酸 + チョーク"
+
+#: api.lua:1578
+msgid "Hot Brimstone! Step off & splash with Flask [3]."
+msgstr "熱い硫黄！離れてフラスコ [3] で水をかけよう。"
+
+#: api.lua:1605
+msgid "Stinging Acid! Step out & sweep with Pestle [4]."
+msgstr "しみる酸！外に出て乳棒 [4] で掃こう。"
+
+#: api.lua:1888
+msgid "Calm Balance"
+msgstr "穏やかな調和"
+
+#: api.lua:1893
+msgid "✦ Sprout #@1 Revived!"
+msgstr "✦ 苗 #@1 が復活！"
+
+#: api.lua:1894
+msgid "@1 restored @2% Plant HP"
+msgstr "@1 が植物HPを @2% 回復"
+
+#: api.lua:1903
+msgid "Watered Sprout #@1 (@2% HP)"
+msgstr "苗 #@1 に水やり（HP @2%）"
+
+#: api.lua:1937
+msgid "✦ Aegis Shield (@1s)!"
+msgstr "✦ イージスシールド（@1秒）！"
+
+#: api.lua:1938
+msgid "@1 healed & shielded all plants!"
+msgstr "@1 が全植物を回復＆シールド保護！"
+
+#: api.lua:1971 api.lua:2200
+msgid "Alchemist"
+msgstr "錬金術師"
+
+#: api.lua:1975
+msgid "✦ Time Frozen (@1s)!"
+msgstr "✦ 時間停止（@1秒）！"
+
+#: api.lua:1976
+msgid "@1 paused drops · @2 cleared"
+msgstr "@1 が落下を停止 · @2個除去"
+
+#: api.lua:2136
+msgid "Rank"
+msgstr "順位"
+
+#: api.lua:2137
+msgid "Player"
+msgstr "プレイヤー"
+
+#: api.lua:2138
+msgid "Highest Level"
+msgstr "最高Lv"
+
+#: api.lua:2139
+msgid "Levels Won"
+msgstr "クリア数"
+
+#: api.lua:2140
+msgid "Best Bloom"
+msgstr "最高開花"
+
+#: api.lua:2141
+msgid "Cleared"
+msgstr "除去数"
+
+#: api.lua:2142
+msgid "Time"
+msgstr "タイム"
+
+#: api.lua:2150
+msgid "(No scores saved yet — finish or reset a level to record!)"
+msgstr "（まだ記録がありません — レベルをクリアまたはリセットすると記録されます！）"
+
+#: api.lua:2162
+msgid "Level @1 (@2 Room)"
+msgstr "レベル @1（@2部屋）"
+
+#: api.lua:2163
+msgid "Level @1 (@2 Rooms)"
+msgstr "レベル @1（@2部屋）"
+
+#: api.lua:2173
+msgid "@1s"
+msgstr "@1秒"
+
+#: api.lua:2194
+msgid "Casual"
+msgstr "カジュアル"
+
+#: api.lua:2195
+msgid "Panic"
+msgstr "パニック"
+
+#: api.lua:2196
+msgid "Normal"
+msgstr "ノーマル"
+
+#: api.lua:2201
+msgid "Terrarium Crucible · @1 · Lv@2 (@3 Won) · @4% Bloom · @5 Cleared · @6s [@7]"
+msgstr "テラリウム・クルーシブル · @1 · Lv@2（@3勝）· @4% 開花 · @5 除去 · @6秒 [@7]"
+
+#: api.lua:2361
+msgid "+2 Aegis · +1 Hourglass · +1 Tool Cap!"
+msgstr "+2 イージス · +1 砂時計 · 道具容量 +1！"
+
+#: api.lua:2363
+msgid "+2 Aegis · +1 Hourglass"
+msgstr "+2 イージス · +1 砂時計"
+
+#: api.lua:2365
+msgid "+1 Aegis · +1 Hourglass · +1 Tool Cap!"
+msgstr "+1 イージス · +1 砂時計 · 道具容量 +1！"
+
+#: api.lua:2367
+msgid "+1 Aegis · +1 Hourglass"
+msgstr "+1 イージス · +1 砂時計"
+
+#: api.lua:2372
+msgid "@1 [@2] · @3"
+msgstr "@1 [@2] · @3"
+
+#: api.lua:2374
+msgid "Blessing: @1 · @2"
+msgstr "祝福：@1 · @2"
+
+#: api.lua:2382
+msgid "★ LEVEL @1 BEGINS (@2 Rooms)"
+msgstr "★ レベル @1 開始（@2部屋）"
+
+#: api.lua:2421
+msgid "The garden lost its balance!"
+msgstr "庭のバランスが崩れてしまった！"
+
+#: api.lua:2480
+msgid "You ran out of health, and the shockwave wilted the last remaining plant!"
+msgstr "あなたのHPが尽き、その衝撃波で最後の植物もしおれてしまった！"
+
+#: api.lua:2488
+msgid "✖ Second Chance!"
+msgstr "✖ セカンドチャンス！"
+
+#: api.lua:2489
+msgid "Plants lost 30% HP — water them with Flask [3]!"
+msgstr "植物のHPが30%減少 — フラスコ [3] で水をあげよう！"
+
+#: api.lua:2509
+msgid "Everyone on the team ran out of health at the same time!"
+msgstr "チーム全員のHPが同時に尽きてしまった！"
+
+#: api.lua:2514
+msgid "⚠ @1 Knocked Down!"
+msgstr "⚠ @1 がダウン！"
+
+#: api.lua:2515
+msgid "Teammates: stay safe for 5s while they recover!"
+msgstr "仲間は復帰するまで5秒間安全に耐えよう！"
+
+#: hud.lua:33
+msgid "Bloom"
+msgstr "開花度"
+
+#: hud.lua:38 hud.lua:50
+msgid "@1: @2%"
+msgstr "@1：@2%"
+
+#: hud.lua:45
+msgid "Plant HP"
+msgstr "植物HP"
+
+#: hud.lua:57
+msgid "Heat"
+msgstr "温度"
+
+#: hud.lua:62
+msgid "@1: @2°C"
+msgstr "@1：@2°C"
+
+#: hud.lua:69
+msgid "Soil pH"
+msgstr "土壌pH"
+
+#: hud.lua:74
+msgid "@1: @2/@3"
+msgstr "@1：@2/@3"
+
+#: hud.lua:89
+msgid "Boost"
+msgstr "ブースト"
+
+#: hud.lua:97
+msgid "@1: @2s"
+msgstr "@1：@2秒"
+
+#: hud.lua:472
+msgid "▸ LEVEL COMPLETE! Pick a Blessing on screen or right-click a Plant!"
+msgstr "▸ レベルクリア！画面で祝福を選ぶか植物を右クリック！"
+
+#: hud.lua:476
+msgid "▸ RUN ENDED: Right-click a Plant or press [I] to restart Level 1."
+msgstr "▸ 挑戦終了：植物を右クリックするか [I] でレベル1から再開。"
+
+#: hud.lua:483
+msgid "▸ ✖ OVERCROWDED (@1s)! Clear @2 hazard(s) with [1–4]!"
+msgstr "▸ ✖ 過密警告（@1秒）！[1–4] で障害をあと @2個片付けよう！"
+
+#: hud.lua:489
+msgid "▸ PLANT WILTED! Splash with Flask [3], Aegis, or @1s Balance!"
+msgstr "▸ 植物がしおれた！フラスコ [3]、イージス、または @1秒バランス維持！"
+
+#: hud.lua:494
+msgid "▸ FLOOR FULL (@1/@2): Clear hazards now with Tools [1–4]!"
+msgstr "▸ 床が満杯（@1/@2）：今すぐ道具 [1–4] で障害を除去しよう！"
+
+#: hud.lua:499
+msgid "▸ TOO HOT (>60°C): Splash Brimstone [3] or pair with Ice [1]!"
+msgstr "▸ 高温注意（>60°C）：硫黄に [3] で水をかけるか氷と [1] で合成！"
+
+#: hud.lua:502
+msgid "▸ TOO COLD (<40°C): Melt blue Ice [2] & scoop Water [3]!"
+msgstr "▸ 低温注意（<40°C）：氷を [2] で溶かし [3] で水をすくおう！"
+
+#: hud.lua:505
+msgid "▸ TOO SOUR (<5.6 pH): Sweep green Acid with Pestle [4]!"
+msgstr "▸ 酸性過多（<5.6 pH）：緑の酸を乳棒 [4] で中和しよう！"
+
+#: hud.lua:508
+msgid "▸ TOO CHALKY (>8.4 pH): Wash Chalk [3] or pair with Acid [1]!"
+msgstr "▸ アルカリ過多（>8.4 pH）：チョークを [3] で洗うか酸と [1] で合成！"
+
+#: hud.lua:512
+msgid "▸ CLUTTERED (@1>@2): Combine [1] or clear hazards [2–4]!"
+msgstr "▸ 散乱注意（@1>@2）：[1] で合成するか [2–4] で片付けよう！"
+
+#: hud.lua:521
+msgid "▸ BALANCED: Combine blocks [1] or clear [2–4] for Bloom! [Z] Ping"
+msgstr "▸ 快適バランス：[1] 合成や [2–4] 浄化で開花促進！[Z] マーカー"
+
+#: hud.lua:525
+msgid "▸ HAPPY GARDEN: [I] Tool Guide · [5] Guidebook · [Z] Call Room"
+msgstr "▸ 順調な庭：[I] 道具ガイド · [5] 図鑑 · [Z] 部屋マーカー"
+
+#: hud.lua:539
+msgid "★ 100% BLOOM ★"
+msgstr "★ 100% 満開 ★"
+
+#: hud.lua:541
+msgid "✖ PAUSED ✖"
+msgstr "✖ 一時停止中 ✖"
+
+#: hud.lua:546
+msgid "LV@1 · Plants @2/@3 · Hazards @4/@5@6"
+msgstr "LV@1 · 植物 @2/@3 · 障害 @4/@5@6"
+
+#: hud.lua:551
+msgid "LEVEL @1 (1 Room)  ·  Plants: @2/@3  ·  Hazards: @4/@5@6"
+msgstr "レベル @1（1部屋） · 植物：@2/@3 · 障害：@4/@5@6"
+
+#: hud.lua:556
+msgid "LEVEL @1 (@2 Rooms)  ·  Plants: @3/@4  ·  Hazards: @5/@6@7"
+msgstr "レベル @1（@2部屋） · 植物：@3/@4 · 障害：@5/@6@7"
+
+#: hud.lua:570 ui.lua:399
+msgid "✖ OVERCROWDED (@1s)"
+msgstr "✖ 過密危険（@1秒）"
+
+#: hud.lua:573
+msgid "✦ SHIELD (@1s)"
+msgstr "✦ シールド（@1秒）"
+
+#: hud.lua:576
+msgid "✦ BALANCED (@1s)"
+msgstr "✦ バランス（@1秒）"
+
+#: hud.lua:579
+msgid "⚠ CLUTTERED (@1>@2)"
+msgstr "⚠ 散乱（@1>@2）"
+
+#: hud.lua:583
+msgid "⚠ OFF BALANCE"
+msgstr "⚠ バランス崩壊"
+
+#: hud.lua:584
+msgid "⚠ OFF BALANCE (40–60°C · 5.6–8.4 pH)"
+msgstr "⚠ バランス崩壊（40–60°C · 5.6–8.4 pH）"
+
+#: hud.lua:595
+msgid "@1 · @2°C | @3pH · @4"
+msgstr "@1 · @2°C | @3pH · @4"
+
+#: hud.lua:597
+msgid "@1  ·  @2°C | @3 pH  ·  Blessing: @4"
+msgstr "@1  ·  @2°C | @3 pH  ·  祝福：@4"
+
+#: hud.lua:600
+msgid "@1  ·  @2°C | @3 pH"
+msgstr "@1  ·  @2°C | @3 pH"
+
+#: hud.lua:647
+msgid "★ FINAL SURGE!"
+msgstr "★ ファイナルラッシュ！"
+
+#: hud.lua:651
+msgid "▾ BONUS GEODE!"
+msgstr "▾ ボーナス晶洞！"
+
+#: hud.lua:655
+msgid "▾ TRIAL FALLING!"
+msgstr "▾ 試練ウェーブ落下！"
+
+#: hud.lua:659
+msgid "▾ FALLING NOW!"
+msgstr "▾ 落下中！"
+
+#: hud.lua:665
+msgid "⏳ PAUSED · @1s@2"
+msgstr "⏳ 停止中 · @1秒@2"
+
+#: hud.lua:671
+msgid "✦ GEODE IN @1s@2"
+msgstr "✦ 晶洞まで @1秒@2"
+
+#: hud.lua:675
+msgid "★ TRIAL IN @1s@2"
+msgstr "★ 試練まで @1秒@2"
+
+#: hud.lua:679
+msgid "NEXT DROP · @1s@2"
+msgstr "次の落下 · @1秒@2"
+
+#: hud.lua:721
+msgid "Crack Geode or Pair [1]!"
+msgstr "[1] で晶洞開封または合成！"
+
+#: hud.lua:723
+msgid "Opposite Pair → Combine [1]!"
+msgstr "対ペア → [1] で合成！"
+
+#: hud.lua:726
+msgid "@1 → @2"
+msgstr "@1 → @2"
+
+#: hud.lua:728
+msgid "@1x @2 → @3"
+msgstr "@1x @2 → @3"
+
+#: hud.lua:730
+msgid "@1 + Geode!"
+msgstr "@1 + 晶洞！"
+
+#: hud.lua:733
+msgid "@1 · @2"
+msgstr "@1 · @2"
+
+#: hud.lua:1021
+msgid "Action"
+msgstr "アクション"
+
+#: hud.lua:1023
+msgid "+@1% Bloom · @2"
+msgstr "+@1% 開花 · @2"
+
+#: hud.lua:1437
+msgid "✖ Sprout #@1 WILTED!"
+msgstr "✖ 苗 #@1 がしおれた！"
+
+#: hud.lua:1438
+msgid "⚠ Sprout #@1 (@2%)"
+msgstr "⚠ 苗 #@1（@2%）"
+
+#: hud.lua:1531
+msgid "WILTED · @1% Bloom"
+msgstr "しおれ · @1% 開花"
+
+#: hud.lua:1532
+msgid "@1% Bloom · @2% HP"
+msgstr "@1% 開花 · HP @2%"
+
+#: hud.lua:1558
+msgid "✦ Room #@1 Marked [@2]"
+msgstr "✦ 部屋 #@1 をマーク [@2]"
+
+#: hud.lua:1559
+msgid "@1 · @2 Hazards"
+msgstr "@1 · 障害 @2"
+
+#: hud.lua:1565
+msgid "✦ Room #@1 [@2]"
+msgstr "✦ 部屋 #@1 [@2]"
+
+#: init.lua:37
+msgid "Welcome!"
+msgstr "ようこそ！"
+
+#: init.lua:40
+msgid "Keep Heat (40–60°C) & Soil pH (5.6–8.4) comfortable until all plants reach 100% Bloom!"
+msgstr "全植物が100%開花するまで、温度（40–60°C）と土壌pH（5.6–8.4）を快適に保とう！"
+
+#: init.lua:45
+msgid "Controls"
+msgstr "操作方法"
+
+#: init.lua:48
+msgid "[1–4] Tools · [5] Guidebook · [I] Quick Tool Guide · [Z] Call Out Room · [E+W] Sprint."
+msgstr "[1–4] 道具 · [5] ガイドブック · [I] 道具ガイド · [Z] 部屋マーカー · [E+W] ダッシュ。"
+
+#: init.lua:106
+msgid "Trial Wave — Twin Opposites! Pair Hot + Cold or Acid + Chalk with Trowel [1] for huge Bloom!"
+msgstr "試練ウェーブ — 対の双子！コテ [1] で「熱＋冷」や「酸＋チョーク」を合成して大量開花！"
+
+#: init.lua:107
+msgid "Trial Wave — Ember Shower! Quench fiery Brimstone with Water Flask [3] and ride the Steam!"
+msgstr "試練ウェーブ — 火花の雨！水フラスコ [3] で硫黄を消火し、蒸気に乗って跳ぼう！"
+
+#: init.lua:108
+msgid "Trial Wave — Frost Squall! Puff blue Ice Shards with Thermal Bellows [2] and stock up on Water!"
+msgstr "試練ウェーブ — 氷霜スコール！熱風ふいご [2] で氷片を溶かし、水をたっぷり確保しよう！"
+
+#: init.lua:109
+msgid "Trial Wave — Sour Drizzle! Sweep green Acid puddles with Pestle [4] to pave Speed Soil paths!"
+msgstr "試練ウェーブ — 酸性雨！乳棒 [4] で酸の水たまりを掃いて、加速ソイルの道を敷こう！"
+
+#: init.lua:200
+msgid "The Wizard · Wave @1 (1 Drop)"
+msgstr "魔法使い · ウェーブ @1（落下 1個）"
+
+#: init.lua:201
+msgid "The Wizard · Wave @1 (@2 Drops)"
+msgstr "魔法使い · ウェーブ @1（落下 @2個）"
+
+#: init.lua:608
+msgid "Too many uncleared hazards (@1/@2 blocks piled up for 8 seconds and cracked the glass!)"
+msgstr "未処理の障害が多すぎました（@1/@2 個が8秒間積み上がり、ガラスが割れました！）"
+
+#: init.lua:620
+msgid "Too Many Hazards!"
+msgstr "障害が多すぎます！"
+
+#: init.lua:623
+msgid "Floor is overcrowded (@1/@2)! Clear @3 block(s) within @4s before the glass cracks!"
+msgstr "床が過密状態です（@1/@2）！ガラスが割れる前に @4秒以内で @3個片付けよう！"
+
+#: init.lua:634
+msgid "Room Safe Again"
+msgstr "部屋の安全回復"
+
+#: init.lua:635
+msgid "Nice work! You cleared enough blocks and saved the glass terrarium."
+msgstr "お見事！ブロックを十分に片付けてガラステラリウムを守り抜きました。"
+
+#: init.lua:749
+msgid "Plant Alert"
+msgstr "植物アラート"
+
+#: init.lua:752
+msgid "Sprout #@1 has WILTED! Splash with Water Flask [3], drink Aegis Potion, or keep @2s Balance!"
+msgstr "苗 #@1 がしおれました！水フラスコ [3]、イージスポーション、または @2秒間のバランス維持で復活させよう！"
+
+#: init.lua:784
+msgid "All @1 plant(s) wilted at the same time!"
+msgstr "@1株すべての植物が同時にしおれてしまいました！"
+
+#: init.lua:848
+msgid "Your Sprout grew into @1!"
+msgstr "苗が @1 に成長しました！"
+
+#: init.lua:849
+msgid "Sprout #@1 grew into @2! (@3% Bloom)"
+msgstr "苗 #@1 が @2 に成長！（@3% 開花）"
+
+#: init.lua:851
+msgid "Plant Growth"
+msgstr "植物の成長"
+
+#: init.lua:856
+msgid "[Clear extra hazards in this room!]"
+msgstr " [この部屋の余分な障害を片付けよう！]"
+
+#: init.lua:858
+msgid "Sprout #@1 · @2"
+msgstr "苗 #@1 · @2"
+
+#: init.lua:859
+msgid "Bloom: @1% · Plant Health: @2% · Nearby Hazards: @3@4"
+msgstr "開花度：@1% · 植物HP：@2% · 周囲の障害：@3@4"
+
+#: init.lua:866
+msgid "Right-Click for Garden Controls · Left-Click with Water Flask [3] to heal"
+msgstr "右クリック：庭の管理 · 水フラスコ [3] 左クリック：回復"
+
+#: init.lua:870
+msgid "Sprout #@1 [WILTED · Needs Water!]"
+msgstr "苗 #@1 [しおれ · 水やりが必要！]"
+
+#: init.lua:871
+msgid "Growth paused at @1% until revived!"
+msgstr "復活するまで @1% で成長停止中！"
+
+#: init.lua:872
+msgid "Left-Click with Water Flask [3], drink Aegis Potion, or keep @1s Balance"
+msgstr "水フラスコ [3] 左クリック、イージスポーション、または @1秒間バランス維持"
+
+#: init.lua:908
+msgid "Final Bloom Surge!"
+msgstr "ファイナル開花ラッシュ！"
+
+#: init.lua:911
+msgid "Your garden reached 85% Bloom! Crack the bonus Prismatic Geode or pair the twin drops to hit 100%!"
+msgstr "開花度85%到達！ボーナスのプリズム晶洞を割るか、ペア落下を合成して一気に100%を目指そう！"
+
+#: init.lua:928
+msgid "★ LEVEL @1 COMPLETE! ALL @2 PLANT(S) REACHED 100% BLOOM! ★"
+msgstr "★ レベル @1 クリア！全 @2株が 100% 満開達成！ ★"
+
+#: init.lua:931
+msgid "The Wizard"
+msgstr "魔法使い"
+
+#: init.lua:934
+msgid "Wonderful work! Pick a Next-Level Blessing to open Room #@1!"
+msgstr "素晴らしい手際だ！次レベルの祝福を選んで部屋 #@1 を開けよう！"
+
+#: init.lua:1046
+msgid "Opened Top 10 Scores."
+msgstr "トップ10スコアを開きました。"
+
+#: init.lua:1048 init.lua:1057 init.lua:1066 init.lua:1078
+msgid "Player must be connected."
+msgstr "プレイヤーが接続している必要があります。"
+
+#: init.lua:1055
+msgid "Opened Gardener's Guidebook."
+msgstr "庭師のガイドブックを開きました。"
+
+#: init.lua:1064
+msgid "Opened Garden Controls."
+msgstr "庭の管理パネルを開きました。"
+
+#: init.lua:1074
+msgid "Marked the room for everyone."
+msgstr "全員にこの部屋をマークしました。"
+
+#: init.lua:1076
+msgid "Please wait a moment before pinging again."
+msgstr "再マークするまで少しお待ちください。"
+
+#: init.lua:1082 init.lua:1087
+msgid "Open the Top 10 Terrarium Crucible scores"
+msgstr "テラリウム・クルーシブルのトップ10スコアを開く"
+
+#: init.lua:1092
+msgid "Open the illustrated Gardener's Guidebook"
+msgstr "イラスト付きの庭師のガイドブックを開く"
+
+#: init.lua:1097
+msgid "Open Garden Controls and Game Pace settings"
+msgstr "庭の管理とゲーム速度設定を開く"
+
+#: init.lua:1102
+msgid "Place a 4-second marker above the room you are facing"
+msgstr "向いている部屋の上に4秒間のマーカーを表示する"
+
+#: ui.lua:17
+msgid "1. How to Play"
+msgstr "1. 遊び方"
+
+#: ui.lua:18
+msgid "Your goal, how plants grow, and how to keep the room comfortable."
+msgstr "目標、植物の育ち方、部屋を快適に保つ基本ルール。"
+
+#: ui.lua:21
+msgid "2. Blocks & Tools"
+msgstr "2. ブロックと道具"
+
+#: ui.lua:22
+msgid "Picture guide showing every falling block and the tool that clears it."
+msgstr "各落下ブロックと、それを処理する道具のイラスト図鑑。"
+
+#: ui.lua:25
+msgid "3. Combos & Potions"
+msgstr "3. コンボと秘薬"
+
+#: ui.lua:26
+msgid "Combine opposite blocks, build green speed paths, and use potions."
+msgstr "対ブロックの合成、緑の加速ソイル作り、ポーションの使い方。"
+
+#: ui.lua:29
+msgid "4. Healing & Co-op"
+msgstr "4. 回復と協力"
+
+#: ui.lua:30
+msgid "How to revive wilted plants, avoid overcrowding, and play with friends."
+msgstr "しおれた植物の復活方法、過密の回避、マルチ協力プレイ。"
+
+#: ui.lua:33
+msgid "5. Top 10 Scores"
+msgstr "5. トップ10"
+
+#: ui.lua:34
+msgid "See the highest levels reached and best runs saved on this world."
+msgstr "このワールドに記録された最高到達レベルとベストスコア。"
+
+#: ui.lua:41
+msgid "WELCOME TO THE WIZARD'S GLASS TERRARIUM!"
+msgstr "魔法使いのガラステラリウムへようこそ！"
+
+#: ui.lua:44
+msgid "You have been shrunk down inside an open-top glass box on a wizard's wooden desk."
+msgstr "あなたは小さく縮められ、魔法使いの木の机の上にある吹き抜けガラス箱の中にいます。"
+
+#: ui.lua:48
+msgid "Glowing rings appear on the soil before fire, ice, acid, or chalk blocks drop in from above — clear them on the floor with Tools [1–4], or catch them in mid-air for extra plant growth!"
+msgstr "炎・氷・酸・チョークが落ちてくる前に土の上へ光る輪が現れます。着地後に道具 [1–4] で片付けるか、空中で直接キャッチして成長ボーナスを獲得しましょう！"
+
+#: ui.lua:54
+msgid "✦ YOUR GOAL: GROW EVERY PLANT TO 100% BLOOM"
+msgstr "✦ 目標：すべての植物を100%満開に育てよう"
+
+#: ui.lua:57
+msgid "Level 1 starts in 1 cozy glass room with charged Tools [2–4] (4 Puffs · 3 Splashes · 4 Sweeps, gaining +1 cap every 2 levels!)."
+msgstr "レベル1は1つの小さなガラス部屋から始まり、道具 [2–4] は充填済みです（4パフ · 3スプラッシュ · 4スイープ、2レベルごとに上限+1！）。"
+
+#: ui.lua:64
+msgid "Reach 100% Bloom with all plants awake to finish the level, pick 1 of 3 Next-Level Blessings, and open a new archway room (plus Level 3+ Trial Waves)!"
+msgstr "全植物が元気な状態で100%開花を達成するとクリア！3つの祝福から1つを選び、次のアーチ部屋が解放されます（Lv3以降は試練ウェーブも登場）！"
+
+#: ui.lua:70
+msgid "✦ KEEP HEAT & SOIL COMFORTABLE"
+msgstr "✦ 温度と土壌を快適に保とう"
+
+#: ui.lua:71
+msgid "Heat [40°C – 60°C]"
+msgstr "温度 [40°C – 60°C]"
+
+#: ui.lua:72
+msgid "Fiery Brimstone makes it hotter; blue Ice makes it colder."
+msgstr "灼熱の硫黄は室温を上げ、青い氷は室温を下げます。"
+
+#: ui.lua:73
+msgid "Soil pH [5.6 – 8.4]"
+msgstr "土壌pH [5.6 – 8.4]"
+
+#: ui.lua:74
+msgid "Green Acid makes soil too sour; Chalk makes soil too dry."
+msgstr "緑の酸は土を酸性に、チョークは土をアルカリ性（乾燥）に傾けます。"
+
+#: ui.lua:77
+msgid "Keep leftover floor hazards low so the garden stays Balanced — plants heal themselves, wilted plants revive after 6s, and 8s of balance gives everyone a Harmony Boost!"
+msgstr "床に残る障害を減らして「バランス」を保ちましょう。植物が自然回復し、しおれた苗も6秒で復活、8秒維持で全員にハーモニー加速が付与されます！"
+
+#: ui.lua:94
+msgid "POINT AT ANY PICTURE · RIGHT-CLICK ANY PLANT!"
+msgstr "アイコンにカーソルで詳細表示 · 植物を右クリックで管理画面！"
+
+#: ui.lua:96
+msgid "[1–4] Tools · [5] Guidebook · [I] Quick Guide · [Z] Call Room · [E+W] Sprint."
+msgstr "[1–4] 道具 · [5] ガイドブック · [I] 簡易ガイド · [Z] 部屋マーカー · [E+W] ダッシュ。"
+
+#: ui.lua:119
+msgid "What it does:"
+msgstr "特徴："
+
+#: ui.lua:120
+msgid "How to clear:"
+msgstr "対処法："
+
+#: ui.lua:135
+msgid "✦ HELPFUL COMBOS & BONUS CRYSTALS"
+msgstr "✦ 便利なコンボ＆ボーナス結晶"
+
+#: ui.lua:137
+msgid "Combine Hot + Cold with Trowel [1]"
+msgstr "コテ [1] で「高温＋低温」を合成"
+
+#: ui.lua:140
+msgid "Click Brimstone or Ice with Trowel [1] to scoop it up, then click right onto (or beside) its opposite so both burst into fresh Water & Steam!"
+msgstr "コテ [1] で硫黄か氷をすくい、反対属性の上（または隣）をクリックすると、両方が弾けて真水と蒸気に変わります！"
+
+#: ui.lua:146
+msgid "Make Green Speed Soil (Acid + Chalk)"
+msgstr "緑の加速ソイル作り（酸＋チョーク）"
+
+#: ui.lua:149
+msgid "Clear green Acid with Pestle [4] (or click Chalk onto Acid) to turn brown dirt into glowing Fertile Soil that boosts plant growth and running speed!"
+msgstr "乳棒 [4] で酸を掃く（または酸にチョークを合わせる）と、茶色い土が輝く肥沃な土に変わり、植物の成長と移動速度がアップします！"
+
+#: ui.lua:155
+msgid "Prismatic Geodes & 85% Final Surge"
+msgstr "プリズム晶洞＆85%ファイナルラッシュ"
+
+#: ui.lua:158
+msgid "Click with Trowel [1] within 22s to clear nearby hazards & refill all Tools [2–4]!"
+msgstr "22秒以内にコテ [1] でクリックすると、周囲の障害を一掃＆道具 [2–4] が全補充！"
+
+#: ui.lua:161
+msgid "Refilling Tools [2–4] & Emergency Prime:"
+msgstr "道具 [2–4] の補充と緊急チャージ："
+
+#: ui.lua:164
+msgid "Siphon Brimstone → Bellows [2], Water/Steam → Flask [3], Chalk → Pestle [4] (or click empty air when empty for +1 emergency charge!)."
+msgstr "硫黄吸収 → ふいご [2]、水/蒸気 → フラスコ [3]、チョーク粉砕 → 乳棒 [4]（空の時に空中クリックで +1 緊急チャージも可能！）。"
+
+#: ui.lua:173
+msgid "✦ SPEED SOIL & RARE ELIXIRS [6–7]"
+msgstr "✦ 加速ソイル＆希少アイテム [6–7]"
+
+#: ui.lua:175
+msgid "Extra potions past your belt cap auto-convert into bonus Bloom & healing!"
+msgstr "所持上限を超えた分のポーションは自動的に開花ボーナス＆回復に変換されます！"
+
+#: ui.lua:178
+msgid "Fertile Speed Soil"
+msgstr "肥沃な加速ソイル"
+
+#: ui.lua:179
+msgid "(Pave Your Own Green Paths!)"
+msgstr "（自分だけの緑の高速通路を作ろう！）"
+
+#: ui.lua:182
+msgid "Wash Chalk or dust Acid to pave glowing green paths that make you run much faster!"
+msgstr "チョークの洗浄や酸の中和で輝く緑の道を敷けば、素早く駆け回れます！"
+
+#: ui.lua:185
+msgid "Aegis Potion [6]"
+msgstr "イージスポーション [6]"
+
+#: ui.lua:186
+msgid "(Geodes & Level Clears · Cap 2)"
+msgstr "（晶洞＆クリア報酬 · 上限2個）"
+
+#: ui.lua:189
+msgid "Refills full health, revives all wilted plants, & shields you + plants for 12s (triggers automatically if you run out of health!)."
+msgstr "HP全回復、全しおれ植物の復活、12秒間の全員＋植物シールド（HP0で自動発動！）。"
+
+#: ui.lua:195
+msgid "Chronos Hourglass [7]"
+msgstr "クロノスの砂時計 [7]"
+
+#: ui.lua:196
+msgid "(Every Level · Cap 2)"
+msgstr "（毎レベル報酬 · 上限2個）"
+
+#: ui.lua:199
+msgid "Pauses falling blocks for 12s, clears nearby hazards, & speeds up everyone!"
+msgstr "12秒間ブロックの落下を停止し、周囲の障害を消して全員を加速します！"
+
+#: ui.lua:222
+msgid "✦ PLANT HEALTH & HOW TO REVIVE"
+msgstr "✦ 植物のHPと復活方法"
+
+#: ui.lua:225
+msgid "Each room's plant has its own Plant Health (0% – 100%) and natural growth pace:"
+msgstr "各部屋の植物には個別の植物HP（0%～100%）と成長ペースがあります："
+
+#: ui.lua:229
+msgid "Extreme heat/cold, sour/chalky soil, or hazards left right next to a plant slowly lower that plant's health."
+msgstr "極端な高温・低温、酸性・アルカリ性の土壌、植物の真横に放置された障害は少しずつ植物HPを減らします。"
+
+#: ui.lua:236
+msgid "At 0% health, a plant WILTS and shows a bright red warning marker on screen so you can find it right away—even through walls!"
+msgstr "HPが0%になると植物は「しおれ」状態になり、壁越しでもすぐ見つけられる赤い警告マーカーが表示されます！"
+
+#: ui.lua:242
+msgid "3 EASY WAYS TO REVIVE A WILTED PLANT:"
+msgstr "しおれた植物を復活させる3つの方法："
+
+#: ui.lua:245
+msgid "Water Flask [3]: Left-Click right on the wilted plant (uses 1 splash)."
+msgstr "水フラスコ [3]：しおれた植物を直接左クリック（1スプラッシュ消費）。"
+
+#: ui.lua:249
+msgid "Aegis Potion: Drink one anywhere to revive every wilted plant at once!"
+msgstr "イージスポーション：どこで飲んでもしおれた全植物が一斉に復活！"
+
+#: ui.lua:253
+msgid "Calm Balance: Keep Heat & Soil comfortable for 6s (4s with Roots)!"
+msgstr "穏やかな調和：温度と土壌を6秒間快適に保つ（地脈の根なら4秒）！"
+
+#: ui.lua:259
+msgid "✦ HOW A RUN CAN END (& HOW TO STAY SAFE)"
+msgstr "✦ ゲームオーバー条件（と安全のコツ）"
+
+#: ui.lua:261
+msgid "Every Plant Wilts at Once"
+msgstr "すべての植物が同時にしおれる"
+
+#: ui.lua:262
+msgid "Keep at least 1 plant healthy while you water any wilted ones!"
+msgstr "しおれた苗に水をやりに行く間も、最低1株は元気な状態を保とう！"
+
+#: ui.lua:264
+msgid "Too Many Uncleared Blocks (8-Second Warning)"
+msgstr "未処理ブロックの過密（8秒警告）"
+
+#: ui.lua:267
+msgid "If too many blocks pile up on the floor, an 8s warning counts down — clear a few blocks before time runs out to stay safe!"
+msgstr "床にブロックが溜まりすぎると8秒のカウントダウンが始まります。時間内にいくつか片付ければ安全に戻ります！"
+
+#: ui.lua:273
+msgid "Hazard Burns, Stings & Co-op"
+msgstr "火傷・酸ダメージ＆協力プレイ"
+
+#: ui.lua:276
+msgid "Standing on Brimstone, wading in Acid Slime, or standing under falling blocks hurts!"
+msgstr "硫黄を踏む、酸スライムに入る、落下ブロックの真下に立つとダメージを受けます！"
+
+#: ui.lua:280
+msgid "Solo: 0 HP brings you back in Room 1 (-30% plant HP). Press [Z] to call rooms!"
+msgstr "ソロ：HP0で部屋1に復帰（植物HP -30%）。[Z] キーで部屋にマーカーを出せます！"
+
+#: ui.lua:302
+msgid "★ TOP 10 TERRARIUM GARDENERS"
+msgstr "★ テラリウム庭師トップ10"
+
+#: ui.lua:306
+msgid "Ranked by Levels Won → Highest Level → Best Bloom → Hazards Cleared → Fastest Time."
+msgstr "順位基準：クリア数 → 最高Lv → 最高開花度 → 障害除去数 → 最速タイム。"
+
+#: ui.lua:351
+msgid "GRIMOIRE"
+msgstr "グリモワール"
+
+#: ui.lua:356
+msgid "Garden Status & Pace"
+msgstr "庭のステータス＆速度"
+
+#: ui.lua:357
+msgid "Check each plant's health, see this level's blessing, or change the game pace."
+msgstr "各植物のHPや現在の祝福を確認し、ゲーム速度を変更できます。"
+
+#: ui.lua:361 ui.lua:462
+msgid "Back to Game"
+msgstr "ゲームに戻る"
+
+#: ui.lua:362
+msgid "Close the Guidebook and return to your garden."
+msgstr "ガイドブックを閉じて庭へ戻ります。"
+
+#: ui.lua:369
+msgid "THE GARDENER'S GUIDEBOOK"
+msgstr "庭師のガイドブック"
+
+#: ui.lua:372
+msgid "Illustrated How-to-Play · Point at any block, tool, or potion picture to read its full tip"
+msgstr "イラスト付き遊び方ガイド · ブロック・道具・ポーションの図にカーソルを合わせると詳細を表示"
+
+#: ui.lua:395
+msgid "★ LEVEL COMPLETE ★"
+msgstr "★ レベルクリア ★"
+
+#: ui.lua:397
+msgid "✖ RUN ENDED ✖"
+msgstr "✖ 挑戦終了 ✖"
+
+#: ui.lua:401
+msgid "Plant Shield (@1s)"
+msgstr "植物シールド（@1秒）"
+
+#: ui.lua:403
+msgid "Balanced (@1s)"
+msgstr "バランス（@1秒）"
+
+#: ui.lua:405
+msgid "Floor Cluttered!"
+msgstr "床が散乱中！"
+
+#: ui.lua:407
+msgid "Off Balance!"
+msgstr "バランス崩壊！"
+
+#: ui.lua:421
+msgid "#@1: WILTED (@2% Bloom)"
+msgstr "#@1：しおれ（@2% 開花）"
+
+#: ui.lua:429
+msgid "#@1: @2% Bloom (@3% HP)"
+msgstr "#@1：@2% 開花（HP @3%）"
+
+#: ui.lua:435
+msgid "Starting..."
+msgstr "開始準備中..."
+
+#: ui.lua:445
+msgid "None yet (Finish a level to pick 1 of 3 Next-Level Blessings!)"
+msgstr "まだなし（レベルをクリアすると3つの祝福から1つ選べます！）"
+
+#: ui.lua:456
+msgid "★ Pick Blessing & Next Room! ★"
+msgstr "★ 祝福を選んで次の部屋へ！ ★"
+
+#: ui.lua:457
+msgid "Open the Level Complete screen to pick your Next-Level Blessing and unlock the next room."
+msgstr "クリア画面を開き、次レベルの祝福を選んで新しい部屋を解放します。"
+
+#: ui.lua:463
+msgid "Close this menu and keep caring for your plants."
+msgstr "メニューを閉じて植物のお世話を続けます。"
+
+#: ui.lua:467
+msgid "Casual (@1s)"
+msgstr "カジュアル（@1秒）"
+
+#: ui.lua:468
+msgid "Normal (@1s)"
+msgstr "ノーマル（@1秒）"
+
+#: ui.lua:469
+msgid "Panic (@1s)"
+msgstr "パニック（@1秒）"
+
+#: ui.lua:474
+msgid "Garden Condition"
+msgstr "庭のコンディション"
+
+#: ui.lua:475
+msgid "Keep Heat (40–60°C) and Soil pH (5.6–8.4) comfortable so your plants thrive."
+msgstr "植物が元気に育つよう、温度（40–60°C）と土壌pH（5.6–8.4）を快適に保ちましょう。"
+
+#: ui.lua:479
+msgid "Plant Growth (Goal: 100%)"
+msgstr "植物の成長（目標：100%）"
+
+#: ui.lua:480
+msgid "@1%  (Stage @2/4)"
+msgstr "@1%  （段階 @2/4）"
+
+#: ui.lua:482
+msgid "Grow your plants to 100% Bloom with all plants awake to finish the level!"
+msgstr "すべての植物がしおれていない状態で100%開花させるとレベルクリア！"
+
+#: ui.lua:486
+msgid "Plants Awake & Health"
+msgstr "元気な植物数＆HP"
+
+#: ui.lua:487
+msgid "@1 / @2  (@3% Avg)"
+msgstr "@1 / @2  （平均 @3%）"
+
+#: ui.lua:489
+msgid "Heal hurt or wilted plants with Water Flask [3], Aegis Potion, or 6s of Balance."
+msgstr "水フラスコ [3]、イージスポーション、または6秒間のバランス維持で植物を回復します。"
+
+#: ui.lua:494
+msgid "Heat [40–60°C] · Soil [5.6–8.4]"
+msgstr "温度 [40–60°C] · 土壌 [5.6–8.4]"
+
+#: ui.lua:495
+msgid "@1°C  |  @2 pH"
+msgstr "@1°C  |  @2 pH"
+
+#: ui.lua:497
+msgid "Comfort Zone: 40–60°C Heat and 5.6–8.4 Soil pH."
+msgstr "快適ゾーン：温度 40–60°C、土壌pH 5.6–8.4。"
+
+#: ui.lua:501
+msgid "Floor Hazard Limit"
+msgstr "床の障害上限"
+
+#: ui.lua:502
+msgid "@1 / @2 Max Blocks"
+msgstr "@1 / @2 最大ブロック"
+
+#: ui.lua:504
+msgid "Going over the max starts an 8-second warning — clear a few blocks in time to stay safe!"
+msgstr "上限を超えると8秒間の警告カウントが開始—時間内にいくつか片付ければ安全です！"
+
+#: ui.lua:508
+msgid "Hazards Cleared & Time"
+msgstr "除去数＆経過時間"
+
+#: ui.lua:509
+msgid "@1 Cleared  (@2s)"
+msgstr "@1個除去  （@2秒）"
+
+#: ui.lua:511
+msgid "Crack Prismatic Geodes & finish levels to earn rare Aegis Potions & Chronos Hourglasses!"
+msgstr "プリズム晶洞を割り、レベルをクリアしてイージスポーションや砂時計を手に入れよう！"
+
+#: ui.lua:519
+msgid "PLANTS BY ROOM:"
+msgstr "部屋ごとの植物："
+
+#: ui.lua:522
+msgid "THIS LEVEL'S BLESSING:"
+msgstr "現在の祝福："
+
+#: ui.lua:532
+msgid "GAME PACE (HOW FAST BLOCKS FALL)"
+msgstr "ゲーム速度（ブロックの落下間隔）"
+
+#: ui.lua:534
+msgid "(Change anytime — active choice highlighted):"
+msgstr "（いつでも変更可能 — 現在の設定がハイライト表示）："
+
+#: ui.lua:541
+msgid "Relaxed, unhurried pace — great for learning tools and enjoying your garden."
+msgstr "ゆったり落ち着いたペース — 道具の練習やのんびり庭を楽しみたい方に最適。"
+
+#: ui.lua:547
+msgid "Comfortable, balanced pace — recommended for most players."
+msgstr "程よく歯ごたえのある標準ペース — 多くのプレイヤーにおすすめ。"
+
+#: ui.lua:553
+msgid "Fast falling blocks — build green Speed Soil paths and use potions to keep up!"
+msgstr "次々と落下する高速ペース — 緑の加速ソイルとポーションを駆使して乗り切ろう！"
+
+#: ui.lua:559 ui.lua:620 ui.lua:851
+msgid "Open Guidebook"
+msgstr "ガイドブックを開く"
+
+#: ui.lua:560
+msgid "Read the 5-tab picture guide to every block, tool, potion, and plant tip."
+msgstr "5タブのイラスト図鑑で、全ブロック・道具・ポーション・育成術を確認します。"
+
+#: ui.lua:564
+msgid "★ Top 10 Scores ★"
+msgstr "★ トップ10スコア ★"
+
+#: ui.lua:565
+msgid "View the Top 10 best runs saved on this world."
+msgstr "このワールドに保存されているベスト10記録を表示します。"
+
+#: ui.lua:569
+msgid "Start Over at Level 1"
+msgstr "レベル1からやり直す"
+
+#: ui.lua:570
+msgid "Save your current score and begin a brand-new Level 1 garden."
+msgstr "現在のスコアを保存し、新しいレベル1の庭を始めます。"
+
+#: ui.lua:576
+msgid "GARDEN CONTROLS — LEVEL @1 (1 ROOM)"
+msgstr "庭の管理パネル — レベル @1（1部屋）"
+
+#: ui.lua:577
+msgid "GARDEN CONTROLS — LEVEL @1 (@2 ROOMS)"
+msgstr "庭の管理パネル — レベル @1（@2部屋）"
+
+#: ui.lua:585
+msgid "Check Plant Health, Active Blessing, Game Pace, Guidebook & Top 10 Scores"
+msgstr "植物HP、有効な祝福、ゲーム速度、ガイドブック、トップ10スコアの確認"
+
+#: ui.lua:609 ui.lua:729 ui.lua:839
+msgid "Shareable Run Summary (Select & Copy):"
+msgstr "共有用スコアサマリー（選択してコピー）："
+
+#: ui.lua:611 ui.lua:731 ui.lua:841
+msgid "Select and copy your run summary to share with friends or on Jam threads!"
+msgstr "サマリーを選択＆コピーして、フレンドやスレッドで結果をシェアしよう！"
+
+#: ui.lua:615
+msgid "Garden Status"
+msgstr "庭のステータス"
+
+#: ui.lua:616
+msgid "Open live plant health and Game Pace controls."
+msgstr "植物HPとゲーム速度の管理画面を開きます。"
+
+#: ui.lua:621
+msgid "Open the illustrated Gardener's Guidebook."
+msgstr "イラスト付きの庭師のガイドブックを開きます。"
+
+#: ui.lua:625
+msgid "Close"
+msgstr "閉じる"
+
+#: ui.lua:626
+msgid "Return to your garden."
+msgstr "庭へ戻ります。"
+
+#: ui.lua:633
+msgid "★ TOP 10 TERRARIUM GARDENERS ★"
+msgstr "★ テラリウム庭師トップ10 ★"
+
+#: ui.lua:636
+msgid "Best Runs Saved on This World — Levels Won, Best Bloom & Hazards Cleared"
+msgstr "このワールドのベスト記録 — クリア数・最高開花度・障害除去数"
+
+#: ui.lua:658
+msgid "ALL @1 PLANT(S) BLOOMED IN @2s! PICK 1 BLESSING FOR LEVEL @3:"
+msgstr "全 @1株が @2秒で満開！レベル @3 の祝福を1つ選ぼう："
+
+#: ui.lua:662
+msgid "Next Up (Level @1):"
+msgstr "次のステージ（レベル @1）："
+
+#: ui.lua:663
+msgid "Opens Glass Room #@1 with Plant #@2 (@3 falling block(s) per wave — your green Speed Soil paths stay!)."
+msgstr "ガラス部屋 #@1 と植物 #@2 が解放（1ウェーブ @3個落下 — 敷いた緑の加速ソイルはそのまま残ります！）。"
+
+#: ui.lua:667
+msgid "Fresh Every Level:"
+msgstr "毎レベル支給ボーナス："
+
+#: ui.lua:668
+msgid "Your Blessing lasts all of Level @1, plus +1 Aegis Potion & +1 Chronos Hourglass!"
+msgstr "選んだ祝福はレベル @1 の間ずっと有効！さらにイージスポーション +1 ＆クロノスの砂時計 +1 を獲得！"
+
+#: ui.lua:693
+msgid "Pick: @1 → Lvl @2"
+msgstr "選択：@1 → Lv @2"
+
+#: ui.lua:694
+msgid "Choose '@1' (@2) for Level @3 and open Room #@4!"
+msgstr "レベル @3 用に「@1」（@2）を選び、部屋 #@4 を開きます！"
+
+#: ui.lua:722 ui.lua:832
+msgid "TOP 10 SCORES:"
+msgstr "トップ10スコア："
+
+#: ui.lua:736
+msgid "Start Fresh at Level 1"
+msgstr "レベル1から新しく始める"
+
+#: ui.lua:737
+msgid "Start a brand-new single-room Level 1 garden."
+msgstr "1部屋の新しいレベル1の庭を最初から始めます。"
+
+#: ui.lua:741
+msgid "Look Around First"
+msgstr "先に庭を見渡す"
+
+#: ui.lua:742
+msgid "Close this window to admire your blooming plants (right-click any Plant when ready!)."
+msgstr "ウィンドウを閉じて満開の植物を鑑賞します（準備ができたら任意の植物を右クリック！）。"
+
+#: ui.lua:751
+msgid "★ LEVEL @1 COMPLETE — PICK YOUR NEXT-LEVEL BLESSING! ★"
+msgstr "★ レベル @1 クリア — 次レベルの祝福を選ぼう！ ★"
+
+#: ui.lua:755
+msgid "Choose 1 Blessing for Level @1 (lasts the whole next level, then pick a fresh one!)"
+msgstr "レベル @1 の祝福を1つ選択（次のレベル中ずっと持続し、クリア後にまた新しく選べます！）"
+
+#: ui.lua:771
+msgid "Clear hazards steadily with Bellows [2], Water Flask [3], & Pestle [4], or use a Chronos Hourglass to pause falling blocks!"
+msgstr "ふいご [2]・水フラスコ [3]・乳棒 [4] で着実に障害を片付けるか、クロノスの砂時計で落下を一時停止しよう！"
+
+#: ui.lua:776
+msgid "Heal hurt or wilted plants anytime by Left-Clicking them with a filled Water Flask [3] or drinking an Aegis Potion!"
+msgstr "傷ついたりしおれた植物は、水入りフラスコ [3] の左クリックやイージスポーションでいつでも回復できます！"
+
+#: ui.lua:781
+msgid "Step around fiery Brimstone and green Acid Slime so they don't burn your feet—and drink an Aegis Potion whenever you need a full heal!"
+msgstr "熱い硫黄や緑の酸スライムを踏まないよう避けて動き、全回復したい時は迷わずイージスポーションを飲もう！"
+
+#: ui.lua:802
+msgid "Reached Level @1 (1 Room)  ·  Best Bloom on Level @2: @3%  ·  Time: @4s"
+msgstr "到達レベル @1（1部屋） · レベル @2 最高開花：@3% · タイム：@4秒"
+
+#: ui.lua:807
+msgid "Reached Level @1 (@2 Rooms)  ·  Best Bloom on Level @3: @4%  ·  Time: @5s"
+msgstr "到達レベル @1（@2部屋） · レベル @3 最高開花：@4% · タイム：@5秒"
+
+#: ui.lua:817
+msgid "WHAT HAPPENED: @1"
+msgstr "終了理由：@1"
+
+#: ui.lua:818
+msgid "Your Run:"
+msgstr "今回の結果："
+
+#: ui.lua:819
+msgid "Helpful Tip for Next Time:"
+msgstr "次回へのワンポイント："
+
+#: ui.lua:846
+msgid "Play Again (Start Level 1)"
+msgstr "もう一度遊ぶ（レベル1から）"
+
+#: ui.lua:847
+msgid "Tidy up the terrarium and start a fresh Level 1 garden!"
+msgstr "テラリウムを整えて、新しいレベル1の庭をスタート！"
+
+#: ui.lua:852
+msgid "Read picture tips on tools, combos, and healing plants."
+msgstr "道具やコンボ、植物の回復方法をイラスト付きで確認します。"
+
+#: ui.lua:856
+msgid "Look Around"
+msgstr "周りを見る"
+
+#: ui.lua:857
+msgid "Close this window to look around (right-click any Plant to start again)."
+msgstr "ウィンドウを閉じて庭を見渡します（任意の植物を右クリックで再開）。"
+
+#: ui.lua:864
+msgid "✖ GARDEN RUN ENDED ON LEVEL @1 ✖"
+msgstr "✖ レベル @1 で挑戦終了 ✖"
+
+#: ui.lua:867
+msgid "No worries — right-click any Plant or press [I] to switch to Casual pace anytime!"
+msgstr "大丈夫！植物を右クリックするか [I] キーを押せば、いつでもカジュアル速度に切り替えられます！"
+
+#: ui.lua:900 ui.lua:911 ui.lua:922
+msgid "Game Pace"
+msgstr "ゲーム速度"
+
+#: ui.lua:903
+msgid "Switched to CASUAL pace (about @1s between falling blocks)."
+msgstr "【カジュアル】速度に切り替えました（落下間隔：約 @1秒）。"
+
+#: ui.lua:914
+msgid "Switched to NORMAL pace (about @1s between falling blocks)."
+msgstr "【ノーマル】速度に切り替えました（落下間隔：約 @1秒）。"
+
+#: ui.lua:925
+msgid "Switched to PANIC pace (about @1s between falling blocks)!"
+msgstr "【パニック】速度に切り替えました（落下間隔：約 @1秒）！"
+
+#: ui.lua:942
+msgid "Garden Reset"
+msgstr "庭をリセット"
+
+#: ui.lua:943
+msgid "Started a fresh Level 1 garden (1 Room, 1 Plant)!"
+msgstr "新しいレベル1の庭を開始しました（1部屋・植物1株）！"
+
+#: ui.lua:967
+msgid "Blessing Picked"
+msgstr "祝福を選択"
+
+#: ui.lua:970
+msgid "@1 chose [@2] — @3"
+msgstr "@1 が [@2] を選択 — @3"
+
+
+#: hud_migration
+msgid "✦ Welcome to the Garden!"
+msgstr "✦ 庭園へようこそ！"
+
+#: hud_migration
+msgid "[1–4] Tools · [5] Guide · [I] Bag"
+msgstr "[1–4] 道具 · [5] 図鑑 · [I] 鞄"
+
+#: hud_migration
+msgid "★ Trial: Twin Opposites!"
+msgstr "★ 試練：対極ペア！"
+
+#: hud_migration
+msgid "Pair Hot+Cold or Acid+Chalk [1]!"
+msgstr "コテ [1] で対極ブロックを結合！"
+
+#: hud_migration
+msgid "★ Trial: Ember Shower!"
+msgstr "★ 試練：灼熱シャワー！"
+
+#: hud_migration
+msgid "Quench Brimstone with Flask [3]!"
+msgstr "水瓶 [3] で硫黄を鎮火しよう！"
+
+#: hud_migration
+msgid "★ Trial: Frost Squall!"
+msgstr "★ 試練：氷結スコール！"
+
+#: hud_migration
+msgid "Melt blue Ice with Bellows [2]!"
+msgstr "ふいご [2] で青い氷を溶かそう！"
+
+#: hud_migration
+msgid "★ Trial: Sour Drizzle!"
+msgstr "★ 試練：酸性のにわか雨！"
+
+#: hud_migration
+msgid "Sweep green Acid with Pestle [4]!"
+msgstr "乳棒 [4] で緑の酸を浄化しよう！"
+
+#: hud_migration
+msgid "✦ Bonus Geode Falling!"
+msgstr "✦ ボーナス晶洞が落下中！"
+
+#: hud_migration
+msgid "Crack with Trowel [1] within 22s!"
+msgstr "22秒以内にコテ [1] で割ろう！"
+
+#: hud_migration
+msgid "✖ Too Many Hazards (@1/@2)!"
+msgstr "✖ 危険ブロック過多 (@1/@2)！"
+
+#: hud_migration
+msgid "Clear @1 block(s) within @2s!"
+msgstr "@2秒以内にあと@1個片付けよう！"
+
+#: hud_migration
+msgid "✦ Room Safe Again!"
+msgstr "✦ 温室の安全回復！"
+
+#: hud_migration
+msgid "Overcrowding cleared — glass saved!"
+msgstr "過密解消 — ガラスを守り抜いた！"
+
+#: hud_migration
+msgid "Splash with Flask [3] or Aegis!"
+msgstr "水瓶 [3] かイージス薬で回復！"
+
+#: hud_migration
+msgid "✦ Grew into @1!"
+msgstr "✦ @1に成長！"
+
+#: hud_migration
+msgid "✦ Sprout #@1 → @2!"
+msgstr "✦ 芽 #@1 → @2！"
+
+#: hud_migration
+msgid "@1% Bloom reached"
+msgstr "開花度 @1% に到達"
+
+#: hud_migration
+msgid "★ 85% Final Bloom Surge!"
+msgstr "★ 85% 最終ブルームラッシュ！"
+
+#: hud_migration
+msgid "Crack Geode or Pair [1] for 100%!"
+msgstr "晶洞か対極ペア [1] で100%へ！"
+
+#: hud_migration
+msgid "★ Level @1 Complete!"
+msgstr "★ レベル @1 クリア！"
+
+#: hud_migration
+msgid "Pick a Blessing for Room #@1!"
+msgstr "第@1室の祝福を選ぼう！"
+
+#: hud_migration
+msgid "Pace: Casual (~@1s waves)"
+msgstr "ペース：カジュアル（約@1秒間隔）"
+
+#: hud_migration
+msgid "Pace: Normal (~@1s waves)"
+msgstr "ペース：ノーマル（約@1秒間隔）"
+
+#: hud_migration
+msgid "Pace: Panic (~@1s waves)!"
+msgstr "ペース：パニック（約@1秒間隔）！"
+
+#: hud_migration
+msgid "✦ Garden Reset — Level 1"
+msgstr "✦ 庭園リセット — レベル 1"
+
+#: hud_migration
+msgid "Started a fresh Level 1 garden!"
+msgstr "新しいレベル1の庭園を開始！"

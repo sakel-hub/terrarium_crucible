@@ -25,13 +25,32 @@ SOFTWARE.
 
 ---
 
-## Media & Audio License
-- **AI-Generated Pixel-Art Textures & Menu Branding (`mods/tc_assets/textures/*.png`, `menu/icon.png`, `menu/header.png`, `menu/background.png`, `screenshot.png`)**: Dedicated to the public domain under **Creative Commons Zero v1.0 Universal (CC0 1.0)**. Created with **Gemini 3.1 Pro** / **Imagen** and directed/curated by **SaKeL**.
-- **Base Foley Audio (`tc_dig_*`, `tc_dug_node.*`, `tc_footstep_*`, `tc_place_node*`, `tc_tool_breaks.*`, `tc_item_smoke.ogg`, `tc_player_damage.ogg`)**: CC-BY-SA 3.0 / CC0 1.0 (Curated & mastered by **SaKeL**).
-- **Bundled Core Mods (`x_player_api` by SaKeL, `player_monoids`, `sfinv`, `game_commands`, `show_wielded_item`, `hudbars`)**: MIT / LGPL-2.1+ / CC-BY-SA 3.0 / CC-BY-4.0 / CC0 1.0 (see `mods/x_player_api/license.txt` for full 3D character model & equip audio attributions).
+## Media, AI-Generated Assets & Bundled Mod Licenses
 
-### Audio & Sound Effects
-Mastered, sliced, trimmed, and transcoded specifically for Luanti (Mono, 44.1 kHz, -1.0 dBFS Ogg Vorbis) by SaKeL:
+### AI-Generated Artwork & Model Credits (CC0 1.0)
+All custom visual artwork created for **Terrarium Crucible** is dedicated to the public domain under **Creative Commons Zero v1.0 Universal (CC0 1.0)**:
+- **AI Models Credited**: Generated with **Google Gemini 3.1 Pro** and **Google Imagen**, with art direction, pixel-art curation, palette tuning, and Blender promotional scene composition by **SaKeL**.
+- **Covered Visual Assets**:
+  - Block, plant, crystal, tool, potion, particle, and animated sprite-sheet textures (`mods/tc_assets/textures/*.png`)
+  - Custom HUD banners, forecast plaques, toast frames, tongs socket, gauges, effect icons, and celestial textures (`mods/tc_assets/textures/tc_hud_*.png`, `tc_bar_*.png`, `tc_icon_effect_*.png`, `tc_gui_*.png`, `tc_astral_moon.png`, `tc_moon_tonemap.png`)
+  - Custom restyled gauge & inventory arrow textures in `mods/hudbars/textures/*.png` and `mods/sfinv/textures/sfinv_crafting_arrow.png`
+  - Alchemist character skin (`mods/tc_assets/textures/tc_alchemist_skin.png`)
+  - Main-menu branding and promotional screenshot (`menu/icon.png`, `menu/header.png`, `menu/background.png`, `screenshot.png`)
+
+### Sound Effects & Foley Audio (CC0 1.0 / CC-BY-SA 3.0)
+- **Gameplay Sound Effects (`mods/tc_assets/sounds/*.ogg`)**: Human-recorded Creative Commons Zero (**CC0 1.0**) sound effects from **Freesound.org** (full creator credits listed below), sliced, balanced, and mastered by **SaKeL**.
+- **Base Foley Audio (`tc_dig_*`, `tc_dug_node.*`, `tc_footstep_*`, `tc_place_node*`, `tc_tool_breaks.*`, `tc_item_smoke.ogg`, `tc_player_damage.ogg`)**: **CC-BY-SA 3.0 / CC0 1.0**, curated and mastered by **SaKeL**.
+
+### Bundled Community & Core Mods
+- **`game_commands`** (`mods/game_commands/`): Code **MIT** (rubenwardy).
+- **`hudbars`** (`mods/hudbars/`): Code **MIT** (Wuzzy, BlockMen); upstream textures **CC-BY-SA 3.0** (celeron55, BlockMen) & **MIT** (kaeza, Wuzzy); custom Terrarium Crucible bar/icon restyling **CC0 1.0** (Google Gemini 3.1 Pro / Google Imagen & SaKeL).
+- **`player_monoids`** (`mods/player_monoids/`): Code **Apache-2.0** (raymoo).
+- **`sfinv`** (`mods/sfinv/`): Code **MIT** (rubenwardy); upstream media **CC-BY-SA 3.0** (paramat).
+- **`show_wielded_item`** (`mods/show_wielded_item/`): Code **LGPL-2.1+** (Wuzzy, 4aiman, VanessaE).
+- **`x_player_api`** (`mods/x_player_api/`): Code **LGPL-2.1+ & MIT** (celeron55, Luanti contributors, Lars Mueller, SaKeL); 3D character models & animations **CC-BY 4.0** (MirceaKitsune, kilbith, sofar, xunto, Rogier-5, TeTpaAka, Desour, stujones11, An0n3m0us, Jordach, celeron55, SaKeL); equip sounds **CC0 1.0** (Vrymaa, harrisonlace, mrickey13) — see `mods/x_player_api/license.txt` for full details.
+
+### Freesound.org Audio Attributions (CC0 1.0)
+Edited and mastered for Luanti by **SaKeL**:
 
 - `mods/tc_assets/sounds/tc_drop_warning.1.ogg`:
   Source: "2022-01-14-crystal-bell-01.flac" (Sound #614833) by arseniiv

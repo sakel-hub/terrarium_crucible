@@ -3,6 +3,7 @@ local modpath = core.get_modpath(core.get_current_modname())
 dofile(modpath .. "/api.lua")
 dofile(modpath .. "/entities.lua")
 
+local S = tc_elements.S
 local P = tc_assets.PALETTE
 
 -- Mapgen aliases
@@ -17,14 +18,14 @@ core.register_alias("mapgen_river_water_source", "tc_elements:water_source")
 -- Enchanted Crucible Glass (Indestructible container boundary)
 core.register_node("tc_elements:flask_glass", {
     description = tc_assets.format_description({
-        title = "Terrarium Glass Wall",
-        category = "Glass Room Wall",
-        summary = "Thick brass-framed glass walls surrounding your tiny garden.",
-        effect = "Keeps everything safely inside and opens outward when you finish a level!",
-        usage = "Peer through the glass to see the wizard's giant wooden desk, candles, and open spellbook.",
+        title = S("Terrarium Glass Wall"),
+        category = S("Glass Room Wall"),
+        summary = S("Thick brass-framed glass walls surrounding your tiny garden."),
+        effect = S("Keeps everything safely inside and opens outward when you finish a level!"),
+        usage = S("Peer through the glass to see the wizard's giant wooden desk, candles, and open spellbook."),
         accent = P.aqua,
     }),
-    short_description = "Terrarium Glass Wall",
+    short_description = S("Terrarium Glass Wall"),
     drawtype = "glasslike_framed_optional",
     tiles = {"tc_flask_glass.png", "tc_flask_glass_detail.png"},
     paramtype = "light",
@@ -40,13 +41,13 @@ core.register_node("tc_elements:flask_glass", {
 -- Crucible Collar Rim (Engraved brass collar crowning open-top glass walls)
 core.register_node("tc_elements:flask_rim", {
     description = tc_assets.format_description({
-        title = "Brass Terrarium Rim",
-        category = "Glass Room Wall",
-        summary = "Carved brass trim along the open top of the glass walls.",
-        effect = "Frames the open ceiling where the wizard drops blocks in from above.",
+        title = S("Brass Terrarium Rim"),
+        category = S("Glass Room Wall"),
+        summary = S("Carved brass trim along the open top of the glass walls."),
+        effect = S("Frames the open ceiling where the wizard drops blocks in from above."),
         accent = P.gold,
     }),
-    short_description = "Brass Terrarium Rim",
+    short_description = S("Brass Terrarium Rim"),
     tiles = {"tc_flask_rim.png"},
     is_ground_content = false,
     groups = {cracky = 1},
@@ -57,12 +58,12 @@ core.register_node("tc_elements:flask_rim", {
 -- Giant Mahogany Workbench
 core.register_node("tc_elements:desk_wood", {
     description = tc_assets.format_description({
-        title = "Wizard's Wooden Desk",
-        category = "Outside Scenery",
-        summary = "Giant polished wooden desk planks underneath the glass terrarium.",
+        title = S("Wizard's Wooden Desk"),
+        category = S("Outside Scenery"),
+        summary = S("Giant polished wooden desk planks underneath the glass terrarium."),
         accent = P.amber,
     }),
-    short_description = "Wizard's Wooden Desk",
+    short_description = S("Wizard's Wooden Desk"),
     tiles = {"tc_desk_wood.png"},
     is_ground_content = false,
     groups = {choppy = 1},
@@ -73,12 +74,12 @@ core.register_node("tc_elements:desk_wood", {
 -- Giant Spellbook Parchment
 core.register_node("tc_elements:parchment", {
     description = tc_assets.format_description({
-        title = "Wizard's Open Spellbook",
-        category = "Outside Scenery",
-        summary = "Giant glowing spellbook pages lying open on the desk outside the glass.",
+        title = S("Wizard's Open Spellbook"),
+        category = S("Outside Scenery"),
+        summary = S("Giant glowing spellbook pages lying open on the desk outside the glass."),
         accent = P.gold,
     }),
-    short_description = "Wizard's Open Spellbook",
+    short_description = S("Wizard's Open Spellbook"),
     tiles = {"tc_parchment.png"},
     is_ground_content = false,
     light_source = 5,
@@ -90,12 +91,12 @@ core.register_node("tc_elements:parchment", {
 -- Beeswax Candle Pillar
 core.register_node("tc_elements:candle_wax", {
     description = tc_assets.format_description({
-        title = "Giant Beeswax Candle",
-        category = "Outside Scenery",
-        summary = "A towering beeswax candle warming the wizard's desk outside the glass.",
+        title = S("Giant Beeswax Candle"),
+        category = S("Outside Scenery"),
+        summary = S("A towering beeswax candle warming the wizard's desk outside the glass."),
         accent = P.gold,
     }),
-    short_description = "Giant Beeswax Candle",
+    short_description = S("Giant Beeswax Candle"),
     tiles = {"tc_candle_wax.png"},
     is_ground_content = false,
     light_source = 4,
@@ -107,13 +108,13 @@ core.register_node("tc_elements:candle_wax", {
 -- Magical Candle Flame Wick (Light source)
 core.register_node("tc_elements:candle_wick", {
     description = tc_assets.format_description({
-        title = "Dancing Candle Flame",
-        category = "Outside Scenery",
-        summary = "A warm flickering flame shining atop the giant desk candles.",
-        effect = "Lights up the workshop with a cozy golden glow.",
+        title = S("Dancing Candle Flame"),
+        category = S("Outside Scenery"),
+        summary = S("A warm flickering flame shining atop the giant desk candles."),
+        effect = S("Lights up the workshop with a cozy golden glow."),
         accent = P.amber,
     }),
-    short_description = "Dancing Candle Flame",
+    short_description = S("Dancing Candle Flame"),
     drawtype = "plantlike",
     tiles = {tc_assets.vertical_tile("tc_candle_wick_anim.png", 1.2)},
     inventory_image = "tc_candle_wick.png",
@@ -129,12 +130,12 @@ core.register_node("tc_elements:candle_wick", {
 -- Base Obsidian Substrate
 core.register_node("tc_elements:substrate", {
     description = tc_assets.format_description({
-        title = "Terrarium Base Stone",
-        category = "Garden Floor",
-        summary = "Solid dark stone foundation underneath the garden soil.",
+        title = S("Terrarium Base Stone"),
+        category = S("Garden Floor"),
+        summary = S("Solid dark stone foundation underneath the garden soil."),
         accent = P.violet,
     }),
-    short_description = "Terrarium Base Stone",
+    short_description = S("Terrarium Base Stone"),
     tiles = {"tc_substrate.png"},
     is_ground_content = false,
     groups = {cracky = 1},
@@ -145,15 +146,15 @@ core.register_node("tc_elements:substrate", {
 -- Alchemical Loam (Indestructible terrarium ground)
 core.register_node("tc_elements:loam", {
     description = tc_assets.format_description({
-        title = "Garden Soil",
-        category = "Garden Floor",
-        summary = "Soft brown earth covering the floor of every glass room.",
-        effect = "Can be upgraded into glowing green Fertile Soil that speeds up you and your plants!",
-        usage = "Clear green Acid Slime with Pestle [4] or splash Chalk " ..
-            "with Water Flask [3] on top of this soil.",
+        title = S("Garden Soil"),
+        category = S("Garden Floor"),
+        summary = S("Soft brown earth covering the floor of every glass room."),
+        effect = S("Can be upgraded into glowing green Fertile Soil that speeds up you and your plants!"),
+        usage = S("Clear green Acid Slime with Pestle [4] or splash Chalk " ..
+            "with Water Flask [3] on top of this soil."),
         accent = P.amber,
     }),
-    short_description = "Garden Soil",
+    short_description = S("Garden Soil"),
     tiles = {"tc_loam.png"},
     is_ground_content = false,
     groups = {soil = 1, alchem_loam = 1},
@@ -164,14 +165,14 @@ core.register_node("tc_elements:loam", {
 -- Transmuted Fertile Catalyst Soil (Beneficial nutrient soil + speed boost highway)
 core.register_node("tc_elements:fertile_loam", {
     description = tc_assets.format_description({
-        title = "Fertile Soil",
-        category = "Rich Green Soil · Speed Boost",
-        summary = "Glowing green soil created whenever you clean up Acid, Chalk, or a Prismatic Geode.",
-        effect = "Helps nearby plants bloom faster AND lets you run much quicker when you walk on it!",
-        usage = "Create green paths from room to room so you can dash across your garden with ease.",
+        title = S("Fertile Soil"),
+        category = S("Rich Green Soil · Speed Boost"),
+        summary = S("Glowing green soil created whenever you clean up Acid, Chalk, or a Prismatic Geode."),
+        effect = S("Helps nearby plants bloom faster AND lets you run much quicker when you walk on it!"),
+        usage = S("Create green paths from room to room so you can dash across your garden with ease."),
         accent = P.emerald,
     }),
-    short_description = "Fertile Soil (Faster Running & Plant Growth)",
+    short_description = S("Fertile Soil (Faster Running & Plant Growth)"),
     tiles = {tc_assets.vertical_tile("tc_fertile_loam_anim.png", 3.0)},
     is_ground_content = false,
     light_source = 5,
@@ -180,9 +181,9 @@ core.register_node("tc_elements:fertile_loam", {
     sounds = tc_assets.node_sound_dirt_defaults(),
     on_construct = function(pos)
         core.get_meta(pos):set_string("infotext", tc_assets.format_infotext(
-            "Fertile Soil",
-            "Faster Plant Growth · Faster Running",
-            "Walk on this glowing green soil to run much faster!"
+            S("Fertile Soil"),
+            S("Faster Plant Growth · Faster Running"),
+            S("Walk on this glowing green soil to run much faster!")
         ))
     end,
 })
@@ -198,10 +199,11 @@ local function place_reagent_on_floor(itemstack, placer, pointed_thing)
     local above = pointed_thing.above
     if above.y > 2 or above.y < 1 then
         if placer and placer:is_player() then
-            core.chat_send_player(
-                placer:get_player_name(),
-                tc_assets.chat_prefix("Garden Tip", P.amber) ..
-                core.colorize(P.text_primary, "Blocks can only be placed down on the garden floor!")
+            tc_tools.send_hint(
+                placer,
+                "trowel_floor",
+                S("Blocks can only be placed down on the garden floor!"),
+                "tc_tool_trowel.png"
             )
         end
         return itemstack
@@ -209,10 +211,11 @@ local function place_reagent_on_floor(itemstack, placer, pointed_thing)
     local lvl = tc_core.state.level
     if tc_world.is_protected_pos(above, lvl) then
         if placer and placer:is_player() then
-            core.chat_send_player(
-                placer:get_player_name(),
-                tc_assets.chat_prefix("Garden Tip", P.coral) ..
-                core.colorize(P.text_primary, "Please leave a little room around your plants and the Control Altar!")
+            tc_tools.send_hint(
+                placer,
+                "trowel_prot",
+                S("Please leave a little room around your plants!"),
+                "tc_tool_trowel.png"
             )
         end
         return itemstack
@@ -267,17 +270,36 @@ local function register_reagent_node(node_name, category_label, extra)
         _wield_glow = extra._wield_glow,
         drawtype = extra.drawtype,
         node_box = extra.node_box,
+        selection_box = extra.selection_box,
+        walkable = extra.walkable,
+        move_resistance = extra.move_resistance,
         sunlight_propagates = extra.sunlight_propagates,
         use_texture_alpha = extra.use_texture_alpha,
         floodable = extra.floodable,
         on_flood = extra.on_flood,
         groups = extra.groups,
-        damage_per_second = extra.damage_per_second,
+        diggable = false,
+        drop = "",
         sounds = extra.sounds,
         on_construct = function(pos)
             core.get_meta(pos):set_string("infotext", info_text)
             if timer_sec then
                 core.get_node_timer(pos):start(timer_sec)
+            end
+        end,
+        on_punch = function(pos, _, puncher)
+            if not tc_core.state.running or not puncher or not puncher:is_player() then
+                return
+            end
+            local wield = puncher:get_wielded_item()
+            local wname = wield:get_name()
+            if wname == "tc_tools:trowel" then
+                local updated, changed = tc_tools.handle_trowel_on_reagent(wield, puncher, pos, node_name)
+                if changed then
+                    puncher:set_wielded_item(updated)
+                end
+            else
+                tc_tools.send_hint(puncher, "punch_" .. rspec.id, rspec.infotext_hint)
             end
         end,
         on_timer = timer_sec and function(pos)
@@ -293,11 +315,10 @@ local function register_reagent_node(node_name, category_label, extra)
 end
 
 -- Scorching Brimstone (+13°C Thermal, Igneous; 10s Node Timer scorches neglected Fertile Soil)
-register_reagent_node("tc_elements:brimstone", "Hot Block · Raises Heat", {
+register_reagent_node("tc_elements:brimstone", S("Hot Block · Raises Heat"), {
     light_source = 12,
     _wield_glow = 10,
     groups = {brimstone = 1, reagent = 1, igniter = 1},
-    damage_per_second = 2,
     sounds = tc_assets.node_sound_stone_defaults(),
     soil_degrade_sec = 10.0,
     degrade_sound = "tc_sizzle",
@@ -305,7 +326,7 @@ register_reagent_node("tc_elements:brimstone", "Hot Block · Raises Heat", {
 })
 
 -- Glacial Cryo-Shard (-13°C Thermal, Slippery; 12s Node Timer chills neglected Fertile Soil)
-register_reagent_node("tc_elements:cryo_ice", "Cold Block · Lowers Heat", {
+register_reagent_node("tc_elements:cryo_ice", S("Cold Block · Lowers Heat"), {
     sunlight_propagates = true,
     use_texture_alpha = "blend",
     light_source = 5,
@@ -315,23 +336,28 @@ register_reagent_node("tc_elements:cryo_ice", "Cold Block · Lowers Heat", {
     degrade_sound = "tc_ice_dig",
 })
 
--- Vitriol Acid Slime (-12 internal pH / Acidic, Viscous, Caustic)
-register_reagent_node("tc_elements:acid_slime", "Sour Puddle · Sours Soil", {
+-- Vitriol Acid Slime (-12 internal pH / Acidic, Walkable-In Sticky Mire & Caustic Puddle)
+register_reagent_node("tc_elements:acid_slime", S("Sour Puddle · Sours Soil"), {
     drawtype = "nodebox",
+    walkable = false,
+    move_resistance = 4,
     node_box = {
         type = "fixed",
-        fixed = {-0.5, -0.5, -0.5, 0.5, 0.25, 0.5},
+        fixed = {-0.5, -0.5, -0.5, 0.5, -0.1875, 0.5},
+    },
+    selection_box = {
+        type = "fixed",
+        fixed = {-0.5, -0.5, -0.5, 0.5, -0.1875, 0.5},
     },
     sunlight_propagates = true,
     use_texture_alpha = "blend",
     light_source = 6,
     groups = {acid = 1, reagent = 3, disable_jump = 1},
-    damage_per_second = 2,
     sounds = tc_assets.node_sound_dirt_defaults(),
 })
 
 -- Alkaline Chalk Crystal (+12 internal pH / Alkaline; native floodable + on_flood dissolution)
-register_reagent_node("tc_elements:alkaline_chalk", "Dry Block · Dries Soil", {
+register_reagent_node("tc_elements:alkaline_chalk", S("Dry Block · Dries Soil"), {
     light_source = 3,
     floodable = true,
     groups = {chalk = 1, reagent = 2},
@@ -384,7 +410,7 @@ local GEODE_SPLIT_DIRS = {
 core.register_node("tc_elements:aether_geode", {
     description = tc_assets.format_description({
         title = cat.title,
-        category = "Bonus Crystal · Level 2+",
+        category = S("Bonus Crystal · Level 2+"),
         summary = cat.summary,
         effect = cat.effect,
         usage = cat.usage,
@@ -404,8 +430,8 @@ core.register_node("tc_elements:aether_geode", {
         meta:set_int("ttl", 22)
         meta:set_string("infotext", tc_assets.format_infotext(
             cat.title,
-            "Cracks into 2 hazards in 22s!",
-            "Left-Click or Right-Click with Trowel [1] to clear nearby hazards!"
+            S("Cracks into 2 hazards in 22s!"),
+            S("Left-Click or Right-Click with Trowel [1] to clear nearby hazards!")
         ))
         core.get_node_timer(pos):start(1.0)
     end,
@@ -413,12 +439,22 @@ core.register_node("tc_elements:aether_geode", {
         if not tc_core.state.running or not puncher or not puncher:is_player() then
             return
         end
-        if puncher:get_wielded_item():get_name() == "tc_tools:trowel" then
+        local wield = puncher:get_wielded_item()
+        if wield:get_name() == "tc_tools:trowel" then
+            if tc_tools.get_trowel_cargo(wield) ~= "" then
+                wield = tc_tools.set_trowel_cargo(wield, nil)
+                puncher:set_wielded_item(wield)
+                tc_tools.sync_player_trowel_cargo_inv(puncher, "")
+                x_player_api.update_wield_item(puncher, true, wield)
+                tc_core.add_scaled_bloom(0.5, pos)
+                tc_core.record_neutralization(puncher, 1)
+            end
+            x_player_api.trigger_player_action(puncher, "attack_thrust", 0.35)
             tc_elements.resonate_geode_at(pos, puncher)
         else
             tc_tools.send_hint(
                 puncher, "geode_tool",
-                "Switch to your Trowel [1] and Left-Click or Right-Click this Prismatic Geode to crack it open!"
+                S("Switch to your Trowel [1] and Left-Click or Right-Click this Prismatic Geode to crack it open!")
             )
         end
     end,
@@ -431,7 +467,7 @@ core.register_node("tc_elements:aether_geode", {
         else
             tc_tools.send_hint(
                 clicker, "geode_tool",
-                "Switch to your Trowel [1] (or place any block beside this Geode) to crack it open!"
+                S("Switch to your Trowel [1] (or place any block beside this Geode) to crack it open!")
             )
         end
         return itemstack
@@ -446,8 +482,8 @@ core.register_node("tc_elements:aether_geode", {
             meta:set_int("ttl", ttl)
             meta:set_string("infotext", tc_assets.format_infotext(
                 cat.title,
-                string.format("Cracks into 2 hazards in %ds!", ttl),
-                "Left-Click or Right-Click with Trowel [1] to clear nearby hazards!"
+                S("Cracks into 2 hazards in @1s!", ttl),
+                S("Left-Click or Right-Click with Trowel [1] to clear nearby hazards!")
             ))
             return true
         end
@@ -470,10 +506,15 @@ core.register_node("tc_elements:aether_geode", {
                 spawned = spawned + 1
             end
         end
-        core.chat_send_all(
-            tc_assets.chat_prefix("Crystal Cracked", P.coral) ..
-            core.colorize(P.text_primary, "An unopened Prismatic Geode cracked apart into 2 hazard blocks!")
-        )
+        tc_core.push_hud_event({
+            priority = 2,
+            icon = "tc_aether_geode.png",
+            title = S("✖ Unopened Geode Shattered!"),
+            detail = S("Split into 2 floor hazards!"),
+            color = P.hud_coral,
+            accent_hex = P.coral,
+            ttl = 3.8,
+        })
         return false
     end,
 })
@@ -485,14 +526,14 @@ core.register_node("tc_elements:aether_geode", {
 -- Alchemical Water Source
 core.register_node("tc_elements:water_source", {
     description = tc_assets.format_description({
-        title = "Fresh Water",
-        category = "Refills Your Water Flask",
-        summary = "Clean, cool water left behind whenever you melt blue Ice Shards.",
-        effect = "Gently cools the room and washes away nearby Brimstone or Chalk.",
-        usage = "Left-Click this water with your Water Flask [3] to scoop up the puddle and fill 3 splashes!",
+        title = S("Fresh Water"),
+        category = S("Refills Your Water Flask"),
+        summary = S("Clean, cool water left behind whenever you melt blue Ice Shards."),
+        effect = S("Gently cools the room and washes away nearby Brimstone or Chalk."),
+        usage = S("Left-Click this water with your Water Flask [3] to scoop up the puddle and fill 3 splashes!"),
         accent = P.aqua,
     }),
-    short_description = "Fresh Water (Left-Click with Flask [3])",
+    short_description = S("Fresh Water (Left-Click with Flask [3])"),
     drawtype = "liquid",
     tiles = {
         tc_assets.vertical_tile("tc_water_source_anim.png", 2.4, 32, 32, {backface_culling = false}),
@@ -527,14 +568,14 @@ core.register_node("tc_elements:water_source", {
 -- Flowing Alchemical Water
 core.register_node("tc_elements:water_flowing", {
     description = tc_assets.format_description({
-        title = "Flowing Water",
-        category = "Refills Your Water Flask",
-        summary = "Spreading ripples of cool water.",
-        effect = "Melts Chalk on contact and cools hot Brimstone into Steam.",
-        usage = "Left-Click anywhere on the puddle with your Water Flask [3] to scoop it up and refill!",
+        title = S("Flowing Water"),
+        category = S("Refills Your Water Flask"),
+        summary = S("Spreading ripples of cool water."),
+        effect = S("Melts Chalk on contact and cools hot Brimstone into Steam."),
+        usage = S("Left-Click anywhere on the puddle with your Water Flask [3] to scoop it up and refill!"),
         accent = P.aqua,
     }),
-    short_description = "Flowing Water",
+    short_description = S("Flowing Water"),
     drawtype = "flowingliquid",
     tiles = {"tc_water.png"},
     special_tiles = {
@@ -565,14 +606,14 @@ core.register_node("tc_elements:water_flowing", {
 -- Alchemical Steam Vapor (Dissipates via node timer & grants Steam Updraft jump boost)
 core.register_node("tc_elements:steam", {
     description = tc_assets.format_description({
-        title = "Rising Steam",
-        category = "Warm Mist · High Jump",
-        summary = "Soft, warm mist created when water cools down hot Brimstone or Ice melts.",
-        effect = "Step through it to float lightly and jump much higher for 5 seconds!",
-        usage = "Walk into rising steam to leap high, or Left-Click it with your Water Flask [3] to refill.",
+        title = S("Rising Steam"),
+        category = S("Warm Mist · High Jump"),
+        summary = S("Soft, warm mist created when water cools down hot Brimstone or Ice melts."),
+        effect = S("Step through it to float lightly and jump much higher for 5 seconds!"),
+        usage = S("Walk into rising steam to leap high, or Left-Click it with your Water Flask [3] to refill."),
         accent = P.aqua,
     }),
-    short_description = "Rising Steam (Walk In for High Jump)",
+    short_description = S("Rising Steam (Walk In for High Jump)"),
     drawtype = "plantlike",
     tiles = {tc_assets.vertical_tile("tc_steam_anim.png", 1.8)},
     inventory_image = "tc_steam.png",
@@ -583,7 +624,6 @@ core.register_node("tc_elements:steam", {
     is_ground_content = false,
     light_source = 4,
     walkable = false,
-    climbable = true,
     pointable = false,
     diggable = false,
     buildable_to = true,
@@ -606,10 +646,10 @@ for i = 1, #tc_elements.SPROUT_STAGES do
     core.register_node(st.name, {
         description = tc_assets.format_description({
             title = st.title,
-            category = "Magical Plant · Protect & Grow!",
-            summary = "The living heart of each glass room—grow all plants to 100% Bloom to finish the level!",
-            effect = "Blooms steadily when Heat (40–60°C) and Soil pH (5.6–8.4) stay comfortable and calm.",
-            usage = "Right-Click to check Garden Status; Left-Click with a filled Water Flask [3] to heal it!",
+            category = S("Magical Plant · Protect & Grow!"),
+            summary = S("The living heart of each glass room—grow all plants to 100% Bloom to finish the level!"),
+            effect = S("Blooms steadily when Heat (40–60°C) and Soil pH (5.6–8.4) stay comfortable and calm."),
+            usage = S("Right-Click to check Garden Status; Left-Click with a filled Water Flask [3] to heal it!"),
             accent = P.emerald,
         }),
         short_description = st.title,
@@ -631,13 +671,13 @@ for i = 1, #tc_elements.SPROUT_STAGES do
         on_construct = function(pos)
             core.get_meta(pos):set_string("infotext", tc_assets.format_infotext(
                 st.title,
-                "Keep Heat (40–60°C) & Soil pH (5.6–8.4) comfortable",
-                "Right-Click for Garden Status · Left-Click with Water Flask [3] to heal"
+                S("Keep Heat (40–60°C) & Soil pH (5.6–8.4) comfortable"),
+                S("Right-Click for Garden Controls · Left-Click with Water Flask [3] to heal")
             ))
         end,
         on_rightclick = function(_, _, clicker)
             if clicker and clicker:is_player() then
-                tc_core.show_altar_dialog(clicker)
+                tc_core.show_garden_dialog(clicker)
             end
         end,
     })
@@ -646,15 +686,15 @@ end
 -- Withered Sprout (0% Vitality state — Dedicated texture & urgent revival instructions)
 core.register_node("tc_elements:crucible_sprout_withered", {
     description = tc_assets.format_description({
-        title = "Wilted Sprout (Needs Water!)",
-        category = "Magical Plant · Needs Revival!",
-        summary = "A tired, wilted sprout whose growth is paused until you revive it.",
-        effect = "If EVERY sprout in your garden wilts at the same time, the run ends!",
-        usage = "Left-Click with a filled Water Flask [3], drink an Aegis Potion, " ..
-            "or keep the room balanced for 6s to revive it!",
+        title = S("Wilted Sprout (Needs Water!)"),
+        category = S("Magical Plant · Needs Revival!"),
+        summary = S("A tired, wilted sprout whose growth is paused until you revive it."),
+        effect = S("If EVERY sprout in your garden wilts at the same time, the run ends!"),
+        usage = S("Left-Click with a filled Water Flask [3], drink an Aegis Potion, " ..
+            "or keep the room balanced for 6s to revive it!"),
         accent = P.coral,
     }),
-    short_description = "Wilted Sprout (Splash Water [3] to Revive!)",
+    short_description = S("Wilted Sprout (Splash Water [3] to Revive!)"),
     drawtype = "plantlike",
     visual_scale = 0.98,
     tiles = {"tc_crucible_sprout_withered.png"},
@@ -672,56 +712,14 @@ core.register_node("tc_elements:crucible_sprout_withered", {
     },
     on_construct = function(pos)
         core.get_meta(pos):set_string("infotext", tc_assets.format_infotext(
-            "Wilted Sprout [Needs Revival!]",
-            "Growth paused for this plant until revived!",
-            "Left-Click with Water Flask [3], drink Aegis Potion, or keep 6s Balance"
+            S("Wilted Sprout [Needs Revival!]"),
+            S("Growth paused for this plant until revived!"),
+            S("Left-Click with Water Flask [3], drink Aegis Potion, or keep 6s Balance")
         ))
     end,
     on_rightclick = function(_, _, clicker)
         if clicker and clicker:is_player() then
-            tc_core.show_altar_dialog(clicker)
-        end
-    end,
-})
-
--- ========================================================
--- CRUCIBLE CONTROL ALTAR (Status, Pace & Top 10 Leaderboard)
--- ========================================================
-
-core.register_node("tc_elements:altar_stone", {
-    description = tc_assets.format_description({
-        title = "Control Altar",
-        category = "Garden Pedestal",
-        summary = "A glowing stone-and-gold stand that watches over your entire glass garden.",
-        effect = "Shows every plant's health, your active upgrades, Game Pace buttons, Guidebook, and Top 10 Scores.",
-        usage = "Right-Click anytime to check your plants, switch to Casual/Normal/Panic pace, or restart at Level 1.",
-        accent = P.gold,
-    }),
-    short_description = "Control Altar (Right-Click for Status & Pace)",
-    tiles = {
-        "tc_altar_top.png",
-        "tc_substrate.png",
-        "tc_altar_stone.png",
-        "tc_altar_stone.png",
-        "tc_altar_stone.png",
-        "tc_altar_stone.png",
-    },
-    paramtype = "light",
-    is_ground_content = false,
-    light_source = 10,
-    groups = {cracky = 1},
-    diggable = false,
-    sounds = tc_assets.node_sound_stone_defaults(),
-    on_construct = function(pos)
-        core.get_meta(pos):set_string("infotext", tc_assets.format_infotext(
-            "Control Altar",
-            "Check Plant Health · Change Game Pace · Guidebook · Top 10 Scores",
-            "Right-Click to open Garden Controls"
-        ))
-    end,
-    on_rightclick = function(_, _, clicker)
-        if clicker and clicker:is_player() then
-            tc_core.show_altar_dialog(clicker)
+            tc_core.show_garden_dialog(clicker)
         end
     end,
 })

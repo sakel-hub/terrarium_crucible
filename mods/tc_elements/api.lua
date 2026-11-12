@@ -3,6 +3,9 @@
 ---@field name string Full registered node name (e.g., "tc_elements:brimstone")
 ---@field title string Display title
 ---@field short_description string Concise HUD wield label
+---@field hud_short string Compact HUD Drop Forecast reagent label
+---@field hud_counter string Compact HUD Drop Forecast counter-tool label
+---@field tool_icon string Counter-tool icon texture filename
 ---@field texture string Primary static 32x32 tile/icon texture
 ---@field anim_texture? string Optional 32x256 vertical_frames animated node sheet texture
 ---@field anim_length? number Optional animation cycle duration in seconds
@@ -24,14 +27,19 @@
 ---@field scale number Visual plantlike scale
 
 ---@class TcElementsAPI
+---@field S fun(str: string, ...: any): string Mod translator function
 ---@field REAGENTS TcReagentSpec[] Ordered list of the 4 falling volatile reagents
 ---@field REAGENT_BY_NAME table<string, TcReagentSpec> Lookup table by full node name
 ---@field CATALYST table Metadata definition for Level 2+ Prismatic Aether Geode
+---@field RETICLE_TEXTURE_BY_ITEM table<string, string> Luanti 5.18 ^[colorizehsl: landing reticles by item
 ---@field SPROUT_STAGES TcSproutStageSpec[] Ordered list of the 4 Crucible Sprout growth stages
 ---@field get_sprout_stage fun(bloom: number): integer, string
 ---@field enrich_soil_at fun(pos: {x: integer, y: integer, z: integer}): boolean
 ---@field resonate_geode_at fun(pos: {x: integer, y: integer, z: integer}, user?: ObjectRef): integer
 ---@field spawn_falling_reagent fun(target_pos: {x: integer, y: integer, z: integer}, item_name: string)
+---@field can_tool_catch_reagent fun(itemstack: ItemStack, item_name: string): boolean
+---@field interact_falling_reagent fun(target: any, user: ObjectRef, itemstack?: ItemStack): ItemStack, boolean, boolean
+---@field find_interceptable_reagent fun(user: ObjectRef, pointed_thing?: table, itemstack?: ItemStack): table|nil
 ---@field node_sound_stone_defaults fun(tbl?: table): table
 ---@field node_sound_dirt_defaults fun(tbl?: table): table
 ---@field node_sound_wood_defaults fun(tbl?: table): table
@@ -40,6 +48,7 @@
 ---@field node_sound_water_defaults fun(tbl?: table): table
 ---@field node_sound_crystal_defaults fun(tbl?: table): table
 tc_elements = {
+    S                           = core.get_translator("tc_elements"),
     node_sound_stone_defaults   = tc_assets.node_sound_stone_defaults,
     node_sound_dirt_defaults    = tc_assets.node_sound_dirt_defaults,
     node_sound_wood_defaults    = tc_assets.node_sound_wood_defaults,
@@ -49,75 +58,88 @@ tc_elements = {
     node_sound_crystal_defaults = tc_assets.node_sound_crystal_defaults,
 }
 
+local S = tc_elements.S
 local P = tc_assets.PALETTE
 
 tc_elements.REAGENTS = {
     {
         id = "brimstone",
         name = "tc_elements:brimstone",
-        title = "Scorching Brimstone",
-        short_description = "Scorching Brimstone (Hot Block — Splash Water [3])",
+        title = S("Scorching Brimstone"),
+        short_description = S("Scorching Brimstone (Hot Block — Splash Water [3])"),
+        hud_short = S("Brimstone"),
+        hud_counter = S("Flask [3]"),
+        tool_icon = "tc_tool_flask_water.png",
         texture = "tc_brimstone.png",
         anim_texture = "tc_brimstone_anim.png",
         anim_length = 2.2,
         accent = P.amber,
-        summary = "A glowing-hot lava stone dropped in from above by the wizard.",
-        effect = "Makes the room hotter, burns your feet if you stand on it, and dries out nearby green soil.",
-        usage = "Left-Click with a filled Water Flask [3], or Right-Click with Trowel [1] " ..
-            "and place it beside Ice to cancel both out!",
-        infotext_hint = "Left-Click with Water Flask [3] · Right-Click with Trowel [1] to move",
+        summary = S("A glowing-hot lava stone dropped in from above by the wizard."),
+        effect = S("Raises heat, burns your boots (2 HP/s) if stood on, bonks on impact, & scorches green soil."),
+        usage = S("Splash with Flask [3], siphon with low Bellows [2] to refill all Puffs, " ..
+            "or pair with Ice via Trowel [1]!"),
+        infotext_hint = S("Splash with Flask [3] · Siphon with low Bellows [2] · Pair with Ice [1]"),
         tool_item = "tc_tools:condenser_flask_full",
         pair_item = "tc_elements:cryo_ice",
-        voice = "Dropping Scorching Brimstone! Splash it with Water Flask [3] or hit it mid-air for bonus growth!",
+        voice = S("Dropping Scorching Brimstone! Splash it with Water Flask [3] or hit it mid-air for bonus growth!"),
     },
     {
         id = "cryo_ice",
         name = "tc_elements:cryo_ice",
-        title = "Glacial Ice Shard",
-        short_description = "Glacial Ice Shard (Cold Block — Melt with Bellows [2])",
+        title = S("Glacial Ice Shard"),
+        short_description = S("Glacial Ice Shard (Cold Block — Melt with Bellows [2])"),
+        hud_short = S("Ice"),
+        hud_counter = S("Bellows [2]"),
+        tool_icon = "tc_tool_bellows.png",
         texture = "tc_cryo_ice.png",
         accent = P.aqua,
-        summary = "A freezing blue ice crystal that cools down the glass room.",
-        effect = "Makes the room colder, makes the floor slippery, and chills nearby green soil.",
-        usage = "Left-Click with Thermal Bellows [2] to melt into fresh Water (then refill your Water Flask [3]!).",
-        infotext_hint = "Left-Click with Bellows [2] to melt, then scoop Water with Flask [3]",
+        summary = S("A freezing blue ice crystal that cools down the glass room."),
+        effect = S("Makes the room colder, makes the floor slippery, and chills nearby green soil."),
+        usage = S("Left-Click with Thermal Bellows [2] to melt into fresh Water (then refill your Water Flask [3]!)."),
+        infotext_hint = S("Left-Click with Bellows [2] to melt, then scoop Water with Flask [3]"),
         tool_item = "tc_tools:bellows",
         pair_item = "tc_elements:brimstone",
-        voice = "Dropping a Glacial Ice Shard! Melt it with Bellows [2] (or catch it mid-air for bonus growth)!",
+        voice = S("Dropping a Glacial Ice Shard! Melt it with Bellows [2] (or catch it mid-air for bonus growth)!"),
     },
     {
         id = "acid_slime",
         name = "tc_elements:acid_slime",
-        title = "Vitriol Acid Slime",
-        short_description = "Vitriol Acid Slime (Sour Puddle — Clear with Pestle [4])",
+        title = S("Vitriol Acid Slime"),
+        short_description = S("Vitriol Acid Slime (Sour Puddle — Clear with Pestle [4])"),
+        hud_short = S("Acid"),
+        hud_counter = S("Pestle [4]"),
+        tool_icon = "tc_tool_pestle.png",
         texture = "tc_acid_slime.png",
         anim_texture = "tc_acid_slime_anim.png",
         anim_length = 2.0,
         accent = P.emerald,
-        summary = "A bubbling green puddle that sours the soil and sticks to your boots.",
-        effect = "Makes soil too sour, stings your feet, stops jumping while inside it, and spoils green soil.",
-        usage = "Left-Click on or near it with Limestone Pestle [4] (or place Chalk beside it) " ..
-            "to turn the floor into fast green Fertile Soil!",
-        infotext_hint = "Left-Click with Pestle [4] · Place Chalk beside it for green Speed Soil",
+        summary = S("A bubbling green puddle that sours the soil and sticks to your boots."),
+        effect = S("Sours soil, slows & stings your feet (2 HP/s), stops jumping inside it, & spoils green soil."),
+        usage = S("Left-Click on or near it with Limestone Pestle [4] (or place Chalk beside it) " ..
+            "to turn the floor into fast green Fertile Soil!"),
+        infotext_hint = S("Left-Click with Pestle [4] · Place Chalk beside it for green Speed Soil"),
         tool_item = "tc_tools:chalk_pestle",
         pair_item = "tc_elements:alkaline_chalk",
-        voice = "Pouring green Acid Slime! Dust it with Pestle [4] to turn the floor into green Speed Soil!",
+        voice = S("Pouring green Acid Slime! Dust it with Pestle [4] to turn the floor into green Speed Soil!"),
     },
     {
         id = "alkaline_chalk",
         name = "tc_elements:alkaline_chalk",
-        title = "Alkaline Chalk",
-        short_description = "Alkaline Chalk (Dry Block — Splash Water [3])",
+        title = S("Alkaline Chalk"),
+        short_description = S("Alkaline Chalk (Dry Block — Splash Water [3])"),
+        hud_short = S("Chalk"),
+        hud_counter = S("Flask [3]"),
+        tool_icon = "tc_tool_flask_water.png",
         texture = "tc_alkaline_chalk.png",
         accent = P.violet,
-        summary = "A dry, chalky crystal block that throws off soil balance.",
-        effect = "Makes soil too chalky (alkaline); melts away on its own if flowing water touches it.",
-        usage = "Left-Click with a filled Water Flask [3], " ..
-            "or Right-Click with Trowel [1] and place it beside green Acid Slime!",
-        infotext_hint = "Left-Click with Water Flask [3] · Right-Click with Trowel [1] to pair with Acid",
+        summary = S("A dry, chalky crystal block that throws off soil balance."),
+        effect = S("Makes soil too chalky (alkaline); melts away on its own if flowing water touches it."),
+        usage = S("Wash with Flask [3], grind with low Pestle [4] to refill all Sweeps, " ..
+            "or pair with Acid via Trowel [1]!"),
+        infotext_hint = S("Wash with Flask [3] · Grind with low Pestle [4] · Pair with Acid [1]"),
         tool_item = "tc_tools:condenser_flask_full",
         pair_item = "tc_elements:acid_slime",
-        voice = "Dropping Alkaline Chalk! Splash it with Water Flask [3] or pair it beside green Acid Slime!",
+        voice = S("Dropping Alkaline Chalk! Splash it with Water Flask [3] or pair it beside green Acid Slime!"),
     },
 }
 
@@ -130,24 +152,27 @@ end
 tc_elements.CATALYST = {
     id = "aether_geode",
     name = "tc_elements:aether_geode",
-    title = "Prismatic Geode",
-    short_description = "Prismatic Geode (Bonus Crystal — Hit with Trowel [1]!)",
+    title = S("Prismatic Geode"),
+    short_description = S("Prismatic Geode (Bonus Crystal — Hit with Trowel [1]!)"),
+    hud_short = S("Geode"),
+    hud_counter = S("Trowel [1]"),
+    tool_icon = "tc_tool_trowel.png",
     texture = "tc_aether_geode.png",
     anim_texture = "tc_aether_geode_anim.png",
     anim_length = 1.8,
     accent = P.gold,
-    summary = "A shimmering rainbow crystal that drops in starting from Level 2.",
-    effect = "Clears nearby hazards and turns the floor into green Speed Soil—or cracks into 2 hazards after 22s!",
-    usage = "Left-Click or Right-Click it with your Trowel [1] (or set any block beside it) before time runs out!",
-    voice = "A shimmering Prismatic Geode is falling! Hit it with Trowel [1] within 22s " ..
-        "to clear nearby hazards and boost plant growth!",
+    summary = S("A shimmering rainbow crystal that drops in starting from Level 2."),
+    effect = S("Clears nearby hazards, makes Speed Soil, refills all Tools [2–4], & rewards +1 Aegis Potion!"),
+    usage = S("Left-Click or Right-Click it with your Trowel [1] (or set any block beside it) before time runs out!"),
+    voice = S("A shimmering Prismatic Geode is falling! Hit it with Trowel [1] within 22s " ..
+        "for +1 Aegis Potion, green Speed Soil, & bonus Bloom!"),
 }
 
 tc_elements.SPROUT_STAGES = {
     {
         stage = 1,
         name = "tc_elements:crucible_sprout_1",
-        title = "Crucible Seedling (Stage 1/4)",
+        title = S("Crucible Seedling (Stage 1/4)"),
         min_bloom = 0.0,
         light = 6,
         scale = 1.0,
@@ -155,7 +180,7 @@ tc_elements.SPROUT_STAGES = {
     {
         stage = 2,
         name = "tc_elements:crucible_sprout_2",
-        title = "Crucible Vines (Stage 2/4)",
+        title = S("Crucible Vines (Stage 2/4)"),
         min_bloom = 25.0,
         light = 9,
         scale = 1.05,
@@ -163,7 +188,7 @@ tc_elements.SPROUT_STAGES = {
     {
         stage = 3,
         name = "tc_elements:crucible_sprout_3",
-        title = "Crucible Astral Rose (Stage 3/4)",
+        title = S("Crucible Astral Rose (Stage 3/4)"),
         min_bloom = 55.0,
         light = 12,
         scale = 1.12,
@@ -171,7 +196,7 @@ tc_elements.SPROUT_STAGES = {
     {
         stage = 4,
         name = "tc_elements:crucible_sprout_4",
-        title = "Philosopher's Lotus (Stage 4/4 · Full Bloom)",
+        title = S("Philosopher's Lotus (Stage 4/4 · Full Bloom)"),
         min_bloom = 85.0,
         light = 14,
         scale = 1.28,
@@ -201,9 +226,9 @@ function tc_elements.enrich_soil_at(pos)
         core.swap_node(floor_pos, {name = "tc_elements:fertile_loam"})
         local meta = core.get_meta(floor_pos)
         meta:set_string("infotext", tc_assets.format_infotext(
-            "Fertile Soil",
-            "Faster Plant Growth · Faster Running",
-            "Walk on this glowing green soil to run much faster!"
+            S("Fertile Soil"),
+            S("Faster Plant Growth · Faster Running"),
+            S("Walk on this glowing green soil to run much faster!")
         ))
         return true
     end
@@ -258,20 +283,48 @@ function tc_elements.resonate_geode_at(pos, user)
         },
     })
 
-    local gain = tc_core.add_scaled_bloom(4.5 + (0.5 * purged), pos)
-    if user and user:is_player() then
-        tc_core.record_neutralization(user, 1 + purged)
+    local all_players = core.get_connected_players()
+    for i = 1, #all_players do
+        tc_tools.refill_player_tools(all_players[i])
     end
 
-    local msg = string.format(
-        "Prismatic Geode cracked open! Cleared %d nearby hazard(s), made green Speed Soil & +%.1f%% Bloom!",
-        purged,
-        gain
-    )
-    core.chat_send_all(
-        tc_assets.chat_prefix("Bonus Crystal", P.gold) ..
-        core.colorize(P.text_primary, msg)
-    )
+    local gain = tc_core.add_scaled_bloom(4.5 + (0.5 * purged), pos)
+    local recipient = (user and user:is_player()) and user or nil
+    if not recipient then
+        local best_d2 = math.huge
+        for i = 1, #all_players do
+            local pl = all_players[i]
+            local pp = pl:get_pos()
+            local dx, dz = pp.x - pos.x, pp.z - pos.z
+            local d2 = (dx * dx) + (dz * dz)
+            if d2 < best_d2 then
+                best_d2 = d2
+                recipient = pl
+            end
+        end
+    end
+
+    local detail_str = S("Tools [2–4] Refilled")
+    if recipient then
+        tc_core.record_neutralization(recipient, 1 + purged)
+        local added_a, over_a, over_gain = tc_core.grant_potion(recipient, "tc_tools:elixir_aegis", 1)
+        if added_a > 0 then
+            detail_str = S("Tools [2–4] Refilled · +1 Aegis!")
+        elseif over_a > 0 then
+            gain = gain + over_gain
+            detail_str = S("Tools [2–4] Refilled · Belt Full Bonus!")
+        end
+    end
+
+    tc_core.push_hud_event({
+        priority = 2,
+        icon = "tc_aether_geode.png",
+        title = S("✦ Geode Cracked! (+@1% Bloom)", string.format("%.1f", gain)),
+        detail = detail_str,
+        color = P.hud_gold,
+        accent_hex = P.gold,
+        ttl = 3.8,
+    })
     return purged
 end
 
@@ -283,25 +336,36 @@ local TRAIL_PARTICLE_BY_ITEM = {
     ["tc_elements:aether_geode"]   = tc_assets.PARTICLES.bloom,
 }
 
+-- Luanti 5.18 ^[colorizehsl:<hue>:<sat>:<lightness> alpha-preserving landing reticles
+tc_elements.RETICLE_TEXTURE_BY_ITEM = {
+    ["tc_elements:brimstone"]      = "tc_drop_reticle.png^[colorizehsl:-28:90:5",
+    ["tc_elements:cryo_ice"]       = "tc_drop_reticle.png^[colorizehsl:148:85:10",
+    ["tc_elements:acid_slime"]     = "tc_drop_reticle.png^[colorizehsl:88:85:5",
+    ["tc_elements:alkaline_chalk"] = "tc_drop_reticle.png^[colorizehsl:-115:65:12",
+    ["tc_elements:aether_geode"]   = "tc_drop_reticle.png^[colorizehsl:8:95:14",
+}
+
 ---Spawns a ground landing reticle telegraph and launches a physical 3D falling_reagent entity from above.
 ---@param target_pos {x: integer, y: integer, z: integer}
 ---@param item_name string
 function tc_elements.spawn_falling_reagent(target_pos, item_name)
     local trail_sheet = TRAIL_PARTICLE_BY_ITEM[item_name] or tc_assets.PARTICLES.pollen
+    local reticle_tex = tc_elements.RETICLE_TEXTURE_BY_ITEM[item_name] or "tc_drop_reticle.png"
 
-    -- Ground-level runic target reticle pulsing throughout the ~2.76s descent
+    -- Ground-level runic target reticle pulsing throughout descent (~2.65s base, ~3.5s with Featherfall Winds)
     local ret_min = {x = target_pos.x - 0.35, y = target_pos.y - 0.42, z = target_pos.z - 0.35}
     local ret_max = {x = target_pos.x + 0.35, y = target_pos.y - 0.32, z = target_pos.z + 0.35}
     local zero_v = {x = 0, y = 0.15, z = 0}
+    local ret_time = tc_core.has_blessing("featherfall_canopy") and 3.50 or 2.65
     core.add_particlespawner({
         amount = 24,
-        time = 2.65,
+        time = ret_time,
         pos = {min = ret_min, max = ret_max},
         vel = {min = zero_v, max = {x = 0, y = 0.45, z = 0}},
         exptime = {min = 0.55, max = 0.90},
         size = {min = 2.4, max = 3.8},
         texpool = {
-            {name = "tc_drop_reticle.png", blend = "add", scale_tween = {3.2, 1.4}, alpha_tween = {0.95, 0.1}},
+            {name = reticle_tex, blend = "add", scale_tween = {3.2, 1.4}, alpha_tween = {0.95, 0.1}},
         },
         minpos = ret_min,
         maxpos = ret_max,
@@ -311,7 +375,7 @@ function tc_elements.spawn_falling_reagent(target_pos, item_name)
         maxexptime = 0.90,
         minsize = 2.4,
         maxsize = 3.8,
-        texture = "tc_drop_reticle.png",
+        texture = reticle_tex,
         glow = 13,
     })
 

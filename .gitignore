@@ -2,6 +2,7 @@
 # Operating System files
 # ==============================================================================
 .DS_Store
+**/.DS_Store
 .DS_Store?
 ._*
 .Spotlight-V100
@@ -11,7 +12,7 @@ Thumbs.db
 desktop.ini
 
 # ==============================================================================
-# Editor and IDE configurations
+# Editor, IDE, and AI Assistant configurations / scratch files
 # ==============================================================================
 .idea/
 .vscode/
@@ -21,14 +22,40 @@ desktop.ini
 *.swo
 *~
 *.bak
+*.orig
+.agents/
+.gemini/
+.claude/
+.cursor/
+.codex/
+.copilot/
+.windsurf/
+.roo/
+.aider*
+.cursorrules
+.clinerules
+.windsurfrules
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+scratch/
 
 # ==============================================================================
-# Blender autosaves and backup files
+# Blender scenes, authoring source files, and unused prototype assets
 # ==============================================================================
+/assets/
+mods/*/assets/
+*.blend
 *.blend1
 *.blend2
 *.blend@
 *.blend[0-9]
+*.xcf
+*.psd
+*.kra
+*.aseprite
+mods/tc_assets/textures/tc_hud_accent.png
+mods/tc_assets/textures/tc_hud_bg.png
 
 # ==============================================================================
 # Python scripts, cache, bytecode, and virtual environments
