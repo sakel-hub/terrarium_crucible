@@ -25,6 +25,7 @@
 ---@field sync_player_trowel_cargo_inv fun(player: ObjectRef, cargo_name?: string)
 ---@field handle_trowel_on_reagent fun(st: ItemStack, u: ObjectRef, pos: table, nm: string): ItemStack, boolean
 ---@field clear_player_trowels fun(player: ObjectRef)
+---@field count_carried_hazards fun(): integer, string|nil
 ---@field spawn_bellows_particles fun(pos: table, dir: table)
 ---@field spawn_pestle_particles fun(center: table, radius: number)
 ---@field spawn_elixir_particles fun(pos: table, texture: string)
@@ -509,6 +510,59 @@ function tc_tools.clear_player_trowels(player)
         x_player_api.update_wield_item(player, true)
     end
     tc_tools.sync_player_trowel_cargo_inv(player, "")
+end
+
+---Counts volatile hazards currently carried on connected players' Alchemist's Trowels.
+---@return integer count
+---@return string|nil first_item_name
+function tc_tools.count_carried_hazards()
+    local players = core.get_connected_players()
+    local count = 0
+    local first_item = nil
+    for i = 1, #players do
+        local p = players[i]
+        if p and p:is_player() then
+            local found = nil
+            local inv = p:get_inventory()
+            if inv and inv:get_size("trowel_cargo") >= 1 then
+                local cname = inv:get_stack("trowel_cargo", 1):get_name()
+                if cname ~= "" and tc_elements.REAGENT_BY_NAME[cname] ~= nil then
+                    found = cname
+                end
+            end
+            if not found then
+                local wst = p:get_wielded_item()
+                if wst and wst:get_name() == "tc_tools:trowel" then
+                    local wc = tc_tools.get_trowel_cargo(wst)
+                    if wc ~= "" and tc_elements.REAGENT_BY_NAME[wc] ~= nil then
+                        found = wc
+                    end
+                end
+            end
+            if not found and inv then
+                local list = inv:get_list("main")
+                if list then
+                    for slot = 1, #list do
+                        local st = list[slot]
+                        if st:get_name() == "tc_tools:trowel" then
+                            local sc = tc_tools.get_trowel_cargo(st)
+                            if sc ~= "" and tc_elements.REAGENT_BY_NAME[sc] ~= nil then
+                                found = sc
+                                break
+                            end
+                        end
+                    end
+                end
+            end
+            if found then
+                count = count + 1
+                if not first_item then
+                    first_item = found
+                end
+            end
+        end
+    end
+    return count, first_item
 end
 
 ---Spawns a directional cone of heated ember & vapor particles from the Thermal Bellows.

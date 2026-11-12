@@ -215,7 +215,7 @@ function tc_init.build_satchel_formspec(player)
 
         -- Hotbar (top row) + Satchel Storage (3 rows) using Luanti 5.18 native listimages[] slot frames
         ui.card(0.35, 5.24, 10.20, 5.38, P.border_arcane, P.bg_inset),
-        ui.spine_label(0.16, 5.55, S("SATCHEL"), P.gold),
+        ui.spine_label(0.18, 7.93, S("SATCHEL"), P.gold),
         "list[current_player;main;0.58,5.42;8,1;]",
         "list[current_player;main;0.58,6.84;8,3;8]",
     })
@@ -223,8 +223,11 @@ function tc_init.build_satchel_formspec(player)
     return ui.window({
         w = 10.90,
         h = 10.90,
-        title = S("YOUR BAG & QUICK TOOL GUIDE"),
-        subtitle = S("Keep Heat (40–60°C) & Soil pH (5.6–8.4) comfortable until every plant reaches 100% Bloom!"),
+        title = core.get_translated_string(lang, S("YOUR BAG & QUICK TOOL GUIDE")),
+        subtitle = core.get_translated_string(
+            lang,
+            S("Keep Heat (40–60°C) & Soil pH (5.6–8.4) comfortable until every plant reaches 100% Bloom!")
+        ),
         accent = P.gold,
         body = body,
     })

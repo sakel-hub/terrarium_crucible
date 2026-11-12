@@ -1498,3 +1498,107 @@ msgstr "✦ 庭園リセット — レベル 1"
 #: hud_migration
 msgid "Started a fresh Level 1 garden!"
 msgstr "新しいレベル1の庭園を開始！"
+
+#: final_sweep_retry
+msgid "Retries"
+msgstr "リトライ"
+
+#: final_sweep_retry
+msgid "Terrarium Crucible · @1 · Lv@2 (@3 Won) · @4% Bloom · @5 Retries · @6 Cleared · @7s [@8]"
+msgstr "Terrarium Crucible · @1 · Lv@2 (@3勝) · 開花@4% · リトライ@5 · 除去@6 · @7秒 [@8]"
+
+#: final_sweep_retry
+msgid "Blessing: @1 · Tools & Potions Restored!"
+msgstr "祝福: @1 · 道具とポーションを復元！"
+
+#: final_sweep_retry
+msgid "Garden Reset · Tools & Potions Restored!"
+msgstr "庭園リセット · 道具とポーションを復元！"
+
+#: final_sweep_retry
+msgid "↻ Level @1 Retry #@2!"
+msgstr "↻ レベル @1 リトライ #@2！"
+
+#: final_sweep_retry
+msgid "★ 100% Bloom — Final Sweep!"
+msgstr "★ 開花100% — 最終スイープ！"
+
+#: final_sweep_retry
+msgid "Skies clear! Clear @1 hazard(s) to win!"
+msgstr "落下停止！残り @1 個の危険ブロックを消せば勝利！"
+
+#: final_sweep_retry
+msgid "▸ RUN PAUSED: Right-click a Plant to Retry Level @1 (or [I] for Pace)!"
+msgstr "▸ 一時停止: 植物を右クリックでレベル @1 を再挑戦（[I]で速度変更）！"
+
+#: final_sweep_retry
+msgid "▸ FINAL SWEEP: Place & clear your Trowel [1] block to finish!"
+msgstr "▸ 最終スイープ: コテ [1] のブロックを置いて消せばクリア！"
+
+#: final_sweep_retry
+msgid "▸ FINAL SWEEP: Skies clear — clear @1 hazard(s) to finish!"
+msgstr "▸ 最終スイープ: 落下停止 — 残り @1 個を消してクリア！"
+
+#: final_sweep_retry
+msgid "★ FINAL SWEEP ★"
+msgstr "★ 最終スイープ ★"
+
+#: final_sweep_retry
+msgid "Revive wilted plant [3]!"
+msgstr "水瓶 [3] で植物を回復！"
+
+#: final_sweep_retry
+msgid "Clear Trowel [1] block!"
+msgstr "コテ [1] のブロックを処理！"
+
+#: final_sweep_retry
+msgid "Clear @1 left to win!"
+msgstr "残り @1 個を消して勝利！"
+
+#: final_sweep_retry
+msgid "★ FINAL SWEEP!"
+msgstr "★ 最終スイープ！"
+
+#: final_sweep_retry
+msgid "Reach 100% Bloom (skies clear!) and sweep any remaining hazards with all plants awake to win, pick 1 of 3 Next-Level Blessings, or Retry your current level if a higher room gets hectic!"
+msgstr "開花100%（落下停止！）に到達し、すべての植物が元気な状態で残りの危険ブロックを一掃すればクリア！3つの祝福から1つ選んで次の部屋へ進み、高レベルで負けてもそのレベルから再挑戦できます！"
+
+#: final_sweep_retry
+msgid "Ranked by Levels Won → Highest Level → Best Bloom → Fewest Retries → Hazards Cleared → Fastest Time."
+msgstr "順位基準: クリア数 → 最高到達レベル → 最高開花率 → 最小リトライ数 → 除去数 → 最速タイム。"
+
+#: final_sweep_retry
+msgid "★ Final Sweep (@1 left)"
+msgstr "★ 最終スイープ (残@1)"
+
+#: final_sweep_retry
+msgid "↻ Retry Level @1"
+msgstr "↻ レベル @1 を再挑戦"
+
+#: final_sweep_retry
+msgid "Retry Level @1 with your Blessing, green Speed Soil paths, and restored tools & potions (+1 Retry)."
+msgstr "このレベルの祝福・緑の加速タイル・復元された道具とポーションでレベル @1 に再挑戦します（リトライ+1）。"
+
+#: final_sweep_retry
+msgid "Reach 100% Bloom, then clear any remaining hazards with all plants awake to finish the level!"
+msgstr "開花100%に達したあと、すべての植物が元気な状態で残りの危険ブロックをすべて消すとレベルクリア！"
+
+#: final_sweep_retry
+msgid "Reached Level @1 (@2 Rooms)  ·  Best Bloom on Level @3: @4%  ·  Retries: @5  ·  Time: @6s"
+msgstr "到達レベル @1 (@2部屋)  ·  レベル @3 最高開花: @4%  ·  リトライ: @5  ·  時間: @6秒"
+
+#: final_sweep_retry
+msgid "Start Level 1"
+msgstr "レベル 1 から開始"
+
+#: final_sweep_retry
+msgid "Start a fresh 0-retry run from Level 1."
+msgstr "レベル 1 からリトライ0回の新しいランを始めます。"
+
+#: final_sweep_retry
+msgid "Guidebook"
+msgstr "ガイドブック"
+
+#: final_sweep_retry
+msgid "Close this window to look around (right-click any Plant to retry or switch Pace)."
+msgstr "ウィンドウを閉じて見回します（植物を右クリックで再挑戦や速度変更ができます）。"

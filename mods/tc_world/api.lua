@@ -445,7 +445,6 @@ function tc_world.build_level(level, preserve_fertile)
     end
 
     vm:set_data(data)
-    vm:calc_lighting()
     vm:write_to_map(true)
 
     local sprout_title = tc_elements.SPROUT_STAGES[1].title

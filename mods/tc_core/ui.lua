@@ -62,8 +62,8 @@ local function build_guide_tab_1(pname)
         "• " .. ht_tr(
             pname,
             S(
-                "Reach 100% Bloom with all plants awake to finish the level, " ..
-                "pick 1 of 3 Next-Level Blessings, and open a new archway room (plus Level 3+ Trial Waves)!"
+                "Reach 100% Bloom (skies clear!) and sweep any remaining hazards with all plants awake to win, " ..
+                "pick 1 of 3 Next-Level Blessings, or Retry your current level if a higher room gets hectic!"
             )
         ) .. "\n\n",
         "<style color=" .. P.aqua .. " size=15><b>" ..
@@ -293,7 +293,8 @@ local function build_guide_tab_4(pname)
     })
 end
 
-local function build_guide_tab_5(pname)
+local function build_guide_tab_5(player, pname)
+    local receipt = tc_core.build_run_receipt(player)
     return table.concat({
         ui.card(0.45, 2.30, 12.50, 6.60, P.gold, P.bg_card),
         ui.hypertext(
@@ -303,12 +304,22 @@ local function build_guide_tab_5(pname)
             "<style color=" .. P.text_secondary .. " size=13>" ..
             ht_tr(
                 pname,
-                S("Ranked by Levels Won → Highest Level → Best Bloom → Hazards Cleared → Fastest Time.")
+                S(
+                    "Ranked by Levels Won → Highest Level → Best Bloom → " ..
+                    "Fewest Retries → Hazards Cleared → Fastest Time."
+                )
             ) ..
             "</style>",
             13
         ),
-        tc_core.build_top10_table_formspec(0.70, 3.12, 12.00, 5.56),
+        tc_core.build_top10_table_formspec(0.70, 3.12, 12.00, 4.68),
+        ui.readonly_field(
+            0.70, 8.20, 12.00, 0.54,
+            "fld_run_receipt",
+            S("Shareable Run Summary (Select & Copy):"),
+            receipt,
+            S("Select and copy your run summary to share with friends or on Jam threads!")
+        ),
     })
 end
 
@@ -344,7 +355,7 @@ function tc_core.show_guide_dialog(player, tab_idx)
     elseif tab_idx == 4 then
         tab_content = build_guide_tab_4(pname)
     else
-        tab_content = build_guide_tab_5(pname)
+        tab_content = build_guide_tab_5(player, pname)
     end
 
     local body = table.concat({
@@ -366,8 +377,8 @@ function tc_core.show_guide_dialog(player, tab_idx)
     local form = ui.window({
         w = 13.40,
         h = 10.20,
-        title = ht_tr(pname, S("THE GARDENER'S GUIDEBOOK")),
-        subtitle = ht_tr(
+        title = tc_core.resolve_player_text(pname, S("THE GARDENER'S GUIDEBOOK")),
+        subtitle = tc_core.resolve_player_text(
             pname,
             S("Illustrated How-to-Play · Point at any block, tool, or potion picture to read its full tip")
         ),
@@ -397,6 +408,8 @@ function tc_core.show_garden_dialog(player)
         status_str, status_col = S("✖ RUN ENDED ✖"), P.coral
     elseif (s.overload_timer or 0) > 0 then
         status_str, status_col = S("✖ OVERCROWDED (@1s)", math.max(1, 8 - s.overload_timer)), P.coral
+    elseif s.cleanup_phase then
+        status_str, status_col = S("★ Final Sweep (@1 left)", math.max(0, s.remaining_hazards or 0)), P.gold
     elseif s.aegis_timer > 0 then
         status_str, status_col = S("Plant Shield (@1s)", math.ceil(s.aegis_timer)), P.gold
     elseif in_harmony then
@@ -456,6 +469,16 @@ function tc_core.show_garden_dialog(player)
             S("★ Pick Blessing & Next Room! ★"), "primary",
             S("Open the Level Complete screen to pick your Next-Level Blessing and unlock the next room.")
         )
+    elseif s.defeat and (s.level or 1) >= 2 then
+        close_btn = ui.button(
+            6.05, 8.22, 5.30, 0.80, "btn_retry_level",
+            S("↻ Retry Level @1", s.level), "primary",
+            S(
+                "Retry Level @1 with your Blessing, green Speed Soil paths, " ..
+                "and restored tools & potions (+1 Retry).",
+                s.level
+            )
+        )
     else
         close_btn = ui.button(
             6.05, 8.22, 5.30, 0.80, "btn_close",
@@ -468,45 +491,49 @@ function tc_core.show_garden_dialog(player)
     local nrm_lbl = S("Normal (@1s)", string.format("%.0f", iv.normal))
     local pnc_lbl = S("Panic (@1s)", string.format("%.0f", iv.panic))
 
+    local tr = function(str)
+        return tc_core.resolve_player_text(name, str)
+    end
+
     local body = table.concat({
         ui.stat_box(
             0.45, 1.48, 3.52, 1.08,
-            S("Garden Condition"), status_str, status_col,
+            tr(S("Garden Condition")), tr(status_str), status_col,
             S("Keep Heat (40–60°C) and Soil pH (5.6–8.4) comfortable so your plants thrive.")
         ),
         ui.stat_box(
             4.14, 1.48, 3.52, 1.08,
-            S("Plant Growth (Goal: 100%)"),
-            S("@1%  (Stage @2/4)", string.format("%.1f", s.bloom), stage_num),
+            tr(S("Plant Growth (Goal: 100%)")),
+            tr(S("@1%  (Stage @2/4)", string.format("%.1f", s.bloom), stage_num)),
             P.emerald,
-            S("Grow your plants to 100% Bloom with all plants awake to finish the level!")
+            S("Reach 100% Bloom, then clear any remaining hazards with all plants awake to finish the level!")
         ),
         ui.stat_box(
             7.83, 1.48, 3.52, 1.08,
-            S("Plants Awake & Health"),
-            S("@1 / @2  (@3% Avg)", s.living_plants, #s.plants, string.format("%.0f", s.avg_vitality)),
+            tr(S("Plants Awake & Health")),
+            tr(S("@1 / @2  (@3% Avg)", s.living_plants, #s.plants, string.format("%.0f", s.avg_vitality))),
             (s.living_plants == #s.plants) and P.emerald or P.coral,
             S("Heal hurt or wilted plants with Water Flask [3], Aegis Potion, or 6s of Balance.")
         ),
 
         ui.stat_box(
             0.45, 2.70, 3.52, 1.08,
-            S("Heat [40–60°C] · Soil [5.6–8.4]"),
-            S("@1°C  |  @2 pH", string.format("%.0f", s.temperature), string.format("%.1f", ph_val)),
+            tr(S("Heat [40–60°C] · Soil [5.6–8.4]")),
+            tr(S("@1°C  |  @2 pH", string.format("%.0f", s.temperature), string.format("%.1f", ph_val))),
             in_harmony and P.aqua or P.amber,
             S("Comfort Zone: 40–60°C Heat and 5.6–8.4 Soil pH.")
         ),
         ui.stat_box(
             4.14, 2.70, 3.52, 1.08,
-            S("Floor Hazard Limit"),
-            S("@1 / @2 Max Blocks", s.active_reagents, s.max_reagents),
+            tr(S("Floor Hazard Limit")),
+            tr(S("@1 / @2 Max Blocks", s.active_reagents, s.max_reagents)),
             ((s.overload_timer or 0) > 0 or s.active_reagents >= s.max_reagents - 2) and P.coral or P.violet,
             S("Going over the max starts an 8-second warning — clear a few blocks in time to stay safe!")
         ),
         ui.stat_box(
             7.83, 2.70, 3.52, 1.08,
-            S("Hazards Cleared & Time"),
-            S("@1 Cleared  (@2s)", pstat.neutralized or 0, s.run_seconds),
+            tr(S("Hazards Cleared & Time")),
+            tr(S("@1 Cleared  (@2s)", pstat.neutralized or 0, s.run_seconds)),
             P.gold,
             S("Crack Prismatic Geodes & finish levels to earn rare Aegis Potions & Chronos Hourglasses!")
         ),
@@ -579,11 +606,8 @@ function tc_core.show_garden_dialog(player)
     local form = ui.window({
         w = 11.80,
         h = 9.40,
-        title = ht_tr(name, win_title),
-        subtitle = ht_tr(
-            name,
-            S("Check Plant Health, Active Blessing, Game Pace, Guidebook & Top 10 Scores")
-        ),
+        title = tr(win_title),
+        subtitle = tr(S("Check Plant Health, Active Blessing, Game Pace, Guidebook & Top 10 Scores")),
         accent = P.aqua,
         body = body,
     })
@@ -630,8 +654,8 @@ function tc_core.show_leaderboard_dialog(player)
     local form = ui.window({
         w = 13.00,
         h = 9.30,
-        title = ht_tr(pname, S("★ TOP 10 TERRARIUM GARDENERS ★")),
-        subtitle = ht_tr(
+        title = tc_core.resolve_player_text(pname, S("★ TOP 10 TERRARIUM GARDENERS ★")),
+        subtitle = tc_core.resolve_player_text(
             pname,
             S("Best Runs Saved on This World — Levels Won, Best Bloom & Hazards Cleared")
         ),
@@ -722,7 +746,7 @@ function tc_core.show_victory_dialog(player)
             ht_tr(pname, S("TOP 10 SCORES:")) .. "</b></style>",
             12
         ),
-        tc_core.build_top10_table_formspec(0.68, 6.82, 11.64, 2.04),
+        tc_core.build_top10_table_formspec(0.68, 6.82, 11.64, 1.90),
         ui.readonly_field(
             0.68, 9.22, 11.64, 0.54,
             "fld_run_receipt",
@@ -746,11 +770,11 @@ function tc_core.show_victory_dialog(player)
     local form = ui.window({
         w = 13.00,
         h = 11.25,
-        title = ht_tr(
+        title = tc_core.resolve_player_text(
             pname,
             S("★ LEVEL @1 COMPLETE — PICK YOUR NEXT-LEVEL BLESSING! ★", s.level)
         ),
-        subtitle = ht_tr(
+        subtitle = tc_core.resolve_player_text(
             pname,
             S("Choose 1 Blessing for Level @1 (lasts the whole next level, then pick a fresh one!)", next_lvl)
         ),
@@ -805,8 +829,8 @@ function tc_core.show_defeat_dialog(player)
         )
     else
         run_stats_line = S(
-            "Reached Level @1 (@2 Rooms)  ·  Best Bloom on Level @3: @4%  ·  Time: @5s",
-            s.level, s.level, s.level, bloom_str, s.run_seconds
+            "Reached Level @1 (@2 Rooms)  ·  Best Bloom on Level @3: @4%  ·  Retries: @5  ·  Time: @6s",
+            s.level, s.level, s.level, bloom_str, s.retries or 0, s.run_seconds
         )
     end
 
@@ -818,6 +842,54 @@ function tc_core.show_defeat_dialog(player)
         ht_tr(pname, S("Your Run:")), ht_tr(pname, run_stats_line),
         P.emerald, ht_tr(pname, S("Helpful Tip for Next Time:")), ht_tr(pname, advice)
     )
+
+    local action_buttons
+    if (s.level or 1) >= 2 then
+        action_buttons = table.concat({
+            ui.button(
+                0.45, 9.24, 3.44, 0.84, "btn_retry_level",
+                S("↻ Retry Level @1", s.level), "primary",
+                S(
+                    "Retry Level @1 with your Blessing, green Speed Soil paths, " ..
+                    "and restored tools & potions (+1 Retry).",
+                    s.level
+                )
+            ),
+            ui.button(
+                4.11, 9.24, 2.94, 0.84, "btn_restart",
+                S("Start Level 1"), "default",
+                S("Start a fresh 0-retry run from Level 1.")
+            ),
+            ui.button(
+                7.27, 9.24, 2.64, 0.84, "btn_defeat_guide",
+                S("Guidebook"), "gold",
+                S("Read picture tips on tools, combos, and healing plants.")
+            ),
+            ui.button(
+                10.13, 9.24, 2.42, 0.84, "btn_close",
+                S("Look Around"), "default",
+                S("Close this window to look around (right-click any Plant to retry or switch Pace)."), true
+            ),
+        })
+    else
+        action_buttons = table.concat({
+            ui.button(
+                0.95, 9.24, 4.50, 0.84, "btn_restart",
+                S("Play Again (Start Level 1)"), "primary",
+                S("Tidy up the terrarium and start a fresh Level 1 garden!")
+            ),
+            ui.button(
+                5.70, 9.24, 3.30, 0.84, "btn_defeat_guide",
+                S("Open Guidebook"), "gold",
+                S("Read picture tips on tools, combos, and healing plants.")
+            ),
+            ui.button(
+                9.25, 9.24, 2.80, 0.84, "btn_close",
+                S("Look Around"), "default",
+                S("Close this window to look around (right-click any Plant to start again)."), true
+            ),
+        })
+    end
 
     local body = table.concat({
         ui.card(0.45, 1.48, 12.10, 2.24, P.coral, P.bg_card),
@@ -832,7 +904,7 @@ function tc_core.show_defeat_dialog(player)
             ht_tr(pname, S("TOP 10 SCORES:")) .. "</b></style>",
             13
         ),
-        tc_core.build_top10_table_formspec(0.68, 4.42, 11.64, 3.52),
+        tc_core.build_top10_table_formspec(0.68, 4.42, 11.64, 3.38),
         ui.readonly_field(
             0.68, 8.32, 11.64, 0.54,
             "fld_run_receipt",
@@ -841,28 +913,14 @@ function tc_core.show_defeat_dialog(player)
             S("Select and copy your run summary to share with friends or on Jam threads!")
         ),
 
-        ui.button(
-            0.95, 9.24, 4.50, 0.84, "btn_restart",
-            S("Play Again (Start Level 1)"), "primary",
-            S("Tidy up the terrarium and start a fresh Level 1 garden!")
-        ),
-        ui.button(
-            5.70, 9.24, 3.30, 0.84, "btn_defeat_guide",
-            S("Open Guidebook"), "gold",
-            S("Read picture tips on tools, combos, and healing plants.")
-        ),
-        ui.button(
-            9.25, 9.24, 2.80, 0.84, "btn_close",
-            S("Look Around"), "default",
-            S("Close this window to look around (right-click any Plant to start again)."), true
-        ),
+        action_buttons,
     })
 
     local form = ui.window({
         w = 13.00,
         h = 10.45,
-        title = ht_tr(pname, S("✖ GARDEN RUN ENDED ON LEVEL @1 ✖", s.level)),
-        subtitle = ht_tr(
+        title = tc_core.resolve_player_text(pname, S("✖ GARDEN RUN ENDED ON LEVEL @1 ✖", s.level)),
+        subtitle = tc_core.resolve_player_text(
             pname,
             S("No worries — right-click any Plant or press [I] to switch to Casual pace anytime!")
         ),
@@ -914,6 +972,10 @@ core.register_on_player_receive_fields(function(player, formname, fields)
             tc_core.show_garden_dialog(player)
         elseif fields.btn_open_victory then
             tc_core.show_victory_dialog(player)
+        elseif fields.btn_retry_level then
+            if tc_core.state.defeat then
+                tc_core.retry_level()
+            end
         elseif fields.btn_top10 then
             tc_core.show_leaderboard_dialog(player)
         elseif fields.btn_guide then
@@ -967,7 +1029,11 @@ core.register_on_player_receive_fields(function(player, formname, fields)
             tc_core.reset_crucible()
         end
     elseif formname == "tc_core:defeat" then
-        if fields.btn_restart then
+        if fields.btn_retry_level then
+            if tc_core.state.defeat then
+                tc_core.retry_level()
+            end
+        elseif fields.btn_restart then
             tc_core.reset_crucible()
         elseif fields.btn_defeat_guide then
             tc_core.show_guide_dialog(player, 1)

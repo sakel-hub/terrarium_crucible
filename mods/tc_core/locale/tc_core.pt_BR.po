@@ -1498,3 +1498,107 @@ msgstr "✦ Jardim reiniciado — Nível 1"
 #: hud_migration
 msgid "Started a fresh Level 1 garden!"
 msgstr "Novo jardim de Nível 1 iniciado!"
+
+#: final_sweep_retry
+msgid "Retries"
+msgstr "Tentativas"
+
+#: final_sweep_retry
+msgid "Terrarium Crucible · @1 · Lv@2 (@3 Won) · @4% Bloom · @5 Retries · @6 Cleared · @7s [@8]"
+msgstr "Terrarium Crucible · @1 · Nv@2 (@3 venc.) · @4% floração · @5 tentativas · @6 limp. · @7s [@8]"
+
+#: final_sweep_retry
+msgid "Blessing: @1 · Tools & Potions Restored!"
+msgstr "Bênção: @1 · Ferramentas e poções restauradas!"
+
+#: final_sweep_retry
+msgid "Garden Reset · Tools & Potions Restored!"
+msgstr "Jardim restaurado · Ferramentas e poções prontas!"
+
+#: final_sweep_retry
+msgid "↻ Level @1 Retry #@2!"
+msgstr "↻ Nível @1 · Tentativa #@2!"
+
+#: final_sweep_retry
+msgid "★ 100% Bloom — Final Sweep!"
+msgstr "★ 100% floração — Limpeza final!"
+
+#: final_sweep_retry
+msgid "Skies clear! Clear @1 hazard(s) to win!"
+msgstr "Céu limpo! Limpe @1 perigo(s) para vencer!"
+
+#: final_sweep_retry
+msgid "▸ RUN PAUSED: Right-click a Plant to Retry Level @1 (or [I] for Pace)!"
+msgstr "▸ PAUSA: Clique direito numa Planta para repetir o Nível @1 (ou [I] Ritmo)!"
+
+#: final_sweep_retry
+msgid "▸ FINAL SWEEP: Place & clear your Trowel [1] block to finish!"
+msgstr "▸ LIMPEZA FINAL: Coloque e limpe o bloco da Pá [1] para concluir!"
+
+#: final_sweep_retry
+msgid "▸ FINAL SWEEP: Skies clear — clear @1 hazard(s) to finish!"
+msgstr "▸ LIMPEZA FINAL: Céu limpo — limpe @1 perigo(s) para concluir!"
+
+#: final_sweep_retry
+msgid "★ FINAL SWEEP ★"
+msgstr "★ LIMPEZA FINAL ★"
+
+#: final_sweep_retry
+msgid "Revive wilted plant [3]!"
+msgstr "Reviva a planta [3]!"
+
+#: final_sweep_retry
+msgid "Clear Trowel [1] block!"
+msgstr "Limpe o bloco na Pá [1]!"
+
+#: final_sweep_retry
+msgid "Clear @1 left to win!"
+msgstr "Limpe @1 para vencer!"
+
+#: final_sweep_retry
+msgid "★ FINAL SWEEP!"
+msgstr "★ LIMPEZA FINAL!"
+
+#: final_sweep_retry
+msgid "Reach 100% Bloom (skies clear!) and sweep any remaining hazards with all plants awake to win, pick 1 of 3 Next-Level Blessings, or Retry your current level if a higher room gets hectic!"
+msgstr "Alcance 100% de floração (o céu limpa!) e elimine os perigos restantes com todas as plantas acordadas para vencer, escolher 1 de 3 Bênçãos, ou repetir o nível atual se uma sala avançada apertar!"
+
+#: final_sweep_retry
+msgid "Ranked by Levels Won → Highest Level → Best Bloom → Fewest Retries → Hazards Cleared → Fastest Time."
+msgstr "Ordem: Níveis vencidos → Maior nível → Melhor floração → Menos tentativas → Perigos limpos → Menor tempo."
+
+#: final_sweep_retry
+msgid "★ Final Sweep (@1 left)"
+msgstr "★ Limpeza final (@1 rest.)"
+
+#: final_sweep_retry
+msgid "↻ Retry Level @1"
+msgstr "↻ Repetir Nível @1"
+
+#: final_sweep_retry
+msgid "Retry Level @1 with your Blessing, green Speed Soil paths, and restored tools & potions (+1 Retry)."
+msgstr "Repita o Nível @1 mantendo sua Bênção, caminhos verdes rápidos e ferramentas/poções restauradas (+1 Tentativa)."
+
+#: final_sweep_retry
+msgid "Reach 100% Bloom, then clear any remaining hazards with all plants awake to finish the level!"
+msgstr "Chegue a 100% de floração e depois limpe os perigos restantes com todas as plantas acordadas para concluir!"
+
+#: final_sweep_retry
+msgid "Reached Level @1 (@2 Rooms)  ·  Best Bloom on Level @3: @4%  ·  Retries: @5  ·  Time: @6s"
+msgstr "Nível alcançado: @1 (@2 Salas)  ·  Melhor floração no Nível @3: @4%  ·  Tentativas: @5  ·  Tempo: @6s"
+
+#: final_sweep_retry
+msgid "Start Level 1"
+msgstr "Iniciar Nível 1"
+
+#: final_sweep_retry
+msgid "Start a fresh 0-retry run from Level 1."
+msgstr "Comece uma nova partida com 0 tentativas a partir do Nível 1."
+
+#: final_sweep_retry
+msgid "Guidebook"
+msgstr "Guia"
+
+#: final_sweep_retry
+msgid "Close this window to look around (right-click any Plant to retry or switch Pace)."
+msgstr "Feche esta janela para olhar ao redor (clique direito em qualquer Planta para repetir ou mudar o Ritmo)."

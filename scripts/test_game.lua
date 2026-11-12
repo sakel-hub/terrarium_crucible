@@ -120,6 +120,29 @@ function ItemStack(spec)
             get_int = function(_, k) return math.floor(tonumber(m[k]) or 0) end,
         }
     end
+    function st:get_description()
+        if self:is_empty() then return "" end
+        local md = tostring(self._meta.description or "")
+        if md ~= "" then return md end
+        local def = registered_items[self.name]
+        return (def and def.description) and tostring(def.description) or self.name
+    end
+    function st:get_short_description()
+        if self:is_empty() then return "" end
+        local msd = tostring(self._meta.short_description or "")
+        if msd ~= "" then return msd end
+        local md = tostring(self._meta.description or "")
+        if md ~= "" then return md:match("^([^\n]*)") or md end
+        local def = registered_items[self.name]
+        if def and def.short_description and def.short_description ~= "" then
+            return tostring(def.short_description)
+        end
+        if def and def.description and def.description ~= "" then
+            local d = tostring(def.description)
+            return d:match("^([^\n]*)") or d
+        end
+        return ""
+    end
     return st
 end
 
@@ -665,9 +688,10 @@ core = {
             set_velocity = function(_, v) ent._vel = table.copy(v) end,
             set_acceleration = function(_, a) ent._acc = table.copy(a) end,
             get_rotation = function() return ent._rot end,
-            set_rotation = function(_, r, interpolate)
+            set_rotation = function(_, ...)
+                local r = select(1, ...)
                 ent._rot = table.copy(r or {x = 0, y = 0, z = 0})
-                table.insert(ent._rot_calls, {rot = ent._rot, interpolate = interpolate})
+                table.insert(ent._rot_calls, {rot = ent._rot, arg_count = select("#", ...)})
             end,
             get_properties = function() return ent._props end,
             set_properties = function(_, pr)
@@ -760,7 +784,9 @@ core = {
                 return buf
             end,
             set_data = function(_, d) last_data = d end,
-            calc_lighting = function() end,
+            calc_lighting = function()
+                error("calc_lighting called for a non-mapgen VoxelManip object")
+            end,
             write_to_map = function()
                 local va = VoxelArea:new({MinEdge = minp, MaxEdge = maxp})
                 for z = minp.z, maxp.z do
@@ -801,7 +827,15 @@ core = {
         return res
     end,
     emerge_area = function(_, _, cb) cb(nil, nil, 0) end,
-    after = function(_, fn) fn() end,
+    _script_init_phase = true,
+    _deferred_after_cbs = {},
+    after = function(_, fn)
+        if core._script_init_phase then
+            table.insert(core._deferred_after_cbs, fn)
+        else
+            fn()
+        end
+    end,
     sound_play = function() end,
     add_particlespawner = function(def)
         core._last_particlespawner = def
@@ -821,6 +855,7 @@ core = {
         return nil
     end,
     set_timeofday = function(val)
+        assert(not core._script_init_phase, "Calling set_timeofday during script init is disallowed in Luanti 5.18")
         assert(type(val) == "number" and val >= 0 and val <= 1, "set_timeofday expects [0, 1]")
         mock_timeofday = val
     end,
@@ -892,6 +927,11 @@ end
 for _, fn in ipairs(mods_loaded_cbs) do
     fn()
 end
+core._script_init_phase = false
+for _, fn in ipairs(core._deferred_after_cbs) do
+    fn()
+end
+core._deferred_after_cbs = {}
 
 -- 1. Verify WCAG 2.1 AA contrast ratios (>= 4.5:1)
 local function hex_to_lum(hex)
@@ -1093,7 +1133,23 @@ print("[OK] Prismatic Aether Geode 3x3 Resonance (+4.5%+0.5%*purged Bloom) & 22s
 -- 8. Test Victory Next-Level Blessing Picker -> Level 2 Expansion, Cheer Emote, Turbulence, Micro-Climate & Waypoints
 tc_core.state.bloom = 100.0
 for _, fn in ipairs(globalsteps) do fn(1.0) end
-assert(tc_core.state.victory, "100% Bloom must trigger Victory")
+assert(tc_core.state.cleanup_phase == true and not tc_core.state.victory,
+    "100% Bloom with shattered Geode hazards on floor must enter Final Sweep (cleanup_phase) first")
+do
+    local b1 = tc_world.get_bounding_box(1)
+    local rem_h = core.find_nodes_in_area(
+        {x = b1.min_x, y = 1, z = b1.min_z},
+        {x = b1.max_x, y = 4, z = b1.max_z},
+        {"group:reagent"}
+    )
+    assert(#rem_h > 0, "Expected shattered geode floor hazards during Final Sweep")
+    for _, hp in ipairs(rem_h) do
+        core.remove_node(hp)
+    end
+end
+for _, fn in ipairs(globalsteps) do fn(1.0) end
+assert(tc_core.state.victory and not tc_core.state.cleanup_phase,
+    "Clearing remaining floor hazards during Final Sweep must trigger Victory")
 assert(shown_formspecs["tc_core:victory"]:find("btn_blessing_1"),
     "Victory dialog must render 3 Next-Level Blessing cards")
 local win_pstate = x_player_api.controls.player_states["SaKeL"]
@@ -2806,6 +2862,9 @@ print("[OK] Rechargeable Toolkit ([2] Bellows, [3] Flask, [4] Pestle), Cross-Haz
     assert(satchel_fs:find("style_type[vertlabel;textcolor=", 1, true) ~= nil
         and satchel_fs:find("vertlabel[", 1, true) ~= nil,
         "Satchel formspec must include colored 5.18 vertlabel[] book-spine title")
+    local sat_vx, sat_vy = satchel_fs:match("vertlabel%[([%d%.]+),([%d%.]+);")
+    assert(tonumber(sat_vx) ~= nil and tonumber(sat_vy) >= 6.5 and tonumber(sat_vy) <= 9.2,
+        "Satchel vertlabel[] must be vertically centered inside 5.24..10.62 card (v12 center positioning)")
 
     shown_formspecs["tc_core:guide"] = nil
     tc_core.show_guide_dialog(p1, 1)
@@ -2813,6 +2872,11 @@ print("[OK] Rechargeable Toolkit ([2] Bellows, [3] Flask, [4] Pestle), Cross-Haz
     assert(guide_fs:find("^formspec_version%[12%]") ~= nil
         and guide_fs:find("vertlabel[", 1, true) ~= nil,
         "Guidebook formspec must use formspec_version[12] and colored vertlabel[] spine ornament")
+
+    shown_formspecs["tc_core:guide"] = nil
+    tc_core.show_guide_dialog(p1, 5)
+    assert(shown_formspecs["tc_core:guide"]:find("style[fld_run_receipt;editable=false;", 1, true) ~= nil,
+        "Guidebook Tab 5 (Top 10 Scores) must include Luanti 5.18 editable=false run summary field")
 
     tc_core.start_level(2, false)
     shown_formspecs["tc_core:leaderboard"] = nil
@@ -2970,7 +3034,58 @@ print("[OK] Rechargeable Toolkit ([2] Bellows, [3] Flask, [4] Pestle), Cross-Haz
     assert(find_cargo_hud(p1) == nil,
         "Emptying Trowel cargo must immediately remove Option A cargo HUD element")
 
-    -- (f) Verify ^[colorizehsl: landing reticles & ObjectRef:set_rotation(rot, false) instant crystal snap
+    -- Verify show_wielded_item updates bottom-center HUD text immediately when dynamic short_description changes
+    do
+        local swi_joins, swi_leaves, swi_steps = {}, {}, {}
+        local orig_rjoin = core.register_on_joinplayer
+        local orig_rleave = core.register_on_leaveplayer
+        local orig_rgstep = core.register_globalstep
+        core.register_on_joinplayer = function(fn) table.insert(swi_joins, fn) end
+        core.register_on_leaveplayer = function(fn) table.insert(swi_leaves, fn) end
+        core.register_globalstep = function(fn) table.insert(swi_steps, fn) end
+        current_mod = "show_wielded_item"
+        dofile(game_dir .. "/mods/show_wielded_item/init.lua")
+        core.register_on_joinplayer = orig_rjoin
+        core.register_on_leaveplayer = orig_rleave
+        core.register_globalstep = orig_rgstep
+
+        p1._wield_idx = 1
+        p1:set_wielded_item(ItemStack("tc_tools:trowel"))
+        local max_before = 0
+        for hid in pairs(p1._hud_elems) do
+            if hid > max_before then max_before = hid end
+        end
+        swi_joins[1](p1)
+        local swi_hid = nil
+        for hid in pairs(p1._hud_elems) do
+            if hid > max_before then swi_hid = hid end
+        end
+        assert(swi_hid ~= nil, "show_wielded_item must register a text HUD element on join")
+
+        local loaded_tr = tc_tools.set_trowel_cargo(ItemStack("tc_tools:trowel"), "tc_elements:brimstone")
+        p1:set_wielded_item(loaded_tr) -- Same slot (1) and item name ("tc_tools:trowel"), new short_description!
+        swi_steps[1](0.1)
+        assert(p1._hud_elems[swi_hid].text:find("Brimstone", 1, true) ~= nil,
+            "show_wielded_item must refresh immediately when Trowel scoops cargo without changing slot")
+
+        p1._wield_idx = 3
+        local flk3 = tc_tools.fill_flask()
+        p1:set_wielded_item(flk3)
+        swi_steps[1](0.1)
+        assert(p1._hud_elems[swi_hid].text:find("3/3 Splashes", 1, true) ~= nil,
+            "show_wielded_item must display 3/3 Splashes on filled Water Flask")
+        local flk2 = tc_tools.consume_flask_charge(flk3)
+        p1:set_wielded_item(flk2) -- Same slot (3) and item name ("tc_tools:condenser_flask_full"), updated charges!
+        swi_steps[1](0.1)
+        assert(p1._hud_elems[swi_hid].text:find("2/3 Splashes", 1, true) ~= nil,
+            "show_wielded_item must refresh immediately when Water Flask consumes a charge (3/3 -> 2/3)")
+
+        swi_leaves[1](p1)
+        p1:hud_remove(swi_hid)
+        p1._wield_idx = 1
+    end
+
+    -- (f) Verify ^[colorizehsl: landing reticles & 1-arg ObjectRef:set_rotation(rot) 3-axis crystal snap
     spawned_entities = {}
     core._particlespawners = {}
     tc_elements.spawn_falling_reagent({x = 2, y = 1, z = -2}, "tc_elements:aether_geode")
@@ -2980,14 +3095,16 @@ print("[OK] Rechargeable Toolkit ([2] Bellows, [3] Flask, [4] Pestle), Cross-Haz
         "Landing telegraph reticle must use Luanti 5.18 ^[colorizehsl: modifier")
     local spawned_fall = spawned_entities[#spawned_entities]
     assert(spawned_fall and #spawned_fall._rot_calls >= 1
-        and spawned_fall._rot_calls[1].interpolate == false,
-        "Falling reagent on_activate must snap initial facet rotation via set_rotation(rot, false)")
+        and spawned_fall._rot_calls[1].arg_count == 1
+        and (math.abs(spawned_fall._rot_calls[1].rot.x) > 0.001
+            or math.abs(spawned_fall._rot_calls[1].rot.z) > 0.001),
+        "Falling reagent on_activate must snap 3-axis facet tilt via 1-arg set_rotation(rot)")
     local rot_before_deflect = #spawned_fall._rot_calls
     p1:set_wielded_item(tc_tools.fill_bellows())
     spawned_fall:on_punch(p1)
     assert(#spawned_fall._rot_calls == rot_before_deflect + 1
-        and spawned_fall._rot_calls[#spawned_fall._rot_calls].interpolate == false,
-        "Non-matching tool punch on falling crystal must snap deflection via set_rotation(rot, false)")
+        and spawned_fall._rot_calls[#spawned_fall._rot_calls].arg_count == 1,
+        "Non-matching tool punch on falling crystal must snap deflection via 1-arg set_rotation(rot)")
 
     -- (g) Verify zero 'nil' substrings across all drop-card wave kinds (including Geode & Surge)
     local test_waves = {
@@ -3064,12 +3181,67 @@ print("[OK] Rechargeable Toolkit ([2] Bellows, [3] Flask, [4] Pestle), Cross-Haz
             assert(lg_banner ~= "" and lg_banner ~= en_banner,
                 string.format("[%s] Expected localized Guidebook title distinct from English, got %q", test_lang, lg_banner))
         end
+        local function verify_dialog_hypertext(tag, fs_str)
+            assert(type(fs_str) == "string" and fs_str ~= "", "Empty formspec for " .. tag)
+            assert_no_html_entities(tag, fs_str)
+            for ht_body in fs_str:gmatch("hypertext%[[^;]+;[^;]+;[^;]+;(.-)%]") do
+                local unfs = ht_body:gsub("\\%[", "["):gsub("\\%]", "]"):gsub("\\\\", "\\")
+                assert(unfs:find("\27", 1, true) == nil,
+                    string.format("[%s] Raw \\27 escape leaked inside hypertext[] of %s: %q", test_lang, tag, unfs))
+                assert(unfs:find("\\\\<", 1, true) == nil and unfs:find("\\\\>", 1, true) == nil,
+                    string.format("[%s] Double hypertext_escape detected in %s: %q", test_lang, tag, unfs))
+            end
+        end
+
+        verify_dialog_hypertext("satchel[" .. test_lang .. "]", tc_init.build_satchel_formspec(p1))
+        shown_formspecs["tc_core:guide"] = nil
+        tc_core.show_guide_dialog(p1, 1)
+        verify_dialog_hypertext("tc_core:guide_t1[" .. test_lang .. "]", shown_formspecs["tc_core:guide"])
         shown_formspecs["tc_core:guide"] = nil
         tc_core.show_guide_dialog(p1, 2)
-        assert_no_html_entities("tc_core:guide[" .. test_lang .. "]", shown_formspecs["tc_core:guide"])
+        verify_dialog_hypertext("tc_core:guide_t2[" .. test_lang .. "]", shown_formspecs["tc_core:guide"])
+        shown_formspecs["tc_core:guide"] = nil
+        tc_core.show_guide_dialog(p1, 5)
+        verify_dialog_hypertext("tc_core:guide_t5[" .. test_lang .. "]", shown_formspecs["tc_core:guide"])
+        shown_formspecs["tc_core:garden"] = nil
+        tc_core.show_garden_dialog(p1)
+        verify_dialog_hypertext("tc_core:garden[" .. test_lang .. "]", shown_formspecs["tc_core:garden"])
+        shown_formspecs["tc_core:leaderboard"] = nil
+        tc_core.show_leaderboard_dialog(p1)
+        verify_dialog_hypertext("tc_core:leaderboard[" .. test_lang .. "]", shown_formspecs["tc_core:leaderboard"])
+        tc_core.state.victory = true
+        shown_formspecs["tc_core:victory"] = nil
+        tc_core.show_victory_dialog(p1)
+        verify_dialog_hypertext("tc_core:victory[" .. test_lang .. "]", shown_formspecs["tc_core:victory"])
+        tc_core.state.victory = false
+        shown_formspecs["tc_core:defeat"] = nil
+        tc_core.show_defeat_dialog(p1)
+        verify_dialog_hypertext("tc_core:defeat[" .. test_lang .. "]", shown_formspecs["tc_core:defeat"])
     end
     mock_player_langs["SaKeL"] = nil
     mock_escape_translate_mode = false
+
+    -- (i) Verify README.md documents showcased Luanti 5.18 features, APIs & scripts
+    local readme_fp = io.open(game_dir .. "/README.md", "rb")
+    assert(readme_fp ~= nil, "Missing README.md")
+    local readme_src = readme_fp:read("*a")
+    readme_fp:close()
+    local required_readme_tokens = {
+        "formspec_version[12]",
+        "editable=false",
+        "listimages",
+        "vertlabel",
+        "text2",
+        "light_curve",
+        "ao_gamma",
+        "X-Source-Language",
+    }
+    for r_i = 1, #required_readme_tokens do
+        local tok = required_readme_tokens[r_i]
+        assert(readme_src:find(tok, 1, true) ~= nil,
+            "README.md Luanti 5.18 showcase section must document: " .. tok)
+    end
+
     tc_core.reset_crucible()
 end)()
 print("[OK] Luanti 5.18 Capabilities (Formspec v12, listimages, editable=false, vertlabel, cargo HUD, static light_curve, moon_tonemap, colorizehsl, set_rotation & 9-language Gettext) verified")
@@ -3233,14 +3405,36 @@ print("[OK] Luanti 5.18 Capabilities (Formspec v12, listimages, editable=false, 
         and tc_core.state.active_drop.kind == "surge",
         "Reaching 85%+ Bloom on Level 3 must trigger Final Bloom Surge on Top-Right Drop HUD")
 
-    -- 100% Bloom Level Complete + Next-Level Blessing selection
+    -- 100% Bloom Final Sweep -> Clear Surge Hazards -> Level Complete + Next-Level Blessing selection
     for p_i = 1, #tc_core.state.plants do
         tc_core.state.plants[p_i].bloom = 100.0
         tc_core.state.plants[p_i].withered = false
     end
     tc_core.recalc_mean_bloom()
     step_sim_1s()
-    assert(tc_core.state.victory == true, "100% Bloom across all plants must trigger Level Complete")
+    assert(tc_core.state.cleanup_phase == true and tc_core.state.victory == false,
+        "100% Bloom while Surge hazards are still falling must enter Final Sweep first")
+    for e_i = #spawned_entities, 1, -1 do
+        local fe = spawned_entities[e_i]
+        if fe and fe.object then
+            fe._removed = true
+            fe.object:remove()
+        end
+    end
+    do
+        local b3 = tc_world.get_bounding_box(3)
+        local rem3 = core.find_nodes_in_area(
+            {x = b3.min_x, y = 1, z = b3.min_z},
+            {x = b3.max_x, y = 4, z = b3.max_z},
+            {"group:reagent"}
+        )
+        for _, hp in ipairs(rem3) do
+            core.remove_node(hp)
+        end
+    end
+    step_sim_1s()
+    assert(tc_core.state.victory == true and tc_core.state.cleanup_phase == false,
+        "100% Bloom with all Surge hazards cleared must trigger Level Complete")
     for f_i = 1, #field_cbs do
         field_cbs[f_i](p1, "tc_core:victory", {btn_blessing_1 = "true"})
     end
@@ -3461,6 +3655,208 @@ print("[OK] Tool on_use mid-air entity interception, whiff-lockout immunity & ai
     tc_core.reset_crucible()
 end)()
 print("[OK] Multiplayer HUD packet deduplication, anti-refill join/reconnect, memory cleanup & safe landing verified")
+
+-- 27. Final Sweep (Two-Phase Completion), Level 2+ Retry Checkpoints & Friendly Top 10 Retry Ranking
+;(function()
+    local function step_1s()
+        for _, fn in ipairs(globalsteps) do fn(1.0) end
+    end
+
+    -- (a) Non-hazard nodes (Water, Steam, unopened Geode) must NOT block immediate Victory at 100% Bloom
+    tc_core.reset_crucible()
+    core.set_node({x = -2, y = 1, z = -2}, {name = "tc_elements:water_source"})
+    core.set_node({x = 2, y = 1, z = -2}, {name = "tc_elements:steam"})
+    core.set_node({x = 2, y = 1, z = 2}, {name = "tc_elements:aether_geode"})
+    tc_core.state.bloom = 100.0
+    step_1s()
+    assert(tc_core.state.victory == true and tc_core.state.cleanup_phase == false,
+        "Water, Steam, and unopened Prismatic Geodes must NOT block Victory at 100% Bloom")
+
+    -- (b) Floor hazard + extreme temperature during Final Sweep: skies pause, Bloom locks at 100%, Trowel cargo blocks win
+    tc_core.reset_crucible()
+    for bx = -3, -1 do
+        core.set_node({x = bx, y = 1, z = 2}, {name = "tc_elements:brimstone"})
+    end
+    tc_core.state.temperature = 90.0
+    tc_core.state.drop_timer = 1.0
+    local wave_before = tc_core.state.wave
+    tc_core.state.bloom = 100.0
+    step_1s()
+    assert(tc_core.state.cleanup_phase == true and tc_core.state.victory == false,
+        "Floor hazards at 100% Bloom must latch Final Sweep (cleanup_phase)")
+    assert(tc_core.state.bloom == 100.0, "Bloom must lock at 100.0% during Final Sweep even under extreme heat")
+    step_1s()
+    step_1s()
+    assert(tc_core.state.wave == wave_before and tc_core.state.bloom == 100.0,
+        "New sky drop waves must stop completely during Final Sweep while Bloom stays locked at 100%")
+
+    -- Clear 2 floor Brimstones and carry the 3rd on Trowel [1]: carried hazard must still hold Final Sweep
+    core.remove_node({x = -3, y = 1, z = 2})
+    core.remove_node({x = -2, y = 1, z = 2})
+    core.remove_node({x = -1, y = 1, z = 2})
+    tc_tools.sync_player_trowel_cargo_inv(p1, "tc_elements:brimstone")
+    step_1s()
+    assert(tc_core.state.cleanup_phase == true and tc_core.state.victory == false
+        and tc_core.state.carried_hazards == 1,
+        "Hazard carried on Trowel [1] must keep Final Sweep active until placed & cleared")
+    tc_tools.sync_player_trowel_cargo_inv(p1, "")
+    step_1s()
+    assert(tc_core.state.victory == true and tc_core.state.cleanup_phase == false,
+        "Clearing carried Trowel hazard with 0 floor/air hazards must finish the level")
+
+    -- (c) Natural losing scenarios remain active during Final Sweep (8s Overload & All-Plant Wilt)
+    tc_core.reset_crucible()
+    tc_core.state.bloom = 100.0
+    local b1 = tc_world.get_bounding_box(1)
+    local placed_ov = 0
+    for z = b1.min_z + 1, b1.max_z - 1 do
+        for x = b1.min_x + 1, b1.max_x - 1 do
+            if not tc_world.is_protected_pos({x = x, y = 1, z = z}, 1) and placed_ov < 12 then
+                core.set_node({x = x, y = 1, z = z}, {name = "tc_elements:cryo_ice"})
+                placed_ov = placed_ov + 1
+            end
+        end
+    end
+    for _ = 1, 8 do
+        step_1s()
+    end
+    assert(tc_core.state.defeat == true and tc_core.state.defeat_kind == "overload",
+        "8s Overcrowding meltdown must still trigger Defeat during Final Sweep")
+    assert(not shown_formspecs["tc_core:defeat"]:find("btn_retry_level", 1, true),
+        "Level 1 Defeat dialog must keep the 3-button Start Level 1 layout without redundant Retry button")
+
+    tc_core.reset_crucible()
+    core.set_node({x = -3, y = 1, z = 2}, {name = "tc_elements:brimstone"})
+    tc_core.state.bloom = 100.0
+    step_1s()
+    assert(tc_core.state.cleanup_phase == true, "Expected Final Sweep before wilt test")
+    tc_core.state.temperature = 90.0
+    tc_core.state.plants[1].vitality = 1.0
+    step_1s()
+    assert(tc_core.state.defeat == true and tc_core.state.defeat_kind == "wilt",
+        "All plants wilting during Final Sweep must still trigger Defeat")
+
+    -- (d) Level 4 Defeat -> Checkpoint-Restored Retry Level 4 (Blessing, Speed Soil, Potions, Anti-Farming Rollback)
+    tc_core.reset_crucible()
+    core.set_node({x = 2, y = 0, z = 2}, {name = "tc_elements:fertile_loam"})
+    tc_core.player_stats["SaKeL"] = {neutralized = 25, downed_until = 0, run_id = tc_core.state.run_id}
+    tc_core.select_blessing("starlight_mortar")
+    tc_core.start_level(4, true)
+    assert(tc_core.state.level == 4 and tc_core.state.retries == 0, "Fresh Level 4 entry must have 0 retries")
+    assert(tc_core.has_blessing("starlight_mortar"), "Level 4 must activate drafted Starlight Mortar blessing")
+    assert(core.get_node({x = 2, y = 0, z = 2}).name == "tc_elements:fertile_loam",
+        "Green Fertile Speed Soil must carry into Level 4")
+    local cp_aegis = tc_core.count_player_item(p1, "tc_tools:elixir_aegis")
+    local cp_chronos = tc_core.count_player_item(p1, "tc_tools:chronos_sandglass")
+    assert(cp_aegis >= 1 and cp_chronos >= 1, "Level 4 checkpoint must include level-entry potions")
+
+    -- Simulate failed Level 4 attempt: corrode green soil, spend potions, lose HP, farm +9 neutralizations, then lose
+    core.swap_node({x = 2, y = 0, z = 2}, {name = "tc_elements:loam"})
+    p1:get_inventory():remove_item("main", "tc_tools:elixir_aegis 99")
+    p1:get_inventory():remove_item("main", "tc_tools:chronos_sandglass 99")
+    p1:set_hp(6)
+    tc_core.record_neutralization(p1, 9)
+    assert(tc_core.player_stats["SaKeL"].neutralized == 34, "Pre-defeat neutralization increment check")
+    tc_core.state.run_seconds = 140
+    tc_core.trigger_defeat("All 4 plants wilted!", "wilt")
+
+    assert(shown_formspecs["tc_core:defeat"]:find("btn_retry_level", 1, true) ~= nil
+        and shown_formspecs["tc_core:defeat"]:find("btn_restart", 1, true) ~= nil,
+        "Level 4 Defeat dialog must offer both Retry Level 4 and Start Level 1")
+    tc_core.show_garden_dialog(p1)
+    assert(shown_formspecs["tc_core:garden"]:find("btn_retry_level", 1, true) ~= nil,
+        "Garden Controls during Level 4 Defeat must surface primary Retry Level 4 button")
+
+    for _, fn in ipairs(field_cbs) do
+        fn(p1, "tc_core:defeat", {btn_retry_level = "Retry"})
+    end
+    assert(tc_core.state.level == 4 and tc_core.state.running == true and not tc_core.state.defeat,
+        "Clicking Retry Level 4 must restart Level 4 immediately")
+    assert(tc_core.state.retries == 1, "Retrying Level 4 must increment state.retries to 1")
+    assert(tc_core.has_blessing("starlight_mortar"),
+        "Retrying Level 4 must preserve Level 4's active Blessing from checkpoint")
+    assert(core.get_node({x = 2, y = 0, z = 2}).name == "tc_elements:fertile_loam",
+        "Retrying Level 4 must restore corroded Fertile Speed Soil from Level 4 start checkpoint")
+    assert(p1:get_hp() == 20, "Retrying Level 4 must restore full 20 HP")
+    assert(tc_core.count_player_item(p1, "tc_tools:elixir_aegis") == cp_aegis
+        and tc_core.count_player_item(p1, "tc_tools:chronos_sandglass") == cp_chronos,
+        "Retrying Level 4 must restore level-entry Aegis & Chronos potions")
+    assert(tc_core.player_stats["SaKeL"].neutralized == 25,
+        "Retrying Level 4 must roll back neutralized hazards to Level 4 start checkpoint (anti-farming)")
+    assert(tc_core.state.run_seconds == 140,
+        "Retrying Level 4 must keep cumulative run_seconds honest")
+
+    local receipt_r1 = tc_core.build_run_receipt(p1)
+    assert(receipt_r1:find("1 Retries", 1, true) ~= nil,
+        "Shareable Run Summary must display retry count: " .. receipt_r1)
+
+    -- Restarting Level 1 resets retries to 0
+    tc_core.trigger_defeat("Lost again!", "wilt")
+    for _, fn in ipairs(field_cbs) do
+        fn(p1, "tc_core:defeat", {btn_restart = "Start Level 1"})
+    end
+    assert(tc_core.state.level == 1 and tc_core.state.retries == 0 and tc_core.state.level_checkpoint == nil,
+        "Starting Level 1 must reset retries to 0 and clear old level checkpoint")
+
+    -- (e) Friendly Top 10 Leaderboard Retry Tie-Breaking & Personal Best Upgrade
+    tc_core.record_player_score("ClimberWithRetries", 5, 4, 100.0, 48, 260, 2)
+    tc_core.record_player_score("EarlyFlawless", 4, 3, 100.0, 60, 180, 0)
+    tc_core.record_player_score("TieFlawlessL3", 4, 3, 100.0, 35, 210, 0)
+    tc_core.record_player_score("TieRetriedL3", 4, 3, 100.0, 55, 170, 2)
+
+    local top = tc_core.get_top10()
+    local rank_by_name = {}
+    for idx = 1, #top do
+        rank_by_name[top[idx].name] = idx
+    end
+    assert(rank_by_name["ClimberWithRetries"] and rank_by_name["EarlyFlawless"]
+        and rank_by_name["ClimberWithRetries"] < rank_by_name["EarlyFlawless"],
+        "Higher Levels Won (4 Won, 2 Retries) must ALWAYS rank above lower Levels Won (3 Won, 0 Retries)")
+    assert(rank_by_name["TieFlawlessL3"] and rank_by_name["TieRetriedL3"]
+        and rank_by_name["TieFlawlessL3"] < rank_by_name["TieRetriedL3"],
+        "At equal Levels Won, Highest Level, and Best Bloom, fewer Retries (0 vs 2) must win the tie")
+
+    -- Beating your own retry count (2 -> 0) at the same level updates your personal best
+    tc_core.record_player_score("TieRetriedL3", 4, 3, 100.0, 40, 195, 0)
+    local updated_entry = nil
+    for _, e in ipairs(tc_core.get_top10()) do
+        if e.name == "TieRetriedL3" then
+            updated_entry = e
+            break
+        end
+    end
+    assert(updated_entry and updated_entry.retries == 0 and updated_entry.neutralized == 40,
+        "Improving from 2 retries to 0 retries at the same level must update personal best record")
+
+    local top_fs = tc_core.build_top10_table_formspec(0, 0, 10, 4)
+    assert(top_fs:find("Retries", 1, true) ~= nil, "Top 10 table formspec must include Retries column header")
+
+    -- Verify 9-language translations for Final Sweep HUD & Level 2+ Defeat / Receipt have zero \27 leaks or HTML entities
+    mock_escape_translate_mode = true
+    for _, lg in ipairs({"en", "es", "fr", "de", "pt_BR", "ru", "zh_CN", "ja", "sk"}) do
+        mock_player_langs["SaKeL"] = lg
+        tc_core.start_level(2, false)
+        core.set_node({x = -2, y = 1, z = 2}, {name = "tc_elements:brimstone"})
+        tc_core.state.bloom = 100.0
+        step_1s()
+        tc_core.update_player_hud(p1)
+        for _, h in pairs(p1._hud_elems) do
+            if h and h.type == "text" and type(h.text) == "string" and h.text ~= "" then
+                assert(h.text:find("\27", 1, true) == nil,
+                    string.format("[%s] Final Sweep HUD leaked \\27 escape: %q", lg, h.text))
+            end
+        end
+        tc_core.trigger_defeat("All 2 plants wilted!", "wilt")
+        assert_no_html_entities("tc_core:defeat[" .. lg .. "]", shown_formspecs["tc_core:defeat"])
+        local lg_rec = tc_core.build_run_receipt(p1)
+        assert(lg_rec ~= "" and lg_rec:find("\27", 1, true) == nil,
+            string.format("[%s] Localized receipt leaked \\27 escape: %q", lg, lg_rec))
+    end
+    mock_player_langs["SaKeL"] = nil
+    mock_escape_translate_mode = false
+    tc_core.reset_crucible()
+end)()
+print("[OK] Final Sweep two-phase completion, Level 2+ checkpoint retry & friendly Top 10 retry ranking verified")
 
 for _, fn in ipairs(leave_cbs) do fn(p1) end
 print("[OK] All Terrarium Crucible verification checks passed!")

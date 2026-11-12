@@ -106,12 +106,13 @@ Finishing a level lets you pick **1 of 3 Next-Level Blessings** from 8 magical p
 
 ## Winning, Hazards & Top 10 Scores
 
-- **Finishing a Level**: Reach **100% Bloom** while **every plant is awake** (if one plant has wilted, Bloom waits at `99%` until you revive it!).
-- **How a Run Can End**:
+- **Finishing a Level (Final Sweep)**: Reach **100% Bloom** while **every plant is awake** (if one plant has wilted, Bloom waits at `99%` until you revive it!). At `100%` Bloom, **falling waves stop** and **Final Sweep** begins—sweep away any remaining hazard blocks (on the floor, mid-air, or carried on your Trowel `[1]`) with all plants awake to complete the level!
+- **How a Run Can End (& Retrying Your Level)**:
   1. **Every Plant Wilts at Once**: Keep at least one plant awake while reviving wilted ones.
   2. **Floor Overload (8-Second Grace Timer)**: If too many uncleared blocks pile up (`11` in Level 1, plus `5` for each new room), an **8-second warning** counts down—clear a few blocks in time and you're safe!
   3. **Knockout**: In solo play, running out of health brings you back in Room 1 while shaking `30%` health off your plants. In co-op, the run only ends if everyone is knocked down at once.
-- **Top 10 Leaderboard & Shareable Summaries**: View the **Top 10 Scores** anytime from a plant, your Inventory `[I]`, or `/leaderboard`—complete with a one-click copyable run summary to share with friends!
+  - **Retry Current Level (`Level 2+`)**: If a multi-room level gets the best of you, click **↻ Retry Level `N`** right from the end screen (or any Plant) to replay that exact level with your active **Blessing**, green **Speed Soil** paths, full tools, and level-entry potions restored—or choose **Start Level 1** anytime for a fresh `0`-retry run!
+- **Top 10 Leaderboard & Shareable Summaries**: View the **Top 10 Scores** anytime from a plant, your Inventory `[I]`, or `/leaderboard`—complete with a one-click copyable run summary! Higher levels won and reached **always** rank first, while fewer **Retries** (`0` = flawless run) breaks ties at the same level and Bloom (`Levels Won` → `Highest Level` → `Best Bloom` → `Fewest Retries` → `Hazards Cleared` → `Fastest Time`).
 
 ---
 
@@ -121,6 +122,19 @@ Finishing a level lets you pick **1 of 3 Next-Level Blessings** from 8 magical p
 - **Book-Style Menus & Live Tongs Preview**: Illustrated menus with glowing slot highlights, vertical book-spine titles, copyable run summaries, and a live hotbar tongs badge showing whatever block your Trowel is currently holding.
 - **Living Nighttime Atmosphere**: Looking up through the open glass top reveals a custom crescent moon, drifting mist, and warm candlelight whose mood shifts dynamically during calm Harmony, time-frozen Chronos pauses, and Overload warnings.
 - **Smooth Co-op & 9 Languages**: Built for responsive solo and multiplayer play with zero chat clutter, 3D room callout markers, and full translations in **English, Español, Français, Deutsch, Português (Brasil), Русский, 简体中文, 日本語, and Slovenčina**.
+
+### Luanti 5.18 Features, APIs & Scripts Showcased
+
+| Luanti 5.18 Capability | Engine API / Syntax | Where Showcased |
+| :--- | :--- | :--- |
+| **Formspec v12 & Copyable Read-Only Fields** | `formspec_version[12]`, `style[<name>;editable=false]` | Shareable one-line run summary receipt (`fld_run_receipt`) in Guidebook Tab 5, Top 10 Scores, Victory, and Defeat dialogs (`mods/tc_assets/ui.lua`, `mods/tc_core/ui.lua`, `mods/tc_core/api.lua`) |
+| **Custom Inventory Slot Hover Art** | `listimages[<normal>;<hover>]` | Brass-framed Satchel & hotbar slot states (`tc_gui_hb_bg.png` + `tc_gui_slot_hover.png`) via `player:set_formspec_prepend` (`mods/tc_assets/ui.lua`, `mods/tc_init/api.lua`) |
+| **Colored Vertical Spine Typography** | `style_type[vertlabel;textcolor=...]`, `vertlabel[]` | Gold book-spine titles (`CRUCIBLE` & `SATCHEL`) centered along illustrated dialog cards (`mods/tc_assets/ui.lua`, `mods/tc_init/api.lua`, `mods/tc_core/ui.lua`) |
+| **Custom-Framed Inventory HUD Element** | `type = "inventory"`, `text2 = "tc_hud_tongs_slot.png"` | Dynamic 1-slot Trowel Tongs Cargo badge (`trowel_cargo`) beside the hotbar while carrying a scooped block (`mods/tc_core/hud.lua`, `mods/tc_tools/api.lua`) |
+| **Custom Static Light Curves & AO Gamma** | `player:set_lighting({ static = { light_curve, ao_gamma } })` | Four zero-churn atmosphere presets (`normal`, `stasis`, `overdrive`, `overload`) with 16-step non-sunlight curves (`mods/tc_assets/api.lua`, `mods/tc_core/api.lua`) |
+| **Server `.en.po` Fallback & 9-Language Gettext** | `X-Source-Language: en`, `*.en.po`, `core.get_translated_string` | Complete server-side localization across all 6 `tc_*` mods (`en`, `es`, `fr`, `de`, `pt_BR`, `ru`, `zh_CN`, `ja`, `sk`) with per-player HUD & hypertext resolution (`mods/tc_*/locale/`, `mods/tc_core/api.lua`) |
+| **Strict 5.18 `ItemStack` Hygiene** | Canonical `"<mod>:<item> <count>"`, empty `count = 0` | Clean starter loadouts, reconnect sanitization, and dynamic tool charge/cargo metadata (`mods/tc_init/api.lua`, `mods/tc_tools/api.lua`, `mods/show_wielded_item/init.lua`) |
+| **Astral Moon Tonemap, HSL Reticles & 3-Axis Crystal Snap** | `player:set_moon({ tonemap })`, `^[colorizehsl:`, `ObjectRef:set_rotation`, `core.do_item_eat` | Nocturnal moonlit atrium (`tc_moon_tonemap.png`), HSL-tinted drop-zone reticles, 3-axis falling crystal facet tilt, and animated potion drinking (`mods/tc_init/api.lua`, `mods/tc_elements/api.lua`, `mods/tc_elements/entities.lua`, `mods/tc_tools/api.lua`) |
 
 ---
 

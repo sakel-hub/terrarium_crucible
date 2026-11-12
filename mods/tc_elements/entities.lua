@@ -11,7 +11,7 @@ local COUNTER_HINT_BY_ITEM = {
     ["tc_elements:aether_geode"]   = S("Click with Trowel [1] (or let it land) to crack open the crystal!"),
 }
 
--- Snaps crystal facet orientation immediately using Luanti 5.18 set_rotation(rot, false) (no interpolation slerp)
+-- Sets 3-axis Z-X-Y crystal facet orientation (pitch, yaw, roll) via ObjectRef:set_rotation(rot)
 local function snap_crystal_rotation(obj, pos, jolt_offset)
     local px = pos and pos.x or 0
     local pz = pos and pos.z or 0
@@ -21,7 +21,7 @@ local function snap_crystal_rotation(obj, pos, jolt_offset)
     local yaw = ((seed % 36) / 36.0) * (math.pi * 2.0)
     local pitch = (((seed % 7) - 3) * 0.08) + (step > 0 and 0.28 or 0.0)
     local roll = ((((math.floor(seed / 7)) % 7) - 3) * 0.08) - (step > 0 and 0.22 or 0.0)
-    obj:set_rotation({x = pitch, y = yaw, z = roll}, false)
+    obj:set_rotation({x = pitch, y = yaw, z = roll})
 end
 
 local INTERCEPT_SHEET_BY_ITEM = {
@@ -396,6 +396,37 @@ function tc_elements.find_interceptable_reagent(user, pointed_thing, itemstack)
     end
 
     return best_ent
+end
+
+---Counts live mid-air falling volatile hazards (excluding bonus Prismatic Aether Geodes).
+---@return integer count
+---@return string|nil first_item_name
+function tc_elements.count_falling_hazards()
+    if #active_falling == 0 then
+        return 0, nil
+    end
+    local cur_epoch = tc_core.state.epoch or 0
+    local count = 0
+    local first_item = nil
+    local write_i = 1
+    for i = 1, #active_falling do
+        local ent = active_falling[i]
+        if is_entity_live(ent, cur_epoch) then
+            active_falling[write_i] = ent
+            write_i = write_i + 1
+            local iname = ent.item_name
+            if iname and tc_elements.REAGENT_BY_NAME[iname] ~= nil then
+                count = count + 1
+                if not first_item then
+                    first_item = iname
+                end
+            end
+        end
+    end
+    for i = #active_falling, write_i, -1 do
+        active_falling[i] = nil
+    end
+    return count, first_item
 end
 
 core.register_entity("tc_elements:falling_reagent", {

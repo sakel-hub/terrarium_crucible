@@ -32,7 +32,7 @@ All custom visual artwork created for **Terrarium Crucible** is dedicated to the
 - **AI Models Credited**: Generated with **Google Gemini 3.1 Pro** and **Google Imagen**, with art direction, pixel-art curation, palette tuning, and Blender promotional scene composition by **SaKeL**.
 - **Covered Visual Assets**:
   - Block, plant, crystal, tool, potion, particle, and animated sprite-sheet textures (`mods/tc_assets/textures/*.png`)
-  - Custom HUD banners, forecast plaques, toast frames, tongs socket, gauges, effect icons, and celestial textures (`mods/tc_assets/textures/tc_hud_*.png`, `tc_bar_*.png`, `tc_icon_effect_*.png`, `tc_gui_*.png`, `tc_astral_moon.png`, `tc_moon_tonemap.png`)
+  - Custom HUD banners, forecast plaques, toast frames, tongs socket, gauges, effect icons, and celestial textures (`mods/tc_assets/textures/tc_hud_*.png`, `tc_hud_tongs_slot.png`, `tc_bar_*.png`, `tc_icon_effect_*.png`, `tc_gui_*.png`, `tc_gui_slot_hover.png`, `tc_astral_moon.png`, `tc_moon_tonemap.png`)
   - Custom restyled gauge & inventory arrow textures in `mods/hudbars/textures/*.png` and `mods/sfinv/textures/sfinv_crafting_arrow.png`
   - Alchemist character skin (`mods/tc_assets/textures/tc_alchemist_skin.png`)
   - Main-menu branding and promotional screenshot (`menu/icon.png`, `menu/header.png`, `menu/background.png`, `screenshot.png`)

@@ -114,8 +114,9 @@ core.register_on_player_hpchange(function(player, hp_change)
     return hp_change
 end, true)
 
--- Lock nocturnal celestial clock on startup (overrides stale env_meta.txt time_of_day in existing worlds)
-core.register_on_mods_loaded(function()
+-- Lock nocturnal celestial clock on first server tick after ServerEnvironment initialization
+-- (overrides stale env_meta.txt time_of_day in existing worlds without calling set_timeofday during script init)
+core.after(0, function()
     core.set_timeofday(tc_assets.CELESTIAL.timeofday)
 end)
 

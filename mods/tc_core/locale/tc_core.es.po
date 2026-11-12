@@ -1498,3 +1498,107 @@ msgstr "✦ Jardín reiniciado — Nivel 1"
 #: hud_migration
 msgid "Started a fresh Level 1 garden!"
 msgstr "¡Nuevo jardín de Nivel 1 iniciado!"
+
+#: final_sweep_retry
+msgid "Retries"
+msgstr "Reintentos"
+
+#: final_sweep_retry
+msgid "Terrarium Crucible · @1 · Lv@2 (@3 Won) · @4% Bloom · @5 Retries · @6 Cleared · @7s [@8]"
+msgstr "Terrarium Crucible · @1 · Nv@2 (@3 gan.) · @4% floración · @5 reintentos · @6 limp. · @7s [@8]"
+
+#: final_sweep_retry
+msgid "Blessing: @1 · Tools & Potions Restored!"
+msgstr "Bendición: @1 · ¡Herramientas y pociones restauradas!"
+
+#: final_sweep_retry
+msgid "Garden Reset · Tools & Potions Restored!"
+msgstr "Jardín restaurado · ¡Herramientas y pociones listas!"
+
+#: final_sweep_retry
+msgid "↻ Level @1 Retry #@2!"
+msgstr "↻ ¡Nivel @1 · Reintento #@2!"
+
+#: final_sweep_retry
+msgid "★ 100% Bloom — Final Sweep!"
+msgstr "★ 100% floración — ¡Limpieza final!"
+
+#: final_sweep_retry
+msgid "Skies clear! Clear @1 hazard(s) to win!"
+msgstr "¡Cielo despejado! ¡Limpia @1 peligro(s) para ganar!"
+
+#: final_sweep_retry
+msgid "▸ RUN PAUSED: Right-click a Plant to Retry Level @1 (or [I] for Pace)!"
+msgstr "▸ PAUSA: ¡Clic derecho en una Planta para reintentar Nivel @1 (o [I] Ritmo)!"
+
+#: final_sweep_retry
+msgid "▸ FINAL SWEEP: Place & clear your Trowel [1] block to finish!"
+msgstr "▸ LIMPIEZA FINAL: ¡Coloca y limpia el bloque de tu Pala [1] para ganar!"
+
+#: final_sweep_retry
+msgid "▸ FINAL SWEEP: Skies clear — clear @1 hazard(s) to finish!"
+msgstr "▸ LIMPIEZA FINAL: Cielo despejado — ¡limpia @1 peligro(s) para terminar!"
+
+#: final_sweep_retry
+msgid "★ FINAL SWEEP ★"
+msgstr "★ LIMPIEZA FINAL ★"
+
+#: final_sweep_retry
+msgid "Revive wilted plant [3]!"
+msgstr "¡Revive la planta [3]!"
+
+#: final_sweep_retry
+msgid "Clear Trowel [1] block!"
+msgstr "¡Limpia bloque en Pala [1]!"
+
+#: final_sweep_retry
+msgid "Clear @1 left to win!"
+msgstr "¡Limpia @1 más para ganar!"
+
+#: final_sweep_retry
+msgid "★ FINAL SWEEP!"
+msgstr "★ ¡LIMPIEZA FINAL!"
+
+#: final_sweep_retry
+msgid "Reach 100% Bloom (skies clear!) and sweep any remaining hazards with all plants awake to win, pick 1 of 3 Next-Level Blessings, or Retry your current level if a higher room gets hectic!"
+msgstr "Alcanza el 100% de floración (¡dejan de caer bloques!) y limpia los peligros restantes con todas las plantas despiertas para ganar, elegir 1 de 3 Bendiciones, ¡o reintentar el nivel actual si una sala avanzada se complica!"
+
+#: final_sweep_retry
+msgid "Ranked by Levels Won → Highest Level → Best Bloom → Fewest Retries → Hazards Cleared → Fastest Time."
+msgstr "Orden: Niveles ganados → Nivel máx. → Mejor floración → Menos reintentos → Peligros limpiados → Mejor tiempo."
+
+#: final_sweep_retry
+msgid "★ Final Sweep (@1 left)"
+msgstr "★ Limpieza final (@1 rest.)"
+
+#: final_sweep_retry
+msgid "↻ Retry Level @1"
+msgstr "↻ Reintentar Nivel @1"
+
+#: final_sweep_retry
+msgid "Retry Level @1 with your Blessing, green Speed Soil paths, and restored tools & potions (+1 Retry)."
+msgstr "Reintenta el Nivel @1 conservando tu Bendición, caminos verdes de velocidad y herramientas/pociones restauradas (+1 Reintento)."
+
+#: final_sweep_retry
+msgid "Reach 100% Bloom, then clear any remaining hazards with all plants awake to finish the level!"
+msgstr "¡Llega al 100% de floración y luego limpia los peligros restantes con todas las plantas despiertas para terminar!"
+
+#: final_sweep_retry
+msgid "Reached Level @1 (@2 Rooms)  ·  Best Bloom on Level @3: @4%  ·  Retries: @5  ·  Time: @6s"
+msgstr "Nivel alcanzado: @1 (@2 Salas)  ·  Mejor floración en Nivel @3: @4%  ·  Reintentos: @5  ·  Tiempo: @6s"
+
+#: final_sweep_retry
+msgid "Start Level 1"
+msgstr "Iniciar Nivel 1"
+
+#: final_sweep_retry
+msgid "Start a fresh 0-retry run from Level 1."
+msgstr "Comienza una partida nueva con 0 reintentos desde el Nivel 1."
+
+#: final_sweep_retry
+msgid "Guidebook"
+msgstr "Guía"
+
+#: final_sweep_retry
+msgid "Close this window to look around (right-click any Plant to retry or switch Pace)."
+msgstr "Cierra esta ventana para mirar alrededor (clic derecho en cualquier Planta para reintentar o cambiar el Ritmo)."

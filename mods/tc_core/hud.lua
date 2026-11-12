@@ -473,6 +473,10 @@ local function compute_mentor_prompt(tier)
             P.hud_gold
     end
     if s.defeat then
+        if (s.level or 1) >= 2 then
+            return S("▸ RUN PAUSED: Right-click a Plant to Retry Level @1 (or [I] for Pace)!", s.level),
+                P.hud_coral
+        end
         return S("▸ RUN ENDED: Right-click a Plant or press [I] to restart Level 1."),
             P.hud_coral
     end
@@ -488,6 +492,17 @@ local function compute_mentor_prompt(tier)
         local rev_s = tc_core.has_blessing("leyline_roots") and 4 or 6
         return S("▸ PLANT WILTED! Splash with Flask [3], Aegis, or @1s Balance!", rev_s),
             P.hud_coral
+    end
+
+    if s.cleanup_phase then
+        if (s.carried_hazards or 0) > 0 and s.active_reagents == 0 and (s.falling_hazards or 0) == 0 then
+            return S("▸ FINAL SWEEP: Place & clear your Trowel [1] block to finish!"),
+                P.hud_gold
+        end
+        return S(
+            "▸ FINAL SWEEP: Skies clear — clear @1 hazard(s) to finish!",
+            math.max(1, s.remaining_hazards or 1)
+        ), P.hud_gold
     end
 
     if s.active_reagents >= (s.max_reagents - 2) then
@@ -539,6 +554,8 @@ local function build_banner_lines(player_name, layout)
         status_tail = "  ·  " .. S("★ 100% BLOOM ★")
     elseif s.defeat then
         status_tail = "  ·  " .. S("✖ PAUSED ✖")
+    elseif s.cleanup_phase then
+        status_tail = "  ·  " .. S("★ FINAL SWEEP ★")
     end
 
     local l1
@@ -624,6 +641,57 @@ local function compute_drop_card_model(player_name, layout)
     local s = tc_core.state
     if s.victory or s.defeat then
         return false, "", P.hud_gold, P.gold, {}, "", ""
+    end
+
+    if s.cleanup_phase then
+        local rem = math.max(0, s.remaining_hazards or 0)
+        local raw_icons = s.cleanup_icons or {}
+        local icons = {}
+        local has_brim = false
+        local has_ice = false
+        local has_acid = false
+        local has_chalk = false
+        for i = 1, math.min(4, #raw_icons) do
+            local iname = raw_icons[i]
+            if iname == "tc_elements:brimstone" then
+                has_brim = true
+            elseif iname == "tc_elements:cryo_ice" then
+                has_ice = true
+            elseif iname == "tc_elements:acid_slime" then
+                has_acid = true
+            elseif iname == "tc_elements:alkaline_chalk" then
+                has_chalk = true
+            end
+            local spec = tc_elements.REAGENT_BY_NAME[iname]
+            icons[i] = spec and spec.texture or "tc_crucible_sprout_4.png"
+        end
+        if #icons == 0 then
+            icons[1] = "tc_crucible_sprout_4.png"
+        end
+
+        local tool_icon
+        local desc
+        if rem == 0 and s.living_plants < #s.plants then
+            tool_icon = "tc_tool_flask_water.png"
+            desc = S("Revive wilted plant [3]!")
+        elseif (s.carried_hazards or 0) > 0 and s.active_reagents == 0 and (s.falling_hazards or 0) == 0 then
+            tool_icon = "tc_tool_trowel.png"
+            desc = S("Clear Trowel [1] block!")
+        elseif (has_brim and has_ice) or (has_acid and has_chalk) then
+            tool_icon = "tc_tool_trowel.png"
+            desc = S("Clear @1 left to win!", math.max(1, rem))
+        else
+            local s1 = raw_icons[1] and tc_elements.REAGENT_BY_NAME[raw_icons[1]] or nil
+            tool_icon = (s1 and s1.tool_icon) or "tc_tool_trowel.png"
+            desc = S("Clear @1 left to win!", math.max(1, rem))
+        end
+
+        local header = tc_core.clamp_hud_text(
+            tc_core.resolve_player_text(player_name, S("★ FINAL SWEEP!")),
+            layout.card_max
+        )
+        desc = tc_core.clamp_hud_text(tc_core.resolve_player_text(player_name, desc), layout.card_max)
+        return true, header, P.hud_gold, P.gold, icons, tool_icon, desc
     end
 
     local is_active = (s.active_drop ~= nil and (s.active_drop.ttl or 0) > 0)

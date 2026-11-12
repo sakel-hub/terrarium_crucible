@@ -16,6 +16,7 @@
 ---@field highest_level integer Highest level reached
 ---@field levels_cleared integer Highest level fully completed (100% bloom)
 ---@field max_bloom number Best bloom percentage on highest_level
+---@field retries? integer Level retries used in this run (0 = flawless run)
 ---@field neutralized integer Total hazards neutralized in best run
 ---@field best_time integer Run time in seconds
 
@@ -136,12 +137,14 @@
 ---@field revive_sprout_at fun(pos: table, user?: ObjectRef, amount?: number): boolean
 ---@field activate_aegis_ward fun(user: ObjectRef, duration?: number)
 ---@field activate_chronos_stasis fun(user: ObjectRef, duration: number)
----@field record_player_score fun(name: string, lvl: integer, clr: integer, bloom: number, neut: integer, sec: integer)
+---@field record_player_score fun(
+---    name: string, lvl: integer, clr: integer, bloom: number, neut: integer, sec: integer, retries?: integer)
 ---@field record_all_players fun(level_cleared: boolean)
 ---@field get_top10 fun(): LeaderboardEntry[]
 ---@field build_top10_table_formspec fun(x: number, y: number, w: number, h: number): string
 ---@field build_run_receipt fun(player?: ObjectRef): string
----@field start_level fun(level: integer, preserve_fertile?: boolean)
+---@field start_level fun(level: integer, preserve_fertile?: boolean, is_retry?: boolean)
+---@field retry_level fun()
 ---@field reset_crucible fun()
 ---@field trigger_defeat fun(reason: string, defeat_kind?: string)
 ---@field on_player_died fun(player: ObjectRef)
@@ -393,6 +396,13 @@ tc_core.state = {
     next_wave = nil,
     active_drop = nil,
     climax_triggered = false,
+    cleanup_phase = false,
+    falling_hazards = 0,
+    carried_hazards = 0,
+    remaining_hazards = 0,
+    cleanup_icons = {},
+    retries = 0,
+    level_checkpoint = nil,
     trial_cursor = 0,
     victory = false,
     defeat = false,
@@ -748,6 +758,14 @@ function tc_core.recalc_mean_bloom()
     if n == 0 then
         s._synced_bloom = s.bloom
         return s.bloom
+    end
+    if s.cleanup_phase then
+        for i = 1, n do
+            s.plants[i].bloom = 100.0
+        end
+        s.bloom = 100.0
+        s._synced_bloom = 100.0
+        return 100.0
     end
     local sum_b = 0.0
     local living_cnt = 0
@@ -1992,6 +2010,11 @@ local function sort_leaderboard(entries)
         if math.abs((a.max_bloom or 0) - (b.max_bloom or 0)) > 0.05 then
             return (a.max_bloom or 0) > (b.max_bloom or 0)
         end
+        local ra = a.retries or 0
+        local rb = b.retries or 0
+        if ra ~= rb then
+            return ra < rb
+        end
         if (a.neutralized or 0) ~= (b.neutralized or 0) then
             return (a.neutralized or 0) > (b.neutralized or 0)
         end
@@ -2029,10 +2052,14 @@ end
 ---@param bloom_pct number
 ---@param neutralized integer
 ---@param seconds integer
-function tc_core.record_player_score(player_name, level_reached, levels_cleared, bloom_pct, neutralized, seconds)
+---@param retries? integer
+function tc_core.record_player_score(
+    player_name, level_reached, levels_cleared, bloom_pct, neutralized, seconds, retries
+)
     if not player_name or player_name == "" then
         return
     end
+    local ret_cnt = math.max(0, math.floor(retries or 0))
     local entries = get_leaderboard_entries()
     local found = nil
     for i = 1, #entries do
@@ -2048,32 +2075,55 @@ function tc_core.record_player_score(player_name, level_reached, levels_cleared,
             highest_level = level_reached,
             levels_cleared = levels_cleared,
             max_bloom = bloom_pct,
+            retries = ret_cnt,
             neutralized = neutralized,
             best_time = math.max(1, seconds),
         }
         entries[#entries + 1] = found
     else
+        local prev_clr = found.levels_cleared or 0
+        local prev_lvl = found.highest_level or 1
+        local prev_bloom = found.max_bloom or 0
+        local prev_ret = found.retries or 0
+        local prev_neut = found.neutralized or 0
+        local prev_time = found.best_time or 999999
+        local clamped_sec = math.max(1, seconds)
+
         local is_better = false
-        if levels_cleared > (found.levels_cleared or 0) then
+        if levels_cleared > prev_clr then
             is_better = true
-        elseif levels_cleared == (found.levels_cleared or 0) and level_reached > found.highest_level then
-            is_better = true
-        elseif level_reached == found.highest_level and bloom_pct > (found.max_bloom or 0) then
-            is_better = true
-        elseif level_reached == found.highest_level
-                and math.abs(bloom_pct - (found.max_bloom or 0)) <= 0.1
-                and neutralized > (found.neutralized or 0) then
-            is_better = true
+        elseif levels_cleared == prev_clr then
+            if level_reached > prev_lvl then
+                is_better = true
+            elseif level_reached == prev_lvl then
+                if bloom_pct > prev_bloom + 0.05 then
+                    is_better = true
+                elseif math.abs(bloom_pct - prev_bloom) <= 0.05 then
+                    if ret_cnt < prev_ret then
+                        is_better = true
+                    elseif ret_cnt == prev_ret then
+                        if neutralized > prev_neut then
+                            is_better = true
+                        elseif neutralized == prev_neut and clamped_sec < prev_time then
+                            is_better = true
+                        end
+                    end
+                end
+            end
         end
 
         if is_better then
-            found.highest_level = math.max(found.highest_level, level_reached)
-            found.levels_cleared = math.max(found.levels_cleared or 0, levels_cleared)
+            found.highest_level = level_reached
+            found.levels_cleared = levels_cleared
             found.max_bloom = bloom_pct
-            found.neutralized = math.max(found.neutralized or 0, neutralized)
-            found.best_time = math.max(1, seconds)
-        else
-            found.neutralized = math.max(found.neutralized or 0, neutralized)
+            found.retries = ret_cnt
+            found.neutralized = neutralized
+            found.best_time = clamped_sec
+        elseif levels_cleared == prev_clr
+                and level_reached == prev_lvl
+                and ret_cnt == prev_ret
+                and neutralized > prev_neut then
+            found.neutralized = neutralized
         end
     end
 
@@ -2098,7 +2148,8 @@ function tc_core.record_all_players(level_cleared)
             cleared_cnt,
             bloom_to_save,
             pstat.neutralized or 0,
-            s.run_seconds
+            s.run_seconds,
+            s.retries or 0
         )
     end
 end
@@ -2131,6 +2182,7 @@ function tc_core.build_top10_table_formspec(x, y, w, h)
             esc(S("Highest Level")),
             esc(S("Levels Won")),
             esc(S("Best Bloom")),
+            esc(S("Retries")),
             esc(S("Cleared")),
             esc(S("Time")),
         }, ","),
@@ -2141,7 +2193,7 @@ function tc_core.build_top10_table_formspec(x, y, w, h)
             P.text_secondary,
             "-",
             esc(S("(No scores saved yet — finish or reset a level to record!)")),
-            "-", "-", "-", "-", "-",
+            "-", "-", "-", "-", "-", "-",
         }, ",")
     else
         for i = 1, #top do
@@ -2155,13 +2207,14 @@ function tc_core.build_top10_table_formspec(x, y, w, h)
                 and S("Level @1 (@2 Room)", hl, hl)
                 or S("Level @1 (@2 Rooms)", hl, hl)
             rows[#rows + 1] = string.format(
-                "%s,#%d,%s,%s,%d,%.0f%%,%d,%s",
+                "%s,#%d,%s,%s,%d,%.0f%%,%d,%d,%s",
                 color,
                 i,
                 esc(e.name),
                 esc(lvl_cell),
                 e.levels_cleared or 0,
                 e.max_bloom or 0,
+                e.retries or 0,
                 e.neutralized or 0,
                 esc(S("@1s", e.best_time or 0))
             )
@@ -2170,7 +2223,7 @@ function tc_core.build_top10_table_formspec(x, y, w, h)
 
     local opts = "tableoptions[background=" .. P.bg_inset .. ";highlight=#352854;border=true]"
     local cols = "tablecolumns[color;text,align=center;text,align=left;text,align=center;" ..
-        "text,align=center;text,align=center;text,align=center;text,align=right]"
+        "text,align=center;text,align=center;text,align=center;text,align=center;text,align=right]"
     return string.format(
         "%s%stable[%.2f,%.2f;%.2f,%.2f;tbl_top10;%s;1]",
         opts, cols, x, y, w, h, table.concat(rows, ",")
@@ -2192,11 +2245,12 @@ function tc_core.build_run_receipt(player)
     local bloom_str = string.format("%.1f", s.victory and 100.0 or (s.bloom or 0.0))
     local who = (pname ~= "") and pname or S("Alchemist")
     local raw = S(
-        "Terrarium Crucible · @1 · Lv@2 (@3 Won) · @4% Bloom · @5 Cleared · @6s [@7]",
+        "Terrarium Crucible · @1 · Lv@2 (@3 Won) · @4% Bloom · @5 Retries · @6 Cleared · @7s [@8]",
         who,
         s.level or 1,
         cleared_lvls,
         bloom_str,
+        s.retries or 0,
         pstat.neutralized or 0,
         s.run_seconds or 0,
         diff_label
@@ -2211,9 +2265,13 @@ end
 ---Starts or expands the terrarium to the target level (`level` cubes, `level` plants).
 ---@param level integer Target level (1..N)
 ---@param preserve_fertile? boolean Preserve existing fertile_loam speed highways
-function tc_core.start_level(level, preserve_fertile)
+---@param is_retry? boolean Whether this call restores the Level-Start checkpoint for `level`
+function tc_core.start_level(level, preserve_fertile, is_retry)
     level = math.max(1, math.floor(level or 1))
     local s = tc_core.state
+    local cp = (is_retry and level > 1 and s.level_checkpoint and s.level_checkpoint.level == level)
+        and s.level_checkpoint
+        or nil
 
     s.running = true
     s.epoch = (s.epoch or 0) + 1
@@ -2231,9 +2289,16 @@ function tc_core.start_level(level, preserve_fertile)
     s.next_wave = nil
     s.active_drop = nil
     s.climax_triggered = false
+    s.cleanup_phase = false
+    s.falling_hazards = 0
+    s.carried_hazards = 0
+    s.remaining_hazards = 0
+    s.cleanup_icons = {}
     if level == 1 then
         s.run_id = (s.run_id or 0) + 1
         s.run_seconds = 0
+        s.retries = 0
+        s.level_checkpoint = nil
         s.reagents_dropped = 0
         s.peak_harmony = 0
         s.trial_cursor = 0
@@ -2243,6 +2308,15 @@ function tc_core.start_level(level, preserve_fertile)
         s.blessing_chooser = nil
         reagent_bag = {}
         tc_core.player_stats = {}
+    elseif cp then
+        s.active_blessing = cp.active_blessing
+        s.prev_blessing = cp.prev_blessing
+        s.pending_blessing = nil
+        s.blessing_chooser = nil
+        s.trial_cursor = cp.trial_cursor or 0
+        s.reagents_dropped = cp.reagents_dropped or 0
+        s.peak_harmony = cp.peak_harmony or 0
+        reagent_bag = {}
     else
         if s.pending_blessing ~= nil then
             if s.active_blessing ~= nil then
@@ -2268,7 +2342,16 @@ function tc_core.start_level(level, preserve_fertile)
     tc_core.clear_all_waypoints()
 
     -- Build or expand the open-top cubic terrarium & workshop diorama
-    tc_world.build_level(level, preserve_fertile)
+    tc_world.build_level(level, (not is_retry) and preserve_fertile or false)
+    if cp and cp.fertile_coords then
+        local fcoords = cp.fertile_coords
+        for i = 1, #fcoords do
+            local fp = fcoords[i]
+            if core.get_node(fp).name == "tc_elements:loam" then
+                core.swap_node(fp, {name = "tc_elements:fertile_loam"})
+            end
+        end
+    end
 
     -- Initialize per-plant vitality & asynchronous growth tempo across all `level` cubes
     local cells = tc_world.get_active_cells(level)
@@ -2333,6 +2416,28 @@ function tc_core.start_level(level, preserve_fertile)
             tc_core.clear_player_effects(p, true)
             tc_init.equip_player(p, true)
             p:set_pos(tc_init.SPAWN_POS)
+        elseif is_retry then
+            local cp_p = cp and cp.players and cp.players[pname] or nil
+            if cp_p then
+                tc_core.player_stats[pname].neutralized = cp_p.neutralized or 0
+            end
+            x_player_api.stop_emote(p)
+            tc_core.set_player_sprinting(p, false)
+            tc_core.clear_player_effects(p, true)
+            tc_init.equip_player(p, true)
+            local aegis_cnt = cp_p and cp_p.aegis or (has_dew and 2 or 1)
+            local chronos_cnt = cp_p and cp_p.chronos or 1
+            local max_aegis = tc_core.get_potion_cap("tc_tools:elixir_aegis")
+            local max_chronos = tc_core.get_potion_cap("tc_tools:chronos_sandglass")
+            aegis_cnt = math.min(aegis_cnt, max_aegis)
+            chronos_cnt = math.min(chronos_cnt, max_chronos)
+            if aegis_cnt > 0 then
+                tc_core.grant_potion(p, "tc_tools:elixir_aegis", aegis_cnt)
+            end
+            if chronos_cnt > 0 then
+                tc_core.grant_potion(p, "tc_tools:chronos_sandglass", chronos_cnt)
+            end
+            p:set_pos(tc_init.SPAWN_POS)
         else
             tc_tools.clear_player_trowels(p)
             tc_init.equip_player(p, false)
@@ -2342,47 +2447,126 @@ function tc_core.start_level(level, preserve_fertile)
         end
     end
     sync_blessing_equipment()
+
+    if level > 1 and not is_retry then
+        local bbox = tc_world.get_bounding_box(level)
+        local fertile_positions = core.find_nodes_in_area(
+            {x = bbox.min_x, y = 0, z = bbox.min_z},
+            {x = bbox.max_x, y = 0, z = bbox.max_z},
+            {"tc_elements:fertile_loam"}
+        )
+        local cp_fertile = {}
+        for i = 1, #fertile_positions do
+            local fp = fertile_positions[i]
+            cp_fertile[i] = {x = fp.x, y = fp.y, z = fp.z}
+        end
+        local cp_players = {}
+        for pname, pstat in pairs(tc_core.player_stats) do
+            cp_players[pname] = {
+                neutralized = pstat.neutralized or 0,
+                aegis = has_dew and 2 or 1,
+                chronos = 1,
+            }
+        end
+        for i = 1, #players do
+            local p = players[i]
+            local pname = p:get_player_name()
+            local pstat = tc_core.player_stats[pname]
+            cp_players[pname] = {
+                neutralized = pstat and pstat.neutralized or 0,
+                aegis = tc_core.count_player_item(p, "tc_tools:elixir_aegis"),
+                chronos = tc_core.count_player_item(p, "tc_tools:chronos_sandglass"),
+            }
+        end
+        s.level_checkpoint = {
+            level = level,
+            active_blessing = s.active_blessing,
+            prev_blessing = s.prev_blessing,
+            trial_cursor = s.trial_cursor,
+            reagents_dropped = s.reagents_dropped,
+            peak_harmony = s.peak_harmony,
+            fertile_coords = cp_fertile,
+            players = cp_players,
+        }
+    end
+
     tc_core.roll_next_wave(#players)
 
     if level > 1 then
         local b_def = s.active_blessing and tc_core.BLESSING_DEFS[s.active_blessing] or nil
-        local chooser = s.blessing_chooser
-        s.blessing_chooser = nil
-        local has_cap_bonus = (level == 3 or level == 5 or level == 7)
-        local supply_tag
-        if has_dew and has_cap_bonus then
-            supply_tag = S("+2 Aegis · +1 Hourglass · +1 Tool Cap!")
-        elseif has_dew then
-            supply_tag = S("+2 Aegis · +1 Hourglass")
-        elseif has_cap_bonus then
-            supply_tag = S("+1 Aegis · +1 Hourglass · +1 Tool Cap!")
+        if is_retry then
+            s.blessing_chooser = nil
+            local retry_detail = b_def
+                and S("Blessing: @1 · Tools & Potions Restored!", b_def.title)
+                or S("Garden Reset · Tools & Potions Restored!")
+            tc_core.push_hud_event({
+                priority = 2,
+                icon = "tc_crucible_sprout_2.png",
+                title = S("↻ Level @1 Retry #@2!", level, s.retries or 1),
+                detail = retry_detail,
+                color = P.hud_aqua,
+                accent_hex = b_def and b_def.accent or P.aqua,
+                ttl = 4.2,
+            })
         else
-            supply_tag = S("+1 Aegis · +1 Hourglass")
-        end
-        local detail_str
-        if b_def then
-            if chooser and chooser ~= "" then
-                detail_str = S("@1 [@2] · @3", b_def.title, chooser, supply_tag)
+            local chooser = s.blessing_chooser
+            s.blessing_chooser = nil
+            local has_cap_bonus = (level == 3 or level == 5 or level == 7)
+            local supply_tag
+            if has_dew and has_cap_bonus then
+                supply_tag = S("+2 Aegis · +1 Hourglass · +1 Tool Cap!")
+            elseif has_dew then
+                supply_tag = S("+2 Aegis · +1 Hourglass")
+            elseif has_cap_bonus then
+                supply_tag = S("+1 Aegis · +1 Hourglass · +1 Tool Cap!")
             else
-                detail_str = S("Blessing: @1 · @2", b_def.title, supply_tag)
+                supply_tag = S("+1 Aegis · +1 Hourglass")
             end
-        else
-            detail_str = supply_tag
+            local detail_str
+            if b_def then
+                if chooser and chooser ~= "" then
+                    detail_str = S("@1 [@2] · @3", b_def.title, chooser, supply_tag)
+                else
+                    detail_str = S("Blessing: @1 · @2", b_def.title, supply_tag)
+                end
+            else
+                detail_str = supply_tag
+            end
+            tc_core.push_hud_event({
+                priority = 2,
+                icon = "tc_crucible_sprout_2.png",
+                title = S("★ LEVEL @1 BEGINS (@2 Rooms)", level, level),
+                detail = detail_str,
+                color = P.hud_gold,
+                accent_hex = b_def and b_def.accent or P.gold,
+                ttl = 4.5,
+            })
         end
-        tc_core.push_hud_event({
-            priority = 2,
-            icon = "tc_crucible_sprout_2.png",
-            title = S("★ LEVEL @1 BEGINS (@2 Rooms)", level, level),
-            detail = detail_str,
-            color = P.hud_gold,
-            accent_hex = b_def and b_def.accent or P.gold,
-            ttl = 4.5,
-        })
     end
 
     for i = 1, #players do
         tc_core.sync_player_atmosphere(players[i])
         tc_core.update_player_hud(players[i])
+    end
+end
+
+---Retries the current level from its Level-Start checkpoint (or starts fresh if on Level 1),
+---incrementing `state.retries` on Level 2+ and closing any open end-of-run dialogs.
+function tc_core.retry_level()
+    local s = tc_core.state
+    local lvl = math.max(1, math.floor(s.level or 1))
+    if lvl <= 1 then
+        tc_core.reset_crucible()
+        return
+    end
+    s.retries = (s.retries or 0) + 1
+    tc_core.start_level(lvl, false, true)
+    local players = core.get_connected_players()
+    for i = 1, #players do
+        local pname = players[i]:get_player_name()
+        core.close_formspec(pname, "tc_core:victory")
+        core.close_formspec(pname, "tc_core:defeat")
+        core.close_formspec(pname, "tc_core:garden")
     end
 end
 

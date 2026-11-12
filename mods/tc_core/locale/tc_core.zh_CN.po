@@ -1498,3 +1498,107 @@ msgstr "✦ 花园已重置 — 第 1 关"
 #: hud_migration
 msgid "Started a fresh Level 1 garden!"
 msgstr "已开启全新的第 1 关花园！"
+
+#: final_sweep_retry
+msgid "Retries"
+msgstr "重试"
+
+#: final_sweep_retry
+msgid "Terrarium Crucible · @1 · Lv@2 (@3 Won) · @4% Bloom · @5 Retries · @6 Cleared · @7s [@8]"
+msgstr "Terrarium Crucible · @1 · 第@2关 (胜@3) · @4%开花 · @5次重试 · 清除@6 · @7秒 [@8]"
+
+#: final_sweep_retry
+msgid "Blessing: @1 · Tools & Potions Restored!"
+msgstr "祝福：@1 · 工具与药水已恢复！"
+
+#: final_sweep_retry
+msgid "Garden Reset · Tools & Potions Restored!"
+msgstr "花园已重置 · 工具与药水已恢复！"
+
+#: final_sweep_retry
+msgid "↻ Level @1 Retry #@2!"
+msgstr "↻ 第 @1 关 · 第 @2 次重试！"
+
+#: final_sweep_retry
+msgid "★ 100% Bloom — Final Sweep!"
+msgstr "★ 100% 开花 — 最终清场！"
+
+#: final_sweep_retry
+msgid "Skies clear! Clear @1 hazard(s) to win!"
+msgstr "天空已晴！清除剩余 @1 个危险块即可获胜！"
+
+#: final_sweep_retry
+msgid "▸ RUN PAUSED: Right-click a Plant to Retry Level @1 (or [I] for Pace)!"
+msgstr "▸ 已暂停：右键点击植物重试第 @1 关（或按 [I] 调整节奏）！"
+
+#: final_sweep_retry
+msgid "▸ FINAL SWEEP: Place & clear your Trowel [1] block to finish!"
+msgstr "▸ 最终清场：放下并清除铲子 [1] 上的方块即可过关！"
+
+#: final_sweep_retry
+msgid "▸ FINAL SWEEP: Skies clear — clear @1 hazard(s) to finish!"
+msgstr "▸ 最终清场：天空已晴 — 清除 @1 个危险块即可过关！"
+
+#: final_sweep_retry
+msgid "★ FINAL SWEEP ★"
+msgstr "★ 最终清场 ★"
+
+#: final_sweep_retry
+msgid "Revive wilted plant [3]!"
+msgstr "用烧瓶 [3] 救活枯萎植物！"
+
+#: final_sweep_retry
+msgid "Clear Trowel [1] block!"
+msgstr "清除铲子 [1] 上的方块！"
+
+#: final_sweep_retry
+msgid "Clear @1 left to win!"
+msgstr "再清除 @1 个即可获胜！"
+
+#: final_sweep_retry
+msgid "★ FINAL SWEEP!"
+msgstr "★ 最终清场！"
+
+#: final_sweep_retry
+msgid "Reach 100% Bloom (skies clear!) and sweep any remaining hazards with all plants awake to win, pick 1 of 3 Next-Level Blessings, or Retry your current level if a higher room gets hectic!"
+msgstr "达到 100% 开花（天空停落方块！）并在所有植物苏醒时清空剩余危险块即可过关、三选一下一关祝福；若高阶房间失利，也可直接重试当前关卡！"
+
+#: final_sweep_retry
+msgid "Ranked by Levels Won → Highest Level → Best Bloom → Fewest Retries → Hazards Cleared → Fastest Time."
+msgstr "排名顺序：通关数 → 最高关卡 → 最佳开花率 → 最少重试 → 清除危险数 → 最快用时。"
+
+#: final_sweep_retry
+msgid "★ Final Sweep (@1 left)"
+msgstr "★ 最终清场 (剩 @1)"
+
+#: final_sweep_retry
+msgid "↻ Retry Level @1"
+msgstr "↻ 重试第 @1 关"
+
+#: final_sweep_retry
+msgid "Retry Level @1 with your Blessing, green Speed Soil paths, and restored tools & potions (+1 Retry)."
+msgstr "带着本关祝福、绿色加速小径以及恢复满的工具和药水重试第 @1 关（+1 次重试）。"
+
+#: final_sweep_retry
+msgid "Reach 100% Bloom, then clear any remaining hazards with all plants awake to finish the level!"
+msgstr "达到 100% 开花后，在所有植物苏醒的状态下清空剩余危险块即可完成本关！"
+
+#: final_sweep_retry
+msgid "Reached Level @1 (@2 Rooms)  ·  Best Bloom on Level @3: @4%  ·  Retries: @5  ·  Time: @6s"
+msgstr "到达第 @1 关（@2 个房间）  ·  第 @3 关最佳开花：@4%  ·  重试：@5  ·  用时：@6秒"
+
+#: final_sweep_retry
+msgid "Start Level 1"
+msgstr "从第 1 关开始"
+
+#: final_sweep_retry
+msgid "Start a fresh 0-retry run from Level 1."
+msgstr "从第 1 关开启全新的 0 重试挑战。"
+
+#: final_sweep_retry
+msgid "Guidebook"
+msgstr "指南书"
+
+#: final_sweep_retry
+msgid "Close this window to look around (right-click any Plant to retry or switch Pace)."
+msgstr "关闭窗口环顾四周（右键点击任意植物可重试本关或切换节奏）。"

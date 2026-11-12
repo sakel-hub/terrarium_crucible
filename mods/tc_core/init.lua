@@ -127,7 +127,8 @@ local function trigger_reagent_drop()
         else
             local delay = (d - 1) * 0.70
             core.after(delay, function()
-                if tc_core.state.running and tc_core.state.epoch == wave_epoch then
+                if tc_core.state.running and not tc_core.state.cleanup_phase
+                        and tc_core.state.epoch == wave_epoch then
                     core.sound_play(
                         "tc_drop_warning",
                         {pos = cell.center, gain = 0.55, max_hear_distance = 24},
@@ -570,9 +571,45 @@ local function simulation_step()
         end
     end
 
-    -- Track post-reaction un-neutralized hazard blocks for 8s Crucible Overload Meltdown check
+    -- Track post-reaction un-neutralized hazard blocks for 8s Crucible Overload Meltdown & Final Sweep checks
     s.active_reagents = brimstone_cnt + cryo_cnt + acid_cnt + chalk_cnt
     s.max_reagents = 6 + (5 * s.level)
+
+    local fall_cnt, first_fall = tc_elements.count_falling_hazards()
+    local carry_cnt, first_carry = tc_tools.count_carried_hazards()
+    s.falling_hazards = fall_cnt
+    s.carried_hazards = carry_cnt
+    s.remaining_hazards = s.active_reagents + fall_cnt + carry_cnt
+
+    local icons = s.cleanup_icons
+    local ic_n = 0
+    if brimstone_cnt > 0 and ic_n < 4 then
+        ic_n = ic_n + 1
+        icons[ic_n] = "tc_elements:brimstone"
+    end
+    if cryo_cnt > 0 and ic_n < 4 then
+        ic_n = ic_n + 1
+        icons[ic_n] = "tc_elements:cryo_ice"
+    end
+    if acid_cnt > 0 and ic_n < 4 then
+        ic_n = ic_n + 1
+        icons[ic_n] = "tc_elements:acid_slime"
+    end
+    if chalk_cnt > 0 and ic_n < 4 then
+        ic_n = ic_n + 1
+        icons[ic_n] = "tc_elements:alkaline_chalk"
+    end
+    if ic_n == 0 and first_carry then
+        ic_n = ic_n + 1
+        icons[ic_n] = first_carry
+    end
+    if ic_n == 0 and first_fall then
+        ic_n = ic_n + 1
+        icons[ic_n] = first_fall
+    end
+    for k = #icons, ic_n + 1, -1 do
+        icons[k] = nil
+    end
 
     if s.active_reagents > s.max_reagents then
         s.overload_timer = (s.overload_timer or 0) + 1
@@ -768,36 +805,42 @@ local function simulation_step()
         end
     end
 
-    -- Asynchronous per-plant botanical growth (staggered by growth_tempo, local fertile soil & chamber health)
-    for i = 1, n_plants do
-        local p = s.plants[i]
-        local cur_b = p.bloom or 0.0
-        local tempo = p.growth_tempo or 1.0
+    -- Asynchronous per-plant botanical growth (locked at 100% once Final Sweep begins)
+    if s.cleanup_phase or (s.bloom >= 100.0 and s.living_plants == n_plants) then
+        for i = 1, n_plants do
+            s.plants[i].bloom = 100.0
+        end
+    else
+        for i = 1, n_plants do
+            local p = s.plants[i]
+            local cur_b = p.bloom or 0.0
+            local tempo = p.growth_tempo or 1.0
 
-        if p.withered then
-            if temp_extreme or ph_extreme then
-                p.bloom = tc_core.clamp(cur_b - 0.35, 0.0, 99.0)
-            else
-                p.bloom = tc_core.clamp(cur_b, 0.0, 99.0)
-            end
-        else
-            local plant_growth
-            if full_harmony then
-                local base_harmony = 0.85 / (1.0 + 0.08 * (s.level - 1))
-                local soil_bonus = math.min(0.55, (p.fertile_near or 0) * 0.11)
-                local cond_mult = 1.0
-                if n_plants > 1 then
-                    cond_mult = ((p.hazards_near > 0 or p.local_stress) and 0.75 or 1.0)
-                        * (0.94 + 0.06 * (p.vitality / 100.0))
+            if p.withered then
+                if temp_extreme or ph_extreme then
+                    p.bloom = tc_core.clamp(cur_b - 0.35, 0.0, 99.0)
+                else
+                    p.bloom = tc_core.clamp(cur_b, 0.0, 99.0)
                 end
-                plant_growth = (base_harmony + soil_bonus) * tempo * cond_mult
-            elseif temp_extreme or ph_extreme then
-                plant_growth = -0.55 * (2.0 - tempo)
             else
-                local drift_mult = (n_plants > 1 and (p.hazards_near > 0 or p.local_stress)) and 0.75 or 1.0
-                plant_growth = 0.20 * tempo * drift_mult
+                local plant_growth
+                if full_harmony then
+                    local base_harmony = 0.85 / (1.0 + 0.08 * (s.level - 1))
+                    local soil_bonus = math.min(0.55, (p.fertile_near or 0) * 0.11)
+                    local cond_mult = 1.0
+                    if n_plants > 1 then
+                        cond_mult = ((p.hazards_near > 0 or p.local_stress) and 0.75 or 1.0)
+                            * (0.94 + 0.06 * (p.vitality / 100.0))
+                    end
+                    plant_growth = (base_harmony + soil_bonus) * tempo * cond_mult
+                elseif temp_extreme or ph_extreme then
+                    plant_growth = -0.55 * (2.0 - tempo)
+                else
+                    local drift_mult = (n_plants > 1 and (p.hazards_near > 0 or p.local_stress)) and 0.75 or 1.0
+                    plant_growth = 0.20 * tempo * drift_mult
+                end
+                p.bloom = tc_core.clamp(cur_b + plant_growth, 0.0, 100.0)
             end
-            p.bloom = tc_core.clamp(cur_b + plant_growth, 0.0, 100.0)
         end
     end
 
@@ -860,7 +903,7 @@ local function simulation_step()
     end
 
     -- 85% Final Bloom Surge on Level 3+: one-time telegraphed climax with a bonus Geode + matched opposite pair
-    if s.running and not s.victory and s.level >= 3 and not s.climax_triggered
+    if s.running and not s.victory and not s.cleanup_phase and s.level >= 3 and not s.climax_triggered
             and s.bloom >= 85.0 and s.bloom < 100.0 then
         s.climax_triggered = true
         s.drop_timer = math.max(s.drop_timer, 5.5) + 2.5
@@ -876,7 +919,8 @@ local function simulation_step()
             local target_cell = cells[((s.wave + k) % #cells) + 1]
             local pair_item = pair[k]
             core.after(k * 0.55, function()
-                if tc_core.state.running and tc_core.state.epoch == surge_epoch then
+                if tc_core.state.running and not tc_core.state.cleanup_phase
+                        and tc_core.state.epoch == surge_epoch then
                     drop_item_in_cell(target_cell, surge_lvl, pair_item)
                 end
             end)
@@ -903,9 +947,36 @@ local function simulation_step()
         })
     end
 
-    -- Level Completion Check
-    if s.bloom >= 100.0 and s.living_plants == n_plants and not s.victory then
+    -- Two-Phase Level Completion Check (100% Bloom -> Final Sweep -> 0 Hazards Victory)
+    local ready_for_victory = false
+    if not s.victory then
+        if not s.cleanup_phase then
+            if s.bloom >= 100.0 and s.living_plants == n_plants then
+                if s.remaining_hazards == 0 then
+                    ready_for_victory = true
+                else
+                    s.cleanup_phase = true
+                    s.active_drop = nil
+                    core.sound_play("tc_harmony_chime", {gain = 0.95}, true)
+                    tc_core.push_hud_event({
+                        priority = 3,
+                        icon = "tc_crucible_sprout_4.png",
+                        title = S("★ 100% Bloom — Final Sweep!"),
+                        detail = S("Skies clear! Clear @1 hazard(s) to win!", s.remaining_hazards),
+                        color = P.hud_gold,
+                        accent_hex = P.gold,
+                        ttl = 4.8,
+                    })
+                end
+            end
+        elseif s.remaining_hazards == 0 and s.living_plants == n_plants then
+            ready_for_victory = true
+        end
+    end
+
+    if ready_for_victory then
         s.victory = true
+        s.cleanup_phase = false
         s.running = false
         s.active_drop = nil
         s.prev_blessing = s.active_blessing
@@ -956,8 +1027,8 @@ local function simulation_step()
         end
     end
 
-    -- Reagent Drop Timer countdown (paused while Chronos Sandglass stasis_timer > 0)
-    if s.running and s.stasis_timer <= 0 then
+    -- Reagent Drop Timer countdown (paused during Chronos Sandglass stasis or Final Sweep)
+    if s.running and not s.cleanup_phase and s.stasis_timer <= 0 then
         s.drop_timer = s.drop_timer - 1.0
         if s.drop_timer <= 0 then
             s.drop_timer = tc_core.get_next_wave_interval(s.level, #players)

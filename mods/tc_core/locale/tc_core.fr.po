@@ -1498,3 +1498,107 @@ msgstr "✦ Jardin réinitialisé — Niveau 1"
 #: hud_migration
 msgid "Started a fresh Level 1 garden!"
 msgstr "Nouveau jardin de Niveau 1 lancé !"
+
+#: final_sweep_retry
+msgid "Retries"
+msgstr "Essais"
+
+#: final_sweep_retry
+msgid "Terrarium Crucible · @1 · Lv@2 (@3 Won) · @4% Bloom · @5 Retries · @6 Cleared · @7s [@8]"
+msgstr "Terrarium Crucible · @1 · Niv.@2 (@3 gagnés) · @4% floraison · @5 essais · @6 élim. · @7s [@8]"
+
+#: final_sweep_retry
+msgid "Blessing: @1 · Tools & Potions Restored!"
+msgstr "Bénédiction : @1 · Outils et potions restaurés !"
+
+#: final_sweep_retry
+msgid "Garden Reset · Tools & Potions Restored!"
+msgstr "Jardin réinitialisé · Outils et potions restaurés !"
+
+#: final_sweep_retry
+msgid "↻ Level @1 Retry #@2!"
+msgstr "↻ Niveau @1 · Essai #@2 !"
+
+#: final_sweep_retry
+msgid "★ 100% Bloom — Final Sweep!"
+msgstr "★ 100% floraison — Grand nettoyage !"
+
+#: final_sweep_retry
+msgid "Skies clear! Clear @1 hazard(s) to win!"
+msgstr "Ciel dégagé ! Éliminez @1 danger(s) pour gagner !"
+
+#: final_sweep_retry
+msgid "▸ RUN PAUSED: Right-click a Plant to Retry Level @1 (or [I] for Pace)!"
+msgstr "▸ PAUSE : Clic droit sur une Plante pour réessayer le Niv. @1 (ou [I] Rythme) !"
+
+#: final_sweep_retry
+msgid "▸ FINAL SWEEP: Place & clear your Trowel [1] block to finish!"
+msgstr "▸ GRAND NETTOYAGE : Posez et éliminez le bloc de la Truelle [1] pour finir !"
+
+#: final_sweep_retry
+msgid "▸ FINAL SWEEP: Skies clear — clear @1 hazard(s) to finish!"
+msgstr "▸ GRAND NETTOYAGE : Ciel dégagé — éliminez @1 danger(s) pour finir !"
+
+#: final_sweep_retry
+msgid "★ FINAL SWEEP ★"
+msgstr "★ GRAND NETTOYAGE ★"
+
+#: final_sweep_retry
+msgid "Revive wilted plant [3]!"
+msgstr "Ranimer plante [3] !"
+
+#: final_sweep_retry
+msgid "Clear Trowel [1] block!"
+msgstr "Videz la Truelle [1] !"
+
+#: final_sweep_retry
+msgid "Clear @1 left to win!"
+msgstr "Éliminez @1 pour gagner !"
+
+#: final_sweep_retry
+msgid "★ FINAL SWEEP!"
+msgstr "★ GRAND NETTOYAGE !"
+
+#: final_sweep_retry
+msgid "Reach 100% Bloom (skies clear!) and sweep any remaining hazards with all plants awake to win, pick 1 of 3 Next-Level Blessings, or Retry your current level if a higher room gets hectic!"
+msgstr "Atteignez 100% de floraison (le ciel s'éclaircit !) et éliminez les dangers restants avec toutes les plantes éveillées pour gagner, choisir 1 des 3 Bénédictions, ou réessayer le niveau actuel en cas d'échec !"
+
+#: final_sweep_retry
+msgid "Ranked by Levels Won → Highest Level → Best Bloom → Fewest Retries → Hazards Cleared → Fastest Time."
+msgstr "Classé par Niveaux gagnés → Niveau max → Floraison → Moins d'essais → Dangers éliminés → Meilleur temps."
+
+#: final_sweep_retry
+msgid "★ Final Sweep (@1 left)"
+msgstr "★ Grand nettoyage (@1 rest.)"
+
+#: final_sweep_retry
+msgid "↻ Retry Level @1"
+msgstr "↻ Réessayer Niv. @1"
+
+#: final_sweep_retry
+msgid "Retry Level @1 with your Blessing, green Speed Soil paths, and restored tools & potions (+1 Retry)."
+msgstr "Réessayez le Niveau @1 avec votre Bénédiction, vos chemins verts rapides et vos outils/potions restaurés (+1 Essai)."
+
+#: final_sweep_retry
+msgid "Reach 100% Bloom, then clear any remaining hazards with all plants awake to finish the level!"
+msgstr "Atteignez 100% de floraison, puis éliminez les dangers restants avec toutes les plantes éveillées pour finir !"
+
+#: final_sweep_retry
+msgid "Reached Level @1 (@2 Rooms)  ·  Best Bloom on Level @3: @4%  ·  Retries: @5  ·  Time: @6s"
+msgstr "Niveau atteint : @1 (@2 Salles)  ·  Meilleure floraison au Niv. @3 : @4%  ·  Essais : @5  ·  Temps : @6s"
+
+#: final_sweep_retry
+msgid "Start Level 1"
+msgstr "Recommencer Niv. 1"
+
+#: final_sweep_retry
+msgid "Start a fresh 0-retry run from Level 1."
+msgstr "Commencez une nouvelle partie sans essai depuis le Niveau 1."
+
+#: final_sweep_retry
+msgid "Guidebook"
+msgstr "Guide"
+
+#: final_sweep_retry
+msgid "Close this window to look around (right-click any Plant to retry or switch Pace)."
+msgstr "Fermez cette fenêtre pour observer le jardin (clic droit sur une Plante pour réessayer ou changer le Rythme)."

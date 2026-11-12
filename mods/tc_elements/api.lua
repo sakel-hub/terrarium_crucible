@@ -40,6 +40,7 @@
 ---@field can_tool_catch_reagent fun(itemstack: ItemStack, item_name: string): boolean
 ---@field interact_falling_reagent fun(target: any, user: ObjectRef, itemstack?: ItemStack): ItemStack, boolean, boolean
 ---@field find_interceptable_reagent fun(user: ObjectRef, pointed_thing?: table, itemstack?: ItemStack): table|nil
+---@field count_falling_hazards fun(): integer, string|nil
 ---@field node_sound_stone_defaults fun(tbl?: table): table
 ---@field node_sound_dirt_defaults fun(tbl?: table): table
 ---@field node_sound_wood_defaults fun(tbl?: table): table

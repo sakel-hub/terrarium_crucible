@@ -2,6 +2,7 @@
 
 local wield = {}
 local wieldindex = {}
+local wielddesc = {}
 local huds = {}
 local dtimes = {}
 local dlimit = 3  -- HUD element will be hidden after this many seconds
@@ -50,14 +51,17 @@ minetest.register_on_joinplayer(function(player)
 	set_hud(player)
 
 	local name = player:get_player_name()
-	wield[name] = player:get_wielded_item():get_name()
+	local wstack = player:get_wielded_item()
+	wield[name] = wstack:get_name()
 	wieldindex[name] = player:get_wield_index()
+	wielddesc[name] = wstack.get_short_description and wstack:get_short_description() or ""
 end)
 
 minetest.register_on_leaveplayer(function(player)
 	local name = player:get_player_name()
 	wield[name] = nil
 	wieldindex[name] = nil
+	wielddesc[name] = nil
 	huds[name] = nil
 	dtimes[name] = nil
 end)
@@ -102,10 +106,12 @@ minetest.register_globalstep(function(dtime)
 			end
 		end
 
-		-- Update HUD when wielded item or wielded index changed
-		if wname ~= wield[player_name] or windex ~= wieldindex[player_name] then
+		-- Update HUD when wielded item, slot index, or dynamic short_description changed
+		local wshort = wstack.get_short_description and wstack:get_short_description() or ""
+		if wname ~= wield[player_name] or windex ~= wieldindex[player_name] or wshort ~= wielddesc[player_name] then
 			wieldindex[player_name] = windex
 			wield[player_name] = wname
+			wielddesc[player_name] = wshort
 			dtimes[player_name] = 0
 
 			if huds[player_name] then
