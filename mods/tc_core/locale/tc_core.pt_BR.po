@@ -28,7 +28,7 @@ msgstr "Tempo Parado"
 
 #: api.lua:221 api.lua:222
 msgid "Harmony Boost"
-msgstr "Impulso Harmonia"
+msgstr "Harmonia"
 
 #: api.lua:228
 msgid "Green Soil Speed"

@@ -16,7 +16,7 @@ msgstr ""
 
 #: api.lua:207 api.lua:208
 msgid "Aegis Shield"
-msgstr "イージスシールド"
+msgstr "イージス盾"
 
 #: api.lua:214
 msgid "Time Freeze Speed"
@@ -28,7 +28,7 @@ msgstr "時間停止"
 
 #: api.lua:221 api.lua:222
 msgid "Harmony Boost"
-msgstr "ハーモニー加速"
+msgstr "調和加速"
 
 #: api.lua:228
 msgid "Green Soil Speed"

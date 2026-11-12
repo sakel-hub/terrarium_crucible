@@ -108,34 +108,73 @@ core.register_on_leaveplayer(function(player)
     hb.players[name] = nil
 end)
 
----Counts UTF-8 codepoints in `str`.
+-- Lookup tables for fast LuaJIT-friendly ASCII glyph pixel-width estimation (Arimo + DroidSansFallback @ 16px)
+local NARROW_ASCII = {}
+do
+    local s = "ilI1!.,:;|\"' []()/-"
+    for idx = 1, #s do
+        NARROW_ASCII[string.byte(s, idx)] = true
+    end
+end
+
+local EXTRA_WIDE_ASCII = {
+    [37] = true, -- %
+    [38] = true, -- &
+    [64] = true, -- @
+    [77] = true, -- M
+    [87] = true, -- W
+}
+
+local WIDE_ASCII = {}
+do
+    local s = "ABCDEFGHJKLNOPQRSTUVXYZmw_"
+    for idx = 1, #s do
+        WIDE_ASCII[string.byte(s, idx)] = true
+    end
+end
+
+---Estimates the advance width (in logical HUD pixels) and UTF-8 byte length of the glyph starting at `i`.
 ---@param str string
----@return integer
-local function utf8_codepoint_len(str)
-    if not str or str == "" then
-        return 0
-    end
-    local count = 0
-    local i = 1
-    local n = #str
-    while i <= n do
-        local b = string.byte(str, i)
-        if b >= 240 then
-            i = i + 4
-        elseif b >= 224 then
-            i = i + 3
-        elseif b >= 192 then
-            i = i + 2
-        else
-            i = i + 1
+---@param i integer
+---@param n integer
+---@param is_bold boolean
+---@return number px_w
+---@return integer byte_len
+local function glyph_metrics_at(str, i, n, is_bold)
+    local b = string.byte(str, i)
+    if b < 128 then
+        if NARROW_ASCII[b] then
+            return (is_bold and 6.0 or 5.6), 1
+        elseif EXTRA_WIDE_ASCII[b] then
+            return (is_bold and 15.4 or 14.6), 1
+        elseif WIDE_ASCII[b] then
+            return (is_bold and 11.6 or 10.8), 1
         end
-        count = count + 1
+        return (is_bold and 9.6 or 9.0), 1
+    elseif b < 224 then
+        local b2 = (i + 1 <= n) and string.byte(str, i + 1) or 0
+        if b == 194 and (b2 == 176 or b2 == 183) then -- ° or ·
+            return (is_bold and 8.0 or 7.5), 2
+        elseif b >= 208 then -- Cyrillic U+0400..U+04FF
+            return (is_bold and 11.4 or 10.5), 2
+        end
+        return (is_bold and 10.2 or 9.4), 2
+    elseif b < 240 then
+        local b2 = (i + 1 <= n) and string.byte(str, i + 1) or 0
+        local b3 = (i + 2 <= n) and string.byte(str, i + 2) or 0
+        local cp = (b - 224) * 4096 + (b2 - 128) * 64 + (b3 - 128)
+        if cp >= 11904 then -- CJK, Kana, Fullwidth punctuation (U+2E80+)
+            return (is_bold and 17.6 or 17.2), 3
+        elseif cp == 8211 or cp == 8230 or cp == 9656 or cp == 9662 then -- – … ▸ ▾
+            return (is_bold and 9.6 or 9.0), 3
+        end
+        return (is_bold and 14.6 or 13.8), 3
     end
-    return count
+    return (is_bold and 17.6 or 17.2), 4
 end
 
 ---Resolves any server-side translation escape sequences into plain UTF-8 for a player's language.
----Used before codepoint clamping or copyable plain-text fields so `\27` wrappers are never split or exposed.
+---Used before pixel clamping or copyable plain-text fields so `\27` wrappers are never split or exposed.
 ---@param player_name string
 ---@param str string
 ---@return string
@@ -151,6 +190,60 @@ function tc_core.resolve_player_text(player_name, str)
         end
     end
     return core.get_translated_string(lang, str)
+end
+
+---Estimates the rendered HUD pixel width of plain UTF-8 `str` using Luanti's proportional + CJK fallback metrics.
+---@param str string
+---@param is_bold? boolean
+---@return integer
+function tc_core.estimate_hud_text_px(str, is_bold)
+    if not str or str == "" then
+        return 0
+    end
+    local bold = (is_bold == true)
+    local total = 0.0
+    local i = 1
+    local n = #str
+    while i <= n do
+        local gw, c_len = glyph_metrics_at(str, i, n, bold)
+        total = total + gw
+        i = i + c_len
+    end
+    return math.ceil(total)
+end
+
+---Clamps a plain UTF-8 string so its estimated rendered pixel width never exceeds `max_px`.
+---@param str string
+---@param max_px integer
+---@param is_bold? boolean
+---@return string
+function tc_core.clamp_hud_text_px(str, max_px, is_bold)
+    if not str or str == "" or max_px <= 0 then
+        return ""
+    end
+    local bold = (is_bold == true)
+    if tc_core.estimate_hud_text_px(str, bold) <= max_px then
+        return str
+    end
+    local ell_px = bold and 9.6 or 9.0
+    local budget = math.max(0.0, max_px - ell_px)
+    local used = 0.0
+    local cut_end = 0
+    local i = 1
+    local n = #str
+    while i <= n do
+        local gw, c_len = glyph_metrics_at(str, i, n, bold)
+        if used + gw > budget then
+            break
+        end
+        used = used + gw
+        cut_end = i + c_len - 1
+        i = i + c_len
+    end
+    if cut_end <= 0 then
+        return "…"
+    end
+    return string.sub(str, 1, cut_end) .. "…"
 end
 
 ---Clamps a UTF-8 string to at most `max_chars` codepoints without splitting multi-byte UTF-8 glyphs.
@@ -214,6 +307,8 @@ function tc_core.get_hud_layout(player_name)
         local max_banner_w = math.max(240, math.floor(lw - 2 * (-drop_ox + 12)))
         local banner_w = math.min(384, max_banner_w)
         local banner_max = math.min(46, math.max(26, math.floor((banner_w - 28) / 7.5)))
+        local toast_ox = 8
+        local toast_max_w = math.max(188, math.min(284, math.floor(lw * 0.5) - 208 - toast_ox))
         return {
             tier = "compact",
             lw = lw,
@@ -226,6 +321,7 @@ function tc_core.get_hud_layout(player_name)
             card_h = 72,
             card_max = 26,
             toast_w = 188,
+            toast_max_w = toast_max_w,
             toast_h = 52,
             toast_max = 26,
             pill_max = 38,
@@ -234,10 +330,12 @@ function tc_core.get_hud_layout(player_name)
             hb_ox = -200,
             hb_start_y = 94,
             hb_vmargin = 30,
-            toast_ox = 8,
+            toast_ox = toast_ox,
             toast_oy = -114,
         }
     elseif lw < 1440 then
+        local toast_ox = 12
+        local toast_max_w = math.max(244, math.min(396, math.floor(lw * 0.5) - 256 - toast_ox))
         return {
             tier = "standard",
             lw = lw,
@@ -250,6 +348,7 @@ function tc_core.get_hud_layout(player_name)
             card_h = 78,
             card_max = 31,
             toast_w = 244,
+            toast_max_w = toast_max_w,
             toast_h = 56,
             toast_max = 34,
             pill_max = 54,
@@ -258,12 +357,14 @@ function tc_core.get_hud_layout(player_name)
             hb_ox = -204,
             hb_start_y = 112,
             hb_vmargin = 34,
-            toast_ox = 12,
+            toast_ox = toast_ox,
             toast_oy = -124,
         }
     end
 
     local hb_start_y = math.max(120, math.min(168, math.floor(lh * 0.14)))
+    local toast_ox = 16
+    local toast_max_w = math.max(244, math.min(460, math.floor(lw * 0.5) - 260 - toast_ox))
     return {
         tier = "wide",
         lw = lw,
@@ -276,6 +377,7 @@ function tc_core.get_hud_layout(player_name)
         card_h = 80,
         card_max = 36,
         toast_w = 244,
+        toast_max_w = toast_max_w,
         toast_h = 56,
         toast_max = 36,
         pill_max = 66,
@@ -284,7 +386,7 @@ function tc_core.get_hud_layout(player_name)
         hb_ox = -208,
         hb_start_y = hb_start_y,
         hb_vmargin = 34,
-        toast_ox = 16,
+        toast_ox = toast_ox,
         toast_oy = -134,
     }
 end
@@ -548,6 +650,7 @@ local function build_banner_lines(player_name, layout)
     local s = tc_core.state
     local tier = layout.tier
     local n_plants = math.max(1, #s.plants)
+    local banner_inner_px = math.max(180, layout.banner_w - ((tier == "compact") and 28 or 36))
 
     local status_tail = ""
     if s.victory then
@@ -558,19 +661,20 @@ local function build_banner_lines(player_name, layout)
         status_tail = "  ·  " .. S("★ FINAL SWEEP ★")
     end
 
-    local l1
+    local compact_l1 = S(
+        "LV@1 · Plants @2/@3 · Hazards @4/@5@6",
+        s.level, s.living_plants, n_plants, s.active_reagents, s.max_reagents, status_tail
+    )
+    local raw_l1
     if tier == "compact" then
-        l1 = S(
-            "LV@1 · Plants @2/@3 · Hazards @4/@5@6",
-            s.level, s.living_plants, n_plants, s.active_reagents, s.max_reagents, status_tail
-        )
+        raw_l1 = compact_l1
     elseif s.level == 1 then
-        l1 = S(
+        raw_l1 = S(
             "LEVEL @1 (1 Room)  ·  Plants: @2/@3  ·  Hazards: @4/@5@6",
             s.level, s.living_plants, n_plants, s.active_reagents, s.max_reagents, status_tail
         )
     else
-        l1 = S(
+        raw_l1 = S(
             "LEVEL @1 (@2 Rooms)  ·  Plants: @3/@4  ·  Hazards: @5/@6@7",
             s.level, s.level, s.living_plants, n_plants, s.active_reagents, s.max_reagents, status_tail
         )
@@ -582,22 +686,28 @@ local function build_banner_lines(player_name, layout)
     local in_harmony = tc_core.is_in_harmony()
 
     local eq_prefix
+    local eq_short
     local c2
     if (s.overload_timer or 0) > 0 then
         eq_prefix = S("✖ OVERCROWDED (@1s)", math.max(1, 8 - s.overload_timer))
+        eq_short = eq_prefix
         c2 = P.hud_coral
     elseif s.aegis_timer > 0 then
         eq_prefix = S("✦ SHIELD (@1s)", math.ceil(s.aegis_timer))
+        eq_short = eq_prefix
         c2 = P.hud_gold
     elseif in_harmony then
         eq_prefix = S("✦ BALANCED (@1s)", s.harmony_streak)
+        eq_short = eq_prefix
         c2 = (s.harmony_streak >= 8) and P.hud_aqua or P.hud_emerald
     elseif s.turbulent then
         eq_prefix = S("⚠ CLUTTERED (@1>@2)", s.active_reagents, s.level)
+        eq_short = eq_prefix
         c2 = P.hud_amber
     else
+        eq_short = S("⚠ OFF BALANCE")
         eq_prefix = (tier == "compact")
-            and S("⚠ OFF BALANCE")
+            and eq_short
             or S("⚠ OFF BALANCE (40–60°C · 5.6–8.4 pH)")
         c2 = P.hud_amber
     end
@@ -606,23 +716,41 @@ local function build_banner_lines(player_name, layout)
     local ph_str = string.format("%.1f", ph_real)
     local b_id = s.active_blessing
     local b_def = b_id and tc_core.BLESSING_DEFS[b_id] or nil
-    local l2
+    local raw_l2
     if b_def then
         if tier == "compact" then
-            l2 = S("@1 · @2°C | @3pH · @4", eq_prefix, temp_str, ph_str, b_def.title)
+            raw_l2 = S("@1 · @2°C | @3pH · @4", eq_prefix, temp_str, ph_str, b_def.title)
         else
-            l2 = S("@1  ·  @2°C | @3 pH  ·  Blessing: @4", eq_prefix, temp_str, ph_str, b_def.title)
+            raw_l2 = S("@1  ·  @2°C | @3 pH  ·  Blessing: @4", eq_prefix, temp_str, ph_str, b_def.title)
         end
     else
-        l2 = S("@1  ·  @2°C | @3 pH", eq_prefix, temp_str, ph_str)
+        raw_l2 = S("@1  ·  @2°C | @3 pH", eq_prefix, temp_str, ph_str)
     end
 
+    local res_l1 = tc_core.resolve_player_text(player_name, raw_l1)
+    if tier ~= "compact" and tc_core.estimate_hud_text_px(res_l1, true) > banner_inner_px then
+        res_l1 = tc_core.resolve_player_text(player_name, compact_l1)
+    end
+    local l1 = tc_core.clamp_hud_text_px(res_l1, banner_inner_px, true)
+
+    local res_l2 = tc_core.resolve_player_text(player_name, raw_l2)
+    if tier ~= "compact" and tc_core.estimate_hud_text_px(res_l2, false) > banner_inner_px then
+        local compact_l2 = b_def
+            and S("@1 · @2°C | @3pH · @4", eq_short, temp_str, ph_str, b_def.title)
+            or S("@1  ·  @2°C | @3 pH", eq_short, temp_str, ph_str)
+        res_l2 = tc_core.resolve_player_text(player_name, compact_l2)
+    end
+    local l2 = tc_core.clamp_hud_text_px(res_l2, banner_inner_px, false)
+
     local raw_l3, c3 = compute_mentor_prompt(tier)
-    l1 = tc_core.clamp_hud_text(tc_core.resolve_player_text(player_name, l1), layout.banner_max)
-    l2 = tc_core.clamp_hud_text(tc_core.resolve_player_text(player_name, l2), layout.banner_max)
-    local l3 = (raw_l3 ~= "")
-        and tc_core.clamp_hud_text(tc_core.resolve_player_text(player_name, raw_l3), layout.banner_max)
-        or ""
+    local res_l3 = (raw_l3 ~= "") and tc_core.resolve_player_text(player_name, raw_l3) or ""
+    if res_l3 ~= "" and tier ~= "compact" and tc_core.estimate_hud_text_px(res_l3, false) > banner_inner_px then
+        local short_l3 = compute_mentor_prompt("compact")
+        if short_l3 ~= "" then
+            res_l3 = tc_core.resolve_player_text(player_name, short_l3)
+        end
+    end
+    local l3 = (res_l3 ~= "") and tc_core.clamp_hud_text_px(res_l3, banner_inner_px, false) or ""
 
     return l1, c1, l2, c2, l3, c3
 end
@@ -642,6 +770,8 @@ local function compute_drop_card_model(player_name, layout)
     if s.victory or s.defeat then
         return false, "", P.hud_gold, P.gold, {}, "", ""
     end
+    local card_pad = (layout.tier == "compact") and 20 or ((layout.tier == "standard") and 22 or 24)
+    local card_inner_px = math.max(120, layout.card_w - card_pad)
 
     if s.cleanup_phase then
         local rem = math.max(0, s.remaining_hazards or 0)
@@ -686,11 +816,16 @@ local function compute_drop_card_model(player_name, layout)
             desc = S("Clear @1 left to win!", math.max(1, rem))
         end
 
-        local header = tc_core.clamp_hud_text(
+        local header = tc_core.clamp_hud_text_px(
             tc_core.resolve_player_text(player_name, S("★ FINAL SWEEP!")),
-            layout.card_max
+            card_inner_px,
+            true
         )
-        desc = tc_core.clamp_hud_text(tc_core.resolve_player_text(player_name, desc), layout.card_max)
+        desc = tc_core.clamp_hud_text_px(
+            tc_core.resolve_player_text(player_name, desc),
+            card_inner_px,
+            false
+        )
         return true, header, P.hud_gold, P.gold, icons, tool_icon, desc
     end
 
@@ -801,8 +936,8 @@ local function compute_drop_card_model(player_name, layout)
         desc = S("@1 · @2", s1.hud_counter, s2.hud_counter)
     end
 
-    header = tc_core.clamp_hud_text(tc_core.resolve_player_text(player_name, header), layout.card_max)
-    desc = tc_core.clamp_hud_text(tc_core.resolve_player_text(player_name, desc), layout.card_max)
+    header = tc_core.clamp_hud_text_px(tc_core.resolve_player_text(player_name, header), card_inner_px, true)
+    desc = tc_core.clamp_hud_text_px(tc_core.resolve_player_text(player_name, desc), card_inner_px, false)
     return true, header, header_col, accent_hex, icons, tool_icon, desc
 end
 
@@ -923,24 +1058,69 @@ local function sync_event_toast(player, cache, layout)
     local has_detail = (spec.detail ~= nil and spec.detail ~= "")
     local icon_px = layout.icon_px
     local accent_hex = spec.accent_hex or P.gold
-    local text_x = ox + (is_compact and 41 or 46)
-    local text_max = math.max(16, layout.toast_max - 4)
+    local pad_l = is_compact and 41 or 46
+    local pad_r = is_compact and 12 or 14
+    local native_w = is_compact and 188 or 244
+    local toast_h = layout.toast_h
+    local max_w = math.max(native_w, layout.toast_max_w or native_w)
+    local max_inner_px = math.max(96, max_w - pad_l - pad_r)
 
-    local bg_tex = is_compact and "tc_hud_toast_compact.png" or "tc_hud_toast_std.png"
-    local rim_base = is_compact and "tc_hud_toast_rim_compact.png" or "tc_hud_toast_rim_std.png"
+    local pname = player:get_player_name()
+    local clamped_title = tc_core.clamp_hud_text_px(
+        tc_core.resolve_player_text(pname, spec.title),
+        max_inner_px,
+        true
+    )
+    local clamped_detail = ""
+    local detail_px = 0
+    if has_detail then
+        clamped_detail = tc_core.clamp_hud_text_px(
+            tc_core.resolve_player_text(pname, spec.detail or ""),
+            max_inner_px,
+            false
+        )
+        detail_px = tc_core.estimate_hud_text_px(clamped_detail, false)
+    end
+    local title_px = tc_core.estimate_hud_text_px(clamped_title, true)
+    local need_px = math.max(title_px, detail_px)
+    local toast_w = math.min(max_w, math.max(native_w, pad_l + need_px + pad_r))
+
+    local bg_tex
+    local rim_base
+    if toast_w <= native_w then
+        bg_tex = is_compact and "tc_hud_toast_compact.png" or "tc_hud_toast_std.png"
+        rim_base = is_compact and "tc_hud_toast_rim_compact.png" or "tc_hud_toast_rim_std.png"
+    else
+        local cap_lw = is_compact and 39 or 44
+        local cap_rw = 12
+        local mid_w = math.max(1, toast_w - cap_lw - cap_rw)
+        local bg_l = is_compact and "tc_hud_toast_compact_l.png" or "tc_hud_toast_l.png"
+        local bg_c = is_compact and "tc_hud_toast_compact_c.png" or "tc_hud_toast_c.png"
+        local bg_r = is_compact and "tc_hud_toast_compact_r.png" or "tc_hud_toast_r.png"
+        local rim_l = is_compact and "tc_hud_toast_rim_compact_l.png" or "tc_hud_toast_rim_l.png"
+        local rim_c = is_compact and "tc_hud_toast_rim_compact_c.png" or "tc_hud_toast_rim_c.png"
+        local rim_r = is_compact and "tc_hud_toast_rim_compact_r.png" or "tc_hud_toast_rim_r.png"
+        bg_tex = string.format(
+            "[combine:%dx%d:0,0=%s:%d,0=(%s\\^[resize\\:%dx%d):%d,0=%s",
+            toast_w, toast_h, bg_l, cap_lw, bg_c, mid_w, toast_h, toast_w - cap_rw, bg_r
+        )
+        rim_base = string.format(
+            "[combine:%dx%d:0,0=%s:%d,0=(%s\\^[resize\\:%dx%d):%d,0=%s",
+            toast_w, toast_h, rim_l, cap_lw, rim_c, mid_w, toast_h, toast_w - cap_rw, rim_r
+        )
+    end
+
     local acc_tex = rim_base .. "^[multiply:" .. accent_hex
     local iscale = get_icon_scale(spec.icon, icon_px)
     local icon_x = ox + (is_compact and 12 or 13)
     local icon_y = oy + 15
+    local text_x = ox + pad_l
 
     sync_image_elem(player, cache.ev_bg, bg_tex, 1, 1, ox, oy)
     sync_image_elem(player, cache.ev_accent, acc_tex, 1, 1, ox, oy)
     sync_image_elem(player, cache.ev_icon, spec.icon, iscale, iscale, icon_x, icon_y)
 
-    local pname = player:get_player_name()
-    local clamped_title = tc_core.clamp_hud_text(tc_core.resolve_player_text(pname, spec.title), text_max)
     if has_detail then
-        local clamped_detail = tc_core.clamp_hud_text(tc_core.resolve_player_text(pname, spec.detail or ""), text_max)
         local title_y = oy + (is_compact and 9 or 10)
         local detail_y = oy + (is_compact and 27 or 29)
         sync_text_elem(player, cache.ev_title, clamped_title, spec.color or P.hud_gold, text_x, title_y)
@@ -966,13 +1146,19 @@ local function sync_action_pill(player, cache, layout)
 
     local pname = player:get_player_name()
     local is_compact = (layout.tier == "compact")
-    local line = tc_core.clamp_hud_text(tc_core.resolve_player_text(pname, cache.act_line), layout.pill_max)
-    local cp_len = utf8_codepoint_len(line)
     local icon_px = layout.icon_px
     local max_w = is_compact
         and math.min(352, math.floor(layout.lw * 0.44))
         or math.min(440, math.floor(layout.lw * 0.48))
-    local pill_w = math.floor(tc_core.clamp(32 + icon_px + cp_len * 7, 156, math.max(160, max_w)))
+    local chrome_px = 12 + icon_px + 6 + 14
+    local max_inner_px = math.max(80, max_w - chrome_px)
+    local line = tc_core.clamp_hud_text_px(
+        tc_core.resolve_player_text(pname, cache.act_line),
+        max_inner_px,
+        false
+    )
+    local line_px = tc_core.estimate_hud_text_px(line, false)
+    local pill_w = math.floor(tc_core.clamp(chrome_px + line_px, 156, math.max(160, max_w)))
     local pill_h = is_compact and 26 or 30
     local pill_oy = is_compact and -128 or -136
     local left_x = -math.floor(pill_w / 2)
@@ -1012,6 +1198,7 @@ function tc_core.sync_player_drop_hud(player)
     end
     local layout = tc_core.get_hud_layout(name)
     cache.tier = layout.tier
+    cache.toast_max_w = layout.toast_max_w
     sync_hudbars_layout(player, cache, layout)
     sync_drop_card(player, cache, layout)
     if (cache.ev_ttl or 0) > 0 then
@@ -1319,6 +1506,7 @@ function tc_core.init_player_hud(player)
     local cache = {
         tier = layout.tier,
         banner_w = layout.banner_w,
+        toast_max_w = layout.toast_max_w,
         hb_ox = hb.settings.start_offset_left.x,
         hb_start_y = hb.settings.start_offset_left.y,
         hb_vmargin = hb.settings.vmargin,
@@ -1696,9 +1884,14 @@ function tc_core.update_player_hud(player)
 
     local layout = tc_core.get_hud_layout(name)
     local is_compact = (layout.tier == "compact")
-    local geom_changed = (cache.tier ~= layout.tier or cache.banner_w ~= layout.banner_w)
+    local geom_changed = (
+        cache.tier ~= layout.tier
+        or cache.banner_w ~= layout.banner_w
+        or cache.toast_max_w ~= layout.toast_max_w
+    )
     cache.tier = layout.tier
     cache.banner_w = layout.banner_w
+    cache.toast_max_w = layout.toast_max_w
 
     sync_hudbars_layout(player, cache, layout)
 

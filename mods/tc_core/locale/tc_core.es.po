@@ -24,11 +24,11 @@ msgstr "Velocidad Cronos"
 
 #: api.lua:215
 msgid "Time Freeze"
-msgstr "Tiempo detenido"
+msgstr "Pausa temporal"
 
 #: api.lua:221 api.lua:222
 msgid "Harmony Boost"
-msgstr "Impulso armonía"
+msgstr "Armonía"
 
 #: api.lua:228
 msgid "Green Soil Speed"

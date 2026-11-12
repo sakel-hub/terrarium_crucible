@@ -74,7 +74,8 @@
 ---@field card_w integer Width of top-right next-drop plaque in logical pixels
 ---@field card_h integer Height of top-right next-drop plaque in logical pixels
 ---@field card_max integer Max UTF-8 characters inside top-right drop plaque lines
----@field toast_w integer Width of bottom-left priority event toast plaque in logical pixels
+---@field toast_w integer Minimum native width of bottom-left priority event toast plaque in logical pixels
+---@field toast_max_w integer Maximum stretchable width of bottom-left event toast plaque in logical pixels
 ---@field toast_h integer Height of bottom-left priority event toast plaque in logical pixels
 ---@field toast_max integer Max UTF-8 characters inside event toast lines
 ---@field pill_max integer Max UTF-8 characters inside bottom-center action pill
@@ -151,6 +152,8 @@
 ---@field on_player_respawned fun(player: ObjectRef)
 ---@field get_hud_layout fun(player_name: string): TcHudLayout
 ---@field resolve_player_text fun(player_name: string, str: string): string
+---@field estimate_hud_text_px fun(str: string, is_bold?: boolean): integer
+---@field clamp_hud_text_px fun(str: string, max_px: integer, is_bold?: boolean): string
 ---@field clamp_hud_text fun(str: string, max_chars: integer): string
 ---@field push_hud_event fun(spec: TcHudEventSpec)
 ---@field push_hud_event_player fun(player: ObjectRef, spec: TcHudEventSpec)

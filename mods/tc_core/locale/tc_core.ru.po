@@ -36,7 +36,7 @@ msgstr "Быстрая почва"
 
 #: api.lua:229
 msgid "Soil Speed"
-msgstr "Скорость почвы"
+msgstr "Шаг почвы"
 
 #: api.lua:235
 msgid "Steam High Jump"
@@ -48,7 +48,7 @@ msgstr "Прыжок пара"
 
 #: api.lua:243 api.lua:244
 msgid "Recovering"
-msgstr "Восстановление"
+msgstr "Отдых"
 
 #: api.lua:266
 msgid "Deep Retort"

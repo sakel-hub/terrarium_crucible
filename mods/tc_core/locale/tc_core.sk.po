@@ -24,11 +24,11 @@ msgstr "Rýchlosť zastavenia času"
 
 #: api.lua:215
 msgid "Time Freeze"
-msgstr "Zastavenie času"
+msgstr "Stop času"
 
 #: api.lua:221 api.lua:222
 msgid "Harmony Boost"
-msgstr "Bonus harmónie"
+msgstr "Harmónia"
 
 #: api.lua:228
 msgid "Green Soil Speed"

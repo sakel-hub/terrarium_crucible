@@ -2421,8 +2421,20 @@ local expected_hud_pngs = {
     {"tc_hud_drop_rim_compact.png", 188, 72},
     {"tc_hud_toast_std.png", 244, 56},
     {"tc_hud_toast_rim_std.png", 244, 56},
+    {"tc_hud_toast_l.png", 44, 56},
+    {"tc_hud_toast_c.png", 1, 56},
+    {"tc_hud_toast_r.png", 12, 56},
+    {"tc_hud_toast_rim_l.png", 44, 56},
+    {"tc_hud_toast_rim_c.png", 1, 56},
+    {"tc_hud_toast_rim_r.png", 12, 56},
     {"tc_hud_toast_compact.png", 188, 52},
     {"tc_hud_toast_rim_compact.png", 188, 52},
+    {"tc_hud_toast_compact_l.png", 39, 52},
+    {"tc_hud_toast_compact_c.png", 1, 52},
+    {"tc_hud_toast_compact_r.png", 12, 52},
+    {"tc_hud_toast_rim_compact_l.png", 39, 52},
+    {"tc_hud_toast_rim_compact_c.png", 1, 52},
+    {"tc_hud_toast_rim_compact_r.png", 12, 52},
     {"tc_hud_pill_l.png", 10, 30},
     {"tc_hud_pill_c.png", 1, 30},
     {"tc_hud_pill_r.png", 10, 30},
@@ -2522,7 +2534,9 @@ for v_i = 1, #viewport_cases do
                         vc.label .. " Next Drop plaque must anchor to top-right {x=1, y=0}")
                 elseif h.text:find("^tc_hud_banner_") then
                     found_banner_plaque = true
-                elseif h.text:find("^tc_hud_toast_") then
+                elseif (h.text:find("^tc_hud_toast_") and not h.text:find("^tc_hud_toast_rim_"))
+                    or (h.text:find("^%[combine:") and h.text:find("tc_hud_toast_") and not h.text:find("tc_hud_toast_rim_"))
+                then
                     found_toast_plaque = true
                     assert(h.position.x == 0.0 and h.position.y == 1.0,
                         vc.label .. " Event Toast plaque must anchor to bottom-left {x=0, y=1}")
@@ -2567,6 +2581,139 @@ for v_i = 1, #viewport_cases do
     tc_core.update_player_hud(p1)
     assert(p1._hud_changes == pre_steady,
         vc.label .. " unchanged update_player_hud must emit 0 HUD packets")
+end
+
+-- Verify pixel-width containment across all 4 custom HUD zones and all 9 languages (including Guild Ping toast)
+do
+    local p_hud = make_mock_player("singleplayer")
+    table.insert(mock_players, p_hud)
+    for _, fn in ipairs(join_cbs) do fn(p_hud) end
+
+    local hud_langs = {"en", "es", "fr", "de", "pt_BR", "ru", "zh_CN", "ja", "sk"}
+    local check_vps = {
+        {label = "800x600", w = 800, h = 600, scale = 1.0},
+        {label = "1280x720", w = 1280, h = 720, scale = 1.0},
+        {label = "1920x1080", w = 1920, h = 1080, scale = 1.0},
+    }
+    local saved_blessing = tc_core.state.active_blessing
+    local saved_temp = tc_core.state.temperature
+    local saved_ph = tc_core.state.ph
+    local saved_cleanup = tc_core.state.cleanup_phase
+    tc_core.state.active_blessing = "dragonlung_bellows"
+    tc_core.state.temperature = 64.0
+    tc_core.state.ph = 64.0
+    tc_core.state.cleanup_phase = true
+
+    for l_i = 1, #hud_langs do
+        local lg = hud_langs[l_i]
+        mock_player_langs["singleplayer"] = lg
+        tc_core.push_hud_event_player(p_hud, {
+            priority = 4,
+            icon = "tc_crucible_sprout_2.png",
+            title = tc_core.S("✦ Room #@1 Marked [@2]", 1, "singleplayer"),
+            detail = tc_core.S("@1 · @2 Hazards", tc_core.S("@1% Bloom · @2% HP", "34", "88"), 1),
+            color = P.hud_gold,
+            accent_hex = P.gold,
+            ttl = 5.0,
+        })
+        tc_core.push_action_feedback(p_hud, {
+            kind = "action",
+            icon = "tc_tool_trowel.png",
+            bloom = 4.5,
+            label = tc_core.S("Bonus Geode Cracked!"),
+            color = P.hud_aqua,
+            ttl = 4.0,
+        })
+
+        for v_i = 1, #check_vps do
+            local vp = check_vps[v_i]
+            mock_windows["singleplayer"] = {size = {x = vp.w, y = vp.h}, real_hud_scaling = vp.scale}
+            local layout = tc_core.get_hud_layout("singleplayer")
+            tc_core.update_player_hud(p_hud)
+            tc_core.sync_player_drop_hud(p_hud)
+            tc_core.push_action_feedback(p_hud, {
+                kind = "action",
+                icon = "tc_tool_trowel.png",
+                bloom = 4.5,
+                label = tc_core.S("Bonus Geode Cracked!"),
+                color = P.hud_aqua,
+                ttl = 4.0,
+            })
+
+            local toast_w = (layout.tier == "compact") and 188 or 244
+            local pill_w = 0
+            local banner_w = layout.banner_w
+            for _, h in pairs(p_hud._hud_elems) do
+                if h and (h.type == "image" or h.hud_elem_type == "image")
+                    and h.scale and h.scale.x > 0 and type(h.text) == "string"
+                then
+                    if h.text:find("tc_hud_toast_") and not h.text:find("tc_hud_toast_rim_") then
+                        local cw = h.text:match("^%[combine:(%d+)x%d+:")
+                        if cw then
+                            toast_w = tonumber(cw)
+                        end
+                    elseif h.text:find("^%[combine:") and h.text:find("tc_hud_pill_") then
+                        local cw = h.text:match("^%[combine:(%d+)x%d+:")
+                        if cw then
+                            pill_w = tonumber(cw)
+                        end
+                    elseif h.text:find("^%[combine:") and h.text:find("tc_hud_banner_") then
+                        local cw = h.text:match("^%[combine:(%d+)x%d+:")
+                        if cw then
+                            banner_w = tonumber(cw)
+                        end
+                    end
+                end
+            end
+
+            if lg == "en" and vp.w >= 1280 then
+                assert(toast_w >= 310,
+                    string.format("Guild Ping toast at %s must stretch 3-slice plaque >=310px, got %d", vp.label, toast_w))
+            end
+            assert(layout.toast_ox + toast_w <= math.floor(layout.lw * 0.5) - 204,
+                string.format("Toast (%dpx) intrudes toward hotbar on %s [%s]", toast_w, vp.label, lg))
+
+            for _, h in pairs(p_hud._hud_elems) do
+                if h and (h.type == "text" or h.hud_elem_type == "text")
+                    and type(h.text) == "string" and h.text ~= "" and h.text ~= "→"
+                then
+                    local is_bold = (h.style == 1)
+                    local est_px = tc_core.estimate_hud_text_px(h.text, is_bold)
+                    if h.position.x == 0.5 and h.position.y == 0.0 then
+                        assert(est_px <= banner_w - 24,
+                            string.format("Banner text '%s' (%dpx) overflows %dpx banner [%s %s]",
+                                h.text, est_px, banner_w, vp.label, lg))
+                    elseif h.position.x == 1.0 and h.position.y == 0.0 then
+                        assert(est_px <= layout.card_w - 18,
+                            string.format("Drop card text '%s' (%dpx) overflows %dpx card [%s %s]",
+                                h.text, est_px, layout.card_w, vp.label, lg))
+                    elseif h.position.x == 0.0 and h.position.y == 1.0 then
+                        local pad_l = (layout.tier == "compact") and 41 or 46
+                        assert(pad_l + est_px + 10 <= toast_w,
+                            string.format("Toast text '%s' (%dpx) overflows %dpx plaque [%s %s]",
+                                h.text, est_px, toast_w, vp.label, lg))
+                        if lg == "en" and vp.w >= 1280 then
+                            assert(not h.text:find("…"),
+                                string.format("English Guild Ping text '%s' should fit untruncated on %s", h.text, vp.label))
+                        end
+                    elseif h.position.x == 0.5 and h.position.y == 1.0 then
+                        assert(12 + layout.icon_px + 6 + est_px + 10 <= pill_w,
+                            string.format("Pill text '%s' (%dpx) overflows %dpx pill [%s %s]",
+                                h.text, est_px, pill_w, vp.label, lg))
+                    end
+                end
+            end
+        end
+    end
+
+    mock_player_langs["singleplayer"] = nil
+    mock_windows["singleplayer"] = nil
+    for _, fn in ipairs(leave_cbs) do fn(p_hud) end
+    table.remove(mock_players)
+    tc_core.state.active_blessing = saved_blessing
+    tc_core.state.temperature = saved_temp
+    tc_core.state.ph = saved_ph
+    tc_core.state.cleanup_phase = saved_cleanup
 end
 
 mock_windows["SaKeL"] = nil
