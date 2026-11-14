@@ -30,7 +30,7 @@
     "url": "git+https://github.com/sakel-hub/terrarium_crucible.git"
   },
   "author": "SaKeL",
-  "license": "MIT",
+  "license": "LGPL-2.1-or-later",
   "bugs": {
     "url": "https://github.com/sakel-hub/terrarium_crucible/issues"
   },

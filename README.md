@@ -4,8 +4,8 @@
 [![ContentDB Downloads](https://content.luanti.org/packages/SaKeL/terrarium_crucible/shields/downloads/)](https://content.luanti.org/packages/SaKeL/terrarium_crucible/)
 [![Luacheck](https://img.shields.io/github/actions/workflow/status/sakel-hub/terrarium_crucible/luacheck.yml?label=Luacheck&logo=lua)](https://github.com/sakel-hub/terrarium_crucible/actions)
 ![Luanti](https://img.shields.io/badge/Luanti-5.18%2B-5599ff.svg)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.md)
-[![Media License: CC0 / CC-BY-SA 3.0](https://img.shields.io/badge/Media-CC0_1.0_%2F_CC--BY--SA_3.0-lightgrey.svg)](LICENSE.md)
+[![License: LGPL-2.1-or-later](https://img.shields.io/badge/License-LGPL--2.1--or--later-blue.svg)](LICENSE.md)
+[![Media License: CC-BY-SA 3.0](https://img.shields.io/badge/Media-CC--BY--SA_3.0-lightgrey.svg)](LICENSE.md)
 ![AI-Generated](https://img.shields.io/badge/AI--generated-gray)
 
 Shrink down inside a wizard's glass terrarium and care for magical glowing plants! Made for the **2026 Luanti Game Jam** (*The Wizard's Workshop*).
@@ -140,9 +140,9 @@ Finishing a level lets you pick **1 of 3 Next-Level Blessings** from 8 magical p
 
 ## Credits & Licenses
 
-- **Game Design & Code**: **SaKeL** — Licensed under the **[MIT License](LICENSE.md)**.
+- **Game Design & Code**: **SaKeL** — Game bundle distributed under **[LGPL-2.1-or-later](LICENSE.md)** (original `tc_*` game modules by **SaKeL** licensed under **MIT**).
 - **AI-Generated Visual Artwork (CC0 1.0)**: Pixel-art block/tool/plant textures, animated sprite sheets, custom HUD plaques & gauges, character skin, and menu/promotional artwork were generated with **Google Gemini 3.1 Pro** and **Google Imagen** (with art direction, curation, and Blender scene staging by **SaKeL**) and dedicated to the public domain under **CC0 1.0**.
-- **Sound Effects & Bundled Mods**: Gameplay sound effects are **CC0 1.0** recordings from **Freesound.org** contributors (mastered by **SaKeL**), alongside open-source community mods (`x_player_api`, `hudbars`, `player_monoids`, `sfinv`, `show_wielded_item`, `game_commands`). See **[LICENSE.md](LICENSE.md)** for full creator credits and licenses.
+- **Sound Effects & Bundled Mods**: Gameplay sound effects and foley are **CC0 1.0**, **CC BY 3.0**, and **CC BY-SA 3.0** works from **Freesound.org**, **OpenGameArt**, and community contributors, alongside open-source community mods (`x_player_api`, `hudbars`, `player_monoids`, `sfinv`, `show_wielded_item`, `game_commands`). See **[LICENSE.md](LICENSE.md)** for full creator credits and licenses.
 
 ---
 

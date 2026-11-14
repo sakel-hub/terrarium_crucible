@@ -5,7 +5,7 @@
 ![Luanti](https://img.shields.io/badge/Luanti-5.10%2B-5599ff.svg)
 [![Luacheck](https://img.shields.io/github/actions/workflow/status/sakel-hub/x_player_api/luacheck.yml?label=Luacheck&logo=lua)](https://github.com/sakel-hub/x_player_api/actions)
 [![License: LGPL 2.1](https://img.shields.io/badge/License-LGPL_v2.1-blue.svg)](license.txt)
-[![Media License: CC-BY 4.0](https://img.shields.io/badge/Media-CC_BY_4.0-lightgrey.svg)](license.txt)
+[![Media License: CC-BY-SA 3.0](https://img.shields.io/badge/Media-CC--BY--SA_3.0-lightgrey.svg)](license.txt)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/sakel-hub/x_player_api/pulls)
 ![AI-Assisted](https://img.shields.io/badge/AI--assisted-gray)
 
@@ -998,5 +998,5 @@ This package adheres to an **AI-Assisted** development model under strict human 
 
 ## Authors & License
 
-See `license.txt` for license details (LGPLv2.1+ / CC-BY-4.0).
+See `license.txt` for license details (LGPL-2.1-or-later / CC-BY-SA-3.0).
 

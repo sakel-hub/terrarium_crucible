@@ -1,7 +1,21 @@
 # Licenses
 
 ## Code License
-The code in this repository is licensed under the MIT License.
+
+### Combined Game Package (`LGPL-2.1-or-later`)
+Because **Terrarium Crucible** bundles `LGPL-2.1-or-later` (`x_player_api`, `show_wielded_item`), `Apache-2.0` (`player_monoids`), and `MIT` (`hudbars`, `sfinv`, `game_commands`, `tc_*`) modules, the combined game distribution is licensed under the **GNU Lesser General Public License v2.1 or later (`LGPL-2.1-or-later`)**:
+
+This program is free software; you can redistribute it and/or modify it under the terms
+of the GNU Lesser General Public License as published by the Free Software Foundation;
+either version 2.1 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU Lesser General Public License for more details:
+https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
+
+### Original `tc_*` Game Modules (`MIT`)
+All original **Terrarium Crucible** modules authored by **SaKeL** (`mods/tc_assets/`, `mods/tc_core/`, `mods/tc_elements/`, `mods/tc_init/`, `mods/tc_tools/`, `mods/tc_world/`) are permissively licensed under the **MIT License**:
 
 Copyright (c) 2026 SaKeL
 
@@ -33,23 +47,74 @@ All custom visual artwork created for **Terrarium Crucible** is dedicated to the
 - **Covered Visual Assets**:
   - Block, plant, crystal, tool, potion, particle, and animated sprite-sheet textures (`mods/tc_assets/textures/*.png`)
   - Custom HUD banners, forecast plaques, toast frames, tongs socket, gauges, effect icons, and celestial textures (`mods/tc_assets/textures/tc_hud_*.png`, `tc_hud_tongs_slot.png`, `tc_bar_*.png`, `tc_icon_effect_*.png`, `tc_gui_*.png`, `tc_gui_slot_hover.png`, `tc_astral_moon.png`, `tc_moon_tonemap.png`)
-  - Custom restyled gauge & inventory arrow textures in `mods/hudbars/textures/*.png` and `mods/sfinv/textures/sfinv_crafting_arrow.png`
+  - Custom restyled health gauge icons (`mods/hudbars/textures/hudbars_icon_health.png` and `mods/hudbars/textures/hudbars_bgicon_health.png`)
   - Alchemist character skin (`mods/tc_assets/textures/tc_alchemist_skin.png`)
   - Main-menu branding and promotional screenshot (`menu/icon.png`, `menu/header.png`, `menu/background.png`, `screenshot.png`)
 
-### Sound Effects & Foley Audio (CC0 1.0 / CC-BY-SA 3.0)
-- **Gameplay Sound Effects (`mods/tc_assets/sounds/*.ogg`)**: Human-recorded Creative Commons Zero (**CC0 1.0**) sound effects from **Freesound.org** (full creator credits listed below), sliced, balanced, and mastered by **SaKeL**.
-- **Base Foley Audio (`tc_dig_*`, `tc_dug_node.*`, `tc_footstep_*`, `tc_place_node*`, `tc_tool_breaks.*`, `tc_item_smoke.ogg`, `tc_player_damage.ogg`)**: **CC-BY-SA 3.0 / CC0 1.0**, curated and mastered by **SaKeL**.
+### Sound Effects & Foley Audio (CC0 1.0 / CC BY 3.0 / CC BY-SA 3.0)
+- **All 61 Audio Files (`mods/tc_assets/sounds/*.ogg`)**: Individually attributed per file in the **Base Foley Audio Attributions** and **Freesound.org Gameplay Audio Attributions** sections below (`CC0 1.0`, `CC BY 3.0`, and `CC BY-SA 3.0`).
 
 ### Bundled Community & Core Mods
-- **`game_commands`** (`mods/game_commands/`): Code **MIT** (rubenwardy).
-- **`hudbars`** (`mods/hudbars/`): Code **MIT** (Wuzzy, BlockMen); upstream textures **CC-BY-SA 3.0** (celeron55, BlockMen) & **MIT** (kaeza, Wuzzy); custom Terrarium Crucible bar/icon restyling **CC0 1.0** (Google Gemini 3.1 Pro / Google Imagen & SaKeL).
-- **`player_monoids`** (`mods/player_monoids/`): Code **Apache-2.0** (raymoo).
-- **`sfinv`** (`mods/sfinv/`): Code **MIT** (rubenwardy); upstream media **CC-BY-SA 3.0** (paramat).
-- **`show_wielded_item`** (`mods/show_wielded_item/`): Code **LGPL-2.1+** (Wuzzy, 4aiman, VanessaE).
-- **`x_player_api`** (`mods/x_player_api/`): Code **LGPL-2.1+ & MIT** (celeron55, Luanti contributors, Lars Mueller, SaKeL); 3D character models & animations **CC-BY 4.0** (MirceaKitsune, kilbith, sofar, xunto, Rogier-5, TeTpaAka, Desour, stujones11, An0n3m0us, Jordach, celeron55, SaKeL); equip sounds **CC0 1.0** (Vrymaa, harrisonlace, mrickey13) — see `mods/x_player_api/license.txt` for full details.
+- **`game_commands`** (`mods/game_commands/`): Code **MIT** (rubenwardy) — see `mods/game_commands/license.txt`.
+- **`hudbars`** (`mods/hudbars/`): Code **MIT** (Wuzzy, BlockMen); unmodified bar & breath textures (`hudbars_bar_background.png`, `hudbars_bar_breath.png`, `hudbars_bar_health.png`, `hudbars_icon_breath.png`, `hudbars_bgicon_breath.png`) **MIT** (Wuzzy, kaeza, BlockMen); custom Terrarium Crucible health icons (`hudbars_icon_health.png`, `hudbars_bgicon_health.png`) **CC0 1.0** (Google Gemini 3.1 Pro / Google Imagen & SaKeL, replacing upstream `CC BY-SA 3.0` icons by celeron55 & BlockMen) — see `mods/hudbars/README.md`.
+- **`player_monoids`** (`mods/player_monoids/`): Code **Apache-2.0** (raymoo) — see `mods/player_monoids/COPYING`.
+- **`sfinv`** (`mods/sfinv/`): Code **MIT** (rubenwardy); `mods/sfinv/textures/sfinv_crafting_arrow.png` **CC BY-SA 3.0** (paramat, derived from a texture by BlockMen) — see `mods/sfinv/license.txt` and `mods/sfinv/README.md`.
+- **`show_wielded_item`** (`mods/show_wielded_item/`): Code **LGPL-2.1-or-later** (Wuzzy, 4aiman, VanessaE) — see `mods/show_wielded_item/README.md`.
+- **`x_player_api`** (`mods/x_player_api/`): Code **LGPL-2.1-or-later & MIT** (celeron55, Luanti contributors, Lars Mueller, SaKeL); 3D character models, animations & player textures **CC BY-SA 3.0** (MirceaKitsune, kilbith, sofar, xunto, Rogier-5, TeTpaAka, Desour, stujones11, An0n3m0us, Jordach, celeron55, SaKeL); equip sounds **CC0 1.0** (Vrymaa, harrisonlace, mrickey13) — see `mods/x_player_api/license.txt` for full details.
 
-### Freesound.org Audio Attributions (CC0 1.0)
+### Base Foley Audio Attributions (CC BY-SA 3.0 / CC BY 3.0 / CC0 1.0)
+
+- `mods/tc_assets/sounds/tc_dug_node.1.ogg`, `mods/tc_assets/sounds/tc_dug_node.2.ogg`:
+  Source: `default_dug_node.1.ogg`, `default_dug_node.2.ogg` by Mito551 (unmodified)
+  License: Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+  https://github.com/luanti-org/minetest_game
+
+- `mods/tc_assets/sounds/tc_place_node.1.ogg`, `mods/tc_assets/sounds/tc_place_node.2.ogg`, `mods/tc_assets/sounds/tc_place_node.3.ogg`:
+  Source: `default_place_node.1.ogg`–`.3.ogg` by Mito551 (trimmed and normalized to 44.1 kHz Mono by SaKeL)
+  License: Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+  https://github.com/luanti-org/minetest_game
+
+- `mods/tc_assets/sounds/tc_place_node_hard.1.ogg`, `mods/tc_assets/sounds/tc_place_node_hard.2.ogg`:
+  Source: `default_place_node_hard.1.ogg`–`.2.ogg` by Mito551 (trimmed and normalized to 44.1 kHz Mono by SaKeL)
+  License: Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+  https://github.com/luanti-org/minetest_game
+
+- `mods/tc_assets/sounds/tc_dig_cracky.1.ogg`, `mods/tc_assets/sounds/tc_dig_cracky.2.ogg`, `mods/tc_assets/sounds/tc_dig_cracky.3.ogg`:
+  Source: Sound #71823 by Benboncan (via `default_dig_cracky.1.ogg`–`.3.ogg`, trimmed and normalized to 44.1 kHz Mono by SaKeL)
+  License: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
+  https://freesound.org/people/Benboncan/sounds/71823/
+
+- `mods/tc_assets/sounds/tc_tool_breaks.1.ogg`, `mods/tc_assets/sounds/tc_tool_breaks.2.ogg`, `mods/tc_assets/sounds/tc_tool_breaks.3.ogg`:
+  Source: Sound #33206 by HerbertBoland, edited by sofar (`default_tool_breaks.1.ogg`–`.3.ogg`, unmodified)
+  License: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
+  https://freesound.org/people/HerbertBoland/sounds/33206/
+
+- `mods/tc_assets/sounds/tc_player_damage.ogg`:
+  Source: Sound #241872 by sonictechtonic (via `player_damage.ogg`, resampled to 44.1 kHz Mono and normalized by SaKeL)
+  License: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
+  https://freesound.org/people/sonictechtonic/sounds/241872/
+
+- `mods/tc_assets/sounds/tc_item_smoke.ogg`:
+  Source: `default_item_smoke.ogg` by Ferk, based on a sound by bart (unmodified)
+  License: Creative Commons 0 1.0 Universal (CC0 1.0)
+  https://opengameart.org/users/bart
+
+- `mods/tc_assets/sounds/tc_dig_crumbly.1.ogg`, `mods/tc_assets/sounds/tc_dig_crumbly.2.ogg`, `mods/tc_assets/sounds/tc_dig_crumbly.3.ogg`:
+  Source: Dirt impact recordings by kyles (via `x_farming_dirt_hit.1.ogg`–`.3.ogg`, trimmed and normalized to 44.1 kHz Mono by SaKeL)
+  License: Creative Commons 0 1.0 Universal (CC0 1.0)
+  https://freesound.org/people/kyles/
+
+- `mods/tc_assets/sounds/tc_footstep_dirt.1.ogg`, `mods/tc_assets/sounds/tc_footstep_dirt.2.ogg`:
+  Source: "Footsteps" pack by Fission9 (via `x_farming_dirt_footstep.1.ogg`–`.2.ogg`, trimmed and normalized to 44.1 kHz Mono by SaKeL)
+  License: Creative Commons 0 1.0 Universal (CC0 1.0)
+  https://freesound.org/people/Fission9/packs/28551/
+
+- `mods/tc_assets/sounds/tc_footstep_wood.1.ogg`, `mods/tc_assets/sounds/tc_footstep_wood.2.ogg`, `mods/tc_assets/sounds/tc_footstep_wood.3.ogg`:
+  Source: "Footsteps" pack by Fission9 (via `x_farming_wood_footstep.1.ogg`–`.3.ogg`, trimmed and normalized to 44.1 kHz Mono by SaKeL)
+  License: Creative Commons 0 1.0 Universal (CC0 1.0)
+  https://freesound.org/people/Fission9/packs/28551/
+
+### Freesound.org Gameplay Audio Attributions (CC0 1.0)
 Edited and mastered for Luanti by **SaKeL**:
 
 - `mods/tc_assets/sounds/tc_drop_warning.1.ogg`:

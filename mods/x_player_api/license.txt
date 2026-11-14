@@ -44,7 +44,7 @@ SOFTWARE.
 Licenses of media (textures, models and sounds)
 -----------------------------------------------
 
-Attribution 4.0 International (CC BY 4.0)
+Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
 
 `models/character.b3d`, `models/character.glb`, `assets/character.blend`:
 Copyright (C) 2012 MirceaKitsune
@@ -62,7 +62,7 @@ Copyright (C) 2026 SaKeL
 Copyright (C) 2012 Jordach
 Copyright (C) 2026 SaKeL
 
-`textures/x_player_api_bubble.png`:
+`textures/x_player_api_bubble.png`, `textures/blank.png`:
 Copyright (C) 2026 SaKeL
 
 `textures/player.png`, `textures/player_back.png`:
@@ -79,6 +79,9 @@ Attribution — You must give appropriate credit, provide a link to the license,
 indicate if changes were made. You may do so in any reasonable manner, but not in any way
 that suggests the licensor endorses you or your use.
 
+ShareAlike — If you remix, transform, or build upon the material, you must distribute
+your contributions under the same license as the original.
+
 No additional restrictions — You may not apply legal terms or technological measures that
 legally restrict others from doing anything the license permits.
 
@@ -91,7 +94,7 @@ for your intended use. For example, other rights such as publicity, privacy, or 
 rights may limit how you use the material.
 
 For more details:
-https://creativecommons.org/licenses/by/4.0/
+https://creativecommons.org/licenses/by-sa/3.0/
 
 ### Sounds
 
