@@ -3590,7 +3590,7 @@ print("[OK] Luanti 5.18 Capabilities (Formspec v12, listimages, editable=false, 
 
     -- Auto-Aegis Lifesaver, [Z] Chamber Ping & Garden Controls Pace/Reset UI buttons
     tc_core.clear_player_effects(p1, true)
-    p1:set_hp(4)
+    p1:set_hp(1)
     p1:get_inventory():add_item("main", "tc_tools:elixir_aegis")
     tc_core.damage_player(p1, 10, "brimstone")
     assert(p1:get_hp() == 20 and tc_core.has_effect(p1, "aegis_ward"),
@@ -4004,6 +4004,86 @@ print("[OK] Multiplayer HUD packet deduplication, anti-refill join/reconnect, me
     tc_core.reset_crucible()
 end)()
 print("[OK] Final Sweep two-phase completion, Level 2+ checkpoint retry & friendly Top 10 retry ranking verified")
+
+-- Release Archive & Bundled Mod dofile Integrity Verification
+;(function()
+    local bundled_mods = {
+        "game_commands", "hudbars", "player_monoids", "sfinv", "show_wielded_item",
+        "tc_assets", "tc_core", "tc_elements", "tc_init", "tc_tools", "tc_world", "x_player_api",
+    }
+    local tracked_paths = {"game.conf", "minetest.conf", "settingtypes.txt"}
+    local checked_dofile = {}
+
+    local function file_exists(path)
+        local f = io.open(path, "rb")
+        if f then
+            f:close()
+            return true
+        end
+        return false
+    end
+
+    assert(file_exists(game_dir .. "/mods/x_player_api/anim_showcase.lua"),
+        "mods/x_player_api/anim_showcase.lua must exist")
+    assert(not file_exists(game_dir .. "/mods/x_player_api/test_anim.lua"),
+        "Legacy mods/x_player_api/test_anim.lua must not exist")
+    assert(file_exists(game_dir .. "/mods/player_monoids/test.lua"),
+        "mods/player_monoids/test.lua must exist")
+
+    for i = 1, #bundled_mods do
+        local modname = bundled_mods[i]
+        local mod_conf_rel = "mods/" .. modname .. "/mod.conf"
+        local init_rel = "mods/" .. modname .. "/init.lua"
+        assert(file_exists(game_dir .. "/" .. mod_conf_rel), "Missing " .. mod_conf_rel)
+        local init_f = assert(io.open(game_dir .. "/" .. init_rel, "rb"), "Missing " .. init_rel)
+        local init_src = init_f:read("*a")
+        init_f:close()
+
+        table.insert(tracked_paths, mod_conf_rel)
+        table.insert(tracked_paths, init_rel)
+
+        for rel_lua in init_src:gmatch('dofile%s*%([^"]*"/?([^"]+%.lua)"') do
+            local mod_file_rel = "mods/" .. modname .. "/" .. rel_lua
+            local mod_file_abs = game_dir .. "/" .. mod_file_rel
+            assert(file_exists(mod_file_abs), "Missing dofile target: " .. mod_file_rel)
+            local chunk, load_err = loadfile(mod_file_abs)
+            assert(chunk ~= nil, "Syntax error in " .. mod_file_rel .. ": " .. tostring(load_err))
+            if not checked_dofile[mod_file_rel] then
+                checked_dofile[mod_file_rel] = true
+                table.insert(tracked_paths, mod_file_rel)
+            end
+        end
+    end
+
+    assert(checked_dofile["mods/x_player_api/anim_showcase.lua"] == true,
+        "Expected mods/x_player_api/anim_showcase.lua in init.lua dofile targets")
+    assert(checked_dofile["mods/player_monoids/test.lua"] == true,
+        "Expected mods/player_monoids/test.lua in init.lua dofile targets")
+
+    local quoted_paths = {}
+    for i = 1, #tracked_paths do
+        table.insert(quoted_paths, "'" .. tracked_paths[i]:gsub("'", "'\\''") .. "'")
+    end
+    local quoted_dir = "'" .. game_dir:gsub("'", "'\\''") .. "'"
+    local cmd = string.format(
+        "printf '%%s\\n' %s | git -C %s check-attr --stdin export-ignore",
+        table.concat(quoted_paths, " "),
+        quoted_dir
+    )
+    local pipe = assert(io.popen(cmd, "r"), "Failed to invoke git check-attr")
+    local attr_out = pipe:read("*a") or ""
+    pipe:close()
+
+    local line_count = 0
+    for line in attr_out:gmatch("[^\r\n]+") do
+        line_count = line_count + 1
+        assert(line:find("export%-ignore: set", 1, false) == nil,
+            "Runtime file excluded from release archive by export-ignore: " .. line)
+    end
+    assert(line_count == #tracked_paths,
+        string.format("Expected %d git check-attr lines, got %d", #tracked_paths, line_count))
+end)()
+print("[OK] Release archive export-ignore & bundled mod dofile integrity verified")
 
 for _, fn in ipairs(leave_cbs) do fn(p1) end
 print("[OK] All Terrarium Crucible verification checks passed!")

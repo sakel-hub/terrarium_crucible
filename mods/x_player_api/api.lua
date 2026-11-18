@@ -34,6 +34,7 @@
 ---@field _wrappers_applied? boolean Internal flag for API safety wrappers
 ---@field _modpath_hooked? boolean Internal flag for modpath interception
 ---@field _join_registered? boolean Internal flag for player join handler
+---@field _anim_showcase_callbacks_registered? boolean Internal flag for animation showcase callbacks
 ---@field model_format "glb"|"b3d" Currently active player model format ("glb" or "b3d")
 ---@field pure_native_b3d boolean Whether pure native B3D mode is enabled
 ---@field connected_players ObjectRef[] Locally maintained array of connected players
@@ -50,6 +51,7 @@
 ---@field enable_wield_item? boolean Whether 3D wielded item rendering is active
 ---@field enable_left_wield_first_person? boolean Whether 3D left-hand wielded item is visible in 1st person
 ---@field enable_equip_sound? boolean Whether declarative equip sounds are active
+---@field enable_anim_showcase? boolean Whether admin animation showcase chatcommands are enabled
 ---@field equip_sounds? table<string, string|EquipSoundDefinition|boolean> Sound definition lookup cache
 ---@field registered_equip_sounds table<string, string|EquipSoundDefinition|boolean> Registry of equip sound definitions
 ---@field wield_item_offsets? WieldOffsetsRegistry Custom 3D wield item transform registry
@@ -171,6 +173,8 @@
 ---@field wiggle_b3d_data? fun(data: string): string, integer, integer
 ---@field scan_and_wiggle_b3d_model? fun(mesh_name: string, full_path?: string): string
 ---@field scan_and_wiggle_registered_b3d_models? fun()
+---@field start_anim_test? fun(player: ObjectRef, duration?: number, specific_anim?: string): boolean, string?
+---@field stop_anim_test? fun(name: string, quiet?: boolean)
 
 ---@class player_api : x_player_api
 x_player_api = rawget(_G, "x_player_api") or rawget(_G, "player_api") or {}

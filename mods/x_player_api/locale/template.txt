@@ -32,7 +32,7 @@ B3D (Blitz3D single-track)=
 [x_player_api] Switched player model format to @1 (mesh: @2)=
 Toggle between GLB and B3D player models on the fly=
 
-### test_anim.lua ###
+### anim_showcase.lua ###
 [x_player_api] Animation showcase stopped. Restored normal player animations.=
 [x_player_api] Animation showcase completed! Successfully tested all @1 animations.=
 Action Track (Track 1)=

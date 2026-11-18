@@ -1,9 +1,13 @@
--- x_player_api test animations module
--- Provides debug and test chat commands and sequence playback for player animations.
+-- x_player_api animation showcase module
+-- Provides admin showcase chatcommands and sequence playback for player animations.
 
 x_player_api = rawget(_G, "x_player_api") or rawget(_G, "player_api") or {}
 
 local S = core.get_translator(core.get_current_modname())
+local enable_anim_showcase = core.settings:get_bool("x_player_api.enable_anim_showcase", true)
+
+---@type boolean Whether admin animation showcase chatcommands are enabled
+x_player_api.enable_anim_showcase = enable_anim_showcase
 
 local CANONICAL_SHOWCASE_ORDER = {
 	-- Locomotion & Postures (Track 0)
@@ -262,86 +266,97 @@ function x_player_api.start_anim_test(player, duration, specific_anim)
 	return true
 end
 
-core.register_chatcommand("test_anim", {
-	params = S("[duration|anim_name|stop|list] [duration]"),
-	description = S("Admin animation test suite & slideshow. Displays all animations in private chat and on character."),
-	privs = {server = true},
-	func = function(name, param)
-		local player = core.get_player_by_name(name)
-		if not player then
-			return false, S("Player not found.")
-		end
+if enable_anim_showcase then
+	local reg_cmds = core.registered_chatcommands
+	if not (reg_cmds and reg_cmds["test_anim"]) then
+		core.register_chatcommand("test_anim", {
+			params = S("[duration|anim_name|stop|list] [duration]"),
+			description = S("Admin animation test suite & slideshow. Displays all animations in private chat and on character."),
+			privs = {server = true},
+			func = function(name, param)
+				local player = core.get_player_by_name(name)
+				if not player then
+					return false, S("Player not found.")
+				end
 
-		param = param and (param.trim and param:trim() or param:match("^%s*(.-)%s*$")) or ""
-		local args = {}
-		for w in param:gmatch("%S+") do
-			table.insert(args, w)
-		end
+				param = param and (param.trim and param:trim() or param:match("^%s*(.-)%s*$")) or ""
+				local args = {}
+				for w in param:gmatch("%S+") do
+					table.insert(args, w)
+				end
 
-		local first = args[1]
-		if first == "stop" or first == "cancel" or first == "reset" then
-			x_player_api.stop_anim_test(name, false)
-			return true
-		end
+				local first = args[1]
+				if first == "stop" or first == "cancel" or first == "reset" then
+					x_player_api.stop_anim_test(name, false)
+					return true
+				end
 
-		if first == "list" then
-			local anim_data = x_player_api.get_animation(player)
-			local def_model = x_player_api.get_default_model() or "character.glb"
-			local model_name = anim_data and anim_data.model or def_model
-			local model = x_player_api.registered_models[model_name]
-				or x_player_api.registered_models[def_model]
-				or x_player_api.registered_models["character.glb"]
-				or x_player_api.registered_models["character.b3d"]
-			if not model or not model.animations then
-				return false, S("No animations found for model.")
-			end
-			local list = {}
-			for a, _ in pairs(model.animations) do
-				table.insert(list, a)
-			end
-			table.sort(list)
-			core.chat_send_player(name, core.colorize("#00FFFF",
-					S("[x_player_api] Registered animations for @1 (@2): ", model_name, #list))
-				.. table.concat(list, ", "))
-			return true
-		end
+				if first == "list" then
+					local anim_data = x_player_api.get_animation(player)
+					local def_model = x_player_api.get_default_model() or "character.glb"
+					local model_name = anim_data and anim_data.model or def_model
+					local model = x_player_api.registered_models[model_name]
+						or x_player_api.registered_models[def_model]
+						or x_player_api.registered_models["character.glb"]
+						or x_player_api.registered_models["character.b3d"]
+					if not model or not model.animations then
+						return false, S("No animations found for model.")
+					end
+					local list = {}
+					for a, _ in pairs(model.animations) do
+						table.insert(list, a)
+					end
+					table.sort(list)
+					core.chat_send_player(name, core.colorize("#00FFFF",
+							S("[x_player_api] Registered animations for @1 (@2): ", model_name, #list))
+						.. table.concat(list, ", "))
+					return true
+				end
 
-		local duration = tonumber(first)
-		local specific_anim = nil
+				local duration = tonumber(first)
+				local specific_anim = nil
 
-		if not duration and first and first ~= "" then
-			specific_anim = first
-			duration = tonumber(args[2]) or 4.0
-		else
-			duration = duration or 4.0
-		end
+				if not duration and first and first ~= "" then
+					specific_anim = first
+					duration = tonumber(args[2]) or 4.0
+				else
+					duration = duration or 4.0
+				end
 
-		local success, msg = x_player_api.start_anim_test(player, duration, specific_anim)
-		if not success then
-			return false, msg
-		end
-		return true
-	end,
-})
+				local success, msg = x_player_api.start_anim_test(player, duration, specific_anim)
+				if not success then
+					return false, msg
+				end
+				return true
+			end,
+		})
+	end
 
--- Aliases for convenience
-core.register_chatcommand("anim_test", {
-	params = S("[duration|anim_name|stop|list] [duration]"),
-	description = S("Alias for /test_anim"),
-	privs = {server = true},
-	func = function(name, param)
-		return core.chatcommands["test_anim"].func(name, param)
-	end,
-})
+	-- Aliases for convenience
+	if not (reg_cmds and reg_cmds["anim_test"]) then
+		core.register_chatcommand("anim_test", {
+			params = S("[duration|anim_name|stop|list] [duration]"),
+			description = S("Alias for /test_anim"),
+			privs = {server = true},
+			func = function(name, param)
+				return core.chatcommands["test_anim"].func(name, param)
+			end,
+		})
+	end
+end
 
--- Cleanup on leave
-core.register_on_leaveplayer(function(player)
-	local name = player:get_player_name()
-	x_player_api.stop_anim_test(name, true)
-end)
+if not x_player_api._anim_showcase_callbacks_registered then
+	x_player_api._anim_showcase_callbacks_registered = true
 
--- Cancel active test animation on player death
-core.register_on_dieplayer(function(player)
-	local name = player:get_player_name()
-	x_player_api.stop_anim_test(name, true)
-end)
+	-- Cleanup on leave
+	core.register_on_leaveplayer(function(player)
+		local name = player:get_player_name()
+		x_player_api.stop_anim_test(name, true)
+	end)
+
+	-- Cancel active test animation on player death
+	core.register_on_dieplayer(function(player)
+		local name = player:get_player_name()
+		x_player_api.stop_anim_test(name, true)
+	end)
+end

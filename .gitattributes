@@ -105,7 +105,8 @@ __pycache__ export-ignore
 /test*.lua export-ignore
 /tests export-ignore
 tests/** export-ignore
-mods/*/test*.lua export-ignore
+mods/*/tests export-ignore
+mods/*/tests/** export-ignore
 mods/*/.luacheckrc export-ignore
 mods/*/bower.json export-ignore
 mods/*/.mailmap export-ignore

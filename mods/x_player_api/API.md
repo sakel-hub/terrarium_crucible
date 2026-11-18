@@ -2343,6 +2343,7 @@ function x_player_api.wrap_player_metatable(player: ObjectRef)
 | `x_player_api.bone_caches` | `table` | Cached bone transformations for network throttling and dual-format routing |
 | `x_player_api.connected_players` | `ObjectRef[]` | Locally maintained array of connected players for zero-allocation tick iteration |
 | `x_player_api.controls` | `PlayerControlsSubsystem` |  |
+| `x_player_api.enable_anim_showcase` | `unknown` | Whether admin animation showcase chatcommands are enabled |
 | `x_player_api.enable_aux1_sprint` | `unknown` | Whether holding the AUX1 (Special) key to sprint is enabled |
 | `x_player_api.enable_double_tap_sprint` | `unknown` | Whether double-tapping the forward key to sprint is enabled |
 | `x_player_api.enable_eating` | `unknown` | Whether eating animations, sounds, and particle simulations are enabled |

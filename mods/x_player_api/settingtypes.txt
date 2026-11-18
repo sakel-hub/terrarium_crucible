@@ -30,3 +30,6 @@ x_player_api.enable_head_tracking (Enable Head Tracking) bool true
 
 # Enable chatcommands for gestures and postures (/wave, /point, /cheer, /bow, /sit, /lay)
 x_player_api.enable_emote_chatcommands (Enable Emote Chatcommands) bool true
+
+# Enable admin animation showcase chatcommands (/test_anim, /anim_test)
+x_player_api.enable_anim_showcase (Enable Animation Showcase Chatcommands) bool true
